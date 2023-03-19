@@ -1,0 +1,26 @@
+  - name: "Configure workstation"
+    hosts: localhost
+    connection: local
+    tasks:
+
+    - name: "Overlay packages"
+      community.general.rpm_ostree_pkg:
+        name:
+          - bat
+          - distrobox
+          - neovim
+          - zsh
+        state: present
+
+    - name: "Add flathub remote"
+      flatpak_remote:
+        name: flathub
+        state: present
+        flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
+
+    - name: "Install flatpaks"
+      flatpak:
+        name:
+          - com.raggesilver.BlackBox
+          - dev.geopjr.Collision
+        state: present
