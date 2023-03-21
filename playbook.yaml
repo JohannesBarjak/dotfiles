@@ -21,6 +21,10 @@
     - name: "Install flatpaks"
       flatpak:
         name:
+          - com.usebottles.bottles
+          - org.musescore.MuseScore
+          - ca.desrt.dconf-editor
+          - com.github.tchx84.Flatseal
           - com.raggesilver.BlackBox
           - dev.geopjr.Collision
         state: present
