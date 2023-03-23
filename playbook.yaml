@@ -21,6 +21,7 @@
     - name: "Install flatpaks"
       flatpak:
         name:
+          - com.github.GradienceTeam.Gradience
           - com.usebottles.bottles
           - org.musescore.MuseScore
           - ca.desrt.dconf-editor
