@@ -9,6 +9,7 @@
           - bat
           - distrobox
           - neovim
+          - numix-icon-theme-circle
           - zsh
         state: present
 
