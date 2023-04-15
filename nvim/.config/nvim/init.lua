@@ -1,4 +1,5 @@
 require('packer-plugins')
+require('gitsigns').setup()
 
 -- Set theme
 vim.opt.termguicolors = true
