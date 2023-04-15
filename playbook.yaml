@@ -13,13 +13,19 @@
           - zsh
         state: present
 
-    - name: "Add flathub remote"
+    - name: "Add flathub"
       flatpak_remote:
         name: flathub
         state: present
-        flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
+        flatpakrepo_url: https://flathub.org/repo/flathub.flatpakrepo
 
-    - name: "Install flatpaks"
+    - name: "Add flathub beta"
+      flatpak_remote:
+        name: flathub-beta
+        state: present
+        flatpakrepo_url: https://flathub.org/beta-repo/flathub-beta.flatpakrepo
+
+    - name: "Install stable flatpaks"
       flatpak:
         name:
           - com.github.GradienceTeam.Gradience
@@ -30,3 +36,10 @@
           - com.raggesilver.BlackBox
           - dev.geopjr.Collision
         state: present
+
+    - name: "Install beta flatpaks"
+      flatpak:
+        name:
+          - org.mozilla.firefox
+        state: present
+        remote: flathub-beta
