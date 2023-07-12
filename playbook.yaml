@@ -10,6 +10,7 @@
           - distrobox
           - neovim
           - numix-icon-theme-circle
+          - stow
           - zsh
         state: present
 
