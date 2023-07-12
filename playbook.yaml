@@ -35,6 +35,7 @@
           - com.github.tchx84.Flatseal
           - com.raggesilver.BlackBox
           - dev.geopjr.Collision
+          - com.mattjakeman.ExtensionManager
         state: present
 
     - name: "Install beta flatpaks"
@@ -43,3 +44,13 @@
           - org.mozilla.firefox
         state: present
         remote: flathub-beta
+
+    - name: "Git clone zsh-autosuggestions"
+      git:
+        repo: https://github.com/zsh-users/zsh-autosuggestions.git
+        dest: ./zsh/.zsh/zsh-autosuggestions
+
+    - name: "Git clone zsh-syntax-highlighting"
+      git:
+        repo: https://github.com/zsh-users/zsh-syntax-highlighting.git
+        dest: ./zsh/.zsh/zsh-syntax-highlighting

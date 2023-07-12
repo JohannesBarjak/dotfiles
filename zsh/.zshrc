@@ -41,8 +41,9 @@ bindkey "^[[B" down-line-or-beginning-search
 setopt histignoredups
 
 # Load plugins
-source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Set bat theme
 export BAT_THEME='gruvbox-dark'
+export TERM=vte
