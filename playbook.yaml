@@ -37,6 +37,7 @@
           - com.raggesilver.BlackBox
           - dev.geopjr.Collision
           - com.mattjakeman.ExtensionManager
+          - net.veloren.airshipper
         state: present
 
     - name: "Install beta flatpaks"
