@@ -38,6 +38,7 @@
           - dev.geopjr.Collision
           - com.mattjakeman.ExtensionManager
           - net.veloren.airshipper
+          - org.godotengine.Godot
         state: present
 
     - name: "Install beta flatpaks"
