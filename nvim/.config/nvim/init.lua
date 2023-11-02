@@ -1,9 +1,12 @@
-require('packer-plugins')
+require('lazy-plugins')
+require('autocomplete-setup')
+
+require('mason').setup()
 require('gitsigns').setup()
 
 -- Set theme
 vim.opt.termguicolors = true
-vim.opt.background = "dark"
+vim.opt.background = 'dark'
 vim.cmd.colorscheme('gruvbox')
 
 -- Set more convienent number line
