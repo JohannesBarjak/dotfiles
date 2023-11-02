@@ -20,12 +20,13 @@ require('lazy').setup({
     "lewis6991/gitsigns.nvim",
 
     "williamboman/mason.nvim",
-    "dcampos/nvim-snippy",
 
     "neovim/nvim-lspconfig",
 
     "hrsh7th/nvim-cmp",
     "hrsh7th/cmp-nvim-lsp",
-    "dcampos/cmp-snippy",
-    "hrsh7th/cmp-buffer"
+    "hrsh7th/cmp-buffer",
+
+    "L3MON4D3/LuaSnip",
+    "saadparwaiz1/cmp_luasnip"
 })
