@@ -18,6 +18,7 @@ vim.g.mapleader = ' '
 require('lazy').setup({
     "neovim/nvim-lspconfig",
     { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+    "L3MON4D3/LuaSnip",
 
     "sainnhe/gruvbox-material",
     "lewis6991/gitsigns.nvim",
@@ -28,8 +29,8 @@ require('lazy').setup({
     "hrsh7th/nvim-cmp",
     "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-buffer",
-    "ray-x/cmp-treesitter",
 
-    "L3MON4D3/LuaSnip",
+    "ray-x/cmp-treesitter",
+    "dmitmel/cmp-digraphs",
     "saadparwaiz1/cmp_luasnip"
 })
