@@ -38,10 +38,12 @@ cmp.setup({
         end, { 'i', 's' }),
     }),
 
-    sources = cmp.config.sources({
-        { name = 'nvim_lsp' },
-        { name = 'luasnip' }
-    }, {{ name = 'buffer' }})
+    sources = cmp.config.sources ({
+        { name = 'nvim_lsp'   },
+        { name = 'luasnip'    },
+        { name = 'buffer'     },
+        { name = 'treesitter' }
+        })
 })
 
 -- Setup lspconfig.
