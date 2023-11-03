@@ -29,6 +29,7 @@ require('lazy').setup({
     "hrsh7th/nvim-cmp",
     "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-buffer",
+    "hrsh7th/cmp-nvim-lsp-document-symbol",
 
     "ray-x/cmp-treesitter",
     "dmitmel/cmp-digraphs",

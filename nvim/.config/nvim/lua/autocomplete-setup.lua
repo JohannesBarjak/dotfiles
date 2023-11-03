@@ -39,11 +39,12 @@ cmp.setup({
     }),
 
     sources = cmp.config.sources ({
-        { name = 'nvim_lsp'   },
+        { name = 'nvim_lsp' },
+	{ name = 'nvim_lsp_document_symbol' },
         { name = 'treesitter' },
-        { name = 'luasnip'    },
-        { name = 'buffer'     },
-        { name = 'digraphs'   }
+        { name = 'luasnip' },
+        { name = 'buffer' },
+        { name = 'digraphs' }
         })
 })
 
