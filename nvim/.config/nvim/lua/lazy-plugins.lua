@@ -16,12 +16,14 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = ' '
 
 require('lazy').setup({
-    "ellisonleao/gruvbox.nvim",
+    "neovim/nvim-lspconfig",
+    { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+
+    "sainnhe/gruvbox-material",
     "lewis6991/gitsigns.nvim",
 
     "williamboman/mason.nvim",
-
-    "neovim/nvim-lspconfig",
+    "williamboman/mason-lspconfig.nvim",
 
     "hrsh7th/nvim-cmp",
     "hrsh7th/cmp-nvim-lsp",

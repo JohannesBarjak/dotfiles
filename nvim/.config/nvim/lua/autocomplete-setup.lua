@@ -47,6 +47,11 @@ cmp.setup({
 -- Setup lspconfig.
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
+-- Lsp agnostic config
 require('lspconfig')['hls'].setup {
     capabilities = capabilities
+}
+
+require('lspconfig').hls.setup {
+  filetypes = { 'haskell', 'lhaskell', 'cabal' },
 }
