@@ -40,12 +40,18 @@ cmp.setup({
 
     sources = cmp.config.sources ({
         { name = 'nvim_lsp' },
-	{ name = 'nvim_lsp_document_symbol' },
         { name = 'treesitter' },
         { name = 'luasnip' },
         { name = 'buffer' },
         { name = 'digraphs' }
         })
+})
+
+cmp.setup.cmdline('/', {
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = cmp.config.sources({
+        { name = 'buffer' }
+    })
 })
 
 -- Setup lspconfig.
