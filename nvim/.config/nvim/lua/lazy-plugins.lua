@@ -33,5 +33,24 @@ require('lazy').setup({
 
     "ray-x/cmp-treesitter",
     "dmitmel/cmp-digraphs",
-    "saadparwaiz1/cmp_luasnip"
+    "saadparwaiz1/cmp_luasnip",
+
+    { "nvim-neo-tree/neo-tree.nvim"
+    , branch = "v3.x"
+    , dependencies =
+        { "nvim-lua/plenary.nvim"
+        , "nvim-tree/nvim-web-devicons"
+        , "MunifTanjim/nui.nvim"
+        , "3rd/image.nvim"
+        }
+    },
+
+    { 'nvim-lualine/lualine.nvim'
+    , dependencies = { 'nvim-tree/nvim-web-devicons' }
+    },
+
+    { 'akinsho/bufferline.nvim'
+    , version = "*"
+    , dependencies = 'nvim-tree/nvim-web-devicons'
+    }
 })

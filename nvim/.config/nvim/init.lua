@@ -8,8 +8,19 @@ require('gitsigns').setup()
 require('treesitter-setup')
 require('autocomplete-setup')
 
--- Set theme
+require('lualine').setup ({ options = { theme = 'gruvbox-material' }})
+
+-- According to its documentation, bufferline should be loaded after setting 'termguicolors'
 vim.opt.termguicolors = true
+
+require('bufferline').setup (
+    { options =
+        { diagnostics = "nvim_lsp"
+        , separator_style = "slant"
+        }
+    })
+
+-- Set theme
 vim.opt.background = 'dark'
 vim.cmd.colorscheme('gruvbox-material')
 

@@ -1,7 +1,7 @@
 -- Configure treesitter
 require('nvim-treesitter.configs').setup {
     ensure_installed =
-        { "haskell", "agda"
+        { "haskell"
         , "rust", "c", "nasm"
         , "python", "lua"
         , "vim", "vimdoc"
