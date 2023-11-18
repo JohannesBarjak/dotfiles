@@ -46,4 +46,3 @@ source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Set bat theme
 export BAT_THEME='gruvbox-dark'
-export TERM=vte
