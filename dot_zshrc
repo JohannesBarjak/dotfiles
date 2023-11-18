@@ -46,3 +46,6 @@ source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Set bat theme
 export BAT_THEME='gruvbox-dark'
+
+# Add haskell environment
+[ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env" # ghcup-env
