@@ -26,5 +26,6 @@ config.window_decorations = "NONE|RESIZE"
 config.enable_tab_bar = false
 
 config.color_scheme = 'Gruvbox Material (Gogh)'
+config.window_background_opacity = 0.95
 
 return config
