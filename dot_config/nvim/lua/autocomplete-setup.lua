@@ -42,8 +42,7 @@ cmp.setup({
         { name = 'nvim_lsp' },
         { name = 'treesitter' },
         { name = 'luasnip' },
-        { name = 'buffer' },
-        { name = 'digraphs' }
+        { name = 'buffer' }
         })
 })
 

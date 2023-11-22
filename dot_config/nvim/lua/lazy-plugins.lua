@@ -32,7 +32,6 @@ require('lazy').setup({
     "hrsh7th/cmp-cmdline",
 
     "ray-x/cmp-treesitter",
-    "dmitmel/cmp-digraphs",
     "saadparwaiz1/cmp_luasnip",
 
     { "nvim-neo-tree/neo-tree.nvim"
