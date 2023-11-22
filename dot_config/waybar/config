@@ -1,0 +1,38 @@
+[{
+    "layer": "top",
+    "output": ["eDP-1","DP-1","DP-4"],
+    "modules-left": ["sway/workspaces","sway/mode"],
+    "modules-center": ["clock#2"],
+    "modules-right": ["network","battery","clock#1"],
+
+    "clock#1":
+        { "format":"{:%R}"
+        },
+    "battery":
+        { "format":"{capacity}%"
+        },
+    "clock#2":
+        { "format": "{:%d.%m.%Y}"
+        },
+
+    "network":
+        { "format-wifi": "{essid} "
+        , "format-ethernet": "{ipaddr}/{cidr} "
+        , "tooltip-format": "{ifname} via {gwaddr} "
+        , "format-linked": "{ifname} (No IP) "
+        , "format-disconnected": "Disconnected ⚠"
+        , "format-alt": "{ifname}: {ipaddr}/{cidr}"
+        }
+
+}, {
+    "layer":"top",
+    "output":["HDMI-A-1","HDMI-A-2"],
+    "modules-left":["sway/workspaces","sway/mode"],
+    "modules-right":["clock#2","clock#1"],
+    "clock#1": {
+        "format":"{:%R}"
+    },
+    "clock#2": {
+        "format":"{:%d.%m.%Y}"
+    }
+}]
