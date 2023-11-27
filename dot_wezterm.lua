@@ -26,6 +26,10 @@ config.window_decorations = "NONE|RESIZE"
 config.enable_tab_bar = false
 
 config.color_scheme = 'Gruvbox Material (Gogh)'
-config.window_background_opacity = 0.95
+
+config.window_background_gradient =
+    { colors = {'#3c3836', '#1d2021'}
+    , orientation = { Radial = { cx = 0.75, cy = 0.75, radius = 1 } }
+    }
 
 return config
