@@ -212,7 +212,6 @@ bindsym $mod+r mode "resize"
 
 default_border none
 gaps inner 5
-gaps top -5
 smart_gaps on
 
 # Include configs from 3 locations:
