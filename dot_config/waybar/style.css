@@ -6,7 +6,7 @@
 
 window#waybar
     {
-    ; background-color: rgba(1,1,1,0)
+    ; background-color: #1d2021
     ; margin: 0
     }
 
@@ -33,7 +33,7 @@ window#waybar
     ; margin: 0px
     ; color: #ebdbb2
     ; border-radius: 5px 5px 5px 5px
-    ; background-color: #83a598
+    ; background-color: #1d2021
     }
 
 #workspaces
@@ -42,7 +42,7 @@ window#waybar
 
 #workspaces button.visible label,
 #workspaces button.focused label
-    { background-color: #458588
+    { background-color: #3c3836
     ; color: #ebdbb2
     }
 
@@ -58,7 +58,7 @@ window#waybar
 #clock,
 #network,
 #battery
-    { background-color: #83a598
+    { background-color: #1d2021
     ; padding: 0px 8px
     ; margin: 5px 0px 0px 5px
     ; border-radius: 5px 5px 5px 5px
