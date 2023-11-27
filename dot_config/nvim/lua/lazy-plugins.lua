@@ -51,5 +51,7 @@ require('lazy').setup({
     { 'akinsho/bufferline.nvim'
     , version = "*"
     , dependencies = 'nvim-tree/nvim-web-devicons'
-    }
+    },
+
+    "xiyaowong/transparent.nvim"
 })

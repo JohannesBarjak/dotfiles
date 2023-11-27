@@ -8,6 +8,8 @@ require('gitsigns').setup()
 require('treesitter-setup')
 require('autocomplete-setup')
 
+require('transparent').clear_prefix('NeoTree')
+
 require('lualine').setup ({ options = { theme = 'gruvbox-material' }})
 
 -- According to its documentation, bufferline should be loaded after setting 'termguicolors'
@@ -16,7 +18,6 @@ vim.opt.termguicolors = true
 require('bufferline').setup (
     { options =
         { diagnostics = "nvim_lsp"
-        , separator_style = "slant"
         }
     })
 
