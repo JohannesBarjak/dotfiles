@@ -1,4 +1,0 @@
-PATH=$PATH:~/.local/bin
-PATH=$PATH:~/.cabal/bin:~/.ghcup/bin
-PATH=$PATH:/var/lib/flatpak/exports/bin
-PATH=$PATH:~/.local/share/flatpak/exports/bin
