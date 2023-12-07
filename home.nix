@@ -44,7 +44,7 @@
   };
 
   # swaylock config
-  home.file.".config/swaylock/config"= {
+  xdg.configFile."swaylock/config" = {
     source = ./dotfiles/dot_config/swaylock/config;
   };
 
