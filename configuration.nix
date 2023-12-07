@@ -79,17 +79,6 @@
     packages = with pkgs; [];
   };
 
-  # Define login manager
-  services.greetd = {
-    enable = true;
-
-    settings.default_session = {
-      command = "${pkgs.greetd.greetd}/bin/agreety --cmd \"Hyprland &> /dev/null\"";
-    };
-  };
-
-  programs.light.enable = true;
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -109,30 +98,34 @@
     wl-clipboard
   ];
 
-  # Enable flake support
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  # Some programs need SUID wrappers, can be configured further or are
+  # started in user sessions.
 
-  # Add swaylock to pam
-  security.pam.services.swaylock = {};
+  # Add hyprland and waybar
+  programs.hyprland.enable = true;
+  programs.waybar.enable = true;
+  programs.light.enable = true;
 
-  # Enable pipewire
-  security.rtkit.enable = true;
+  # Add Fira Code fonts
+  fonts.packages = with pkgs; [
+    fira-code
+    fira-code-symbols
+  ];
 
-  services.pipewire = {
+  programs.firefox.enable = true;
+
+  # List services that you want to enable:
+
+  # Define login manager
+  services.greetd = {
     enable = true;
-    pulse.enable = true;
-    jack.enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
+
+    settings.default_session = {
+      command = "${pkgs.greetd.greetd}/bin/agreety --cmd \"Hyprland &> /dev/null\"";
+    };
   };
 
-  services.dbus.enable = true;
-  xdg.portal = {
-    enable = true;
-    wlr.enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-  };
-
+  # Enable auto-cpufreq
   services.auto-cpufreq.enable = true;
   services.auto-cpufreq.settings = {
     battery = {
@@ -145,30 +138,31 @@
     };
   };
 
-  programs.hyprland.enable = true;
-  programs.waybar.enable = true;
+  # Enable pipewire
+  security.rtkit.enable = true;
 
-  fonts.packages = with pkgs; [
-    fira-code
-    fira-code-symbols
-  ];
+  services.pipewire = {
+    enable = true;
+    pulse.enable = true;
+    jack.enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+  };
 
-  programs.firefox.enable = true;
+  # Enable dbus
+  services.dbus.enable = true;
 
+  # Add swaylock to pam
+  security.pam.services.swaylock = {};
+
+  # Enable flatpak
   services.flatpak.enable = true;
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
+  xdg.portal = {
+    enable = true;
+    wlr.enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  };
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
