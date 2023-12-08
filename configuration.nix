@@ -26,10 +26,6 @@
     "quiet"
   ];
 
-  fileSystems = {
-    "/".options = [ "compress-force=zstd" ];
-  };
-
   zramSwap = {
     enable = true;
     algorithm = "lz4";
