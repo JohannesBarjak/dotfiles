@@ -3,6 +3,8 @@
   home.homeDirectory = "/home/johannes";
   programs.home-manager.enable = true;
 
+  imports = [ ./fuzzel/fuzzel.nix ];
+
   programs.git = {
     enable = true;
     userName = "Johannes";

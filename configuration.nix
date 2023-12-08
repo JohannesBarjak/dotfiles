@@ -93,7 +93,6 @@
     hyprpaper
     swaylock-effects
     swayidle
-    fuzzel
     mako
     wl-clipboard
   ];
