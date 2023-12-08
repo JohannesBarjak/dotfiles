@@ -5,6 +5,10 @@
 
   imports = [ ./fuzzel/fuzzel.nix ];
 
+  programs.ags = {
+    enable = true;
+  };
+
   programs.git = {
     enable = true;
     userName = "Johannes";

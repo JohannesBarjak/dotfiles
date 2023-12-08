@@ -21,17 +21,23 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # Silent boot
+  # Silent boot.
   boot.kernelParams = [
     "quiet"
   ];
 
+  # Enable zram.
   zramSwap = {
     enable = true;
     algorithm = "lz4";
   };
 
+  # Enable opengl.
   hardware.opengl.enable = true;
+
+  #Enable bluetooth.
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -96,15 +102,13 @@
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
 
-  # Add hyprland and waybar
+  # Add hyprland
   programs.hyprland.enable = true;
-  programs.waybar.enable = true;
   programs.light.enable = true;
 
   # Add Fira Code fonts
   fonts.packages = with pkgs; [
-    fira-code
-    fira-code-symbols
+    ( nerdfonts.override { fonts = [ "FiraCode" ]; })
   ];
 
   programs.firefox.enable = true;
