@@ -3,11 +3,6 @@
   home.homeDirectory = "/home/johannes";
   programs.home-manager.enable = true;
 
-  wayland.windowManager.hyprland = {
-    enable = true;
-    extraConfig = import ./hyprlandConf.nix;
-  };
-
   programs.git = {
     enable = true;
     userName = "Johannes";
