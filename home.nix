@@ -43,9 +43,10 @@
     defaultEditor = true;
   };
 
-  # swaylock config
-  xdg.configFile."swaylock/config" = {
-    source = ./dotfiles/dot_config/swaylock/config;
+  # Add config dotfiles to xdg-config
+  home.file."${config.xdg.configHome}" = {
+    source = ./dotfiles/dot_config;
+    recursive = true;
   };
 
   home.stateVersion = "23.11";
