@@ -102,20 +102,24 @@
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
 
-  # Add hyprland
+  # Enable dconf.
+  programs.dconf.enable = true;
+
+  # Add hyprland.
   programs.hyprland.enable = true;
   programs.light.enable = true;
 
-  # Add Fira Code fonts
+  # Add Fira Code fonts.
   fonts.packages = with pkgs; [
     ( nerdfonts.override { fonts = [ "FiraCode" ]; })
   ];
 
+  programs.thunar.enable = true;
   programs.firefox.enable = true;
 
   # List services that you want to enable:
 
-  # Define login manager
+  # Define login manager.
   services.greetd = {
     enable = true;
 
@@ -124,7 +128,7 @@
     };
   };
 
-  # Enable auto-cpufreq
+  # Enable auto-cpufreq.
   services.auto-cpufreq.enable = true;
   services.auto-cpufreq.settings = {
     battery = {
@@ -137,7 +141,7 @@
     };
   };
 
-  # Enable pipewire
+  # Enable pipewire.
   security.rtkit.enable = true;
 
   services.pipewire = {
@@ -148,13 +152,13 @@
     alsa.support32Bit = true;
   };
 
-  # Enable dbus
+  # Enable dbus.
   services.dbus.enable = true;
 
-  # Add swaylock to pam
+  # Add swaylock to pam.
   security.pam.services.swaylock = {};
 
-  # Enable flatpak
+  # Enable flatpak.
   services.flatpak.enable = true;
 
   xdg.portal = {
