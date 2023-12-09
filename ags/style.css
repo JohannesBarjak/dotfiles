@@ -1,1 +1,48 @@
-/* style.css */
+label
+    { font-weight: bold
+    }
+
+.workspaces button,
+.media
+    { background-color: #282828
+    ; color: #ebdbb2
+    ; border-radius: 25%
+    ; padding: 8px 10px
+    ; margin: 5px 3px 0px 3px
+    }
+
+.workspaces button:hover,
+.media:hover
+    { background-color: #3c3836
+    ; color: #fbf1c7
+    }
+
+.workspaces button:active,
+.media:active
+    { background-color: #3c3836
+    ; color: #fbf1c7
+    }
+
+.workspaces button.focused
+    { background-color: #3c3836
+    }
+
+.notification image
+    { color: #d79921
+    ; margin-left: 1em
+    }
+
+.battery progressbar
+    { margin: 0 6px
+    }
+
+.clock
+    { margin: 0 6px
+    ; padding: 5px
+    ; font-size: 0.9em
+    }
+
+progress, highlight
+    { background-color: #ebdbb2
+    ; min-height: 8px
+    }

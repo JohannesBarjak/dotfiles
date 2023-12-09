@@ -10,6 +10,7 @@
       ./hardware-configuration.nix
     ];
 
+  # Enable flakes.
   nix = {
     package = pkgs.nixFlakes;
     extraOptions = ''
@@ -90,8 +91,6 @@
     gcc
     bat
 
-    numix-icon-theme-circle
-
     hyprpaper
     swaylock-effects
     swayidle
@@ -152,8 +151,9 @@
     alsa.support32Bit = true;
   };
 
-  # Enable dbus.
+  # Enable dbus and upower.
   services.dbus.enable = true;
+  services.upower.enable = true;
 
   # Add swaylock to pam.
   security.pam.services.swaylock = {};

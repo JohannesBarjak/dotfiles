@@ -5,11 +5,14 @@
 
   imports = [ ./fuzzel/fuzzel.nix ];
 
-  # Set gtk theme to Gruvbox.
+  # Set gtk theme to Gruvbox and Numix Circle.
   gtk = {
     enable = true;
+
     theme.name = "Gruvbox-Dark-BL";
     theme.package = pkgs.gruvbox-gtk-theme;
+    iconTheme.name = "Numix-Circle";
+    iconTheme.package = pkgs.numix-icon-theme-circle;
   };
 
   # Set default cursor size.

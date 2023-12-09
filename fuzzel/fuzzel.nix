@@ -6,9 +6,11 @@
     main = {
       icon-theme = "Numix-Circle";
       exit-on-keyboard-focus-loss = false;
-      width = 45;
+      width = 30;
       inner-pad = 10;
       vertical-pad = 15;
+      dpi-aware = "yes";
+      font = "Fira Code Medium:size=13";
     };
 
     colors = {
