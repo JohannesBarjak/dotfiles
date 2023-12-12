@@ -22,11 +22,6 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # Silent boot.
-  boot.kernelParams = [
-    "quiet"
-  ];
-
   # Enable zram.
   zramSwap = {
     enable = true;
@@ -80,6 +75,7 @@
     description = "Johannes";
     extraGroups = [ "networkmanager" "wheel" "video" ];
     packages = with pkgs; [];
+    shell = pkgs.zsh;
   };
 
   # Allow unfree packages
@@ -115,6 +111,7 @@
 
   programs.thunar.enable = true;
   programs.firefox.enable = true;
+  programs.zsh.enable = true;
 
   # List services that you want to enable:
 
@@ -134,6 +131,7 @@
       governor = "powersave";
       turbo = "auto";
     };
+
     charger = {
       governor = "performance";
       turbo = "auto";

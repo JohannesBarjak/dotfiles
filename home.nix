@@ -55,15 +55,29 @@
     theme = "Gruvbox Material Dark Medium";
     shellIntegration.enableZshIntegration = true;
 
-    settings = {
-      shell = "zsh";
-      background_opacity = "0.82";
-    };
+    settings.background_opacity = "0.82";
   };
 
+  # Enable and configure neovim
   programs.neovim = {
     enable = true;
     defaultEditor = true;
+
+    plugins = with pkgs.vimPlugins; [
+      gruvbox-nvim
+      gitsigns-nvim
+      neogit
+      nvim-lspconfig
+      nvim-cmp
+      cmp-nvim-lsp
+      luasnip
+      cmp_luasnip
+      cmp-buffer
+
+      (nvim-treesitter.withPlugins ( p: [
+        p.c p.lua p.nix
+      ]))
+    ];
   };
 
   # Add config dotfiles to xdg-config
