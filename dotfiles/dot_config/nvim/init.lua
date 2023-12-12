@@ -3,6 +3,7 @@ require('autocomplete-setup')
 
 require('gitsigns').setup()
 require('neogit').setup()
+require('lualine').setup()
 
 vim.opt.background = 'dark'
 vim.cmd.colorscheme('gruvbox')

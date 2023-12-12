@@ -56,6 +56,10 @@
     shellIntegration.enableZshIntegration = true;
 
     settings.background_opacity = "0.82";
+
+    font.name = "FiraCode Nerd Font Mono Reg";
+    font.package = ( pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; });
+    font.size = 11;
   };
 
   # Enable and configure neovim
@@ -73,9 +77,12 @@
       luasnip
       cmp_luasnip
       cmp-buffer
+      lualine-nvim
 
       (nvim-treesitter.withPlugins ( p: [
         p.c p.lua p.nix
+        p.vimdoc p.vim
+        p.ini
       ]))
     ];
   };
