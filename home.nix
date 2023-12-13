@@ -5,6 +5,10 @@
 
   imports = [ ./fuzzel/fuzzel.nix ];
 
+  home.sessionVariables = {
+    GTK_THEME = "Gruvbox-Dark-BL";
+  };
+
   # Set gtk theme to Gruvbox and Numix Circle.
   gtk = {
     enable = true;
@@ -17,8 +21,9 @@
 
   # Set default cursor size.
   home.pointerCursor = {
-    name = "Adwaita";
-    package = pkgs.gnome.adwaita-icon-theme;
+    gtk.enable = true;
+    name = "Numix-Cursor";
+    package = pkgs.numix-cursor-theme;
     size = 16;
   };
 
@@ -34,6 +39,10 @@
     enable = true;
     userName = "Johannes";
     userEmail = "johannes.barjak@gmail.com";
+
+    extraConfig = {
+      pull.rebase = true;
+    };
   };
 
   # Use zsh with oh-my-zsh.
@@ -82,7 +91,7 @@
       (nvim-treesitter.withPlugins ( p: [
         p.c p.lua p.nix
         p.vimdoc p.vim
-        p.ini
+        p.ini p.haskell
       ]))
     ];
   };
