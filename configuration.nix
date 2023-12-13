@@ -91,6 +91,7 @@
     swaylock-effects
     swayidle
     wl-clipboard
+    loupe
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
