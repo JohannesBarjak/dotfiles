@@ -1,4 +1,4 @@
-{config, pkgs, ...}: {
+{config, pkgs, ...}: let gtkThemeName = "Gruvbox-Dark-BL"; in {
   home.username = "johannes";
   home.homeDirectory = "/home/johannes";
   programs.home-manager.enable = true;
@@ -6,17 +6,23 @@
   imports = [ ./fuzzel/fuzzel.nix ];
 
   home.sessionVariables = {
-    GTK_THEME = "Gruvbox-Dark-BL";
+    GTK_THEME = gtkThemeName;
   };
 
   # Set gtk theme to Gruvbox and Numix Circle.
   gtk = {
     enable = true;
 
-    theme.name = "Gruvbox-Dark-BL";
+    theme.name = gtkThemeName;
     theme.package = pkgs.gruvbox-gtk-theme;
     iconTheme.name = "Numix-Circle";
     iconTheme.package = pkgs.numix-icon-theme-circle;
+  };
+
+  # Add override for the gtk4 theme
+  home.file."${config.xdg.configHome}/gtk-4.0" = {
+    source = "${pkgs.gruvbox-gtk-theme}/share/themes/${gtkThemeName}/gtk-4.0";
+    recursive = true;
   };
 
   # Set default cursor size.
