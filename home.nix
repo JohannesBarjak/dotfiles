@@ -77,29 +77,10 @@
     font.size = 11;
   };
 
-  # Enable and configure neovim
-  programs.neovim = {
+  # Use helix as an editor.
+  programs.helix = {
     enable = true;
-    defaultEditor = true;
-
-    plugins = with pkgs.vimPlugins; [
-      gruvbox-nvim
-      gitsigns-nvim
-      neogit
-      nvim-lspconfig
-      nvim-cmp
-      cmp-nvim-lsp
-      luasnip
-      cmp_luasnip
-      cmp-buffer
-      lualine-nvim
-
-      (nvim-treesitter.withPlugins ( p: [
-        p.c p.lua p.nix
-        p.vimdoc p.vim
-        p.ini p.haskell
-      ]))
-    ];
+    settings.theme = "gruvbox";
   };
 
   # Add config dotfiles to xdg-config
