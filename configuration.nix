@@ -30,6 +30,7 @@
 
   # Enable opengl.
   hardware.opengl.enable = true;
+  hardware.opengl.driSupport32Bit = true;
 
   #Enable bluetooth.
   hardware.bluetooth.enable = true;
@@ -84,16 +85,15 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    gcc
-    bat
+    gcc bat
 
     hyprpaper
-    swaylock-effects
-    swayidle
+    swaylock-effects swayidle
     wl-clipboard
 
     loupe
     lean4
+    wineWowPackages.waylandFull bottles
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
