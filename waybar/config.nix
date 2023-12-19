@@ -10,6 +10,8 @@
         modules-center = [ "clock#2" ];
         modules-right = [ "network" "battery" "clock#1" ];
 
+        margin = "3 5 0 5";
+
         "clock#1" = {
           format = "{:%R}";
         };

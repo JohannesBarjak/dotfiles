@@ -6,7 +6,8 @@
 
 window#waybar
     { background-color: #1d2021
-    ; margin: 0
+    ; border-radius: 20px
+    ; padding: 2px
     }
 
 #workspaces button
