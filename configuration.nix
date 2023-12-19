@@ -91,7 +91,9 @@
     swaylock-effects
     swayidle
     wl-clipboard
+
     loupe
+    lean4
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -161,7 +163,6 @@
 
   xdg.portal = {
     enable = true;
-    wlr.enable = true;
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
 
