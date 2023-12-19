@@ -104,6 +104,7 @@
 
   # Add hyprland.
   programs.hyprland.enable = true;
+  programs.waybar.enable = true;
   programs.light.enable = true;
 
   # Add Fira Code fonts.

@@ -3,7 +3,10 @@
   home.homeDirectory = "/home/johannes";
   programs.home-manager.enable = true;
 
-  imports = [ ./fuzzel/fuzzel.nix ];
+  imports = [
+    ./fuzzel/fuzzel.nix
+    ./waybar/config.nix
+  ];
 
   home.sessionVariables = {
     GTK_THEME = gtkThemeName;
@@ -31,13 +34,6 @@
     name = "Numix-Cursor";
     package = pkgs.numix-cursor-theme;
     size = 16;
-  };
-
-  # Enable and configure ags.
-  programs.ags = {
-    enable = true;
-    configDir = ./ags;
-    extraPackages = [ pkgs.libsoup_3 ];
   };
 
   # Git configuration.

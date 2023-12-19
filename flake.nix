@@ -6,8 +6,6 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-
-    ags.url = "github:Aylur/ags";
   };
 
   outputs = inputs@{ nixpkgs, home-manager, ... }: {
@@ -21,10 +19,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.johannes = {
-              imports = [
-                inputs.ags.homeManagerModules.default
-                ./home.nix
-              ];
+              imports = [ ./home.nix ];
             };
           }
         ];
