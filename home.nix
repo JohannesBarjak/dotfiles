@@ -65,6 +65,22 @@
     syntaxHighlighting.enable = true;
   };
 
+  programs.nushell = {
+    enable = true;
+  };
+
+    # Enable Nushell autosuggestions using carapace
+  programs.carapace = {
+    enable = true;
+    enableNushellIntegration = true;
+  };
+
+  # Enable direnv
+  programs.direnv = {
+    enable = true;
+    enableNushellIntegration = true;
+  };
+
   programs.kitty = {
     enable = true;
     theme = "Gruvbox Material Dark Medium";
