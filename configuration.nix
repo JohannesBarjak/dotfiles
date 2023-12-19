@@ -75,7 +75,7 @@
     description = "Johannes";
     extraGroups = [ "networkmanager" "wheel" "video" ];
     packages = with pkgs; [];
-    shell = pkgs.zsh;
+    shell = pkgs.nushell;
   };
 
   # Allow unfree packages
@@ -114,7 +114,6 @@
 
   programs.thunar.enable = true;
   programs.firefox.enable = true;
-  programs.zsh.enable = true;
 
   # List services that you want to enable:
 

@@ -47,20 +47,6 @@
     };
   };
 
-  # Use zsh with oh-my-zsh.
-  programs.zsh = {
-    enable = true;
-
-    oh-my-zsh = {
-      enable = true;
-      plugins = [ "themes" ];
-      theme = "gnzh";
-    };
-
-    enableAutosuggestions = true;
-    syntaxHighlighting.enable = true;
-  };
-
   programs.nushell = {
     enable = true;
   };
@@ -77,10 +63,14 @@
     enableNushellIntegration = true;
   };
 
+  programs.starship = {
+    enable = true;
+    enableNushellIntegration = true;
+  };
+
   programs.kitty = {
     enable = true;
     theme = "Gruvbox Material Dark Medium";
-    shellIntegration.enableZshIntegration = true;
 
     settings.background_opacity = "0.82";
 
