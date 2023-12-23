@@ -76,7 +76,7 @@
     description = "Johannes";
     extraGroups = [ "networkmanager" "wheel" "video" ];
     packages = with pkgs; [];
-    shell = pkgs.nushell;
+    shell = pkgs.nushellFull;
   };
 
   # Allow unfree packages
@@ -94,6 +94,7 @@
     loupe
     lean4
     wineWowPackages.waylandFull bottles
+    cinnamon.nemo-with-extensions
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -112,10 +113,12 @@
     ( nerdfonts.override { fonts = [ "FiraCode" ]; })
   ];
 
-  programs.thunar.enable = true;
   programs.firefox.enable = true;
 
   # List services that you want to enable:
+
+  # Gvfs provides trash and remote fs support
+  services.gvfs.enable = true;
 
   # Define login manager.
   services.greetd = {

@@ -6,6 +6,8 @@
   imports = [
     ./fuzzel/fuzzel.nix
     ./waybar/config.nix
+    ./hyprland.nix
+    ./dunst.nix
   ];
 
   home.sessionVariables = {
@@ -49,6 +51,7 @@
 
   programs.nushell = {
     enable = true;
+    package = pkgs.nushellFull;
   };
 
     # Enable Nushell autosuggestions using carapace
@@ -84,6 +87,8 @@
     enable = true;
     settings.theme = "gruvbox";
   };
+
+  programs.wlogout.enable = true;
 
   # Add config dotfiles to xdg-config
   home.file."${config.xdg.configHome}" = {
