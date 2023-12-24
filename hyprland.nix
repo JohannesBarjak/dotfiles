@@ -37,6 +37,7 @@
         "$mod, E, exec, nemo"
         "$mod, R, exec, $menu"
         "$mod, F, fullscreen"
+        "$mod, V, togglefloating,"
 
         # Set scratchpad keybindings.
         "$mod, S, togglespecialworkspace, magic"
@@ -72,8 +73,14 @@
         ", XF86AudioLowerVolume, exec, wpctl set-volume -l 1.4 @DEFAULT_AUDIO_SINK@ 5%-"
       ];
 
+      bindm = [
+        # Drag windows with a left click and resize them with a right click
+        "$mod, mouse:272, movewindow"
+        "$mod, mouse:273, resizewindow"
+      ];
+
       exec-once = [
-        "waybar" "hyprpaper"
+        "hyprpaper"
         "swayidle -w"
       ];
 
@@ -98,6 +105,7 @@
 
       animations = {
         enabled = true;
+        animation = "windowsOut, 1, 7, default, popin 70%";
       };
 
       gestures = {
