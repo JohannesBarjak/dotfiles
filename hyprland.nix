@@ -101,6 +101,8 @@
           size = 4;
           passes = 1;
         };
+
+        layerrule = [ "blur, waybar" ];
       };
 
       animations = {
