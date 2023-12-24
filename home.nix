@@ -85,7 +85,10 @@
   # Use helix as an editor.
   programs.helix = {
     enable = true;
-    settings.theme = "gruvbox";
+    settings = {
+      theme = "gruvbox";
+      editor.line-number = "relative";
+    };
   };
 
   programs.wlogout.enable = true;
