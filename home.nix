@@ -52,6 +52,7 @@
   programs.nushell = {
     enable = true;
     package = pkgs.nushellFull;
+    extraConfig = "$env.config = { show_banner: false }";
   };
 
     # Enable Nushell autosuggestions using carapace
