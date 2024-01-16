@@ -86,6 +86,7 @@
 
       input = {
         kb_layout = "us";
+        kb_options = "compose:ralt";
 
         touchpad = {
           natural_scroll = false;
