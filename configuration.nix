@@ -32,7 +32,7 @@
 
   boot.kernel.sysctl = {
     "vm.swappiness" = 200;
-    "vm.page-cluster" = 0;
+    "vm.page-cluster" = 1;
   };
 
   # Enable opengl.
