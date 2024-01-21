@@ -103,7 +103,10 @@
           passes = 1;
         };
 
-        layerrule = [ "blur, waybar" ];
+        layerrule = [
+          "blur, waybar"
+          "blur, notifications"
+        ];
       };
 
       animations = {
