@@ -21,7 +21,7 @@
         };
 
         network = {
-          format-wifi = "{essid}";
+          format-wifi = "{essid} ";
           format-ethernet = "{ipaddr}/{cidr}";
           format-disconnected = "Disconnected";
         };
