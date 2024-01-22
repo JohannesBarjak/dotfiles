@@ -132,6 +132,7 @@
     enable = true;
 
     settings.default_session = {
+      # Run hyprland in a dbus session so that xdg-mime works correctly.
       command = "${pkgs.greetd.greetd}/bin/agreety --cmd \"dbus-run-session Hyprland &> /dev/null\"";
     };
   };
