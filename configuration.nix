@@ -132,7 +132,7 @@
     enable = true;
 
     settings.default_session = {
-      command = "${pkgs.greetd.greetd}/bin/agreety --cmd \"Hyprland &> /dev/null\"";
+      command = "${pkgs.greetd.greetd}/bin/agreety --cmd \"dbus-run-session Hyprland &> /dev/null\"";
     };
   };
 

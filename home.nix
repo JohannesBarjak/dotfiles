@@ -10,6 +10,18 @@
     ./dunst.nix
   ];
 
+  # Enable and configure xdg mime.
+  xdg.mimeApps = {
+    enable = true;
+
+    defaultApplications = {
+      # Set firefox as the default browser.
+      "text/html" = "firefox.desktop";
+      "x-scheme-handler/http" = "firefox.desktop";
+      "x-scheme-handler/https" = "firefox.desktop";
+    };
+  };
+
   home.sessionVariables = {
     GTK_THEME = gtkThemeName;
   };
