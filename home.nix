@@ -45,6 +45,8 @@
   # Set default cursor size.
   home.pointerCursor = {
     gtk.enable = true;
+    x11.enable = true;
+
     name = "Numix-Cursor";
     package = pkgs.numix-cursor-theme;
     size = 16;
@@ -69,12 +71,6 @@
 
     # Enable Nushell autosuggestions using carapace
   programs.carapace = {
-    enable = true;
-    enableNushellIntegration = true;
-  };
-
-  # Enable direnv
-  programs.direnv = {
     enable = true;
     enableNushellIntegration = true;
   };
