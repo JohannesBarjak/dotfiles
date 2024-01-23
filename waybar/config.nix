@@ -8,7 +8,7 @@
         layer = "top";
         modules-left = [ "hyprland/workspaces" ];
         modules-center = [ "clock#2" ];
-        modules-right = [ "network" "battery" "clock#1" ];
+        modules-right = [ "network" "battery" "idle_inhibitor" "clock#1" ];
 
         margin = "3 5 0 5";
 
@@ -20,6 +20,15 @@
           format = "{:%d.%m.%Y}";
         };
 
+        "idle_inhibitor" = {
+          format = "{icon}";
+
+          format-icons = {
+            activated = "";
+            deactivated = "";
+          };
+        };
+
         network = {
           format-wifi = "{essid} ";
           format-ethernet = "{ipaddr}/{cidr}";
@@ -27,7 +36,8 @@
         };
 
         battery = {
-          format = "{capacity}%";
+          format = "{capacity}% {icon}";
+          format-icons = [""  ""  ""  ""  ""];
         };
       };
     };
