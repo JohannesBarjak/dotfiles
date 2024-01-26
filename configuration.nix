@@ -101,6 +101,7 @@
     lean4
     wineWowPackages.waylandFull bottles
     cinnamon.nemo-with-extensions
+    valent
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -181,6 +182,10 @@
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
+
+  # Enable ports for kde connect.
+  networking.firewall.allowedTCPPortRanges = [{ from = 1714; to = 1764; }];
+  networking.firewall.allowedUDPPortRanges = [{ from = 1714; to = 1764; }];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
