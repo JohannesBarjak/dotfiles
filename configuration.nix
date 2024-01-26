@@ -109,7 +109,7 @@
   # Enable dconf.
   programs.dconf.enable = true;
 
-  # Add hyprland.
+  # Enabling hyprland here disables portal warning.
   programs.hyprland.enable = true;
   programs.waybar.enable = true;
   programs.light.enable = true;

@@ -28,7 +28,7 @@
 
     events = [{
       event = "before-sleep";
-      command = "${pkgs.swaylock-effects}/bin/swaylock -f";
+      command = "${config.programs.swaylock.package}/bin/swaylock -f";
     }];
   };
 
