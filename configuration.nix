@@ -165,7 +165,7 @@
   services.dbus.enable = true;
   services.upower.enable = true;
 
-  # Add swaylock to pam.
+  # Allow unlocking with swaylock in pam.
   security.pam.services.swaylock = {};
 
   # Enable flatpak.
