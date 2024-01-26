@@ -3,12 +3,7 @@
   home.homeDirectory = "/home/johannes";
   programs.home-manager.enable = true;
 
-  imports = [
-    ./fuzzel/fuzzel.nix
-    ./waybar/config.nix
-    ./hyprland.nix
-    ./dunst.nix
-  ];
+  imports = [ ./wm/wm.nix ];
 
   # Enable and configure xdg mime.
   xdg.mimeApps = {
@@ -20,6 +15,21 @@
       "x-scheme-handler/http" = "firefox.desktop";
       "x-scheme-handler/https" = "firefox.desktop";
     };
+  };
+
+  # Enable and configure swayidle.
+  services.swayidle = {
+    enable = true;
+
+    timeouts = [
+      { timeout = 300; command = "hyprctl dispatch dpms off"; }
+      { timeout = 315; command = "systemctl suspend"; }
+    ];
+
+    events = [{
+      event = "before-sleep";
+      command = "${pkgs.swaylock-effects}/bin/swaylock -f";
+    }];
   };
 
   home.sessionVariables = {
@@ -84,11 +94,26 @@
     enable = true;
     theme = "Gruvbox Material Dark Medium";
 
-    settings.background_opacity = "0.82";
+    settings = {
+      scrollback_lines = 1000;
+      background_opacity = "0.82";
+    };
 
     font.name = "FiraCode Nerd Font Mono Reg";
     font.package = ( pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; });
     font.size = 11;
+  };
+
+  xdg.desktopEntries = {
+    kitty = {
+      name = "kitty";
+      genericName = "Terminal emulator";
+      type = "Application";
+
+      icon = "kitty";
+      exec = "kitty --single-instance";
+      categories = [ "System" "TerminalEmulator" ];
+    };
   };
 
   # Use helix as an editor.
@@ -101,12 +126,6 @@
   };
 
   programs.wlogout.enable = true;
-
-  # Add config dotfiles to xdg-config
-  home.file."${config.xdg.configHome}" = {
-    source = ./dotfiles/dot_config;
-    recursive = true;
-  };
 
   home.stateVersion = "23.11";
 }

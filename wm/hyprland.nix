@@ -5,7 +5,7 @@
     settings = {
       "$mod" = "SUPER";
       "$menu" = "fuzzel";
-      "$terminal" = "kitty";
+      "$terminal" = "kitty --single-instance";
 
       general = {
         gaps_in = 5;
@@ -28,7 +28,7 @@
         ", XF86MonBrightnessUp, exec, light -A 5"
         ", XF86MonBrightnessDown, exec, light -U 5"
 
-        "$mod, L, exec, swaylock -f -C ${config.xdg.configHome}/swaylock/config"
+        "$mod, L, exec, swaylock -f"
 
         # Set a few useful bindings.
         "$mod, Q, exec, $terminal"
@@ -79,10 +79,7 @@
         "$mod, mouse:273, resizewindow"
       ];
 
-      exec-once = [
-        "hyprpaper"
-        "swayidle -w"
-      ];
+      exec-once = [ "hyprpaper" ];
 
       input = {
         kb_layout = "us";

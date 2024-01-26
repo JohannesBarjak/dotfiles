@@ -95,7 +95,6 @@
     gcc bat
 
     hyprpaper
-    swaylock-effects swayidle
     wl-clipboard
 
     loupe
