@@ -17,21 +17,6 @@
     };
   };
 
-  # Enable and configure swayidle.
-  services.swayidle = {
-    enable = true;
-
-    timeouts = [
-      { timeout = 300; command = "hyprctl dispatch dpms off"; }
-      { timeout = 315; command = "systemctl suspend"; }
-    ];
-
-    events = [{
-      event = "before-sleep";
-      command = "${config.programs.swaylock.package}/bin/swaylock -f";
-    }];
-  };
-
   home.sessionVariables = {
     GTK_THEME = gtkThemeName;
   };
@@ -60,6 +45,12 @@
     name = "Numix-Cursor";
     package = pkgs.numix-cursor-theme;
     size = 16;
+  };
+
+  dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
+    };
   };
 
   # Git configuration.

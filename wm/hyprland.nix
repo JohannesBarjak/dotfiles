@@ -5,7 +5,10 @@
     settings = {
       "$mod" = "SUPER";
       "$menu" = "fuzzel";
+
       "$terminal" = "kitty --single-instance";
+      "$browser" = "firefox";
+      "$filemanager" = "nemo";
 
       general = {
         gaps_in = 5;
@@ -34,8 +37,9 @@
         "$mod, Q, exec, $terminal"
         "$mod, C, killactive,"
         "$mod, M, exit,"
-        "$mod, E, exec, nemo"
+        "$mod, E, exec, $filemanager"
         "$mod, R, exec, $menu"
+        "$mod, B, exec, $browser"
         "$mod, F, fullscreen"
         "$mod, V, togglefloating,"
 
