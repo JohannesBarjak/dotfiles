@@ -1,9 +1,12 @@
-{config, pkgs, ...}: let gtkThemeName = "Gruvbox-Dark-BL"; in {
+{config, pkgs, ...}: {
   home.username = "johannes";
   home.homeDirectory = "/home/johannes";
   programs.home-manager.enable = true;
 
-  imports = [ ./wm/wm.nix ];
+  imports = [
+    ./wm/wm.nix
+    ./theming.nix
+  ];
 
   # Enable and configure xdg mime.
   xdg.mimeApps = {
@@ -14,42 +17,6 @@
       "text/html" = "firefox.desktop";
       "x-scheme-handler/http" = "firefox.desktop";
       "x-scheme-handler/https" = "firefox.desktop";
-    };
-  };
-
-  home.sessionVariables = {
-    GTK_THEME = gtkThemeName;
-  };
-
-  # Set gtk theme to Gruvbox and Numix Circle.
-  gtk = {
-    enable = true;
-
-    theme.name = gtkThemeName;
-    theme.package = pkgs.gruvbox-gtk-theme;
-    iconTheme.name = "Numix-Circle";
-    iconTheme.package = pkgs.numix-icon-theme-circle;
-  };
-
-  # Add override for the gtk4 theme
-  home.file."${config.xdg.configHome}/gtk-4.0" = {
-    source = "${pkgs.gruvbox-gtk-theme}/share/themes/${gtkThemeName}/gtk-4.0";
-    recursive = true;
-  };
-
-  # Set default cursor size.
-  home.pointerCursor = {
-    gtk.enable = true;
-    x11.enable = true;
-
-    name = "Numix-Cursor";
-    package = pkgs.numix-cursor-theme;
-    size = 16;
-  };
-
-  dconf.settings = {
-    "org/gnome/desktop/interface" = {
-      color-scheme = "prefer-dark";
     };
   };
 
