@@ -10,13 +10,13 @@
       inner-pad = 10;
       vertical-pad = 15;
       dpi-aware = "yes";
-      font = "Fira Code Mono Medium:size=13";
+      font = "Fira Code Mono Medium:size=12";
     };
 
     colors = {
-      background = "1d2021ff";
+      background = "1d2021df";
       text = "ebdbb2ff";
-      selection = "ebdbb2ff";
+      selection = "ebdbb2df";
       selection-text = "3c3836ff";
       match = "cc241dff";
       selection-match = "fb4934ff";
