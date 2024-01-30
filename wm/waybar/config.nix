@@ -8,7 +8,7 @@
         layer = "top";
         modules-left = [ "hyprland/workspaces" ];
         modules-center = [ "clock#2" ];
-        modules-right = [ "network" "battery" "idle_inhibitor" "clock#1" ];
+        modules-right = [ "pulseaudio" "network" "battery" "idle_inhibitor" "clock#1" ];
 
         margin = "3 5 0 5";
 
@@ -30,9 +30,22 @@
         };
 
         network = {
-          format-wifi = "{essid} ";
+          format-wifi = "{signalStrength}% ";
           format-ethernet = "{ipaddr}/{cidr}";
           format-disconnected = "Disconnected";
+
+          tooltip-format-wifi = "{essid}";
+        };
+
+        pulseaudio = {
+          format = "{volume}% {icon}";
+          format-muted = "";
+          format-bluetooth = "{volume}% {icon} bt";
+
+          format-icons = {
+            headphone = "";
+            default = ["" ""];
+          };
         };
 
         battery = {
