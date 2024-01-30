@@ -8,15 +8,25 @@
     ./theming.nix
   ];
 
-  # Enable and configure xdg mime.
-  xdg.mimeApps = {
+  xdg = {
     enable = true;
 
-    defaultApplications = {
-      # Set firefox as the default browser.
-      "text/html" = "firefox.desktop";
-      "x-scheme-handler/http" = "firefox.desktop";
-      "x-scheme-handler/https" = "firefox.desktop";
+    # Enable and configure xdg mime.
+    mimeApps = {
+      enable = true;
+
+      defaultApplications = {
+        # Set firefox as the default browser.
+        "text/html" = "firefox.desktop";
+        "x-scheme-handler/http" = "firefox.desktop";
+        "x-scheme-handler/https" = "firefox.desktop";
+      };
+    };
+
+    # Autogenerate user directories.
+    userDirs = {
+      enable = true;
+      createDirectories = true;
     };
   };
 
