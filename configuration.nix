@@ -133,7 +133,8 @@
 
     settings.default_session = {
       # Run hyprland in a dbus session so that xdg-mime works correctly.
-      command = "${pkgs.greetd.greetd}/bin/agreety --cmd \"dbus-run-session Hyprland &> /dev/null\"";
+      command = "${pkgs.greetd.tuigreet}/bin/tuigreet -r -t --asterisks --user-menu --cmd \"dbus-run-session Hyprland &> /dev/null\"";
+      user = "greeter";
     };
   };
 
