@@ -4,8 +4,8 @@
   programs.home-manager.enable = true;
 
   imports = [
-    ./wm/wm.nix
-    ./theming.nix
+    ./home/wm/wm.nix
+    ./home/theming.nix
   ];
 
   xdg = {
@@ -27,6 +27,13 @@
     userDirs = {
       enable = true;
       createDirectories = true;
+    };
+  };
+
+  dconf.settings = {
+    "org/virt-manager/virt-manager/connections" = {
+      autoconnect = ["qemu:///system"];
+      uris = ["qemu:///system"];
     };
   };
 

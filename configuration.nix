@@ -81,7 +81,7 @@
   users.users.johannes = {
     isNormalUser = true;
     description = "Johannes";
-    extraGroups = [ "networkmanager" "wheel" "video" ];
+    extraGroups = [ "networkmanager" "wheel" "video" "libvirtd" ];
     packages = with pkgs; [];
     shell = pkgs.nushellFull;
   };
@@ -102,6 +102,10 @@
     wineWowPackages.waylandFull bottles
     cinnamon.nemo-with-extensions
     valent
+
+    ppsspp-sdl-wayland pcsx2
+    bsnes-hd mgba melonDS
+    dosbox-x _86Box
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -178,6 +182,10 @@
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
 
+  # Add qemu.
+  virtualisation.libvirtd.enable = true;
+  programs.virt-manager.enable = true;
+
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
@@ -187,6 +195,17 @@
   # Enable ports for kde connect.
   networking.firewall.allowedTCPPortRanges = [{ from = 1714; to = 1764; }];
   networking.firewall.allowedUDPPortRanges = [{ from = 1714; to = 1764; }];
+
+  # Add vpn.
+  environment.etc.openvpn.source = "${pkgs.update-resolv-conf}/libexec/openvpn";
+  services.openvpn.servers = {
+    homeVPN = {
+      config = "config /root/vpn/vpn.ovpn";
+
+      updateResolvConf = true;
+      autoStart = false;
+    };
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

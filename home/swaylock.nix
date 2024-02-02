@@ -1,13 +1,13 @@
-{pkgs, ...}: {
+{config, pkgs, ...}: {
   programs.swaylock = {
     enable = true;
     package = pkgs.swaylock-effects;
 
     settings = {
       clock = true;
-      screenshots = true;
       ignore-empty-password = true;
 
+      image = "~/.wallpapers/pixel-castle.png";
       indicator = true;
       indicator-radius = 70;
 
@@ -17,7 +17,7 @@
       key-hl-color = "bdae93";
       bs-hl-color = "fb4934";
 
-      inside-color = "282828aa";
+      inside-color = "282828df";
       ring-color = "282828";
       text-color = "ebdbb2";
       text-caps-lock-color = "ebdbb2";

@@ -10,7 +10,7 @@
       inner-pad = 10;
       vertical-pad = 15;
       dpi-aware = "yes";
-      font = "Fira Code Mono Medium:size=12";
+      font = "Fira Code Mono Bold:size=12";
     };
 
     colors = {
