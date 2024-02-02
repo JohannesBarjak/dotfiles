@@ -134,6 +134,7 @@
   # Define login manager.
   services.greetd = {
     enable = true;
+    vt = 3;
 
     settings.default_session = {
       # Run hyprland in a dbus session so that xdg-mime works correctly.
