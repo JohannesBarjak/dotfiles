@@ -33,4 +33,9 @@
     package = pkgs.numix-cursor-theme;
     size = 16;
   };
+
+  qt = {
+    enable = true;
+    platformTheme = "gtk";
+  };
 }
