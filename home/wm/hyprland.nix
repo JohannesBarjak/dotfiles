@@ -122,6 +122,12 @@
         workspace_swipe_invert = false;
       };
 
+      env = [
+        "GTK2_RC_FILES,$HOME/.gtkrc-2.0"
+        "QT_QPA_PLATFORMTHEME,gtk2"
+        "QT_STYLE_OVERRIDE,gtk2"
+      ];
+
       misc = {
         # Prevent the default wallpaper from flashing.
         disable_hyprland_logo = true;

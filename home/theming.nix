@@ -13,7 +13,7 @@
 
   # Copy gtk-4.0 files, otherwise the theme isn't applied to gtk4 apps.
   home.file."${config.xdg.configHome}/gtk-4.0" = {
-    source = "${pkgs.gruvbox-gtk-theme}/share/themes/${gtkTheme}/gtk-4.0";
+    source = "${config.gtk.theme.package}/share/themes/${gtkTheme}/gtk-4.0";
     recursive = true;
   };
 
@@ -37,5 +37,7 @@
   qt = {
     enable = true;
     platformTheme = "gtk";
+
+    style.name = "gtk2";
   };
 }
