@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./system/greetd.nix
     ];
 
   # Enable flakes.
@@ -134,18 +135,6 @@
 
   # Gvfs provides trash and remote fs support
   services.gvfs.enable = true;
-
-  # Define login manager.
-  services.greetd = {
-    enable = true;
-    vt = 3;
-
-    settings.default_session = {
-      # Run hyprland in a dbus session so that xdg-mime works correctly.
-      command = "${pkgs.greetd.tuigreet}/bin/tuigreet -r -t --asterisks --user-menu --cmd \"dbus-run-session Hyprland &> /dev/null\"";
-      user = "greeter";
-    };
-  };
 
   # Enable auto-cpufreq.
   services.auto-cpufreq.enable = true;
