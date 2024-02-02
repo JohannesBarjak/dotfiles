@@ -106,6 +106,10 @@
     ppsspp-sdl-wayland pcsx2
     bsnes-hd mgba melonDS
     dosbox-x _86Box
+
+    keepassxc
+    pavucontrol
+    openvpn
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -199,14 +203,6 @@
 
   # Add vpn.
   environment.etc.openvpn.source = "${pkgs.update-resolv-conf}/libexec/openvpn";
-  services.openvpn.servers = {
-    homeVPN = {
-      config = "config /root/vpn/vpn.ovpn";
-
-      updateResolvConf = true;
-      autoStart = false;
-    };
-  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
