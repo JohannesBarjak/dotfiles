@@ -4,7 +4,7 @@
   programs.home-manager.enable = true;
 
   imports = [
-    ./home/wm/wm.nix
+    ./home/wm.nix
     ./home/theming.nix
   ];
 
@@ -20,6 +20,8 @@
         "text/html" = "firefox.desktop";
         "x-scheme-handler/http" = "firefox.desktop";
         "x-scheme-handler/https" = "firefox.desktop";
+
+        "video/mp4" = "celluloid.desktop";
       };
     };
 

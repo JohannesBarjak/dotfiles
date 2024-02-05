@@ -4,7 +4,7 @@
 
     settings = {
       "$mod" = "SUPER";
-      "$menu" = "fuzzel";
+      "$menu" = "rofi -show drun";
 
       "$terminal" = "kitty --single-instance";
       "$browser" = "firefox";
