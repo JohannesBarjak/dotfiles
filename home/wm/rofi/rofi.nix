@@ -3,10 +3,11 @@
   programs.rofi = {
     enable = true;
     package = pkgs.rofi-wayland;
-    theme = ./gruvbox-material.rasi;
+    theme = (import ./gruvbox.nix { inherit config; });
 
     extraConfig = {
       show-icons = true;
+      display-drun = "󰣖 drun:";
     };
   };
 }

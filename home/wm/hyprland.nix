@@ -107,7 +107,7 @@
         layerrule = [
           "blur, waybar"
           "blur, notifications"
-          "blur, launcher"
+          "blur, rofi"
         ];
       };
 
