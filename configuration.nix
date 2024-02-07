@@ -126,8 +126,12 @@
   programs.waybar.enable = true;
   programs.light.enable = true;
 
-  # Add Fira Code fonts.
+  # Add fonts.
   fonts.packages = with pkgs; [
+    noto-fonts
+    noto-fonts-cjk
+    noto-fonts-emoji
+
     ( nerdfonts.override { fonts = [ "FiraCode" ]; })
   ];
 
