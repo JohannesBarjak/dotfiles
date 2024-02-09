@@ -8,7 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./system/greetd.nix
+      ./system.nix
     ];
 
   # Enable flakes.
@@ -26,14 +26,14 @@
   # Enable zram.
   zramSwap = {
     enable = true;
-    algorithm = "lz4";
+    algorithm = "zstd";
     priority = 100;
     memoryPercent = 100;
   };
 
   boot.kernel.sysctl = {
     "vm.swappiness" = 200;
-    "vm.page-cluster" = 1;
+    "vm.page-cluster" = 0;
   };
 
   # Enable opengl.
@@ -82,7 +82,7 @@
   users.users.johannes = {
     isNormalUser = true;
     description = "Johannes";
-    extraGroups = [ "networkmanager" "wheel" "video" "libvirtd" ];
+    extraGroups = [ "networkmanager" "wheel" "video" ];
     packages = with pkgs; [];
     shell = pkgs.nushellFull;
   };
@@ -182,9 +182,9 @@
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
 
-  # Add qemu.
-  virtualisation.libvirtd.enable = true;
-  programs.virt-manager.enable = true;
+  # Add VirtualBox.
+  virtualisation.virtualbox.host.enable = true;
+  users.extraGroups.vboxusers.members = [ "johannes" ];
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
