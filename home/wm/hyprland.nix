@@ -43,11 +43,17 @@
         "$mod, F, fullscreen"
         "$mod, V, togglefloating,"
 
-        # Set scratchpad keybindings.
+        # Move focus with the arrow keys.
+        "$mod, left, movefocus, l"
+        "$mod, right, movefocus, r"
+        "$mod, up, movefocus, u"
+        "$mod, down, movefocus, d"
+
+        # Scratchpad keybindings.
         "$mod, S, togglespecialworkspace, magic"
         "$mod SHIFT, S, movetoworkspace, special:magic"
 
-        # Set workspace keybindings.
+        # Workspace keybindings.
         "$mod, 1, workspace, 1"
         "$mod, 2, workspace, 2"
         "$mod, 3, workspace, 3"
