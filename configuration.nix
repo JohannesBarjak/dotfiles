@@ -101,7 +101,7 @@
     loupe
     lean4
     wineWowPackages.waylandFull bottles
-    cinnamon.nemo-with-extensions
+    gnome.nautilus
     valent
 
     ppsspp-sdl-wayland pcsx2
@@ -114,6 +114,8 @@
 
     celluloid
   ];
+
+  environment.sessionVariables.TERMINAL = "kitty";
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -141,6 +143,9 @@
 
   # Gvfs provides trash and remote fs support
   services.gvfs.enable = true;
+
+  # Enable sushi for nautilus.
+  services.gnome.sushi.enable = true;
 
   # Enable auto-cpufreq.
   services.auto-cpufreq.enable = true;
