@@ -8,7 +8,7 @@
 
       "$terminal" = "kitty --single-instance";
       "$browser" = "firefox";
-      "$filemanager" = "nemo";
+      "$filemanager" = "nautilus";
 
       general = {
         gaps_in = 5;
