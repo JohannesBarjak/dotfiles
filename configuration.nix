@@ -123,7 +123,7 @@
   # Enable dconf.
   programs.dconf.enable = true;
 
-  # Enabling hyprland here disables portal warning.
+  # Enable hyprland here for system integration.
   programs.hyprland.enable = true;
   programs.waybar.enable = true;
   programs.light.enable = true;
@@ -138,6 +138,7 @@
   ];
 
   programs.firefox.enable = true;
+  programs.evince.enable = true;
 
   # List services that you want to enable:
 
