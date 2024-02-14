@@ -1,4 +1,4 @@
-{config, ...}: {
+{config, pkgs, ...}: {
   wayland.windowManager.hyprland = {
     enable = true;
 
@@ -89,7 +89,10 @@
         "$mod, mouse:273, resizewindow"
       ];
 
-      exec-once = [ "hyprpaper" ];
+      exec-once = [
+        "hyprpaper"
+        "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
+      ];
 
       input = {
         kb_layout = "us";

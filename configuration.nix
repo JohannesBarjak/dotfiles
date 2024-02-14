@@ -172,9 +172,10 @@
     alsa.support32Bit = true;
   };
 
-  # Enable dbus and upower.
+  # Enable dbus, upower and polkit.
   services.dbus.enable = true;
   services.upower.enable = true;
+  security.polkit.enable = true;
 
   # Allow unlocking with swaylock in pam.
   security.pam.services.swaylock = {};
