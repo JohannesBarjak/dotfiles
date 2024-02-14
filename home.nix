@@ -96,6 +96,8 @@
   # Use helix as an editor.
   programs.helix = {
     enable = true;
+    defaultEditor = true;
+
     settings = {
       theme = "gruvbox";
       editor.line-number = "relative";
