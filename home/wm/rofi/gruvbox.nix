@@ -1,19 +1,19 @@
 # Use `mkLiteral` for string-like values that should show without quotes.
 {config, ...}: let inherit (config.lib.formats.rasi) mkLiteral; in {
   "*" = {
-    bg0 = mkLiteral "#282828f0";
-    bg1 = mkLiteral "#32302ff0";
+    bg0 = mkLiteral "#282828c0";
+    bg1 = mkLiteral "#32302fc0";
 
     fg0 = mkLiteral "#eee0b7";
 
-    fg1 = mkLiteral "#a89984";
-    fg2 = mkLiteral "#7c6f64";
+    fg1 = mkLiteral "#a89984c0";
+    fg2 = mkLiteral "#7c6f64c0";
 
-    yellow = mkLiteral "#d8a657";
-    red = mkLiteral "#ea6962";
+    yellow = mkLiteral "#d8a657c0";
+    red = mkLiteral "#ea6962c0";
 
-    yellowdark = mkLiteral "#b47109";
-    reddark = mkLiteral "#c14a4a";
+    yellowdark = mkLiteral "#b47109c0";
+    reddark = mkLiteral "#c14a4ac0";
 
     foreground = mkLiteral "@fg2";
     background-color = mkLiteral "transparent";
@@ -97,7 +97,6 @@
 
   "element.selected.active".background-color = mkLiteral "@yellowdark";
   "element.selected.urgent".background-color = mkLiteral "@red";
-  "element.alternate.normal".background-color = mkLiteral "@transparent";
 
   "element-text, element-icon" = {
     size = mkLiteral "2.5ch";
@@ -105,7 +104,7 @@
     vertical-align = mkLiteral "0.5";
     margin = mkLiteral "0 10 0 0";
 
-    background-color = mkLiteral "inherit";
+    background-color = mkLiteral "@transparent";
     text-color = mkLiteral "@fg0";
   };
 
