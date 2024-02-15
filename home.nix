@@ -73,7 +73,7 @@
 
     settings = {
       scrollback_lines = 1000;
-      background_opacity = "0.82";
+      background_opacity = "0.75";
     };
 
     font.name = "FiraCode Nerd Font Mono Reg";
