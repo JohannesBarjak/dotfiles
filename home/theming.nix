@@ -5,8 +5,8 @@
 
     theme.name = gtkTheme;
     theme.package = pkgs.gruvbox-gtk-theme;
-    iconTheme.name = "Numix-Circle";
-    iconTheme.package = pkgs.numix-icon-theme-circle;
+    iconTheme.name = "Papirus-Dark";
+    iconTheme.package = (pkgs.papirus-icon-theme.override { color = "green"; });
   };
 
   home.sessionVariables.GTK_THEME = gtkTheme;
