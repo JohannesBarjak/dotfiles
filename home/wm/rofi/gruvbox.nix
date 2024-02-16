@@ -1,19 +1,19 @@
 # Use `mkLiteral` for string-like values that should show without quotes.
 {config, ...}: let inherit (config.lib.formats.rasi) mkLiteral; in {
   "*" = {
-    bg0 = mkLiteral "#282828c0";
-    bg1 = mkLiteral "#32302fc0";
+    bg0 = mkLiteral "#282828d0";
+    bg1 = mkLiteral "#32302fd0";
 
     fg0 = mkLiteral "#eee0b7";
 
-    fg1 = mkLiteral "#a89984c0";
-    fg2 = mkLiteral "#7c6f64c0";
+    fg1 = mkLiteral "#a89984d0";
+    fg2 = mkLiteral "#7c6f64d0";
 
-    yellow = mkLiteral "#d8a657c0";
-    red = mkLiteral "#ea6962c0";
+    yellow = mkLiteral "#d8a657d0";
+    red = mkLiteral "#ea6962d0";
 
-    yellowdark = mkLiteral "#b47109c0";
-    reddark = mkLiteral "#c14a4ac0";
+    yellowdark = mkLiteral "#b47109d0";
+    reddark = mkLiteral "#c14a4ad0";
 
     foreground = mkLiteral "@fg2";
     background-color = mkLiteral "transparent";
@@ -25,8 +25,8 @@
   window = {
     location = mkLiteral "center";
     anchor = mkLiteral "center";
-    height = mkLiteral "560px";
-    width = mkLiteral "600px";
+    height = mkLiteral "480px";
+    width = mkLiteral "640px";
 
     background-color = mkLiteral "@transparent";
 
@@ -83,7 +83,7 @@
     border-radius = mkLiteral "10px";
 
     color = mkLiteral "@foreground";
-    background-color = mkLiteral "@bg1";
+    background-color = mkLiteral "@transparent";
     text-color = mkLiteral "@fg0";
   };
 
