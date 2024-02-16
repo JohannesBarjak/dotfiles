@@ -4,7 +4,7 @@
 
     iconTheme = {
       name = "${config.gtk.iconTheme.name}";
-      package = "${config.gtk.iconTheme.package}";
+      package = config.gtk.iconTheme.package;
     };
 
     settings = {
