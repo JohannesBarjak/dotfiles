@@ -6,6 +6,7 @@
   imports = [
     ./home/wm.nix
     ./home/theming.nix
+    ./home/apps.nix
   ];
 
   xdg = {

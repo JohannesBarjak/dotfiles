@@ -138,7 +138,6 @@
     ( nerdfonts.override { fonts = [ "FiraCode" ]; })
   ];
 
-  programs.firefox.enable = true;
   programs.evince.enable = true;
 
   # List services that you want to enable:
