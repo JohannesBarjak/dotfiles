@@ -116,7 +116,10 @@
     gnome.gnome-system-monitor
   ];
 
-  environment.sessionVariables.TERMINAL = "kitty";
+  environment.sessionVariables = {
+    TERMINAL = "kitty";
+    EDITOR = "hx";
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
