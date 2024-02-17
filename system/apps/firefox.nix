@@ -3,8 +3,6 @@
     enable = true;
 
     policies = {
-      DisablePocket = true;
-
       DisableTelemetry = true;
       DisableFirefoxStudies = true;
 
@@ -14,6 +12,27 @@
           installation_mode = "force_installed";
         };
       };
+
+      # Disable annoyances.
+      DisablePocket = true;
+
+      FirefoxHome = {
+        Pocket = false;
+        SponsoredTopSites = false;
+      };
+
+      UserMessaging = {
+        MoreFromMozilla = false;
+        SkipOnboarding = true;
+        FeatureRecommendations = false;
+        ExtensionRecommendations = false;
+      };
+
+      FirefoxSuggest.WebSuggestions = false;
+      DontCheckDefaultBrowser = true;
+
+      # Enable DRM.
+      EncryptedMediaExtensions.Enabled = true;
     };
   };
 }
