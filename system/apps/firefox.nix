@@ -28,7 +28,12 @@
         ExtensionRecommendations = false;
       };
 
-      FirefoxSuggest.WebSuggestions = false;
+      FirefoxSuggest = {
+        WebSuggestions = false;
+        SponsoredSuggestions = false;
+        ImproveSuggest = false;
+      };
+
       DontCheckDefaultBrowser = true;
 
       # Enable DRM.

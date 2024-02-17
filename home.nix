@@ -5,6 +5,7 @@
 
   imports = [
     ./home/wm.nix
+    ./home/apps.nix
     ./home/theming.nix
   ];
 
