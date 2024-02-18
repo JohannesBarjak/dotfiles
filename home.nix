@@ -105,7 +105,11 @@
     };
   };
 
-  programs.wlogout.enable = true;
+  # Wallpaper directory.
+  xdg.dataFile.backgrounds = {
+    source = ./home/xdg/backgrounds;
+    recursive = true;
+  };
 
   home.stateVersion = "23.11";
 }
