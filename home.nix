@@ -9,6 +9,8 @@
     ./home/theming.nix
   ];
 
+  home.packages = with pkgs; [ numbat ];
+
   xdg = {
     enable = true;
 
@@ -30,13 +32,6 @@
     userDirs = {
       enable = true;
       createDirectories = true;
-    };
-  };
-
-  dconf.settings = {
-    "org/virt-manager/virt-manager/connections" = {
-      autoconnect = ["qemu:///system"];
-      uris = ["qemu:///system"];
     };
   };
 
