@@ -100,11 +100,7 @@
     };
   };
 
-  # Wallpaper directory.
-  xdg.dataFile.backgrounds = {
-    source = ./home/xdg/backgrounds;
-    recursive = true;
-  };
+  wallpapers.current = "pixel-castle.png";
 
   home.stateVersion = "23.11";
 }

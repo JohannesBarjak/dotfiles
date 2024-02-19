@@ -1,12 +1,14 @@
-{pkgs, ...}: {
+{config, pkgs, ...}: {
+  imports = [ ./wallpapers.nix ];
+
   home.packages = [ pkgs.hyprpaper ];
 
   # hyprpaper config.
   xdg.configFile.hyprpaper = {
     text = ''
       splash = false
-      preload = ~/.local/share/backgrounds/pixel-castle.png
-      wallpaper = ,contain:~/.local/share/backgrounds/pixel-castle.png
+      preload = ${config.wallpapers.path}/${config.wallpapers.current}
+      wallpaper = ,contain:${config.wallpapers.path}/${config.wallpapers.current}
     '';
 
     target = "hypr/hyprpaper.conf";

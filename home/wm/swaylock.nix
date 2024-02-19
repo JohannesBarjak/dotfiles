@@ -1,4 +1,6 @@
 {config, pkgs, ...}: {
+  imports = [ ./wallpapers.nix ];
+
   programs.swaylock = {
     enable = true;
     package = pkgs.swaylock-effects;
@@ -7,7 +9,7 @@
       clock = true;
       ignore-empty-password = true;
 
-      image = "${config.xdg.dataHome}/backgrounds/pixel-castle.png";
+      image = "${config.wallpapers.path}/${config.wallpapers.current}";
       indicator = true;
       indicator-radius = 70;
 
