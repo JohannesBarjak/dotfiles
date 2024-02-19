@@ -7,7 +7,7 @@
       clock = true;
       ignore-empty-password = true;
 
-      image = "~/.wallpapers/pixel-castle.png";
+      image = "${config.xdg.dataHome}/backgrounds/pixel-castle.png";
       indicator = true;
       indicator-radius = 70;
 
