@@ -1,18 +1,16 @@
-{config, pkgs, ...}: let gtkTheme = "Gruvbox-Dark-BL"; in {
+{config, pkgs, ...}: let gtkTheme = "Orchis-Green-Dark"; in {
   # Set gtk theme to Gruvbox and Numix Circle.
   gtk = {
     enable = true;
 
     theme.name = gtkTheme;
-    theme.package = pkgs.gruvbox-gtk-theme;
+    theme.package = pkgs.orchis-theme;
     iconTheme.name = "Papirus-Dark";
     iconTheme.package = (pkgs.papirus-icon-theme.override { color = "green"; });
   };
 
-  home.sessionVariables.GTK_THEME = gtkTheme;
-
   # Copy gtk-4.0 files, otherwise the theme isn't applied to gtk4 apps.
-  home.file."${config.xdg.configHome}/gtk-4.0" = {
+  xdg.configFile."gtk-4.0" = {
     source = "${config.gtk.theme.package}/share/themes/${gtkTheme}/gtk-4.0";
     recursive = true;
   };
