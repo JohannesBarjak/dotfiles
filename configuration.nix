@@ -14,14 +14,22 @@
   # Enable flakes.
   nix = {
     package = pkgs.nixFlakes;
-    extraOptions = ''
-        experimental-features = nix-command flakes
-    '';
+    extraOptions = "experimental-features = nix-command flakes";
   };
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+
+  boot.kernelParams = [ "quiet" "loglevel=3" ];
+  boot.initrd.systemd.enable = true;
+
+  boot.plymouth = {
+    enable = true;
+
+    theme = "cross_hud";
+    themePackages = with pkgs; [ (adi1090x-plymouth-themes.override { selected_themes = [ "cross_hud" ]; }) ];
+  };
 
   # Enable zram.
   zramSwap = {
