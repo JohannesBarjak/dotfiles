@@ -197,6 +197,7 @@
   users.extraGroups.vboxusers.members = [ "johannes" ];
 
   systemd.services.NetworkManager-wait-online.enable = false;
+  services.journald.extraConfig = "SystemMaxUse=50M";
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
