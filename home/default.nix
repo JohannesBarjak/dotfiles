@@ -4,9 +4,9 @@
   programs.home-manager.enable = true;
 
   imports = [
-    ./home/wm.nix
-    ./home/apps.nix
-    ./home/theming.nix
+    ./wm
+    ./apps
+    ./theming.nix
   ];
 
   home.packages = with pkgs; [ numbat ];
