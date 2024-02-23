@@ -6,7 +6,5 @@
     ./wm/swayidle.nix
     ./wm/dunst.nix
     ./wm/rofi/rofi.nix
-    ./wm/hyprpaper.nix
-    ./wm/wallpapers.nix
   ];
 }

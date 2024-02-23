@@ -100,7 +100,5 @@
     };
   };
 
-  wallpapers.current = "pixel-castle.png";
-
   home.stateVersion = "23.11";
 }

@@ -1,4 +1,6 @@
 {config, pkgs, ...}: {
+  imports = [ ./wallpapers ];
+
   wayland.windowManager.hyprland = {
     enable = true;
 
@@ -90,7 +92,7 @@
       ];
 
       exec-once = [
-        "hyprpaper"
+        "${pkgs.swaybg}/bin/swaybg -m fill -i ${config.wallpaper.path}"
         "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
       ];
 

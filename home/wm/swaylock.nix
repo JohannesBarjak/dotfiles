@@ -1,5 +1,5 @@
 {config, pkgs, ...}: {
-  imports = [ ./wallpapers.nix ];
+  imports = [ ./wallpapers ];
 
   programs.swaylock = {
     enable = true;
@@ -9,7 +9,7 @@
       clock = true;
       ignore-empty-password = true;
 
-      image = "${config.wallpapers.path}/${config.wallpapers.current}";
+      image = "${config.wallpaper.path}";
       indicator = true;
       indicator-radius = 70;
 
