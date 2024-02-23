@@ -162,19 +162,8 @@
   # Enable sushi for nautilus.
   services.gnome.sushi.enable = true;
 
-  # Enable auto-cpufreq.
-  services.auto-cpufreq.enable = true;
-  services.auto-cpufreq.settings = {
-    battery = {
-      governor = "powersave";
-      turbo = "auto";
-    };
-
-    charger = {
-      governor = "performance";
-      turbo = "auto";
-    };
-  };
+  # Power management.
+  services.tlp.enable = true;
 
   # Enable pipewire.
   security.rtkit.enable = true;
