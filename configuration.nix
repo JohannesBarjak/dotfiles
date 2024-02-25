@@ -122,7 +122,7 @@
     dosbox-x _86Box
 
     keepassxc
-    pavucontrol
+    pavucontrol helvum
     openvpn
 
     celluloid
@@ -166,6 +166,7 @@
 
   # Power management.
   services.tlp.enable = true;
+  services.ananicy.enable = true;
 
   # Enable pipewire.
   security.rtkit.enable = true;
