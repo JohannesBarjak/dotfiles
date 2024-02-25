@@ -21,6 +21,8 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
   boot.kernelParams = [ "quiet" "loglevel=3" ];
   boot.initrd.systemd.enable = true;
 
