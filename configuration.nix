@@ -23,7 +23,13 @@
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  boot.kernelParams = [ "quiet" "loglevel=3" ];
+  boot.kernelParams = [ "quiet" "loglevel=3" "nowatchdog" ];
+
+  boot.extraModprobeConfig = ''
+    blacklist iTCO_wdt
+    blacklist sp5100_tco
+  '';
+
   boot.initrd.systemd.enable = true;
 
   boot.plymouth = {
