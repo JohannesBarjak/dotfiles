@@ -131,7 +131,6 @@
     openvpn
 
     celluloid
-    gnome.gnome-system-monitor
   ];
 
   environment.sessionVariables = {
