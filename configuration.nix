@@ -114,7 +114,6 @@
   environment.systemPackages = with pkgs; [
     gcc bat
 
-    hyprpaper
     wl-clipboard
 
     loupe
