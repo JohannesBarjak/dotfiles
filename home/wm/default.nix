@@ -4,7 +4,7 @@
     ./waybar
     ./swaylock.nix
     ./swayidle.nix
-    ./dunst.nix
+    ./mako.nix
     ./rofi
   ];
 }

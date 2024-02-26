@@ -119,6 +119,10 @@
           "blur, waybar"
           "blur, notifications"
           "blur, rofi"
+
+          # Remove blur on mako's and rofi's margin
+          "ignorezero, notifications"
+          "ignorezero, rofi"
         ];
       };
 
