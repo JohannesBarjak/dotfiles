@@ -39,7 +39,7 @@
     themePackages = with pkgs; [ (adi1090x-plymouth-themes.override { selected_themes = [ "cross_hud" ]; }) ];
   };
 
-  fileSystems."/".options = [ "compress-force=zstd:2" "autodefrag" ];
+  fileSystems."/".options = [ "compress-force=zstd:2" "autodefrag" "noatime" ];
 
   # Enable zram.
   zramSwap = {
