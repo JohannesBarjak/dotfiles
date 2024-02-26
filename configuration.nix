@@ -147,7 +147,6 @@
   # Enable hyprland here for system integration.
   programs.hyprland.enable = true;
   programs.waybar.enable = true;
-  programs.light.enable = true;
 
   # Add fonts.
   fonts.packages = with pkgs; [
