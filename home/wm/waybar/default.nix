@@ -8,7 +8,7 @@
         layer = "top";
         modules-left = [ "hyprland/workspaces" ];
         modules-center = [ "clock#2" ];
-        modules-right = [ "wireplumber" "network" "battery" "idle_inhibitor" "clock#1" ];
+        modules-right = [ "network" "battery" "idle_inhibitor" "clock#1" ];
 
         margin = "3 5 0 5";
 
@@ -35,16 +35,6 @@
           format-disconnected = "Disconnected";
 
           tooltip-format-wifi = "{essid}";
-        };
-
-        wireplumber = {
-          format = "{volume}% {icon}";
-          format-muted = "";
-
-          format-icons = {
-            headphone = "";
-            default = [ "" "" ""];
-          };
         };
 
         battery = {
