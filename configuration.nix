@@ -169,6 +169,7 @@
 
   # Power management.
   services.tlp.enable = true;
+  services.thermald.enable = true;
   services.ananicy.enable = true;
 
   # Enable pipewire.
