@@ -163,6 +163,12 @@
 
   # List services that you want to enable:
 
+  # Add udev rules for swayosd
+  services.udev.extraRules = ''
+    ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="acpi_video0", RUN+="${pkgs.coreutils}/bin/chgrp video /sys/class/backlight/%k/brightness"
+    ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="acpi_video0", RUN+="${pkgs.coreutils}/bin/chmod g+w /sys/class/backlight/%k/brightness"
+  '';
+
   # Gvfs provides trash and remote fs support
   services.gvfs.enable = true;
 
