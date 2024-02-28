@@ -1,10 +1,10 @@
-{config, pkgs, ...}: let gtkTheme = "Orchis-Green-Dark"; in {
+{config, pkgs, ...}: let gtkTheme = "Gruvbox-Dark-BL"; in {
   # Set gtk theme to Gruvbox and Numix Circle.
   gtk = {
     enable = true;
 
     theme.name = gtkTheme;
-    theme.package = pkgs.orchis-theme;
+    theme.package = pkgs.gruvbox-gtk-theme;
     iconTheme.name = "Papirus-Dark";
     iconTheme.package = (pkgs.papirus-icon-theme.override { color = "green"; });
   };
