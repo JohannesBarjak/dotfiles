@@ -52,6 +52,12 @@
         "$mod, up, movefocus, u"
         "$mod, down, movefocus, d"
 
+        # Move windows with the keyboard.
+        "$mod SHIFT, left, movewindow, l"
+        "$mod SHIFT, right, movewindow, r"
+        "$mod SHIFT, up, movewindow, u"
+        "$mod SHIFT, down, movewindow, d"
+
         # Scratchpad keybindings.
         "$mod, S, togglespecialworkspace, magic"
         "$mod SHIFT, S, movetoworkspace, special:magic"
