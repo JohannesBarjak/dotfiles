@@ -6,6 +6,22 @@
     extraConfig = "$env.config = { show_banner: false }"; # Removes annoying welcome message.
   };
 
+  # Git configuration.
+  programs.git = {
+    enable = true;
+
+    userName = "Johannes";
+    userEmail = "johannes.barjak@gmail.com";
+
+    # Use delta for git diff.
+    delta = {
+      enable = true;
+      options.syntax-theme = "gruvbox-dark";
+    };
+
+    extraConfig.pull.rebase = true;
+  };
+
   # Carapace completes command arguments.
   programs.carapace = {
     enable = true;
@@ -57,5 +73,10 @@
   programs.zoxide = {
     enable = true;
     enableNushellIntegration = true;
+  };
+
+  programs.bat = {
+    enable = true;
+    config.theme = "gruvbox-dark";
   };
 }

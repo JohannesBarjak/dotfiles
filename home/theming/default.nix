@@ -34,8 +34,13 @@
 
   qt = {
     enable = true;
-    platformTheme = "gtk";
 
-    style.name = "gtk2";
+    platformTheme = "qtct";
+    style.name = "kvantum";
+  };
+
+  xdg.configFile."Kvantum/Gruvbox-Dark-Green" = {
+    source = ./Gruvbox-Dark-Green;
+    recursive = true;
   };
 }

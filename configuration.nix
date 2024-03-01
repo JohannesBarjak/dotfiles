@@ -21,7 +21,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
 
   boot.kernelParams = [ "quiet" "loglevel=3" "nowatchdog" ];
 
@@ -114,7 +114,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    gcc bat
+    gcc
 
     wl-clipboard
 
@@ -138,6 +138,7 @@
   environment.sessionVariables = {
     TERMINAL = "kitty";
     EDITOR = "hx";
+    QT_STYLE_OVERRIDE = "kvantum";
   };
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -163,10 +164,10 @@
 
   # List services that you want to enable:
 
-  # Add udev rules for swayosd
+  # Add udev rules for backlight control.
   services.udev.extraRules = ''
-    ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="acpi_video0", RUN+="${pkgs.coreutils}/bin/chgrp video /sys/class/backlight/%k/brightness"
-    ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="acpi_video0", RUN+="${pkgs.coreutils}/bin/chmod g+w /sys/class/backlight/%k/brightness"
+    ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="intel_backlight", RUN+="${pkgs.coreutils}/bin/chgrp video /sys/class/backlight/%k/brightness"
+    ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="intel_backlight", RUN+="${pkgs.coreutils}/bin/chmod g+w /sys/class/backlight/%k/brightness"
   '';
 
   # Gvfs provides trash and remote fs support

@@ -6,11 +6,13 @@
   imports = [
     ./wm
     ./apps
-    ./theming.nix
+    ./theming
     ./terminal.nix
   ];
 
-  home.packages = with pkgs; [ numbat ];
+  home.packages = with pkgs; [
+    numbat
+  ];
 
   xdg = {
     enable = true;
@@ -33,17 +35,6 @@
     userDirs = {
       enable = true;
       createDirectories = true;
-    };
-  };
-
-  # Git configuration.
-  programs.git = {
-    enable = true;
-    userName = "Johannes";
-    userEmail = "johannes.barjak@gmail.com";
-
-    extraConfig = {
-      pull.rebase = true;
     };
   };
 
