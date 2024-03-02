@@ -26,6 +26,8 @@
         layout = "dwindle";
       };
 
+      dwindle.preserve_split = true;
+
       bind = [
         # Set audio and mic mute keybindings.
         ", XF86AudioMute, exec, $swayosd --output-volume mute-toggle"
@@ -45,6 +47,7 @@
         "$mod, B, exec, $browser"
         "$mod, F, fullscreen"
         "$mod, V, togglefloating,"
+        "$mod, Z, layoutmsg, togglesplit"
 
         # Move focus with the arrow keys.
         "$mod, left, movefocus, l"
@@ -89,6 +92,12 @@
       binde = [
         ", XF86AudioRaiseVolume, exec, $swayosd --output-volume raise"
         ", XF86AudioLowerVolume, exec, $swayosd --output-volume lower"
+
+        # Resize windows with the keyboard.
+        "$mod ALT, left, resizeactive, -10 0"
+        "$mod ALT, right, resizeactive, 10 0"
+        "$mod ALT, up, resizeactive, 0 -10"
+        "$mod ALT, down, resizeactive, 0 10"
       ];
 
       bindm = [
@@ -128,6 +137,7 @@
           "blur, rofi"
 
           # Remove blur on mako's and rofi's margin
+          "ignorezero, waybar"
           "ignorezero, notifications"
           "ignorezero, rofi"
         ];

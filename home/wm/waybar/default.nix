@@ -8,7 +8,7 @@
         layer = "top";
         modules-left = [ "hyprland/workspaces" ];
         modules-center = [ "clock#2" ];
-        modules-right = [ "network" "battery" "idle_inhibitor" "clock#1" ];
+        modules-right = [ "network" "battery" "idle_inhibitor" "clock#1" "group/group-power" ];
 
         margin = "3 5 0 5";
 
@@ -40,6 +40,49 @@
         battery = {
           format = "{capacity}% {icon}";
           format-icons = [""  ""  ""  ""  ""];
+        };
+
+        # Found the following on the waybar wiki.
+        "group/group-power" = {
+          orientation = "inherit";
+
+          drawer = {
+            transition-duration = 500;
+            children-class = "not-power";
+            transition-left-to-right = false;
+          };
+
+          modules = [
+            "custom/power"
+            "custom/quit"
+            "custom/lock"
+            "custom/reboot"
+          ];
+        };
+
+        # Add custom power modules.
+        "custom/quit" = {
+          format = "󰗼";
+          tooltip = false;
+          on-click = "hyprctl dispatch exit";
+        };
+
+        "custom/lock" = {
+          format = "󰍁";
+          tooltip = false;
+          on-click = "swaylock";
+        };
+
+        "custom/reboot" = {
+          format = "󰜉";
+          tooltip = false;
+          on-click = "reboot";
+        };
+
+        "custom/power" = {
+          format = "";
+          tooltip = false;
+          on-click = "shutdown now";
         };
       };
     };
