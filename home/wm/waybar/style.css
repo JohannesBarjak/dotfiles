@@ -31,7 +31,6 @@ window#waybar
 #workspaces button.focused label
     { background-color: #3c3836
     ; color: #ebdbb2
-    ; font-weight: bold
     }
 
 #clock,
