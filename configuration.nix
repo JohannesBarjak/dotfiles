@@ -151,14 +151,21 @@
   programs.hyprland.enable = true;
   programs.waybar.enable = true;
 
-  # Add fonts.
-  fonts.packages = with pkgs; [
-    noto-fonts
-    noto-fonts-cjk
-    noto-fonts-emoji
+  # Configure fonts.
+  fonts = {
+    packages = with pkgs; [
+      noto-fonts
+      noto-fonts-cjk
+      noto-fonts-emoji
 
-    ( nerdfonts.override { fonts = [ "FiraCode" ]; })
-  ];
+      ( nerdfonts.override { fonts = [ "FiraCode" "Cousine" ]; })
+    ];
+
+    fontconfig = {
+      enable = true;
+      subpixel.rgba = "rgb";
+    };
+  };
 
   programs.evince.enable = true;
 
