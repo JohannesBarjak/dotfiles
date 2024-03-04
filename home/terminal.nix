@@ -34,18 +34,22 @@
     enableNushellIntegration = true;
   };
 
-  programs.kitty = {
+  programs.alacritty = {
     enable = true;
-    theme = "Gruvbox Material Dark Medium";
 
     settings = {
-      scrollback_lines = 1000;
-      background_opacity = "0.75";
-    };
+      import = [ "${pkgs.alacritty-theme}/gruvbox_material.toml" ];
 
-    font.name = "FiraCode Nerd Font Mono Reg";
-    font.package = ( pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; });
-    font.size = 11;
+      font = {
+        normal.family = "Cousine Nerd Font Mono";
+        normal.style = "Regular";
+        size = 11;
+      };
+
+      window.opacity = 0.8;
+      scrolling.history = 1000;
+      colors.transparent_background_colors = true;
+    };
   };
 
   programs.helix = {

@@ -8,7 +8,7 @@
       "$mod" = "SUPER";
       "$menu" = "rofi -show drun";
 
-      "$terminal" = "kitty --single-instance";
+      "$terminal" = "sh -c 'alacritty msg create-window || alacritty'";
       "$browser" = "firefox";
       "$filemanager" = "nautilus";
 

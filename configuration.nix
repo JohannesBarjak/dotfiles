@@ -136,7 +136,7 @@
   ];
 
   environment.sessionVariables = {
-    TERMINAL = "kitty";
+    TERMINAL = "alacritty";
     EDITOR = "hx";
     QT_STYLE_OVERRIDE = "kvantum";
   };
