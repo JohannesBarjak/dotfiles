@@ -17,6 +17,8 @@
     extraOptions = "experimental-features = nix-command flakes";
   };
 
+  nix.optimize.automatic = true;
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
