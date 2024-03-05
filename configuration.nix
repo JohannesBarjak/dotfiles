@@ -17,7 +17,7 @@
     extraOptions = "experimental-features = nix-command flakes";
   };
 
-  nix.optimize.automatic = true;
+  nix.optimise.automatic = true;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
