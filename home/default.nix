@@ -1,10 +1,9 @@
-{config, pkgs, ...}: {
+{pkgs, ...}: {
   home.username = "johannes";
   home.homeDirectory = "/home/johannes";
   programs.home-manager.enable = true;
 
   imports = [
-    ./wm
     ./apps
     ./theming
     ./terminal.nix
@@ -13,6 +12,7 @@
   home.packages = with pkgs; [
     numbat
     mindustry-wayland
+    blackbox-terminal
   ];
 
   xdg = {

@@ -1,25 +1,23 @@
-{config, pkgs, ...}: let gtkTheme = "Gruvbox-Dark-BL"; in {
+{config, pkgs, ...}: {
+  imports = [ ./wallpapers ];
+
   # Set gtk theme to Gruvbox and Numix Circle.
   gtk = {
     enable = true;
 
-    theme.name = gtkTheme;
-    theme.package = pkgs.gruvbox-gtk-theme;
     iconTheme.name = "Papirus-Dark";
     iconTheme.package = (pkgs.papirus-icon-theme.override { color = "green"; });
   };
 
-  # Copy gtk-4.0 files, otherwise the theme isn't applied to gtk4 apps.
-  xdg.configFile."gtk-4.0" = {
-    source = "${config.gtk.theme.package}/share/themes/${gtkTheme}/gtk-4.0";
-    recursive = true;
-  };
-
-  # This fixes some contrasting issues since the theme is dark.
   dconf.settings = {
+    # This fixes some contrasting issues since the theme is dark.
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
     };
+
+    # Set the wallpaper.
+    "org/gnome/desktop/background"."picture-uri-dark" = "${config.wallpaper.path}";
+    "org/gnome/desktop/screensaver"."picture-uri-dark" = "${config.wallpaper.path}";
   };
 
   # Cursor theme.

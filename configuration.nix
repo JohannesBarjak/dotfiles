@@ -93,6 +93,11 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  # Enable gnome.
+  services.xserver.enable = true;
+  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -101,7 +106,6 @@
     loupe
     lean4
     wineWowPackages.waylandFull bottles
-    gnome.nautilus
     valent
 
     ppsspp-sdl-wayland pcsx2
@@ -113,6 +117,7 @@
     openvpn
 
     celluloid
+    gnomeExtensions.blur-my-shell
   ];
 
   environment.sessionVariables = {
@@ -126,10 +131,6 @@
 
   # Enable dconf.
   programs.dconf.enable = true;
-
-  # Enable hyprland here for system integration.
-  programs.hyprland.enable = true;
-  programs.waybar.enable = true;
 
   # Configure fonts.
   fonts = {
@@ -164,20 +165,8 @@
   services.gnome.sushi.enable = true;
 
   # Power management.
-  services.tlp.enable = true;
   services.thermald.enable = true;
   services.ananicy.enable = true;
-
-  # Enable pipewire.
-  security.rtkit.enable = true;
-
-  services.pipewire = {
-    enable = true;
-    pulse.enable = true;
-    jack.enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-  };
 
   # Enable dbus, upower and polkit.
   services.dbus.enable = true;
@@ -189,11 +178,6 @@
 
   # Enable flatpak.
   services.flatpak.enable = true;
-
-  xdg.portal = {
-    enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-  };
 
   # Add VirtualBox.
   virtualisation.virtualbox.host.enable = true;
