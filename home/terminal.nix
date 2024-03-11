@@ -3,7 +3,7 @@
     enable = true;
 
     package = pkgs.nushellFull;
-    extraConfig = "$env.config = { show_banner: false }"; # Removes annoying welcome message.
+    extraConfig = "$env.config = { show_banner: false, edit_mode: vi }"; # Removes annoying welcome message.
   };
 
   # Git configuration.
@@ -51,6 +51,9 @@
       colors.transparent_background_colors = true;
     };
   };
+
+  # Add extra lsp's for helix
+  home.packages = with pkgs; [ nil marksman ];
 
   programs.helix = {
     enable = true;
