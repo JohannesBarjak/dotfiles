@@ -123,7 +123,7 @@
       noto-fonts-cjk
       noto-fonts-emoji
 
-      ( nerdfonts.override { fonts = [ "FiraCode" "Cousine" ]; })
+      ( nerdfonts.override { fonts = [ "FiraCode" ]; })
     ];
 
     fontconfig = {
