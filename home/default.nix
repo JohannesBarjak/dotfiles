@@ -7,6 +7,7 @@
     ./apps
     ./theming
     ./terminal.nix
+    ./gnome.nix
   ];
 
   home.packages = with pkgs; [

@@ -98,26 +98,20 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
 
+  environment.gnome.excludePackages = [ pkgs.gnome.gnome-software ];
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     wl-clipboard
-
-    loupe
     lean4
-    wineWowPackages.waylandFull bottles
-    valent
 
     ppsspp-sdl-wayland pcsx2
     bsnes-hd mgba melonDS
     dosbox-x _86Box
 
     keepassxc
-    pavucontrol helvum
     openvpn
-
-    celluloid
-    gnomeExtensions.blur-my-shell
   ];
 
   environment.sessionVariables = {
@@ -128,9 +122,6 @@
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
-
-  # Enable dconf.
-  programs.dconf.enable = true;
 
   # Configure fonts.
   fonts = {
@@ -148,33 +139,15 @@
     };
   };
 
-  programs.evince.enable = true;
-
   # List services that you want to enable:
-
-  # Add udev rules for backlight control.
-  services.udev.extraRules = ''
-    ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="intel_backlight", RUN+="${pkgs.coreutils}/bin/chgrp video /sys/class/backlight/%k/brightness"
-    ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="intel_backlight", RUN+="${pkgs.coreutils}/bin/chmod g+w /sys/class/backlight/%k/brightness"
-  '';
-
-  # Gvfs provides trash and remote fs support
-  services.gvfs.enable = true;
-
-  # Enable sushi for nautilus.
-  services.gnome.sushi.enable = true;
 
   # Power management.
   services.thermald.enable = true;
   services.ananicy.enable = true;
 
-  # Enable dbus, upower and polkit.
-  services.dbus.enable = true;
+  # Enable upower and polkit.
   services.upower.enable = true;
   security.polkit.enable = true;
-
-  # Allow unlocking with swaylock in pam.
-  security.pam.services.swaylock = {};
 
   # Enable flatpak.
   services.flatpak.enable = true;
@@ -191,10 +164,6 @@
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
-
-  # Enable ports for kde connect.
-  networking.firewall.allowedTCPPortRanges = [{ from = 1714; to = 1764; }];
-  networking.firewall.allowedUDPPortRanges = [{ from = 1714; to = 1764; }];
 
   # Add vpn.
   environment.etc.openvpn.source = "${pkgs.update-resolv-conf}/libexec/openvpn";
