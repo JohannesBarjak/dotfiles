@@ -93,13 +93,6 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # Enable gnome.
-  services.xserver.enable = true;
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
-
-  environment.gnome.excludePackages = [ pkgs.gnome.gnome-software ];
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -144,13 +137,6 @@
   # Power management.
   services.thermald.enable = true;
   services.ananicy.enable = true;
-
-  # Enable upower and polkit.
-  services.upower.enable = true;
-  security.polkit.enable = true;
-
-  # Enable flatpak.
-  services.flatpak.enable = true;
 
   # Add VirtualBox.
   virtualisation.virtualbox.host.enable = true;
