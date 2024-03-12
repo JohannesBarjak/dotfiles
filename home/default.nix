@@ -6,7 +6,7 @@
   imports = [
     ./apps
     ./theming
-    ./terminal.nix
+    ./terminal
     ./gnome.nix
   ];
 
