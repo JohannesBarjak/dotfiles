@@ -123,7 +123,7 @@
       noto-fonts-cjk
       noto-fonts-emoji
 
-      ( nerdfonts.override { fonts = [ "FiraCode" ]; })
+      ( nerdfonts.override { fonts = [ "FiraCode" "Cousine" ]; })
     ];
 
     fontconfig = {
@@ -135,6 +135,7 @@
   # List services that you want to enable:
 
   # Power management.
+  services.tlp.enable = true;
   services.thermald.enable = true;
   services.ananicy.enable = true;
 

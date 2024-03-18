@@ -1,5 +1,7 @@
-{config, pkgs, ...}: {
-  imports = [ ./wallpapers ];
+{pkgs, ...}: {
+  home.packages = with pkgs; [
+    gradience adw-gtk3
+  ];
 
   # Set gtk theme to Gruvbox and Numix Circle.
   gtk = {
@@ -10,14 +12,10 @@
   };
 
   dconf.settings = {
-    # This fixes some contrasting issues since the theme is dark.
     "org/gnome/desktop/interface" = {
+      gtk-theme = "adw-gtk3-dark";
       color-scheme = "prefer-dark";
     };
-
-    # Set the wallpaper.
-    "org/gnome/desktop/background"."picture-uri-dark" = "${config.wallpaper.path}";
-    "org/gnome/desktop/screensaver"."picture-uri-dark" = "${config.wallpaper.path}";
   };
 
   # Cursor theme.
@@ -37,8 +35,8 @@
     style.name = "kvantum";
   };
 
-  xdg.configFile."Kvantum/Gruvbox-Dark-Green" = {
-    source = ./Gruvbox-Dark-Green;
-    recursive = true;
-  };
+  # xdg.configFile."Kvantum/Gruvbox-Dark-Green" = {
+  #   source = ./Gruvbox-Dark-Green;
+  #   recursive = true;
+  # };
 }

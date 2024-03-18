@@ -7,14 +7,10 @@
     ./apps
     ./theming
     ./terminal
-    ./gnome.nix
+    ./desktop
   ];
 
-  home.packages = with pkgs; [
-    numbat
-    mindustry-wayland
-    blackbox-terminal
-  ];
+  home.packages = with pkgs; [ numbat ];
 
   xdg = {
     enable = true;

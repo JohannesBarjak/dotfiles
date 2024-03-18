@@ -34,10 +34,24 @@
     enableNushellIntegration = true;
   };
 
-  programs.wezterm = {
+  programs.alacritty = {
     enable = true;
 
-    extraConfig = (builtins.readFile ./wezterm.lua);
+    settings = {
+      import = [ "${pkgs.alacritty-theme}/gruvbox_material.toml" ];
+
+      font = {
+        normal.family = "Cousine Nerd Font Mono";
+        normal.style = "Regular";
+
+        size = 11;
+      };
+
+      window.opacity = 0.8;
+      scrolling.history = 500;
+
+      colors.transparent_background_colors = true;
+    };
   };
 
   # Add extra lsp's for helix
