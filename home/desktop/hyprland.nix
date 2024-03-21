@@ -13,6 +13,7 @@
       "$filemanager" = "nautilus";
 
       "$swayosd" = "${pkgs.swayosd}/bin/swayosd-client";
+      "$grimblast" = "${pkgs.grimblast}/bin/grimblast";
 
       general = {
         gaps_in = 3;
@@ -20,8 +21,8 @@
         border_size = 2;
 
         # Set border colors.
-        "col.active_border" = "rgb(928374)";
-        "col.inactive_border" = "rgba(595959aa)";
+        "col.active_border" = "rgb(a89984)";
+        "col.inactive_border" = "rgb(665c54)";
 
         layout = "dwindle";
       };
@@ -36,7 +37,14 @@
         ", XF86MonBrightnessUp, exec, $swayosd --brightness raise"
         ", XF86MonBrightnessDown, exec, $swayosd --brightness lower"
 
+        ", Print, exec, $grimblast save output"
         "$mod, L, exec, swaylock -f"
+        ", Caps_Lock, exec, $swayosd --caps-lock-led input0::capslock"
+
+        "$mod, P, exec, $grimblast save active"
+        "$mod SHIFT, P, exec, $grimblast save area"
+        "$mod ALT, P, exec, $grimblast save output"
+        "$mod CTRL, P, exec, $grimblast save screen"
 
         # Set a few useful bindings.
         "$mod, Q, exec, $terminal"
