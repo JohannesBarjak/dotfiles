@@ -35,8 +35,12 @@
     style.name = "kvantum";
   };
 
-  # xdg.configFile."Kvantum/Gruvbox-Dark-Green" = {
-  #   source = ./Gruvbox-Dark-Green;
-  #   recursive = true;
-  # };
+  xdg.configFile."Kvantum" = {
+    source = builtins.fetchGit {
+      url = "https://github.com/theglitchh/Gruvbox-Kvantum.git";
+      rev = "be75efd4d4a13589fb411e679498943b2dd2380f";
+    };
+
+    recursive = true;
+  };
 }

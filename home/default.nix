@@ -5,9 +5,9 @@
 
   imports = [
     ./apps
-    ./theming
     ./terminal
     ./desktop
+    ./theming.nix
   ];
 
   home.packages = with pkgs; [ numbat ];
