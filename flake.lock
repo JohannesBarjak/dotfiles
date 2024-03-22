@@ -7,11 +7,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1710423955,
-        "narHash": "sha256-6N/65EqYVqCaz5SVoPMx2HgA+DJZAlw5lW+U9VHSSbE=",
+        "lastModified": 1711122977,
+        "narHash": "sha256-EnHux7wf7/7r+YMv8d/Ym1OTllp4sqqq0Bws1a4s2Zo=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "587719494ed18a184c98c4d55dde9469af4446bf",
+        "rev": "19b87b9ae6ecfd81104a2a36ef8364f1de1b54b1",
         "type": "github"
       },
       "original": {
@@ -20,13 +20,25 @@
         "type": "github"
       }
     },
+    "hosts": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-XsyryeG974cBS4QBXtFWToMZbq4q80UUr20K3YKoNvw=",
+        "type": "file",
+        "url": "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts"
+      }
+    },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1710272261,
-        "narHash": "sha256-g0bDwXFmTE7uGDOs9HcJsfLFhH7fOsASbAuOzDC+fhQ=",
+        "lastModified": 1711001935,
+        "narHash": "sha256-URtGpHue7HHZK0mrHnSf8wJ6OmMKYSsoLmJybrOLFSQ=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "0ad13a6833440b8e238947e47bea7f11071dc2b2",
+        "rev": "20f77aa09916374aa3141cbc605c955626762c9a",
         "type": "github"
       },
       "original": {
@@ -39,6 +51,7 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
+        "hosts": "hosts",
         "nixpkgs": "nixpkgs"
       }
     }
