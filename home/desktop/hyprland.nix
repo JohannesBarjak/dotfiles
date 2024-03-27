@@ -29,6 +29,12 @@
 
       dwindle.preserve_split = true;
 
+      group = {
+        "col.border_active" = "rgb(8ec07c)";
+        "col.border_inactive" = "rgb(689d6a)";
+        groupbar.enabled = false;
+      };
+
       bind = [
         # Set audio and mic mute keybindings.
         ", XF86AudioMute, exec, $swayosd --output-volume mute-toggle"
@@ -56,6 +62,10 @@
         "$mod, F, fullscreen"
         "$mod, V, togglefloating,"
         "$mod, Z, layoutmsg, togglesplit"
+
+        "$mod, T, togglegroup"
+        "$mod, J, changegroupactive, b"
+        "$mod, K, changegroupactive, f"
 
         # Move focus with the arrow keys.
         "$mod, left, movefocus, l"
