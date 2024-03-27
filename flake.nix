@@ -11,7 +11,7 @@
     };
 
     hosts = {
-      url = "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts";
+      url = "https://big.oisd.nl/domainswild";
       flake = false;
     };
   };
