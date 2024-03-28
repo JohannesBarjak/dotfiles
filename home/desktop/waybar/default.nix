@@ -1,4 +1,4 @@
-{...}: { # Enable and configure waybar
+{config, pkgs, ...}: {
   programs.waybar = {
     enable = true;
     style = ./style.css;
@@ -64,25 +64,25 @@
         "custom/quit" = {
           format = "󰗼";
           tooltip = false;
-          on-click = "hyprctl dispatch exit";
+          on-click = "${pkgs.hyprland}/bin/hyprctl dispatch exit";
         };
 
         "custom/lock" = {
           format = "󰍁";
           tooltip = false;
-          on-click = "swaylock";
+          on-click = "${config.programs.swaylock.package}/bin/swaylock";
         };
 
         "custom/reboot" = {
           format = "󰜉";
           tooltip = false;
-          on-click = "reboot";
+          on-click = "${pkgs.systemd}/bin/systemctl reboot";
         };
 
         "custom/power" = {
           format = "";
           tooltip = false;
-          on-click = "shutdown now";
+          on-click = "${pkgs.systemd}/bin/systemctl poweroff";
         };
       };
     };
