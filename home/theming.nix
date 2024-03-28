@@ -37,8 +37,8 @@
 
   xdg.configFile."Kvantum" = {
     source = builtins.fetchGit {
-      url = "https://github.com/theglitchh/Gruvbox-Kvantum.git";
-      rev = "be75efd4d4a13589fb411e679498943b2dd2380f";
+      url = "https://github.com/sachnr/gruvbox-kvantum-themes.git";
+      rev = "f47670be407c1f07c64890ad53884ee9977a7db1";
     };
 
     recursive = true;
