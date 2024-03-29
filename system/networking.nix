@@ -1,9 +1,16 @@
 {pkgs, hosts, ...}: {
-  # Enable networking
-  networking.networkmanager.enable = true;
-  networking.hostName = "nixos"; # Define your hostname.
+  networking = {
+    networkmanager.enable = true;
+    hostName = "nixos";
 
-  networking.nameservers = [ "127.0.0.1" "::1" ];
+    nameservers = [ "127.0.0.1" "::1" ];
+
+    # Disable /etc/resolv.conf hooks.
+    dhcpcd.extraConfig = "nohook resolv.conf";
+    networkmanager.dns = "none";
+  };
+
+  services.resolved.enable = false;
 
   services.dnscrypt-proxy2 = {
     enable = true;
