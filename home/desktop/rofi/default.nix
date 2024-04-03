@@ -5,7 +5,7 @@
     package = pkgs.rofi-wayland;
 
     theme = (import ./gruvbox.nix { inherit config; });
-    font = "Fira Code Medium 12";
+    font = "Cousine Nerd Font Propo";
 
     extraConfig = {
       show-icons = true;
