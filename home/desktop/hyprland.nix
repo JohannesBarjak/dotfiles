@@ -8,7 +8,7 @@
       "$mod" = "SUPER";
       "$menu" = "rofi -show drun";
 
-      "$terminal" = "sh -c 'alacritty msg create-window || alacritty'";
+      "$terminal" = "${config.programs.wezterm.package}/bin/wezterm";
       "$browser" = "firefox";
       "$filemanager" = "nautilus";
 

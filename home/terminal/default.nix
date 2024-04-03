@@ -1,4 +1,6 @@
 {pkgs, ...}: {
+  home.packages = with pkgs; [ nil marksman taplo ];
+
   programs.nushell = {
     enable = true;
 
@@ -34,28 +36,11 @@
     enableNushellIntegration = true;
   };
 
-  programs.alacritty = {
+  programs.wezterm = {
     enable = true;
 
-    settings = {
-      import = [ "${pkgs.alacritty-theme}/gruvbox_material.toml" ];
-
-      font = {
-        normal.family = "Cousine Nerd Font Mono";
-        normal.style = "Regular";
-
-        size = 11;
-      };
-
-      window.opacity = 0.8;
-      scrolling.history = 500;
-
-      colors.transparent_background_colors = true;
-    };
+    extraConfig = builtins.readFile ./wezterm.lua;
   };
-
-  # Add extra lsp's for helix
-  home.packages = with pkgs; [ nil marksman ];
 
   programs.helix = {
     enable = true;
