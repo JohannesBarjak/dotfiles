@@ -1,53 +1,63 @@
-*   { padding: 0em
-    ; transition-duration: 0s
-    ; margin: 0em
-    ; font-family: 'FiraCode Nerd Font Propo' /* Proportional fonts are better in this situation */
-    ; font-size: 11pt
-    ; font-weight: bold
-    }
+* {
+  padding: 0em;
+  transition-duration: 0s;
+  margin: 0em;
 
-window#waybar
-    { background-color: rgba(29, 32, 33, 0.80)
-    ; border-radius: 2em
-    ; padding: 0.2em
-    }
+  /* Proportional fonts are better for waybar */
+  font-family: 'FiraCode Nerd Font Propo';
+  font-size: 11pt;
+  font-weight: bold;
+}
 
-#workspaces { margin-left: 0.5em }
+window#waybar {
+  background-color: rgba(29, 32, 33, 0.72);
+  border-radius: 2em;
+  padding: 0.2em;
+}
 
-#workspaces button
-    { margin: 0.3em 0.2em
-    ; background: transparent
-    }
+#workspaces {
+  margin-left: 0.5em;
+}
 
-#workspaces button label
-    { padding: 0.2em 0.5em
-    ; color: #ebdbb2
-    ; border-radius: 0.5em
-    ; background-color: #1d2021
-    ; font-weight: normal
-    }
+#workspaces button {
+  margin: 0.3em 0.2em;
+  background: transparent;
+}
+
+#workspaces button label {
+  padding: 0.2em 0.5em;
+  color: #ebdbb2;
+  border-radius: 0.5em;
+  background-color: rgba(29, 32, 33, 0.65);
+  font-weight: normal;
+}
 
 #workspaces button.visible label,
-#workspaces button.focused label
-    { background-color: #3c3836
-    ; color: #ebdbb2
-    }
+#workspaces button.focused label {
+  background-color: rgba(60, 56, 54, 0.65);
+  color: #ebdbb2;
+}
 
 #clock,
 #network,
 #idle_inhibitor,
 #battery,
-#group-power
-    { background-color: #1d2021
-    ; padding: 0em 0.5em
-    ; margin: 0.3em 0.25em
-    ; border-radius: 0.5em
-    ; color: #ebdbb2
-    }
+#group-power {
+  background-color: rgba(29, 32, 33, 0.65);
+  padding: 0em 0.5em;
+  margin: 0.3em 0.25em;
+  border-radius: 0.5em;
+  color: #ebdbb2;
+}
 
-#group-power { margin-right: 0.5em }
+#group-power {
+  margin-right: 0.5em;
+}
 
 #custom-power,
 #custom-quit,
 #custom-lock,
-#custom-reboot { margin: 0em 0.3em }
+#custom-reboot {
+  margin: 0em 0.3em;
+  padding: 0em 0.3em;
+}
