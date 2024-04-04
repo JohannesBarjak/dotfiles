@@ -1,5 +1,8 @@
 {pkgs, ...}: {
-  home.packages = with pkgs; [ nil marksman taplo ];
+  home.packages = with pkgs; [
+    nil marksman taplo
+    vscode-langservers-extracted
+  ];
 
   programs.nushell = {
     enable = true;
