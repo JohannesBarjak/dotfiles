@@ -44,7 +44,7 @@ window#waybar {
 #battery,
 #group-power {
   background-color: rgba(29, 32, 33, 0.65);
-  padding: 0em 0.5em;
+  padding: 0.2em 0.5em;
   margin: 0.3em 0.25em;
   border-radius: 0.5em;
   color: #ebdbb2;

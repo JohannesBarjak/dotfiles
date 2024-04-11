@@ -17,8 +17,6 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
-
   boot.kernelParams = [ "quiet" "loglevel=3" "nowatchdog" ];
 
   boot.extraModprobeConfig = ''
@@ -130,7 +128,6 @@
   # List services that you want to enable:
 
   # Power management.
-  services.tlp.enable = true;
   services.thermald.enable = true;
   services.ananicy.enable = true;
 
