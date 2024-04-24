@@ -22,6 +22,7 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.systemd-boot.memtest86.enable = true;
 
   boot.kernelParams = [ "quiet" "loglevel=3" "nowatchdog" ];
 
@@ -50,6 +51,8 @@
   #Enable bluetooth.
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = false;
+
+  hardware.enableAllFirmware = true;
 
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
