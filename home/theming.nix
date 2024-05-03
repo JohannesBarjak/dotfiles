@@ -1,7 +1,5 @@
 {pkgs, ...}: {
-  home.packages = with pkgs; [
-    gradience adw-gtk3
-  ];
+  home.packages = with pkgs; [ adw-gtk3 ];
 
   # Set gtk theme to Gruvbox and Numix Circle.
   gtk = {
@@ -20,18 +18,20 @@
 
   # Cursor theme.
   home.pointerCursor = {
-    gtk.enable = true;
-    x11.enable = true;
+    name = "Adwaita";
+    package = pkgs.gnome.adwaita-icon-theme;
+    size = 24;
 
-    name = "Numix-Cursor";
-    package = pkgs.numix-cursor-theme;
-    size = 16;
+    x11 = {
+      enable = true;
+      defaultCursor = "Adwaita";
+    };
   };
 
   qt = {
     enable = true;
 
-    platformTheme = "qtct";
+    platformTheme.name = "qtct";
     style.name = "kvantum";
   };
 

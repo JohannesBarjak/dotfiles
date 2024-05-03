@@ -8,7 +8,7 @@
       "$mod" = "SUPER";
       "$menu" = "rofi -show drun";
 
-      "$terminal" = "${config.programs.wezterm.package}/bin/wezterm";
+      "$terminal" = "${config.programs.kitty.package}/bin/kitty --single-instance";
       "$browser" = "firefox";
       "$filemanager" = "nautilus";
 

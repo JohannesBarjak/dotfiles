@@ -24,12 +24,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.systemd-boot.memtest86.enable = true;
 
-  boot.kernelParams = [ "quiet" "loglevel=3" "nowatchdog" ];
-
-  boot.extraModprobeConfig = ''
-    blacklist iTCO_wdt
-    blacklist sp5100_tco
-  '';
+  boot.kernelParams = [ "quiet" "loglevel=3" ];
 
   boot.initrd.systemd.enable = true;
 
@@ -40,13 +35,11 @@
     themePackages = with pkgs; [ (adi1090x-plymouth-themes.override { selected_themes = [ "cross_hud" ]; }) ];
   };
 
-  fileSystems."/".options = [ "compress-force=zstd:2" "autodefrag" "noatime" ];
+  fileSystems."/".options = [ "compress-force=lzo" "noatime" ];
 
   # Enable opengl.
   hardware.opengl.enable = true;
   hardware.opengl.driSupport32Bit = true;
-
-  hardware.opengl.extraPackages = with pkgs; [ intel-media-driver ];
 
   #Enable bluetooth.
   hardware.bluetooth.enable = true;
@@ -99,7 +92,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    wl-clipboard
+    wl-clipboard glib
     lean4
 
     ppsspp-sdl-wayland pcsx2
@@ -128,21 +121,13 @@
       ( nerdfonts.override { fonts = [ "FiraCode" "Cousine" ]; })
     ];
 
-    fontconfig = {
-      enable = true;
-      subpixel.rgba = "rgb";
-    };
+    fontconfig.enable = true;
   };
 
   # List services that you want to enable:
 
   # Power management.
-  services.thermald.enable = true;
   services.ananicy.enable = true;
-
-  # Add VirtualBox.
-  virtualisation.virtualbox.host.enable = true;
-  users.extraGroups.vboxusers.members = [ "johannes" ];
 
   systemd.services.NetworkManager-wait-online.enable = false;
   services.journald.extraConfig = "SystemMaxUse=50M";

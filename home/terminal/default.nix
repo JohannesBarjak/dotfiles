@@ -45,6 +45,15 @@
     extraConfig = builtins.readFile ./wezterm.lua;
   };
 
+  programs.kitty = {
+    enable = true;
+
+    theme = "Gruvbox Material Dark Medium";
+    settings = {
+      background_opacity = "0.7";
+    };
+  };
+
   programs.helix = {
     enable = true;
     defaultEditor = true;
