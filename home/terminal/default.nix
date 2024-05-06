@@ -24,7 +24,10 @@
       options.syntax-theme = "gruvbox-dark";
     };
 
-    extraConfig.pull.rebase = true;
+    extraConfig = {
+      pull.rebase = true;
+      http.postBuffer = 10485760; # Set git file size limit in bytes.
+    };
   };
 
   # Carapace completes command arguments.
