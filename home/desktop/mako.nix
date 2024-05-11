@@ -4,7 +4,7 @@
 
     # Colors and round borders.
     borderRadius = 5;
-    backgroundColor = "#282828df";
+    backgroundColor = "#282828";
     textColor = "#ebdbb2";
     borderColor = "#ebdbb2";
 

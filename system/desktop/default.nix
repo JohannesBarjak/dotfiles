@@ -1,7 +1,11 @@
 {pkgs, ...}: {
   imports = [ ./display-manager.nix ];
 
-  programs.hyprland.enable = true;
+  programs.sway = {
+    enable = true;
+    wrapperFeatures.gtk = true;
+  };
+
   programs.waybar.enable = true;
 
   xdg.portal = {

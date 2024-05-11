@@ -44,9 +44,7 @@
 
   programs.kitty = {
     enable = true;
-
     theme = "Gruvbox Material Dark Medium";
-    settings.background_opacity = "0.7";
 
     font = {
       name = "FiraCode Nerd Font Mono";

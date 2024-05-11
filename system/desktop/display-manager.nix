@@ -1,9 +1,9 @@
-{pkgs, ...}: let cmd = "dbus-run-session Hyprland &> /dev/null"; in {
+{pkgs, ...}: let cmd = "dbus-run-session sway &> /dev/null"; in {
   services.greetd = {
     enable = true;
 
     settings = {
-      # Autologin into hyprland.
+      # Autologin into sway.
       initial_session = {
         user = "johannes";
         command = cmd;

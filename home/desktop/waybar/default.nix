@@ -6,7 +6,7 @@
     settings = {
       mainBar = {
         layer = "top";
-        modules-left = [ "hyprland/workspaces" ];
+        modules-left = [ "sway/workspaces" ];
         modules-center = [ "clock#2" ];
         modules-right = [ "network" "battery" "idle_inhibitor" "clock#1" "group/group-power" ];
 
@@ -64,7 +64,7 @@
         "custom/quit" = {
           format = "󰗼";
           tooltip = false;
-          on-click = "${pkgs.hyprland}/bin/hyprctl dispatch exit";
+          on-click = "${config.wayland.windowManager.sway.package}/bin/sway exit";
         };
 
         "custom/lock" = {

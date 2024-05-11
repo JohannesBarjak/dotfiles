@@ -10,7 +10,7 @@
 }
 
 window#waybar {
-  background-color: rgba(29, 32, 33, 0.72);
+  background-color: #282828;
   border-radius: 2em;
   padding: 0.2em;
 }
@@ -28,13 +28,13 @@ window#waybar {
   padding: 0.2em 0.5em;
   color: #ebdbb2;
   border-radius: 0.5em;
-  background-color: rgba(29, 32, 33, 0.65);
+  background-color: #1d2021;
   font-weight: normal;
 }
 
 #workspaces button.visible label,
 #workspaces button.focused label {
-  background-color: rgba(60, 56, 54, 0.65);
+  background-color: #3c3836;
   color: #ebdbb2;
 }
 
@@ -43,7 +43,7 @@ window#waybar {
 #idle_inhibitor,
 #battery,
 #group-power {
-  background-color: rgba(29, 32, 33, 0.65);
+  background-color: #1d2021;
   padding: 0.2em 0.5em;
   margin: 0.3em 0.25em;
   border-radius: 0.5em;

@@ -1,6 +1,6 @@
 {...}: {
   imports = [
-    ./hyprland.nix
+    ./sway.nix
     ./waybar
     ./swaylock.nix
     ./swayidle.nix
