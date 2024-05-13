@@ -73,5 +73,10 @@
         };
       };
     };
+
+    extraConfig = ''
+      bindgesture swipe:left workspace prev
+      bindgesture swipe:right workspace next
+    '';
   };
 }
