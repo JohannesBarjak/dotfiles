@@ -38,8 +38,12 @@
   fileSystems."/".options = [ "compress-force=lzo" "noatime" ];
 
   # Enable opengl.
-  hardware.opengl.enable = true;
-  hardware.opengl.driSupport32Bit = true;
+  hardware.opengl = {
+    enable = true;
+
+    driSupport = true;
+    driSupport32Bit = true;
+  };
 
   #Enable bluetooth.
   hardware.bluetooth.enable = true;

@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    nil marksman taplo
+    nil marksman taplo lua-language-server
     vscode-langservers-extracted
   ];
 
