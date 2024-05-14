@@ -1,5 +1,6 @@
-{config, ...}: {
+{config, lib, pkgs, ...}: {
   imports = [ ./wallpapers ];
+  home.packages = [ pkgs.libnotify ];
 
   wayland.windowManager.sway = {
     enable = true;
@@ -31,6 +32,10 @@
       bars = [];
       startup = [{ command = "waybar"; }];
       defaultWorkspace = "workspace number 1";
+
+      keybindings = lib.mkOptionDefault {
+        "XF86AudioMute" = "exec ${pkgs.nushellFull}/bin/nu ${./sway/volume.nu} --toggle=mute";
+      };
 
       colors = let
           bg0 = "#1d2021"; bg = "#282828";
