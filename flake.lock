@@ -23,7 +23,7 @@
     "hosts": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-ztzDKakeLv+NKTZBPB11BrB16qQZNjpQq6414joaHaM=",
+        "narHash": "sha256-TNbTxSs1M1HZ70gihQdpdDJK2YV+jusBa9Qor6J+JNM=",
         "type": "file",
         "url": "https://big.oisd.nl/domainswild"
       },
