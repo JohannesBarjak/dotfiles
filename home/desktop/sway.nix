@@ -35,6 +35,8 @@
 
       keybindings = lib.mkOptionDefault {
         "XF86AudioMute" = "exec ${pkgs.nushellFull}/bin/nu ${./sway/volume.nu} --toggle=mute";
+        "XF86AudioRaiseVolume" = "exec ${pkgs.nushellFull}/bin/nu ${./sway/volume.nu} --inc";
+        "XF86AudioLowerVolume" = "exec ${pkgs.nushellFull}/bin/nu ${./sway/volume.nu} --dec";
       };
 
       colors = let
