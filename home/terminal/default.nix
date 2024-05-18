@@ -1,9 +1,58 @@
 {pkgs, ...}: {
+  imports = [ ./editors.nix ];
+
   home.packages = with pkgs; [
-    nil marksman taplo lua-language-server
+    nil marksman taplo
+    nodePackages.bash-language-server shellcheck
     vscode-langservers-extracted
   ];
 
+  # Main text editor.
+  programs.helix = {
+    enable = true;
+    defaultEditor = true;
+
+    settings = {
+      theme = "gruvbox";
+
+      editor = {
+        line-number = "relative";
+
+        cursor-shape = {
+          insert = "bar";
+          normal = "block";
+          select = "underline";
+        };
+      };
+
+      keys = {
+        normal = {
+          "H" = [ "select_mode" "goto_line_start" "exit_select_mode" ];
+          "L" = [ "select_mode" "goto_line_end" "exit_select_mode" ];
+        };
+
+
+        select = {
+          "H" = [ "goto_line_start" ];
+          "L" = [ "goto_line_end" ];
+        };
+      };
+    };
+  };
+
+  # Default terminal.
+  programs.kitty = {
+    enable = true;
+    theme = "Gruvbox Material Dark Medium";
+
+    font = {
+      name = "FiraCode Nerd Font Mono";
+      package = (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; });
+      size = 10.5;
+    };
+  };
+
+  # Default shell.
   programs.nushell = {
     enable = true;
 
@@ -40,27 +89,6 @@
   programs.starship = {
     enable = true;
     enableNushellIntegration = true;
-  };
-
-  programs.kitty = {
-    enable = true;
-    theme = "Gruvbox Material Dark Medium";
-
-    font = {
-      name = "FiraCode Nerd Font Mono";
-      package = (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; });
-      size = 10.5;
-    };
-  };
-
-  programs.helix = {
-    enable = true;
-    defaultEditor = true;
-
-    settings = {
-      theme = "gruvbox";
-      editor.line-number = "relative";
-    };
   };
 
   programs.btop = {
