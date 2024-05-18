@@ -24,19 +24,6 @@
           select = "underline";
         };
       };
-
-      keys = {
-        normal = {
-          "H" = [ "select_mode" "goto_line_start" "exit_select_mode" ];
-          "L" = [ "select_mode" "goto_line_end" "exit_select_mode" ];
-        };
-
-
-        select = {
-          "H" = [ "goto_line_start" ];
-          "L" = [ "goto_line_end" ];
-        };
-      };
     };
   };
 
