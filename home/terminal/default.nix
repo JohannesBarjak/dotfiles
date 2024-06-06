@@ -99,4 +99,14 @@
     enable = true;
     config.theme = "gruvbox-dark";
   };
+
+  programs.newsboat = {
+    enable = true;
+
+    urls = [
+      { tags = [ "haskell" "functional programming" ];
+        url = "https://planet.haskell.org/rss20.xml";
+      }
+    ];
+  };
 }
