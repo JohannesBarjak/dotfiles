@@ -87,7 +87,7 @@
     description = "Johannes";
     extraGroups = [ "networkmanager" "wheel" "video" ];
     packages = [];
-    shell = pkgs.nushellFull;
+    shell = pkgs.nushell;
   };
 
   # Allow unfree packages

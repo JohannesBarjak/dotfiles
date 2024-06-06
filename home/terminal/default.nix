@@ -43,7 +43,7 @@
   programs.nushell = {
     enable = true;
 
-    package = pkgs.nushellFull;
+    package = pkgs.nushell;
     extraConfig = "$env.config = { show_banner: false, edit_mode: vi }"; # Removes annoying welcome message.
   };
 
