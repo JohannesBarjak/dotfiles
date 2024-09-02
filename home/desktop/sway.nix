@@ -30,7 +30,11 @@
       };
 
       bars = [];
-      startup = [{ command = "waybar"; }];
+      startup = [
+        { command = "waybar"; }
+        { command = "swayidle"; }
+      ];
+
       defaultWorkspace = "workspace number 1";
 
       keybindings = lib.mkOptionDefault {
