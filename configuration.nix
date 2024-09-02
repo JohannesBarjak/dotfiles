@@ -95,7 +95,6 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     wl-clipboard glib
-    lean4
 
     ppsspp-sdl-wayland pcsx2
     bsnes-hd mgba melonDS
