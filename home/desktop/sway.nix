@@ -15,6 +15,8 @@
           tap = "enabled";
           dwt = "disabled";
         };
+
+        "*".xkb_options = "compose:ralt";
       };
 
       output = {
