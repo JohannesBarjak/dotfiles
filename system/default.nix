@@ -6,5 +6,6 @@
     ./desktop
     ./networking.nix
     ./flatpak-workaround.nix
+    ./tlp.nix
   ];
 }
