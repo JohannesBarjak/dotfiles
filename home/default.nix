@@ -36,5 +36,10 @@
     };
   };
 
+  # Compose file.
+  home.file.".XCompose" = {
+    source = ./XCompose;
+  };
+
   home.stateVersion = "23.11";
 }
