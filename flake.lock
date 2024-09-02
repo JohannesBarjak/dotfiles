@@ -20,18 +20,6 @@
         "type": "github"
       }
     },
-    "hosts": {
-      "flake": false,
-      "locked": {
-        "narHash": "sha256-gZ76rwlNVE1fTLYEztroECYUmpEyYkIWXBauLJuzNVk=",
-        "type": "file",
-        "url": "https://big.oisd.nl/domainswild"
-      },
-      "original": {
-        "type": "file",
-        "url": "https://big.oisd.nl/domainswild"
-      }
-    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1719848872,
@@ -51,7 +39,6 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
-        "hosts": "hosts",
         "nixpkgs": "nixpkgs"
       }
     }

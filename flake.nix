@@ -9,18 +9,12 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    hosts = {
-      url = "https://big.oisd.nl/domainswild";
-      flake = false;
-    };
   };
 
-  outputs = { nixpkgs, home-manager, hosts, ... }: {
+  outputs = { nixpkgs, home-manager, ... }: {
     nixosConfigurations = {
       nixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = { inherit hosts; };
 
         modules = [
           ./configuration.nix
