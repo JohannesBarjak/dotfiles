@@ -10,7 +10,7 @@
     ./theming.nix
   ];
 
-  home.packages = with pkgs; [ numbat ];
+  home.packages = with pkgs; [ numbat wineWow64Packages.waylandFull ];
 
   xdg = {
     enable = true;
@@ -40,6 +40,8 @@
   home.file.".XCompose" = {
     source = ./XCompose;
   };
+
+  services.poweralertd.enable = true;
 
   home.stateVersion = "23.11";
 }
