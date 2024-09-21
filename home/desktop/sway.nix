@@ -43,6 +43,8 @@
         "XF86AudioMute" = "exec ${config.programs.nushell.package}/bin/nu ${./sway/volume.nu} --toggle=mute";
         "XF86AudioRaiseVolume" = "exec ${config.programs.nushell.package}/bin/nu ${./sway/volume.nu} --inc";
         "XF86AudioLowerVolume" = "exec ${config.programs.nushell.package}/bin/nu ${./sway/volume.nu} --dec";
+        "XF86MonBrightnessUp" = "exec ${pkgs.brightnessctl}/bin/brightnessctl set 5%+";
+        "XF86MonBrightnessDown" = "exec ${pkgs.brightnessctl}/bin/brightnessctl set 5%-";
       };
 
       colors = let
