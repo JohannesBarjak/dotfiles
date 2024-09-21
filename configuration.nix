@@ -128,7 +128,16 @@
   # List services that you want to enable:
 
   # Power management.
+  services.upower = {
+    enable = true;
+
+    criticalPowerAction = "PowerOff";
+    percentageCritical = 5;
+    percentageAction = 4;
+  };
+
   services.ananicy.enable = true;
+  security.polkit.enable = true;
 
   systemd.services.NetworkManager-wait-online.enable = false;
   services.journald.extraConfig = "SystemMaxUse=50M";
