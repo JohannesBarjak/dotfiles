@@ -1,8 +1,8 @@
-{config, lib, ...}: {
+{lib, ...}: {
   options.wallpaper = {
     path = lib.mkOption {
       type = lib.types.path;
-      default = ./Tranquility.png;
+      default = ./secluded-grove-pixel.png;
 
       description = "This option stores which wallpaper to use";
     };
