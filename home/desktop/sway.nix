@@ -4,6 +4,7 @@
 
   wayland.windowManager.sway = {
     enable = true;
+    systemd.enable = true;
 
     config = {
       menu = "${config.programs.rofi.package}/bin/rofi -show drun";
@@ -33,8 +34,9 @@
 
       bars = [];
       startup = [
-        { command = "waybar"; }
-        { command = "swayidle"; }
+        { command = "${pkgs.mate.mate-polkit}/libexec/polkit-mate-authentication-agent-1"; }
+        { command = "${pkgs.dbus}/bin/dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP"; }
+        { command = "${pkgs.systemd}/bin/systemctl --user import-environment WAYLAND_DISPLAY DISPLAY DBUS_SESSION_BUS_ADDRESS SWAYSOCK"; }
       ];
 
       defaultWorkspace = "workspace number 1";
