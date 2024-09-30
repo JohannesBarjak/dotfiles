@@ -3,6 +3,7 @@
 
   home.packages = with pkgs; [
     nil marksman taplo
+    typst typst-lsp
     nodePackages.bash-language-server shellcheck
     vscode-langservers-extracted
   ];
@@ -65,6 +66,10 @@
       http.postBuffer = 10485760; # Set git file size limit in bytes.
     };
   };
+
+  # Terminal document viewers.
+  programs.zathura.enable = true;
+  programs.sioyek.enable = true;
 
   # Carapace completes command arguments.
   programs.carapace = {
