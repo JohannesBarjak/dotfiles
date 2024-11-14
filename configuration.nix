@@ -7,7 +7,7 @@
 
   # Enable flakes.
   nix = {
-    package = pkgs.nixFlakes;
+    package = pkgs.nixVersions.stable;
     extraOptions = "experimental-features = nix-command flakes";
   };
 
@@ -85,7 +85,6 @@
     description = "Johannes";
     extraGroups = [ "networkmanager" "wheel" "video" ];
     packages = [];
-    shell = pkgs.nushell;
   };
 
   # Allow unfree packages
@@ -101,10 +100,18 @@
     dosbox-x _86Box
 
     keepassxc
+    ryzenadj
+    tauon
   ];
 
+  hardware.cpu.amd.ryzen-smu.enable = true;
+  programs.corectrl = {
+    enable = true;
+    gpuOverclock.enable = true;
+  };
+
   environment.sessionVariables = {
-    TERMINAL = "alacritty";
+    TERMINAL = "kitty";
     EDITOR = "hx";
     QT_STYLE_OVERRIDE = "kvantum";
   };
@@ -112,11 +119,13 @@
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
 
+  virtualisation.vmware.host.enable = true;
+
   # Configure fonts.
   fonts = {
     packages = with pkgs; [
       noto-fonts
-      noto-fonts-cjk
+      noto-fonts-cjk-sans
       noto-fonts-emoji
 
       ( nerdfonts.override { fonts = [ "FiraCode" "Cousine" ]; })
@@ -124,6 +133,8 @@
 
     fontconfig.enable = true;
   };
+
+  programs.ydotool.enable = true;
 
   # List services that you want to enable:
 
@@ -154,5 +165,5 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "23.11"; # Did you read the comment?
+  system.stateVersion = "24.05"; # Did you read the comment?
 }

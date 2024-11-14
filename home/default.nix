@@ -10,7 +10,11 @@
     ./theming.nix
   ];
 
-  home.packages = with pkgs; [ numbat wineWow64Packages.waylandFull ];
+  home.packages = with pkgs; [
+    numbat
+    wineWow64Packages.waylandFull
+    jamesdsp bluetuith
+  ];
 
   xdg = {
     enable = true;
@@ -42,6 +46,9 @@
   };
 
   services.poweralertd.enable = true;
+  services.mpris-proxy.enable = true;
+
+  programs.mpv.enable = true;
 
   home.stateVersion = "23.11";
 }

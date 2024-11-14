@@ -1,11 +1,12 @@
-{pkgs, ...}: {
+{pkgs, config, ...}: {
   imports = [ ./editors.nix ];
 
   home.packages = with pkgs; [
-    nil marksman taplo
+    nil markdown-oxide taplo
     typst typst-lsp
     nodePackages.bash-language-server shellcheck
     vscode-langservers-extracted
+    gitu
   ];
 
   # Main text editor.
@@ -38,6 +39,8 @@
       package = (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; });
       size = 10.5;
     };
+
+    settings.shell = "${config.programs.nushell.package}/bin/nu";
   };
 
   # Default shell.
@@ -103,6 +106,15 @@
   programs.bat = {
     enable = true;
     config.theme = "gruvbox-dark";
+  };
+
+  programs.hexchat = {
+    enable = true;
+    theme = pkgs.fetchzip {
+      url = "https://dl.hexchat.net/themes/Zenburn.hct#Zenburn.zip";
+      sha256 = "sha256-VIv+IeCwq+jq+F5yyz5J3CSCvQaNh07uc81kVNMqxsY=";
+      stripRoot = false;
+    };
   };
 
   programs.newsboat = {
