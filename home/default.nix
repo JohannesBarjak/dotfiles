@@ -14,6 +14,7 @@
     numbat
     wineWow64Packages.waylandFull
     jamesdsp bluetuith
+    gnome-disk-utility ventoy-full
   ];
 
   xdg = {

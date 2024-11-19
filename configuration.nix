@@ -146,6 +146,7 @@
     percentageCritical = 5;
     percentageAction = 4;
   };
+  services.udisks2.enable = true;
 
   services.ananicy.enable = true;
   security.polkit.enable = true;
