@@ -6,6 +6,9 @@
     enable = true;
     systemd.enable = true;
 
+    package = pkgs.swayfx;
+    checkConfig = false;
+
     config = {
       menu = "${config.programs.rofi.package}/bin/rofi -show drun";
       terminal = "${config.programs.kitty.package}/bin/kitty --single-instance";
@@ -94,6 +97,7 @@
     extraConfig = ''
       bindgesture swipe:left workspace prev
       bindgesture swipe:right workspace next
+      corner_radius 5
     '';
   };
 }
