@@ -98,6 +98,7 @@
       bindgesture swipe:left workspace prev
       bindgesture swipe:right workspace next
       corner_radius 5
+      blur enable
     '';
   };
 }

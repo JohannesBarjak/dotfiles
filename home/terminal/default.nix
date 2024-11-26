@@ -40,7 +40,10 @@
       size = 10.5;
     };
 
-    settings.shell = "${config.programs.nushell.package}/bin/nu";
+    settings = {
+      shell = "${config.programs.nushell.package}/bin/nu";
+      background_opacity = 0.85;
+    };
   };
 
   # Default shell.
