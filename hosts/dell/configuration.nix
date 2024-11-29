@@ -29,6 +29,7 @@
     dates = "15:15";
   };
 
+  boot.initrd.systemd.enable = true;
   boot.plymouth.enable = true;
 
   networking.hostName = "nixos"; # Define your hostname.
