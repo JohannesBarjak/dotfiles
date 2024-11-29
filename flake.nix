@@ -4,6 +4,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.05";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -11,7 +12,7 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, ... }: {
+  outputs = { nixpkgs, home-manager, nixpkgs-stable, ... }: {
     nixosConfigurations.main = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
 
@@ -28,7 +29,7 @@
       ];
     };
 
-    nixosConfigurations.dell = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.dell = nixpkgs-stable.lib.nixosSystem {
       system = "x86_64-linux";
 
       modules = [
