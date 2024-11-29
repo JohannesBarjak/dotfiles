@@ -19,6 +19,9 @@
     "zswap.compressor=zstd"
     "zswap.max_pool_percent=50"
     "zswap.zpool=zsmalloc"
+
+    "quiet"
+    "loglevel=3"
   ];
 
   fileSystems."/".options = ["compress-force=lzo"];
