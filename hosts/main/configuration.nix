@@ -19,6 +19,12 @@
     options = "--delete-older-than 14d";
   };
 
+  system.autoUpgrade = {
+    enable = true;
+    dates = "daily";
+    flake = "github:JohannesBarjak/dotfiles#main";
+  };
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
