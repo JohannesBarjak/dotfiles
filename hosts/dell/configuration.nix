@@ -23,6 +23,12 @@
 
   fileSystems."/".options = ["compress-force=lzo"];
 
+  system.autoUpgrade = {
+    enable = true;
+    flake = "github:JohannesBarjak/dotfiles#dell";
+    dates = "15:15";
+  };
+
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
