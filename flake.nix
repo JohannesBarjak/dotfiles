@@ -12,22 +12,28 @@
   };
 
   outputs = { nixpkgs, home-manager, ... }: {
-    nixosConfigurations = {
-      nixos = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
+    nixosConfigurations.main = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
 
-        modules = [
-          ./configuration.nix
+      modules = [
+        ./hosts/main/configuration.nix
 
-          home-manager.nixosModules.home-manager {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.johannes = {
-              imports = [ ./home ];
-            };
-          }
-        ];
-      };
+        home-manager.nixosModules.home-manager {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.johannes = {
+            imports = [ ./hosts/main/home ];
+          };
+        }
+      ];
+    };
+
+    nixosConfigurations.dell = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+
+      modules = [
+        ./hosts/dell/configuration.nix
+      ];
     };
   };
 }

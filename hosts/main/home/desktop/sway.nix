@@ -97,7 +97,7 @@
     extraConfig = ''
       bindgesture swipe:left workspace prev
       bindgesture swipe:right workspace next
-      corner_radius 5
+      corner_radius 8
       blur enable
     '';
   };
