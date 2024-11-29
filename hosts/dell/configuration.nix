@@ -2,9 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
-
-{
+{ pkgs, ... }: {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
@@ -24,12 +22,18 @@
     "loglevel=3"
   ];
 
-  fileSystems."/".options = ["compress-force=lzo"];
+  fileSystems."/".options = [ "compress-force=lzo" ];
 
   system.autoUpgrade = {
     enable = true;
     flake = "github:JohannesBarjak/dotfiles#dell";
-    dates = "15:15";
+    dates = "monthly";
+  };
+
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 7d";
   };
 
   boot.initrd.systemd.enable = true;
