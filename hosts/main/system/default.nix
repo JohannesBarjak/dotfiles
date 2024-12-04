@@ -1,6 +1,5 @@
 {...}: {
   imports = [
-    ./zram.nix
     ./sound.nix
     ./desktop
     ./networking.nix
