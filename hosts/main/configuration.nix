@@ -123,6 +123,7 @@
     keepassxc
     ryzenadj
     tauon
+    compsize
   ];
 
   hardware.cpu.amd.ryzen-smu.enable = true;

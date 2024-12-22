@@ -16,6 +16,7 @@
     jamesdsp bluetuith
     gnome-disk-utility ventoy-full
     valent
+    musescore
   ];
 
   xdg = {
