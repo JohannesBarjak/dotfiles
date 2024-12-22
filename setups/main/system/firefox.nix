@@ -40,7 +40,5 @@
       # Enable DRM.
       EncryptedMediaExtensions.Enabled = true;
     };
-
-    preferences = { "browser.tabs.inTitlebar" = 0; };
   };
 }
