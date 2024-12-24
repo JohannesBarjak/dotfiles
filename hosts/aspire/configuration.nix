@@ -5,6 +5,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ../../setups/shared/system/firefox.nix
     ];
 
   # Bootloader.
