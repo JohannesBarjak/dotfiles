@@ -12,6 +12,20 @@
   boot.loader.grub.device = "/dev/sda";
   boot.loader.grub.useOSProber = true;
 
+  fileSystems."/".options = [ "compress-force=lzo" ];
+
+  system.autoUpgrade = {
+    enable = true;
+    flake = "github:JohannesBarjak/dotfiles#dell";
+    dates = "weekly";
+  };
+
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 7d";
+  };
+
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -77,7 +91,7 @@
   };
 
   # Enable automatic login for the user.
-  services.xserver.displayManager.autoLogin.enable = true;
+  services.displayManager.autoLogin.enable = true;
   services.xserver.displayManager.autoLogin.user = "acer";
 
   # Install firefox.
