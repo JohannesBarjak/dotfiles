@@ -16,7 +16,7 @@
 
   system.autoUpgrade = {
     enable = true;
-    flake = "github:JohannesBarjak/dotfiles#dell";
+    flake = "github:JohannesBarjak/dotfiles#aspire";
     dates = "weekly";
   };
 
