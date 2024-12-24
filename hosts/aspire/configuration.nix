@@ -13,6 +13,7 @@
   boot.loader.grub.device = "/dev/sda";
   boot.loader.grub.useOSProber = true;
 
+  boot.supportedFilesystems = [ "ntfs" ];
   fileSystems."/".options = [ "compress-force=lzo" ];
 
   system.autoUpgrade = {
