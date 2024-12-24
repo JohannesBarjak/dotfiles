@@ -37,7 +37,7 @@
       ];
     };
 
-    nixosConfigurations.aspire = nixpkgs-stable.lib.nixosSystem {
+    nixosConfigurations.aspire = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
 
       modules = [
