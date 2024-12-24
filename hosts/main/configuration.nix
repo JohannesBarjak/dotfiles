@@ -46,6 +46,7 @@
   boot.loader.systemd-boot.memtest86.enable = true;
 
   boot.kernelParams = [ "quiet" "loglevel=3" ];
+  boot.supportedFilesystems = [ "ntfs" ];
 
   boot.initrd.systemd.enable = true;
 
