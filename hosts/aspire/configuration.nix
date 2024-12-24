@@ -92,7 +92,7 @@
 
   # Enable automatic login for the user.
   services.displayManager.autoLogin.enable = true;
-  services.xserver.displayManager.autoLogin.user = "acer";
+  services.displayManager.autoLogin.user = "acer";
 
   # Install firefox.
   programs.firefox.enable = true;
