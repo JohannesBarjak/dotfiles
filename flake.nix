@@ -36,5 +36,13 @@
         ./hosts/dell/configuration.nix
       ];
     };
+
+    nixosConfigurations.aspire = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+
+      modules = [
+        ./hosts/aspire/configuration.nix
+      ];
+    };
   };
 }
