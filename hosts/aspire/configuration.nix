@@ -24,6 +24,7 @@
 
     consoleLogLevel = 0;
     initrd.verbose = false;
+    initrd.systemd.enable = true;
 
     kernelParams = [
       "quiet"
