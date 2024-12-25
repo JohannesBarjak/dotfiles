@@ -10,12 +10,14 @@
     ];
 
   # Bootloader.
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/sda";
-  boot.loader.grub.useOSProber = true;
-
   boot = {
-    loader.timeout = 0;
+    loader = {
+      grub.enable = true;
+      grub.device = "/dev/sda";
+      grub.useOSProber = true;
+
+      timeout = 0;
+    };
 
     consoleLogLevel = 0;
     initrd.verbose = false;
