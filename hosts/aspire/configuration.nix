@@ -14,11 +14,25 @@
   boot.loader.grub.device = "/dev/sda";
   boot.loader.grub.useOSProber = true;
 
-  boot.plymouth = {
-    enable = true;
+  boot = {
+    plymouth = {
+      enable = true;
 
-    theme = "cross_hud";
-    themePackages = with pkgs; [ (adi1090x-plymouth-themes.override { selected_themes = [ "cross_hud" ]; }) ];
+      theme = "cross_hud";
+      themePackages = with pkgs; [ (adi1090x-plymouth-themes.override { selected_themes = [ "cross_hud" ]; }) ];
+    };
+
+    consoleLogLevel = 0;
+    initrd.verbose = false;
+
+    kernelParams = [
+      "quiet"
+      "splash"
+      "loglevel=3"
+      "rd.udev.log_level=3"
+      "udev.log_priority=3"
+      "rd.systemd.show_status=false"
+    ];
   };
 
   boot.supportedFilesystems = [ "ntfs" ];
