@@ -29,6 +29,7 @@
       "udev.log_priority=3"
       "rd.systemd.show_status=false"
       "modprobe.blacklist=amdgpu"
+      "plymouth.use-simpledrm"
     ];
   };
 
