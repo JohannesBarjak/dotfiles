@@ -15,8 +15,6 @@
   boot.loader.grub.useOSProber = true;
 
   boot = {
-    plymouth.enable = true;
-
     consoleLogLevel = 0;
     initrd.verbose = false;
     initrd.systemd.enable = true;
@@ -29,7 +27,6 @@
       "udev.log_priority=3"
       "rd.systemd.show_status=false"
       "modprobe.blacklist=amdgpu"
-      "plymouth.use-simpledrm"
     ];
   };
 
