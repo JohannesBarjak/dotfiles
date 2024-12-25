@@ -26,6 +26,7 @@
       "rd.udev.log_level=3"
       "udev.log_priority=3"
       "rd.systemd.show_status=false"
+      "modprobe.blacklist=amdgpu"
     ];
   };
 
