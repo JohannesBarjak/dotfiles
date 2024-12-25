@@ -19,6 +19,7 @@
       timeout = 0;
     };
 
+    # Configuration for silent boot.
     consoleLogLevel = 0;
     initrd.verbose = false;
     initrd.systemd.enable = true;
