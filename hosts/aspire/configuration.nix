@@ -17,6 +17,7 @@
       grub.useOSProber = true;
 
       timeout = 0;
+      grub.timeoutStyle = "hidden";
     };
 
     # Configuration for silent boot.
