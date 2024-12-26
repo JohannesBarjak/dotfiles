@@ -31,6 +31,13 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
+  # Allow CUPS to detect wireless printing.
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    openFirewall = true;
+  };
+
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
