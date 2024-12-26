@@ -31,7 +31,7 @@
   # Enable CUPS to print documents.
   services.printing = {
     enable = true;
-    drivers = [ pkgs.hplipWithPlugin ];
+    drivers = [ pkgs.hplip ];
   };
 
   # Allow CUPS to detect wireless printing.
