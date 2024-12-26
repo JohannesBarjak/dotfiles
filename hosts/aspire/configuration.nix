@@ -16,8 +16,7 @@
       grub.device = "/dev/sda";
       grub.useOSProber = true;
 
-      timeout = 0;
-      grub.timeoutStyle = "hidden";
+      timeout = 1;
     };
 
     # Configuration for silent boot.
