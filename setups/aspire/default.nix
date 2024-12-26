@@ -29,7 +29,10 @@
   services.xserver.desktopManager.xfce.enable = true;
 
   # Enable CUPS to print documents.
-  services.printing.enable = true;
+  services.printing = {
+    enable = true;
+    drivers = [ pkgs.hplipWithPlugin ];
+  };
 
   # Allow CUPS to detect wireless printing.
   services.avahi = {
