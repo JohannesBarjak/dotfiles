@@ -96,9 +96,6 @@
 
   # List services that you want to enable:
 
-  # Enable Picom to disable tering.
-  services.picom.enable = true;
-
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
 
