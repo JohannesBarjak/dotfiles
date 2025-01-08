@@ -1,5 +1,5 @@
 # Grabbed this from 'discourse.nixos.org'.
-{ config, pkgs, ... }: {
+{ pkgs, ... }: {
   system.fsPackages = [ pkgs.bindfs ];
   fileSystems =
     let
