@@ -18,6 +18,7 @@
     valent
     musescore
     tic-80
+    mullvad-vpn
   ];
 
   xdg = {
