@@ -17,6 +17,7 @@
     gnome-disk-utility ventoy-full
     valent
     musescore
+    tic-80
   ];
 
   xdg = {
