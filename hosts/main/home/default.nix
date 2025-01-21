@@ -12,7 +12,7 @@
 
   home.packages = with pkgs; [
     numbat
-    wineWow64Packages.waylandFull
+    wineWow64Packages.waylandFull winetricks
     jamesdsp bluetuith
     gnome-disk-utility ventoy-full
     valent
