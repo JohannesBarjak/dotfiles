@@ -14,8 +14,6 @@
       # when set globally.
       settings = {
         "browser.tabs.inTitlebar" = 0;
-        "sidebar.revamp" = true;
-        "sidebar.verticalTabs" = true;
       };
     };
   };
