@@ -18,7 +18,8 @@
     valent
     musescore
     tic-80
-    mullvad-vpn tor-browser
+    mullvad-vpn
+    mullvad-browser tor-browser
   ];
 
   xdg = {
