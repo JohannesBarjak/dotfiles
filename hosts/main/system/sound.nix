@@ -1,5 +1,5 @@
 {...}: {
-  services.pulseaudio.enable = false;
+  hardware.pulseaudio.enable = false;
 
   # Enable pipewire.
   security.rtkit.enable = true;
