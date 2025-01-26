@@ -3,7 +3,7 @@
 
   home.packages = with pkgs; [
     nil markdown-oxide taplo
-    typst typst-lsp
+    typst tinymist
     nodePackages.bash-language-server shellcheck
     vscode-langservers-extracted
     gitu
@@ -36,7 +36,7 @@
 
     font = {
       name = "FiraCode Nerd Font Mono";
-      package = pkgs.nerd-fonts.fira-code;
+      package = (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; });
       size = 10.5;
     };
 

@@ -8,12 +8,12 @@
 
     home-manager = {
       url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs-stable";
     };
   };
 
   outputs = { nixpkgs, home-manager, nixpkgs-stable, ... }: {
-    nixosConfigurations.main = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.main = nixpkgs-stable.lib.nixosSystem {
       system = "x86_64-linux";
 
       modules = [
