@@ -46,6 +46,7 @@
   boot.loader.systemd-boot.memtest86.enable = true;
 
   boot.kernelParams = [ "quiet" "loglevel=3" ];
+  boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.supportedFilesystems = [ "ntfs" ];
 
   boot.initrd.systemd.enable = true;
@@ -125,6 +126,7 @@
     ryzenadj
     tauon
     compsize
+    jan
   ];
 
   hardware.cpu.amd.ryzen-smu.enable = true;
