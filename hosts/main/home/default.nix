@@ -53,6 +53,7 @@
 
   services.poweralertd.enable = true;
   services.mpris-proxy.enable = true;
+  services.opensnitch-ui.enable = true;
 
   programs.mpv.enable = true;
 
