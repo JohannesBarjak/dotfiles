@@ -18,7 +18,7 @@
     valent
     musescore
     tic-80
-    mullvad-vpn
+    mullvad-vpn opensnitch-ui
     mullvad-browser tor-browser
   ];
 
