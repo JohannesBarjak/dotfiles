@@ -5,6 +5,7 @@
   };
 
   services.mullvad-vpn.enable = true;
+  services.opensnitch.enable = true;
 
   # Add vpn.
   environment.systemPackages = [ pkgs.openvpn ];
