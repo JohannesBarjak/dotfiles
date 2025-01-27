@@ -8,8 +8,7 @@
   services.ollama = {
     enable = true;
     acceleration = "rocm";
-    
-    loadModels = [ "mistral" ];
-    rocmOverrideGfx = "gfx902";
+
+    rocmOverrideGfx = "9.0.0";
   };
 }
