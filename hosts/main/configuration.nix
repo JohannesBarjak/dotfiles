@@ -126,7 +126,7 @@
     ryzenadj
     tauon
     compsize
-    jan
+    gpt4all
   ];
 
   hardware.cpu.amd.ryzen-smu.enable = true;
