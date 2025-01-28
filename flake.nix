@@ -7,13 +7,13 @@
     nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.11";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.11";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs-stable";
     };
   };
 
   outputs = { nixpkgs, home-manager, nixpkgs-stable, ... }: {
-    nixosConfigurations.main = nixpkgs-stable.lib.nixosSystem {
+    nixosConfigurations.main = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
 
       modules = [
