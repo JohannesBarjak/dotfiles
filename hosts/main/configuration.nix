@@ -153,7 +153,8 @@
       noto-fonts-cjk-sans
       noto-fonts-emoji
 
-      (nerdfonts.override { fonts = [ "FiraCode" "Cousine" ]; })
+      nerd-fonts.fira-code
+      nerd-fonts.cousine
     ];
 
     fontconfig.enable = true;

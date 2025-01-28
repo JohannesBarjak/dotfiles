@@ -19,7 +19,7 @@
           noto-fonts-cjk-sans
           noto-fonts-emoji
 
-          ( nerdfonts.override { fonts = [ "FiraCode" ]; })
+          nerd-fonts.fira-code
         ];
 
         pathsToLink = [ "/share/fonts" "/share/icons" ];
