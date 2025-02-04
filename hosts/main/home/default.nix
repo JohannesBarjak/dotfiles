@@ -39,6 +39,26 @@
       };
     };
 
+    desktopEntries = {
+      firefox = {
+        exec = "firejail firefox --name firefox %U";
+
+        name = "Firefox";
+        genericName = "Web Browser";
+        icon = "firefox";
+
+        mimeType
+          = [ "text/html" "text/xml" "application/xhtml+xml"
+              "application/vnd.mozilla.xul+xml" "x-scheme-handler/http"
+              "x-scheme-handler/https"
+        ];
+
+        startupNotify = true;
+        terminal = false;
+        type = "Application";
+      };
+    };
+
     # Autogenerate user directories.
     userDirs = {
       enable = true;
