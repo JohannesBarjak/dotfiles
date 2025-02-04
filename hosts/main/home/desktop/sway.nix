@@ -9,10 +9,10 @@
     package = pkgs.swayfx;
     checkConfig = false;
 
-    config = {
+    config = let mod = "Mod4"; in {
       menu = "${config.programs.rofi.package}/bin/rofi -show drun";
       terminal = "${config.programs.kitty.package}/bin/kitty --single-instance";
-      modifier = "Mod4";
+      modifier = mod;
 
       input = {
         "type:touchpad" = {
@@ -50,6 +50,8 @@
         "XF86AudioLowerVolume" = "exec ${config.programs.nushell.package}/bin/nu ${./sway/volume.nu} --dec";
         "XF86MonBrightnessUp" = "exec ${pkgs.brightnessctl}/bin/brightnessctl set 5%+";
         "XF86MonBrightnessDown" = "exec ${pkgs.brightnessctl}/bin/brightnessctl set 5%-";
+        "${mod}+tab" = "workspace next_on_output";
+        "${mod}+Shift+tab" = "workspace prev_on_output";
       };
 
       colors = let
