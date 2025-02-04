@@ -160,8 +160,6 @@
     fontconfig.enable = true;
   };
 
-  programs.ydotool.enable = true;
-
   # List services that you want to enable:
 
   # Power management.
