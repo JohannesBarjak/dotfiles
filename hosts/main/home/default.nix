@@ -19,7 +19,7 @@
     musescore
     tic-80
     mullvad-vpn opensnitch-ui
-    mullvad-browser tor-browser
+    tor-browser
   ];
 
   xdg = {
