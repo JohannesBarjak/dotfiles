@@ -126,7 +126,6 @@
     ryzenadj
     tauon
     compsize
-    local-ai
   ];
 
   hardware.cpu.amd.ryzen-smu.enable = true;
