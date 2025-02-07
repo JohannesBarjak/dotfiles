@@ -88,6 +88,8 @@
     };
   };
 
+  programs.lazygit.enable = true;
+
   # Terminal document viewers.
   programs.zathura.enable = true;
   programs.sioyek.enable = true;
