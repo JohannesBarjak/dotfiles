@@ -105,6 +105,7 @@
   };
 
   services.pueue.enable = true;
+  programs.navi.enable = true;
 
   programs.btop = {
     enable = true;
