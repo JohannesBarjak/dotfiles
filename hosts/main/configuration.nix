@@ -126,6 +126,9 @@
     ryzenadj
     tauon
     compsize
+
+    dive
+    podman-tui podman-compose
   ];
 
   hardware.cpu.amd.ryzen-smu.enable = true;
@@ -144,6 +147,14 @@
   # started in user sessions.
 
   virtualisation.vmware.host.enable = true;
+  virtualisation.containers.enable = true;
+
+  virtualisation.podman = {
+    enable = true;
+    dockerCompat = true;
+
+    defaultNetwork.settings.dns_enabled = true;
+  };
 
   # Configure fonts.
   fonts = {
@@ -181,16 +192,7 @@
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
-  networking.firewall = {
-    enable = true;
-
-    allowedTCPPortRanges = [
-      { from = 1714; to = 1764; } # KDE Connect
-    ];
-    allowedUDPPortRanges = [
-      { from = 1714; to = 1764; } # KDE Connect
-    ];
-  };
+  networking.firewall.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
