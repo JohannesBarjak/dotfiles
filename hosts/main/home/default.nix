@@ -8,6 +8,7 @@
     ./terminal
     ./desktop
     ./theming.nix
+    ../../../setups/shared/home
   ];
 
   home.packages = with pkgs; [
