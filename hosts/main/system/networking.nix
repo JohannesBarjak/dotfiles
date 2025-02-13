@@ -19,11 +19,24 @@
         duration = "always";
 
         operator = {
-          type = "simple";
-          operand = "process.path";
+          type = "list";
+          operand = "list";
 
-          sensitive = false;
-          data = "${pkgs.systemd}/lib/systemd/systemd-timesyncd";
+          list = [
+            {
+              type = "regexp";
+              operand = "dest.host";
+
+              data = "\\d\\.nixos\\.pool\\.ntp\\.org";
+            }
+
+            {
+              type = "simple";
+              operand = "process.path";
+
+              data = "${pkgs.systemd}/lib/systemd/systemd-timesyncd";
+            }
+          ];
         };
       };
 
@@ -44,18 +57,16 @@
               type = "simple";
               operand = "process.path";
 
-              sensitive = false;
+              sensitive = true;
               data = "${pkgs.nsncd}/bin/nsncd";
-              list = null;
             }
 
             {
               type = "simple";
               operand = "dest.host";
 
-              sensitive = false;
+              sensitive = true;
               data = "ipv4.am.i.mullvad.net";
-              list = null;
             }
           ];
         };
