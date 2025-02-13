@@ -7,12 +7,10 @@
 
     iconTheme.name = "Papirus-Dark";
     iconTheme.package = (pkgs.papirus-icon-theme.override { color = "green"; });
-  };
 
-  dconf.settings = {
-    "org/gnome/desktop/interface" = {
-      gtk-theme = "adw-gtk3-dark";
-      color-scheme = "prefer-dark";
+    theme = {
+      name = "Gruvbox-Dark";
+      package = pkgs.gruvbox-gtk-theme;
     };
   };
 
