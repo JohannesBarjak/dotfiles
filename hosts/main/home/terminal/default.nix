@@ -17,15 +17,7 @@
     settings = {
       theme = "gruvbox";
 
-      editor = {
-        line-number = "relative";
-
-        cursor-shape = {
-          insert = "bar";
-          normal = "block";
-          select = "underline";
-        };
-      };
+      editor.line-number = "relative";
     };
   };
 
