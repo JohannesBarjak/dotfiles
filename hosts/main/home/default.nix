@@ -75,6 +75,8 @@
   services.mpris-proxy.enable = true;
   services.opensnitch-ui.enable = true;
 
+  services.podman.enable = true;
+
   programs.mpv.enable = true;
 
   home.stateVersion = "24.05";

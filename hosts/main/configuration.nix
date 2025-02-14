@@ -149,13 +149,6 @@
   virtualisation.vmware.host.enable = true;
   virtualisation.containers.enable = true;
 
-  virtualisation.podman = {
-    enable = true;
-    dockerCompat = true;
-
-    defaultNetwork.settings.dns_enabled = true;
-  };
-
   # Configure fonts.
   fonts = {
     packages = with pkgs; [
