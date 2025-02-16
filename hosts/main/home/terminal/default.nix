@@ -6,7 +6,7 @@
     typst tinymist
     nodePackages.bash-language-server shellcheck
     vscode-langservers-extracted
-    gitu
+    tealdeer
   ];
 
   # Main tui text editor.
