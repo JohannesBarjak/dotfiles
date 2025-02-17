@@ -71,6 +71,37 @@
           ];
         };
       };
+
+      mullvad-gui = {
+        name = "mullvad-gui";
+        enabled = true;
+
+        action = "allow";
+        duration = "always";
+
+        operator = {
+          type = "list";
+          operand = "list";
+
+          list = [
+            {
+              type = "simple";
+              operand = "process.path";
+
+              sensitive = true;
+              data = "${pkgs.mullvad-vpn}/bin/.mullvad-gui-wrapped";
+            }
+
+            {
+              type = "simple";
+              operand = "dest.host";
+
+              sensitive = true;
+              data = "127.0.0.1";
+            }
+          ];
+        };
+      };
     };
   };
 
