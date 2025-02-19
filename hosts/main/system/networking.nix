@@ -27,6 +27,7 @@
               type = "regexp";
               operand = "dest.host";
 
+              sensitive = true;
               data = "\\d\\.nixos\\.pool\\.ntp\\.org";
             }
 
@@ -34,6 +35,7 @@
               type = "simple";
               operand = "process.path";
 
+              sensitive = true;
               data = "${pkgs.systemd}/lib/systemd/systemd-timesyncd";
             }
           ];
@@ -89,12 +91,12 @@
               operand = "process.path";
 
               sensitive = true;
-              data = "${pkgs.mullvad-vpn}/bin/.mullvad-gui-wrapped";
+              data = "${pkgs.mullvad-vpn}/share/mullvad/mullvad-gui";
             }
 
             {
               type = "simple";
-              operand = "dest.host";
+              operand = "dest.ip";
 
               sensitive = true;
               data = "127.0.0.1";
