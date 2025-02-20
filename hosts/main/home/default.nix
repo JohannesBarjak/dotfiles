@@ -78,6 +78,10 @@
   services.mpris-proxy.enable = true;
   services.opensnitch-ui.enable = true;
 
+  services.espanso = {
+    enable = true;
+  };
+
   services.podman = {
     enable = true;
 
