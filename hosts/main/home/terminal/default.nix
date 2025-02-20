@@ -77,6 +77,12 @@
     enableNushellIntegration = true;
   };
 
+  # Atuin improves the shell's awareness of context in history.
+  programs.atuin = {
+    enable = true;
+    enableNushellIntegration = true;
+  };
+
   # Starship provides a pretty prompt for nushell.
   programs.starship = {
     enable = true;
