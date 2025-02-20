@@ -20,6 +20,7 @@
     musescore
     tic-80
     mullvad-vpn opensnitch-ui
+    distrobox distrobox-tui
   ];
 
   xdg = {
