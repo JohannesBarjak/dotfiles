@@ -19,7 +19,7 @@
     valent
     musescore
     tic-80
-    mullvad-vpn opensnitch-ui
+    opensnitch-ui
     distrobox distrobox-tui
   ];
 
