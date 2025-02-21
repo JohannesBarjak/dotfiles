@@ -38,6 +38,14 @@
     };
   };
 
+  programs.wezterm = {
+    enable = true;
+  };
+
+  programs.zellij = {
+    enable = true;
+  };
+
   # Default shell.
   programs.nushell = {
     enable = true;
