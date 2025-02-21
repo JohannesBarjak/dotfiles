@@ -44,6 +44,11 @@
 
   programs.zellij = {
     enable = true;
+
+    settings = {
+      theme = "gruvbox-dark";
+      default_shell = "${config.programs.nushell.package}/bin/nu";
+    };
   };
 
   # Default shell.
