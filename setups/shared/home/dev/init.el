@@ -105,3 +105,5 @@
   (eglot-autoshutdown t)  ;; shutdown language server after closing last file
   (eglot-confirm-server-initiated-edits nil)  ;; allow edits without confirmation
   )
+
+(load-theme 'gruvbox-dark-medium)
