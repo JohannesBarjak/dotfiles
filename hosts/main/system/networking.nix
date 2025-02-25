@@ -73,6 +73,22 @@
           ];
         };
       };
+
+      mullvad-daemon = {
+        name = "mullvad-daemon";
+        enabled = true;
+
+        action = "allow";
+        duration = "always";
+
+        operator = {
+          type = "simple";
+          operand = "process.path";
+
+          sensitive = true;
+          data = "${pkgs.mullvad}/bin/.mullvad-daemon-wrapped";
+        };
+      };
     };
   };
 
