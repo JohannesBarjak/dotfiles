@@ -2,7 +2,7 @@
   imports = [ ./editors.nix ];
 
   home.packages = with pkgs; [
-    nil markdown-oxide taplo
+    nixd markdown-oxide taplo
     typst tinymist
     nodePackages.bash-language-server shellcheck
     vscode-langservers-extracted
