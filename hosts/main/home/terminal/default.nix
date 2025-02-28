@@ -105,6 +105,8 @@
   services.pueue.enable = true;
   programs.navi.enable = true;
 
+  programs.pandoc.enable = true;
+
   programs.btop = {
     enable = true;
      settings.color_theme = "gruvbox_material_dark";
