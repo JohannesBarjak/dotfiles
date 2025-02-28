@@ -41,12 +41,12 @@
     };
 
     desktopEntries = {
-      firefox = {
-        exec = "firejail firefox --name firefox %U";
+      librewolf = {
+        exec = "firejail librewolf --name librewolf %U";
 
-        name = "Firefox";
+        name = "Librewolf";
         genericName = "Web Browser";
-        icon = "firefox";
+        icon = "librewolf";
 
         mimeType
           = [ "text/html" "text/xml" "application/xhtml+xml"
