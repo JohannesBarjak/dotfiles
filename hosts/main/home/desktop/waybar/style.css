@@ -42,6 +42,7 @@ window#waybar {
 #network,
 #idle_inhibitor,
 #battery,
+#mode,
 #custom-power {
   background-color: #1d2021;
   padding: 0.2em 0.5em;

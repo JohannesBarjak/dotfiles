@@ -6,7 +6,7 @@
     settings = {
       mainBar = {
         layer = "top";
-        modules-left = [ "sway/workspaces" ];
+        modules-left = [ "sway/workspaces" "sway/mode" ];
         modules-center = [ "clock#2" ];
         modules-right = [ "network" "battery" "idle_inhibitor" "clock#1" "custom/power" ];
 
@@ -18,6 +18,11 @@
 
         "clock#2" = {
           format = "{:%d.%m.%Y}";
+        };
+
+        "sway/mode" = {
+          format = "{}";
+          max-length = 50;
         };
 
         idle_inhibitor = {
