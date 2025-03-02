@@ -9,6 +9,7 @@
       epkgs.gruvbox-theme
       epkgs.lsp-mode epkgs.company
       epkgs.eat epkgs.vterm
+      epkgs.magit
     ];
 
     package = pkgs.emacs30-pgtk;
