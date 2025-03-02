@@ -1,6 +1,6 @@
 (defun meow-setup ()
 (setq meow-cheatsheet-layout meow-cheatsheet-layout-qwerty)
-(meow-motion-overwrite-define-key
+(meow-motion-define-key
  '("j" . meow-next)
  '("k" . meow-prev)
  '("<escape>" . ignore))
