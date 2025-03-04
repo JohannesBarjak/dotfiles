@@ -103,4 +103,8 @@
   (eglot-confirm-server-initiated-edits nil)  ;; allow edits without confirmation
   )
 
+(use-package company
+  :ensure t
+  :hook (after-init . global-company-mode))
+
 (load-theme 'gruvbox-dark-medium)
