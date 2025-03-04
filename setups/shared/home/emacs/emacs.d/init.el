@@ -107,4 +107,4 @@
   :ensure t
   :hook (after-init . global-company-mode))
 
-(load-theme 'gruvbox-dark-medium)
+(load-theme 'gruvbox-dark-medium t)

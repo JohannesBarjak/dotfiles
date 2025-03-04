@@ -13,6 +13,10 @@
     ];
 
     package = pkgs.emacs30-pgtk;
-    extraConfig = builtins.readFile ./init.el;
+  };
+
+  xdg.configFile."emacs" = {
+    source = ./emacs.d;
+    recursive = true;
   };
 }
