@@ -1,3 +1,3 @@
 {...}: {
-  imports = [ ./emacs ];
+  imports = [ ./emacs ./librewolf.nix ];
 }
