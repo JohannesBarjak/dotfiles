@@ -108,3 +108,4 @@
   :hook (after-init . global-company-mode))
 
 (load-theme 'gruvbox-dark-medium t)
+(add-hook 'prog-mode-hook 'display-line-numbers-mode)
