@@ -41,6 +41,16 @@
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
           installation_mode = "force_installed";
         };
+
+        "CanvasBlocker@kkapsner.de" = {
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/canvasblocker/latest.xpi";
+          installation_mode = "force_installed";
+        };
+
+        "{b86e4813-687a-43e6-ab65-0bde4ab75758}" = {
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/localcdn-fork-of-decentraleyes/latest.xpi";
+          installation_mode = "force_installed";
+        };
       };
 
       # Disable annoyances.
