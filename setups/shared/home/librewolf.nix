@@ -51,6 +51,11 @@
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/localcdn-fork-of-decentraleyes/latest.xpi";
           installation_mode = "force_installed";
         };
+
+        "tridactyl.vim@cmcaine.co.uk" = {
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/tridactyl-vim/latest.xpi";
+          installation_mode = "force_installed";
+        };
       };
 
       # Disable annoyances.
