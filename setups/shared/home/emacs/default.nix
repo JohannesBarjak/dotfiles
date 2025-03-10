@@ -3,7 +3,7 @@
   programs.emacs = {
     enable = true;
     extraPackages = epkgs: [
-      epkgs.meow
+      epkgs.meow epkgs.avy
       epkgs.idris2-mode epkgs.haskell-mode
       epkgs.nix-mode
       epkgs.gruvbox-theme
