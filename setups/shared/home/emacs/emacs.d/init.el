@@ -62,6 +62,7 @@
  '("o" . meow-block)
  '("O" . meow-to-block)
  '("p" . meow-yank)
+ '("P" . clipboard-yank)
  '("q" . meow-quit)
  '("Q" . meow-goto-line)
  '("r" . meow-replace)
