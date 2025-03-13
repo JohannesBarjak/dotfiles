@@ -13,11 +13,10 @@
   home.packages = with pkgs; [
     numbat
     wineWow64Packages.waylandFull winetricks
-    jamesdsp bluetuith
+    bluetuith
     gnome-disk-utility ventoy-full
     valent
     musescore
-    tic-80
     opensnitch-ui
     distrobox distrobox-tui
   ];
