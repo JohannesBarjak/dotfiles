@@ -101,6 +101,7 @@
       bindgesture swipe:right workspace next
       corner_radius 8
       blur enable
+      layer_effects "waybar" blur enable
     '';
   };
 }
