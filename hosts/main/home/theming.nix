@@ -1,6 +1,4 @@
 {pkgs, ...}: {
-  home.packages = with pkgs; [ adw-gtk3 ];
-
   # Set gtk theme to Gruvbox and Numix Circle.
   gtk = {
     enable = true;
