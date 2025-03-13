@@ -1,5 +1,6 @@
 (defun load-user-file (file-path) (load-file (expand-file-name (concat user-emacs-directory file-path))))
 (load-user-file "meow.el")
+(load-user-file "avy-keys.el")
 
 (require 'idris2-mode)
 (require 'haskell-mode-autoloads)
