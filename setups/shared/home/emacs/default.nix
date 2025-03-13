@@ -10,6 +10,7 @@
       epkgs.eat epkgs.vterm
       epkgs.magit
       epkgs.doom-themes
+      epkgs.transient
     ];
 
     package = pkgs.emacs30-pgtk;
