@@ -6,10 +6,10 @@
       epkgs.meow epkgs.avy
       epkgs.idris2-mode epkgs.haskell-mode
       epkgs.nix-mode
-      epkgs.gruvbox-theme
       epkgs.lsp-mode epkgs.company
       epkgs.eat epkgs.vterm
       epkgs.magit
+      epkgs.doom-themes
     ];
 
     package = pkgs.emacs30-pgtk;

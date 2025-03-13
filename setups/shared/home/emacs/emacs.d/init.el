@@ -23,7 +23,7 @@
   :ensure t
   :hook (after-init . global-company-mode))
 
-(load-theme 'gruvbox-dark-medium t)
+(load-theme 'doom-gruvbox t)
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
 
 ; Add avy keybindings.
