@@ -44,6 +44,7 @@
 
       defaultWorkspace = "workspace number 1";
 
+      # Use mkOptiondefault so that default config is not overwritten.
       keybindings = lib.mkOptionDefault {
         "XF86AudioMute" = "exec ${config.programs.nushell.package}/bin/nu ${./sway/volume.nu} --toggle=mute";
         "XF86AudioRaiseVolume" = "exec ${config.programs.nushell.package}/bin/nu ${./sway/volume.nu} --inc";
