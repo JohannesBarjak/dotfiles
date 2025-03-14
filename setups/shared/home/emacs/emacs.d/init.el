@@ -27,5 +27,6 @@
 (load-theme 'doom-gruvbox t)
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
 
-; Disable toolbar.
+; Disable toolbar and scrollbar.
 (tool-bar-mode -1)
+(scroll-bar-mode -1)
