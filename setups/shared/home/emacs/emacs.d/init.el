@@ -17,14 +17,10 @@
   (add-hook 'haskell-mode-hook 'eglot-ensure)
   :config
   (setq-default eglot-workspace-configuration
-                '((haskell
-                   (plugin
-                    (stan
-                     (globalOn . :json-false))))))  ;; disable stan
+		'((haskell (plugin (stan (globalOn . :json-false))))))  ;; disable stan
   :custom
   (eglot-autoshutdown t)  ;; shutdown language server after closing last file
-  (eglot-confirm-server-initiated-edits nil)  ;; allow edits without confirmation
-  )
+  (eglot-confirm-server-initiated-edits nil))  ;; allow edits without confirmation
 
 (use-package company
   :ensure t
