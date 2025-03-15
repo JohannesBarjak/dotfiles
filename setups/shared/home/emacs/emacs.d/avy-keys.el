@@ -15,4 +15,4 @@
   )
 
 ; Use C-c prefix.
-(global-set-key (kbd "C-c a") #'avy-transient)
+(global-set-key (kbd "C-z a") #'avy-transient)
