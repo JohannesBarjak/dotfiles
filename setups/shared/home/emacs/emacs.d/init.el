@@ -1,4 +1,6 @@
-(defun load-user-file (file-path) (load-file (expand-file-name (concat user-emacs-directory file-path))))
+; Helper function to load elisp files.
+(defun load-user-file (file-path)
+	(load-file (expand-file-name (concat user-emacs-directory file-path))))
 
 ; Define prefix for custom commands.
 (global-set-key (kbd "C-z") 'mode-specific-command-prefix)
