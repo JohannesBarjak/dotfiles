@@ -100,9 +100,14 @@
     extraConfig = ''
       bindgesture swipe:left workspace prev
       bindgesture swipe:right workspace next
+
       corner_radius 8
+
       blur enable
-      layer_effects "waybar" { blur enable; blur_ignore_transparent enable; }
+      layer_effects "waybar" {
+        blur enable;
+        blur_ignore_transparent enable;
+      }
     '';
   };
 }
