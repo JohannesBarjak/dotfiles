@@ -24,11 +24,13 @@
 
 (use-package company
   :ensure t
-  :hook (after-init . global-company-mode))
+  :hook
+  (after-init . global-company-mode))
 
-(load-theme 'doom-gruvbox t)
-(add-hook 'prog-mode-hook 'display-line-numbers-mode)
+(use-package emacs
+  :init
+  (load-theme 'doom-gruvbox t)
+  (add-hook 'prog-mode-hook 'display-line-numbers-mode)
 
-; Disable toolbar and scrollbar.
-(tool-bar-mode -1)
-(scroll-bar-mode -1)
+  (tool-bar-mode -1) ; Disable toolbar and scrollbar.
+  (scroll-bar-mode -1))
