@@ -1,3 +1,4 @@
+
 * {
   padding: 0em;
   transition-duration: 0s;
@@ -10,7 +11,7 @@
 }
 
 window#waybar {
-  background-color: #282828;
+  background-color: rgba(40, 40, 40, 0.8);
   border-radius: 2em;
   padding: 0.2em;
 }
@@ -28,13 +29,13 @@ window#waybar {
   padding: 0.2em 0.5em;
   color: #ebdbb2;
   border-radius: 0.5em;
-  background-color: #1d2021;
+  background-color: rgba(29, 32, 33, 0.5);
   font-weight: normal;
 }
 
 #workspaces button.visible label,
 #workspaces button.focused label {
-  background-color: #3c3836;
+  background-color: rgba(60, 56, 54, 0.5);
   color: #ebdbb2;
 }
 
@@ -44,7 +45,7 @@ window#waybar {
 #battery,
 #mode,
 #custom-power {
-  background-color: #1d2021;
+  background-color: rgba(29, 32, 33, 0.5);
   padding: 0.2em 0.5em;
   margin: 0.3em 0.25em;
   border-radius: 0.5em;
