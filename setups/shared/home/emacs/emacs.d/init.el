@@ -1,3 +1,11 @@
+(use-package emacs
+  :init
+  (load-theme 'doom-gruvbox t)
+  (add-hook 'prog-mode-hook 'display-line-numbers-mode)
+
+  (tool-bar-mode -1) ; Disable toolbar and scrollbar.
+  (scroll-bar-mode -1))
+
 ; Helper function to load elisp files.
 (defun load-user-file (file-path)
 	(load-file (expand-file-name (concat user-emacs-directory file-path))))
@@ -26,11 +34,3 @@
   :ensure t
   :hook
   (after-init . global-company-mode))
-
-(use-package emacs
-  :init
-  (load-theme 'doom-gruvbox t)
-  (add-hook 'prog-mode-hook 'display-line-numbers-mode)
-
-  (tool-bar-mode -1) ; Disable toolbar and scrollbar.
-  (scroll-bar-mode -1))
