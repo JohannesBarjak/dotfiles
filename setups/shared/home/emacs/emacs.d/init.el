@@ -23,6 +23,7 @@
   :ensure t
   :config
   (add-hook 'haskell-mode-hook 'eglot-ensure)
+  (add-hook 'nix-mode-hook 'eglot-ensure)
   :config
   (setq-default eglot-workspace-configuration
 		'((haskell (plugin (stan (globalOn . :json-false))))))  ;; disable stan
