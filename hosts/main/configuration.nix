@@ -180,9 +180,15 @@
   security.polkit.enable = true;
 
   # I am using this service to remap caps to esc and ctrl.
-  services.interception-tools = {
+  services.keyd = {
     enable = true;
-    plugins = [ pkgs.interception-tools-plugins.caps2esc ];
+
+    keyboards.default = {
+      settings.main = {
+        capslock = "overload(control, esc)";
+        esc = "capslock";
+      };
+    };
   };
 
   systemd.services.NetworkManager-wait-online.enable = false;
