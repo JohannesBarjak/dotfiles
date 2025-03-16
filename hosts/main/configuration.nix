@@ -173,10 +173,17 @@
     percentageCritical = 5;
     percentageAction = 4;
   };
+
   services.udisks2.enable = true;
 
   services.ananicy.enable = true;
   security.polkit.enable = true;
+
+  # I am using this service to remap caps to esc and ctrl.
+  services.interception-tools = {
+    enable = true;
+    plugins = [ pkgs.interception-tools-plugins.caps2esc ];
+  };
 
   systemd.services.NetworkManager-wait-online.enable = false;
   services.journald.extraConfig = "SystemMaxUse=50M";
