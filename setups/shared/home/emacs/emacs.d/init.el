@@ -4,7 +4,9 @@
   (add-hook 'prog-mode-hook 'display-line-numbers-mode)
 
   (tool-bar-mode -1) ; Disable toolbar and scrollbar.
-  (scroll-bar-mode -1))
+  (scroll-bar-mode -1)
+
+  (setq custom-file (locate-user-emacs-file "custom_var.el")))
 
 ; Helper function to load elisp files.
 (defun load-user-file (file-path)
@@ -35,3 +37,6 @@
   :ensure t
   :hook
   (after-init . global-company-mode))
+
+(use-package kbd-mode
+  :vc (:url "https://github.com/kmonad/kbd-mode" :rev :newest))
