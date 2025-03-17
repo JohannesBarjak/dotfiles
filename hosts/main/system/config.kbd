@@ -14,4 +14,6 @@
 	lctl met lalt spc ralt prnt rctl pgup up   pgdn
 	                                 left down right)
 
-(defalias cec (multi-tap 200 (around-next ctl) 200 esc caps))
+(defalias
+  scl (sticky-key 750 ctl)
+  cec (tap-hold-next 200 esc ctl :timeout-button @scl ))
