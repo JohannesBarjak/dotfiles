@@ -1,0 +1,17 @@
+(defsrc
+        grv  1 2 3 4 5 6 7 8 9 0 -    eql bks
+	tab  q w e r t y u i o p [    ]   \
+	caps a s d f g h j k l ; apo  ent
+	lsft z x c v b n m , . / rsft
+	lctl met lalt spc ralt prnt rctl pgup up   pgdn
+	                                 left down right)
+
+(deflayer base
+        grv  1 2 3 4 5 6 7 8 9 0 -    eql bks
+	tab  q w e r t y u i o p [    ]   \
+	@cec a s d f g h j k l ; apo  ent
+	lsft z x c v b n m , . / rsft
+	lctl met lalt spc ralt prnt rctl pgup up   pgdn
+	                                 left down right)
+
+(defalias cec (multi-tap 250 (around-next ctl) 250 esc caps))

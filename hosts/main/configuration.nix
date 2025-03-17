@@ -180,13 +180,19 @@
   security.polkit.enable = true;
 
   # I am using this service to remap caps to esc and ctrl.
-  services.keyd = {
+  services.kmonad = {
     enable = true;
 
-    keyboards.default = {
-      settings.main = {
-        capslock = "overload(control, esc)";
-        esc = "capslock";
+    keyboards = {
+      myLayout = {
+        name = "myLayout";
+        device = "/dev/input/by-path/platform-i8042-serio-0-event-kbd";
+        config = builtins.readFile ./system/config.kbd;
+
+        defcfg = {
+          enable = true;
+          fallthrough = true;
+        };
       };
     };
   };
