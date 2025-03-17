@@ -14,4 +14,4 @@
 	lctl met lalt spc ralt prnt rctl pgup up   pgdn
 	                                 left down right)
 
-(defalias cec (multi-tap 250 (around-next ctl) 250 esc caps))
+(defalias cec (multi-tap 200 (around-next ctl) 200 esc caps))
