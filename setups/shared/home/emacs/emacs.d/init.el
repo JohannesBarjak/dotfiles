@@ -18,8 +18,10 @@
 (load-user-file "meow.el")
 (load-user-file "avy-keys.el")
 
-(require 'idris2-mode)
-(require 'haskell-mode-autoloads)
+(use-package company
+  :ensure t
+  :hook
+  (after-init . global-company-mode))
 
 (use-package eglot
   :ensure t
@@ -33,10 +35,7 @@
   (eglot-autoshutdown t)  ;; shutdown language server after closing last file
   (eglot-confirm-server-initiated-edits nil))  ;; allow edits without confirmation
 
-(use-package company
-  :ensure t
-  :hook
-  (after-init . global-company-mode))
+(require 'haskell-mode-autoloads)
 
 (use-package kbd-mode
   :vc (:url "https://github.com/kmonad/kbd-mode" :rev :newest))
