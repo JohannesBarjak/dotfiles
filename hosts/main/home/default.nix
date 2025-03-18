@@ -107,6 +107,13 @@
     };
   };
 
+  # Make gtk apps use emacs keybindings for text boxes.
+  dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      gtk-key-theme = "Emacs";
+    };
+  };
+
   programs.mpv.enable = true;
 
   home.stateVersion = "24.05";
