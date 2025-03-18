@@ -6,10 +6,10 @@
   (tool-bar-mode -1) ; Disable toolbar and scrollbar.
   (scroll-bar-mode -1)
 
-  ; Define prefix for custom commands.
-  (global-set-key (kbd "C-z") 'mode-specific-command-prefix)
+  (setq custom-file (locate-user-emacs-file "custom_var.el"))
 
-  (setq custom-file (locate-user-emacs-file "custom_var.el")))
+  ; Define prefix for custom commands.
+  :bind ("C-z" . mode-specific-command-prefix))
 
 ; Helper function to load elisp files.
 (defun load-user-file (file-path)
