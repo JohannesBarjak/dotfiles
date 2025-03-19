@@ -12,6 +12,7 @@
       epkgs.doom-themes
       epkgs.transient
       epkgs.vertico epkgs.orderless
+      epkgs.marginalia
     ];
 
     package = pkgs.emacs30-pgtk;

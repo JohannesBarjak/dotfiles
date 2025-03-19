@@ -42,6 +42,14 @@
   (completion-category-defaults nil) ; Ensures that orderless is the only completion style used by default.
   (completion-category-overrides '((file (styles basic partial-completion)))))
 
+; Marginalia adds annotations to the minibuffer.
+(use-package marginalia
+  ;; Bind `marginalia-cycle' locally in the minibuffer.  To make the binding
+  ;; available in the *Completions* buffer, add it to the
+  ;; `completion-list-mode-map'.
+  :bind (:map minibuffer-local-map ("M-A" . marginalia-cycle))
+  :init (marginalia-mode))
+
 (require 'haskell-mode-autoloads)
 
 (use-package kbd-mode
