@@ -35,6 +35,13 @@
   (eglot-autoshutdown t)  ;; shutdown language server after closing last file
   (eglot-confirm-server-initiated-edits nil))  ;; allow edits without confirmation
 
+; Add orderless completion style.
+(use-package orderless
+  :custom
+  (completion-styles '(orderless basic))
+  (completion-category-defaults nil) ; Ensures that orderless is the only completion style used by default.
+  (completion-category-overrides '((file (styles basic partial-completion)))))
+
 (require 'haskell-mode-autoloads)
 
 (use-package kbd-mode
