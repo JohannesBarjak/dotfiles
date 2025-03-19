@@ -50,6 +50,13 @@
   :bind (:map minibuffer-local-map ("M-A" . marginalia-cycle))
   :init (marginalia-mode))
 
+; Embark provides actions on buffer targets.
+(use-package embark
+  :bind
+  ("C-." . embark-act)
+  ("C-;" . embark-dwim)
+  ("C-h B" . embark-bindings))
+
 (require 'haskell-mode-autoloads)
 
 (use-package kbd-mode

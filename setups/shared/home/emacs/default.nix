@@ -13,6 +13,7 @@
       epkgs.transient
       epkgs.vertico epkgs.orderless
       epkgs.marginalia
+      epkgs.embark
     ];
 
     package = pkgs.emacs30-pgtk;
