@@ -180,20 +180,12 @@
   security.polkit.enable = true;
 
   # I am using this service to remap caps to esc and ctrl.
-  services.kmonad = {
+  services.kanata = {
     enable = true;
 
-    keyboards = {
-      myLayout = {
-        name = "myLayout";
-        device = "/dev/input/by-path/platform-i8042-serio-0-event-kbd";
-        config = builtins.readFile ./system/config.kbd;
-
-        defcfg = {
-          enable = true;
-          fallthrough = true;
-        };
-      };
+    keyboards.myLayout = {
+      config = builtins.readFile ./system/config.kbd;
+      extraDefCfg = "process-unmapped-keys yes";
     };
   };
 
