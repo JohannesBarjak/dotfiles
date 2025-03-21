@@ -185,7 +185,9 @@
 
     keyboards.myLayout = {
       config = builtins.readFile ./system/config.kbd;
-      extraDefCfg = "process-unmapped-keys yes";
+      extraDefCfg = ''
+        process-unmapped-keys yes
+      '';
     };
   };
 
