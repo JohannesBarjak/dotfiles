@@ -18,10 +18,11 @@
 (load-user-file "meow.el")
 (load-user-file "avy-keys.el")
 
+; Use company for autocomplete prompts.
 (use-package company
-  :hook
-  (after-init . global-company-mode))
+  :hook (after-init . global-company-mode))
 
+; Use eglot as my lsp manager.
 (use-package eglot
   :config
   (add-hook 'haskell-mode-hook 'eglot-ensure)
