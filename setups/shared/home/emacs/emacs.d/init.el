@@ -66,3 +66,10 @@
 
 (use-package kbd-mode
   :vc (:url "https://github.com/kmonad/kbd-mode" :rev :newest))
+
+(use-package magit-delta
+  :after magit
+  :config (setq
+	   magit-delta-default-dark-theme "gruvbox-dark"
+	   magit-delta-default-light-theme "gruvbox")
+  :init (magit-delta-mode))

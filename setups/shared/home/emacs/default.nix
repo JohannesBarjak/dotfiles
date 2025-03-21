@@ -8,7 +8,7 @@
       epkgs.nix-mode
       epkgs.company
       epkgs.eat epkgs.vterm
-      epkgs.magit
+      epkgs.magit epkgs.magit-delta
       epkgs.doom-themes
       epkgs.transient
       epkgs.vertico epkgs.orderless
