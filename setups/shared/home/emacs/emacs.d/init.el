@@ -19,12 +19,10 @@
 (load-user-file "avy-keys.el")
 
 (use-package company
-  :ensure t
   :hook
   (after-init . global-company-mode))
 
 (use-package eglot
-  :ensure t
   :config
   (add-hook 'haskell-mode-hook 'eglot-ensure)
   (add-hook 'nix-mode-hook 'eglot-ensure)
