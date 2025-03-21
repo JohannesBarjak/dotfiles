@@ -59,17 +59,21 @@
 
 (require 'haskell-mode-autoloads)
 
+; Vertico is a package for interactive completion.
 (use-package vertico
   :custom
   (vertico--resize t)
   :init (vertico-mode))
 
-(use-package kbd-mode
-  :vc (:url "https://github.com/kmonad/kbd-mode" :rev :newest))
-
+; Add syntax highlighting to magit diffs.
 (use-package magit-delta
   :after magit
+  ; Setting the theme to use for magit diff.
   :config (setq
 	   magit-delta-default-dark-theme "gruvbox-dark"
 	   magit-delta-default-light-theme "gruvbox")
   :init (magit-delta-mode))
+
+; Mode for keyboard configuration language.
+(use-package kbd-mode
+  :vc (:url "https://github.com/kmonad/kbd-mode" :rev :newest))
