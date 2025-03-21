@@ -59,10 +59,10 @@
 
 (require 'haskell-mode-autoloads)
 
-(use-package kbd-mode
-  :vc (:url "https://github.com/kmonad/kbd-mode" :rev :newest))
-
 (use-package vertico
   :custom
   (vertico--resize t)
   :init (vertico-mode))
+
+(use-package kbd-mode
+  :vc (:url "https://github.com/kmonad/kbd-mode" :rev :newest))
