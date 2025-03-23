@@ -126,6 +126,7 @@
 
   programs.fd.enable = true;
   programs.ripgrep.enable = true;
+
   programs.bat = {
     enable = true;
     config.theme = "gruvbox-dark";

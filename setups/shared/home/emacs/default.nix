@@ -15,6 +15,7 @@
       epkgs.marginalia
       epkgs.embark
       epkgs.consult
+      epkgs.try
     ];
 
     package = pkgs.emacs30-pgtk;
