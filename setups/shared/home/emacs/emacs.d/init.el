@@ -56,6 +56,12 @@
   ("C-;" . embark-dwim)
   ("C-h B" . embark-bindings))
 
+(use-package consult
+  :bind
+  ("M-s r" . consult-ripgrep)
+  ("C-c h" . consult-history)
+  ("M-g m" . consult-mark))
+
 (require 'haskell-mode-autoloads)
 
 ; Vertico is a package for interactive completion.

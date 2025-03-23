@@ -14,6 +14,7 @@
       epkgs.vertico epkgs.orderless
       epkgs.marginalia
       epkgs.embark
+      epkgs.consult
     ];
 
     package = pkgs.emacs30-pgtk;
