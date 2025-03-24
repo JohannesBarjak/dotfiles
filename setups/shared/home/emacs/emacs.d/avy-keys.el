@@ -11,8 +11,4 @@
    ("s" "avy-isearch" avy-isearch)
    ("f" "avy-goto-char-timer" avy-goto-char-timer)
    ("w" "avy-goto-subword-1" avy-goto-subword-1)
-   ]
-  )
-
-; Use C-c prefix.
-(global-set-key (kbd "C-z a") #'avy-transient)
+   ("q" "quit" transient-quit-one)])

@@ -1,3 +1,7 @@
+; Helper function to load elisp files.
+(defun load-user-file (file-path)
+  (load-file (expand-file-name (concat user-emacs-directory file-path))))
+
 (use-package emacs
   :init
   (load-theme 'doom-gruvbox t)
@@ -8,15 +12,15 @@
 
   (setq custom-file (locate-user-emacs-file "custom_var.el"))
 
+  (load-user-file "avy-keys.el")
+  (load-user-file "meow.el")
+ 
   ; Define prefix for custom commands.
-  :bind ("C-z" . mode-specific-command-prefix))
+  (require 'bind-key)
 
-; Helper function to load elisp files.
-(defun load-user-file (file-path)
-	(load-file (expand-file-name (concat user-emacs-directory file-path))))
-
-(load-user-file "meow.el")
-(load-user-file "avy-keys.el")
+  (bind-keys :prefix-map my-prefix-map
+    :prefix "C-;"
+    ("a" . avy-transient)))
 
 ; Use company for autocomplete prompts.
 (use-package company
@@ -53,7 +57,7 @@
 (use-package embark
   :bind
   ("C-." . embark-act)
-  ("C-;" . embark-dwim)
+  ("C-:" . embark-dwim)
   ("C-h B" . embark-bindings))
 
 (use-package consult

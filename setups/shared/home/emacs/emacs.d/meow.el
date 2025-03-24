@@ -17,6 +17,7 @@
  '("9" . meow-digit-argument)
  '("0" . meow-digit-argument)
  '("/" . meow-keypad-describe-key)
+ '(";" . my-prefix-map)
  '("?" . meow-cheatsheet))
 (meow-normal-define-key
  '("0" . meow-expand-0)
@@ -30,7 +31,7 @@
  '("2" . meow-expand-2)
  '("1" . meow-expand-1)
  '("-" . negative-argument)
- '(";" . meow-reverse)
+ '("'" . meow-reverse)
  '("," . meow-inner-of-thing)
  '("." . meow-bounds-of-thing)
  '("[" . meow-beginning-of-thing)
@@ -80,7 +81,8 @@
  '("y" . meow-save)
  '("Y" . meow-sync-grab)
  '("z" . meow-pop-selection)
- '("'" . repeat)
+ '(";'" . repeat)
+ '(";a" . avy-transient)
  '("<escape>" . ignore)))
 
 (require 'meow)
