@@ -7,6 +7,7 @@
     nodePackages.bash-language-server shellcheck
     vscode-langservers-extracted
     tealdeer
+    elvish
   ];
 
   # Main tui text editor.
