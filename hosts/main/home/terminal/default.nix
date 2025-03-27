@@ -60,6 +60,11 @@
     extraConfig = "$env.config = { show_banner: false, edit_mode: vi }"; # Removes annoying welcome message.
   };
 
+  xdg.configFile."elvish" = {
+    source = ./elvish;
+    recursive = true;
+  };
+
   # Git configuration.
   programs.git = {
     enable = true;
