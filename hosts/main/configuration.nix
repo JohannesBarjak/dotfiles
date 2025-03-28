@@ -146,7 +146,6 @@
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
 
-  virtualisation.vmware.host.enable = true;
   virtualisation.containers.enable = true;
 
   # Configure fonts.
