@@ -186,6 +186,7 @@
       config = builtins.readFile ./system/config.kbd;
       extraDefCfg = ''
         process-unmapped-keys yes
+        concurrent-tap-hold yes
       '';
     };
   };

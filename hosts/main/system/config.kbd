@@ -10,9 +10,17 @@
   grv  1    2    3    4    5    6    7    8    9    0    -    eql  bks
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
   @cec a    s    d    f    g    h    j    k    l    ;    apo  ent
-  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  @lss z    x    c    v    b    n    m    ,    .    /    rsft
   lctl met  lalt           spc            ralt prnt rctl pgup up   pgdn
                                                          left down right)
+
+(defalias
+  cec (tap-hold-press 0 150 esc ctl)
+  lss (one-shot 2000 lsft))
+
+(defchordsv2
+  (met caps) caps 50 first-release ())
+
 #|
 (deflayer qwerty
   grv  1    2    3    4    5    6    7    8    9    0    -    eql  bks
@@ -32,6 +40,3 @@
   _    _    _              _              _    _    _    _    _    _
                                                          _    _    _)
 |#
-
-(defalias
-  cec (tap-hold-press 0 150 esc ctl))
