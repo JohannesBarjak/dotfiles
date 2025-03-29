@@ -25,17 +25,25 @@
   window = {
     location = mkLiteral "center";
     anchor = mkLiteral "center";
-    height = mkLiteral "480px";
-    width = mkLiteral "640px";
 
-    background-color = mkLiteral "@transparent";
+    width = mkLiteral "640px";
+    height = mkLiteral "480px";
+
+    background-color = mkLiteral "@bg0";
 
     border-radius = mkLiteral "10px";
-    spacing = mkLiteral "0";
     orientation = mkLiteral "horizontal";
+    spacing = mkLiteral "0";
 
     children = mkLiteral "[ mainbox ]";
   };
+
+  entry = {
+    placeholder = "Search here...";
+    text-color = mkLiteral "@fg1";
+  };
+
+  prompt.enabled = false;
 
   mainbox = {
     children = mkLiteral "[ inputbar, message, listview ]";
