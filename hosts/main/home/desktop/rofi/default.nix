@@ -10,6 +10,10 @@
     extraConfig = {
       show-icons = true;
       display-drun = "󰣖 drun:";
+
+      sort = true;
+      sorting-method = "fzf";
+      matching = "fuzzy";
     };
   };
 }
