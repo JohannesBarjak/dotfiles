@@ -63,23 +63,15 @@
     background-color = mkLiteral "@bg0";
 
     border = mkLiteral "1px";
-    border-color = mkLiteral "@fg1";
     border-radius = mkLiteral "10px 10px 0px 0px";
+    children = [ "entry" ];
   };
-
-  "entry, prompt, case-indicator" = {
-    text-font = mkLiteral "inherit";
-    text-color = mkLiteral "inherit";
-  };
-
-  prompt.margin = mkLiteral "0px 1em 0em 0em";
 
   listview = {
     padding = mkLiteral "8px";
     background-color = mkLiteral "@bg0";
 
     border = mkLiteral "1px";
-    border-color = mkLiteral "@fg1";
     border-radius = mkLiteral "0px 0px 10px 10px";
 
     dynamic = false;
