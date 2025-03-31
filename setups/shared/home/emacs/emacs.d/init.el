@@ -48,12 +48,13 @@
   :config
   (add-hook 'haskell-mode-hook 'eglot-ensure)
   (add-hook 'nix-mode-hook 'eglot-ensure)
+
   :config
   (setq-default eglot-workspace-configuration
-		'((haskell (plugin (stan (globalOn . :json-false))))))  ;; disable stan
+		'((haskell (plugin (stan (globalOn . :json-false))))))  ; disable stan.
   :custom
-  (eglot-autoshutdown t)  ;; shutdown language server after closing last file
-  (eglot-confirm-server-initiated-edits nil))  ;; allow edits without confirmation
+  (eglot-autoshutdown t)  ; shutdown language server after closing last file.
+  (eglot-confirm-server-initiated-edits nil))  ; allow edits without confirmation.
 
 ; Add orderless completion style.
 (use-package orderless
