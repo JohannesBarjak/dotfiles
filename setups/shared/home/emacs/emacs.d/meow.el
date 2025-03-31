@@ -83,6 +83,7 @@
  '("z" . meow-pop-selection)
  '(";'" . repeat)
  '(";a" . avy-transient)
+ '(";f" . consult-transient)
  '("<escape>" . ignore)))
 
 (require 'meow)

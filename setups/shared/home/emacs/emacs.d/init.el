@@ -20,7 +20,8 @@
 
   (bind-keys :prefix-map my-prefix-map
     :prefix "C-;"
-    ("a" . avy-transient)))
+    ("a" . avy-transient)
+    ("f" . consult-transient)))
 
 ; Use company for autocomplete prompts.
 (use-package company
@@ -63,6 +64,7 @@
 (use-package consult
   :bind
   ("M-s r" . consult-ripgrep)
+  ("M-s d" . consult-fd)
   ("C-c h" . consult-history)
   ("M-g m" . consult-mark))
 

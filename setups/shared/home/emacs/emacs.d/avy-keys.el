@@ -3,7 +3,7 @@
 
 ; Define avy keybingings using transient.
 (transient-define-prefix avy-transient ()
-  "Transient menu for avy commands"
+  "Transient menu for avy"
   ["Avy command"
    ("c" "avy-goto-char" avy-goto-char)
    ("l" "avy-goto-line" avy-goto-line)
