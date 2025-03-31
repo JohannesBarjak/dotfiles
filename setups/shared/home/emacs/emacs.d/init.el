@@ -22,7 +22,11 @@
   (bind-keys :prefix-map my-prefix-map
     :prefix "C-;"
     ("a" . avy-transient)
-    ("f" . consult-transient)))
+    ("f" . consult-transient))
+
+  ; Use eldoc for documentation popups.
+  (require 'eldoc-box)
+  (bind-key "C-h ;" #'eldoc-box-help-at-point))
 
 ; Use corfu for completion prompts.
 (use-package corfu

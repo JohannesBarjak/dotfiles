@@ -7,6 +7,7 @@
       epkgs.idris2-mode epkgs.haskell-mode
       epkgs.nix-mode
       epkgs.corfu
+      epkgs.eldoc-box epkgs.markdown-mode
       epkgs.eat epkgs.vterm
       epkgs.magit epkgs.magit-delta
       epkgs.doom-themes
@@ -18,7 +19,7 @@
       epkgs.try
     ];
 
-    package = pkgs.emacs30-pgtk;
+    package = pkgs.emacs-pgtk;
   };
 
   xdg.configFile."emacs" = {
