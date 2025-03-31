@@ -6,7 +6,7 @@
       epkgs.meow epkgs.avy
       epkgs.idris2-mode epkgs.haskell-mode
       epkgs.nix-mode
-      epkgs.company
+      epkgs.corfu
       epkgs.eat epkgs.vterm
       epkgs.magit epkgs.magit-delta
       epkgs.doom-themes

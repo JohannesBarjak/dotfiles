@@ -24,9 +24,20 @@
     ("a" . avy-transient)
     ("f" . consult-transient)))
 
-; Use company for autocomplete prompts.
-(use-package company
-  :hook (after-init . global-company-mode))
+; Use corfu for completion prompts.
+(use-package corfu
+  :custom
+  (corfu-cycle t)
+  (corfu-preselect 'prompt)
+
+  ; Use tab to cycle completions.
+  :bind (:map corfu-map
+	      ("TAB" . corfu-next)
+	      ([tab] . corfu-next)
+	      ("S-TAB" . corfu-previous)
+	      ([backtab] . corfu-previous))
+
+  :init (global-corfu-mode))
 
 ; Use eglot as my lsp manager.
 (use-package eglot
