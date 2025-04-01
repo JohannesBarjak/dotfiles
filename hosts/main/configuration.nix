@@ -178,6 +178,8 @@
   services.ananicy.enable = true;
   security.polkit.enable = true;
 
+  services.locate.enable = true;
+
   # I am using this service to remap caps to esc and ctrl.
   services.kanata = {
     enable = true;
