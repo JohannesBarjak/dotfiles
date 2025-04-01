@@ -102,7 +102,18 @@
   ("M-s r" . consult-ripgrep)
   ("M-s d" . consult-fd)
   ("C-c h" . consult-history)
-  ("M-g m" . consult-mark))
+  ("M-g m" . consult-mark)
+
+  :init
+  (require 'transient)
+
+  (transient-define-prefix consult-transient()
+    "Transient for consult"
+    ["Consult command"
+     ("f" "consult-ripgrep" consult-ripgrep)
+     ("l" "consult-line" consult-line)
+     ("d" "consult-fd" consult-fd)
+     ("q" "quit" transient-quit-one)]))
 
 ; Vertico is a package for interactive completion.
 (use-package vertico
