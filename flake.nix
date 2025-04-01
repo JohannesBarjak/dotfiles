@@ -10,9 +10,11 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
   };
 
-  outputs = { nixpkgs, home-manager, nixpkgs-stable, ... }: {
+  outputs = { nixpkgs, home-manager, nixpkgs-stable, nix-flatpak, ... }: {
     nixosConfigurations.main = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
 
@@ -23,7 +25,10 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.users.johannes = {
-            imports = [ ./hosts/main/home ];
+            imports = [
+              ./hosts/main/home
+              nix-flatpak.homeManagerModules.nix-flatpak
+            ];
           };
         }
       ];

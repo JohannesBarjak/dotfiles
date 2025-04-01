@@ -21,6 +21,25 @@
     distrobox distrobox-tui
   ];
 
+  # Configure flatpak packages.
+  services.flatpak = {
+    enable = true;
+
+    packages = [
+      "net.mullvad.MullvadBrowser"
+    ];
+
+    overrides = {
+      global = {
+        Context.filesystems = [
+          "/nix/store:ro"
+          "xdg-config/gtk-4.0:ro"
+          "xdg-config/gtk-3.0:ro"
+        ];
+      };
+    };
+  };
+
   xdg = {
     enable = true;
 
