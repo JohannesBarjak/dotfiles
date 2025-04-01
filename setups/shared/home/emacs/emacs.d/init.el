@@ -22,11 +22,7 @@
   (bind-keys :prefix-map my-prefix-map
     :prefix "C-;"
     ("a" . avy-transient)
-    ("f" . consult-transient))
-
-  ; Use eldoc for documentation popups.
-  (require 'eldoc-box)
-  (bind-key "C-h ;" #'eldoc-box-help-at-point))
+    ("f" . consult-transient)))
 
 ; Use corfu for completion prompts.
 (use-package corfu
@@ -55,6 +51,10 @@
   :custom
   (eglot-autoshutdown t)  ; shutdown language server after closing last file.
   (eglot-confirm-server-initiated-edits nil))  ; allow edits without confirmation.
+
+; Use eldoc for documentation popups.
+(use-package eldoc-box
+  :bind ("C-h ;" . #'eldoc-box-help-at-point))
 
 ; Add orderless completion style.
 (use-package orderless
