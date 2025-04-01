@@ -39,6 +39,10 @@
 
   :init (global-corfu-mode))
 
+; Add completion preview.
+(use-package completion-preview
+  :hook (after-init-hook . completion-preview-mode))
+
 ; Use eglot as my lsp manager.
 (use-package eglot
   :config
