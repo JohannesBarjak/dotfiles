@@ -12,7 +12,6 @@
 
   (setq custom-file (locate-user-emacs-file "custom_var.el"))
 
-  (load-user-file "consult-keys.el")
   (load-user-file "meow.el")
 
   ; Define prefix for custom commands.
