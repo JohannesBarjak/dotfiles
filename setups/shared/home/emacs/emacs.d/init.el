@@ -85,8 +85,6 @@
   ("C-c h" . consult-history)
   ("M-g m" . consult-mark))
 
-(require 'haskell-mode-autoloads)
-
 ; Vertico is a package for interactive completion.
 (use-package vertico
   :custom
@@ -101,6 +99,8 @@
 	   magit-delta-default-dark-theme "gruvbox-dark"
 	   magit-delta-default-light-theme "gruvbox")
   :init (magit-delta-mode))
+
+(require 'haskell-mode-autoloads)
 
 ; Mode for keyboard configuration language.
 (use-package kbd-mode
