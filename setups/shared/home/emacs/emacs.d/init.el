@@ -12,10 +12,9 @@
 
   (setq custom-file (locate-user-emacs-file "custom_var.el"))
 
-  (load-user-file "avy-keys.el")
   (load-user-file "consult-keys.el")
   (load-user-file "meow.el")
- 
+
   ; Define prefix for custom commands.
   (require 'bind-key)
 
@@ -23,6 +22,22 @@
     :prefix "C-;"
     ("a" . avy-transient)
     ("f" . consult-transient)))
+
+(use-package avy
+  :init
+  (require 'transient)
+
+  ; Define avy keybingings using transient.
+  (transient-define-prefix avy-transient ()
+    "Transient menu for avy"
+    ["Avy command"
+     ("c" "avy-goto-char" avy-goto-char)
+     ("l" "avy-goto-line" avy-goto-line)
+     ("r" "avy-resume" avy-resume)
+     ("s" "avy-isearch" avy-isearch)
+     ("f" "avy-goto-char-timer" avy-goto-char-timer)
+     ("w" "avy-goto-subword-1" avy-goto-subword-1)
+     ("q" "quit" transient-quit-one)]))
 
 ; Use corfu for completion prompts.
 (use-package corfu
