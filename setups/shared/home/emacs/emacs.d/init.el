@@ -22,6 +22,7 @@
     ("a" . avy-transient)
     ("f" . consult-transient)))
 
+; Avy allows for fast jumping in buffers.
 (use-package avy
   :init
   (require 'transient)
@@ -96,6 +97,7 @@
   ("C-:" . embark-dwim)
   ("C-h B" . embark-bindings))
 
+; Use consult for better searching interfaces.
 (use-package consult
   :bind
   ("M-s r" . consult-ripgrep)
@@ -106,6 +108,7 @@
   :init
   (require 'transient)
 
+  ; Consult transient.
   (transient-define-prefix consult-transient()
     "Transient for consult"
     ["Consult command"
