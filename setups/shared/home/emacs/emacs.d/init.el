@@ -132,7 +132,8 @@
 	   magit-delta-default-light-theme "gruvbox")
   :init (magit-delta-mode))
 
-(require 'haskell-mode-autoloads)
+(use-package haskell-mode
+  :init (require 'haskell-mode-autoloads))
 
 ; Mode for keyboard configuration language.
 (use-package kbd-mode
