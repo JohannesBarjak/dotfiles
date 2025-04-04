@@ -137,3 +137,12 @@
 ; Mode for keyboard configuration language.
 (use-package kbd-mode
   :vc (:url "https://github.com/kmonad/kbd-mode" :rev :newest))
+
+; Make ispell use hunspell.
+(eval-after-load 'ispell
+  (setq ispell-program-name (executable-find "hunspell")
+        ispell-dictionary   "en_US"))
+
+(setq ispell-local-dictionary "en_US")
+(setq ispell-local-dictionary-alist
+      '("en_US" "[[:alpha:]]" "[^[:alpha:]]" "[']" nil ("-d" "en_US") nil utf-8()))

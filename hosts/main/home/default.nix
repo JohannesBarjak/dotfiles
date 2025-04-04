@@ -19,6 +19,7 @@
     musescore
     opensnitch-ui
     distrobox distrobox-tui
+    (hunspellWithDicts [ hunspellDicts.en-us hunspellDicts.en-us-large ])
   ];
 
   # Configure flatpak packages.
