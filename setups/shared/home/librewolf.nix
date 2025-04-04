@@ -14,6 +14,7 @@
       # when set globally.
       settings = {
         "browser.tabs.inTitlebar" = 0;
+        "webgl.disabled" = false;
       };
 
       bookmarks = {
