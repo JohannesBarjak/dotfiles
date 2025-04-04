@@ -56,7 +56,7 @@
 
 ; Add completion preview.
 (use-package completion-preview
-  :hook (after-init-hook . completion-preview-mode))
+  :hook (after-init-hook . global-completion-preview-mode))
 
 ; Use eglot as my lsp manager.
 (use-package eglot
@@ -78,7 +78,7 @@
 ; Add orderless completion style.
 (use-package orderless
   :custom
-  (completion-styles '(orderless basic))
+  (completion-styles '(orderless flex))
   (completion-category-defaults nil) ; Ensures that orderless is the only completion style used by default.
   (completion-category-overrides '((file (styles basic partial-completion)))))
 
