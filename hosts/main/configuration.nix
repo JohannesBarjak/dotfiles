@@ -175,9 +175,12 @@
 
   services.udisks2.enable = true;
 
-  services.ananicy.enable = true;
-  security.polkit.enable = true;
+  services.ananicy = {
+    enable = true;
+    package = pkgs.ananicy-cpp;
+  };
 
+  security.polkit.enable = true;
   services.locate.enable = true;
 
   # I am using this service to remap caps to esc and ctrl.
