@@ -22,6 +22,8 @@
     (hunspellWithDicts [ hunspellDicts.en-us hunspellDicts.en-us-large ])
   ];
 
+  programs.bash.enable = true;
+
   # Configure flatpak packages.
   services.flatpak = {
     enable = true;
