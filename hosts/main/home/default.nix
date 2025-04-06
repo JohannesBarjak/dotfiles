@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{pkgs, config, ...}: {
   home.username = "johannes";
   home.homeDirectory = "/home/johannes";
   programs.home-manager.enable = true;
@@ -22,6 +22,10 @@
     (hunspellWithDicts [ hunspellDicts.en-us hunspellDicts.en-us-large ])
   ];
 
+  home.sessionVariables = {
+    GTK_THEME = config.gtk.theme.name;
+  };
+
   programs.bash.enable = true;
 
   # Configure flatpak packages.
@@ -34,6 +38,8 @@
 
     overrides = {
       global = {
+        Environment.GTK_THEME = config.gtk.theme.name;
+
         Context.filesystems = [
           "/nix/store:ro"
           "xdg-config/gtk-4.0:ro"
