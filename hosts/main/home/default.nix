@@ -68,7 +68,7 @@
 
     desktopEntries = {
       librewolf = {
-        exec = "firejail librewolf --name librewolf %U";
+        exec = "librewolf";
 
         name = "Librewolf";
         genericName = "Web Browser";
