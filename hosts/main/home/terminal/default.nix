@@ -65,6 +65,12 @@
     recursive = true;
   };
 
+  # Correct incorrect commands in the shell.
+  programs.thefuck = {
+    enable = true;
+    enableNushellIntegration = true;
+  };
+
   # Git configuration.
   programs.git = {
     enable = true;
