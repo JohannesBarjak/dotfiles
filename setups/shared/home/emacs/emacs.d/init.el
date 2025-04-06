@@ -52,7 +52,10 @@
 	      ("S-TAB" . corfu-previous)
 	      ([backtab] . corfu-previous))
 
-  :init (global-corfu-mode))
+  :init
+  (global-corfu-mode)
+  (corfu-popupinfo-mode)
+  (setq corfu-popupinfo-delay '(0.5 . 0)))
 
 ; Add completion preview.
 (use-package completion-preview
