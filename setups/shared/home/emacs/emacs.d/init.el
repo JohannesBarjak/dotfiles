@@ -11,14 +11,6 @@
 
   (load-user-file "meow.el")
 
-  ; Define prefix for custom commands.
-  (require 'bind-key)
-
-  (bind-keys :prefix-map my-prefix-map
-    :prefix "C-;"
-    ("a" . avy-transient)
-    ("f" . consult-transient))
-
   :custom
   (tab-always-indent 'complete) ; Enable indentation + completion using the TAB key.
   (custom-file "~/.config/emacs/custom_var.el")
@@ -40,7 +32,8 @@
      ("s" "avy-isearch" avy-isearch)
      ("f" "avy-goto-char-timer" avy-goto-char-timer)
      ("w" "avy-goto-subword-1" avy-goto-subword-1)
-     ("q" "quit" transient-quit-one)]))
+     ("q" "quit" transient-quit-one)])
+  :bind ("C-; a" . avy-transient))
 
 ; Use corfu for completion prompts.
 (use-package corfu
@@ -121,7 +114,8 @@
      ("f" "consult-ripgrep" consult-ripgrep)
      ("l" "consult-line" consult-line)
      ("d" "consult-fd" consult-fd)
-     ("q" "quit" transient-quit-one)]))
+     ("q" "quit" transient-quit-one)])
+  :bind ("C-; f" . consult-transient))
 
 ; Vertico is a package for interactive completion.
 (use-package vertico
