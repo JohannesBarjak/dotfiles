@@ -5,12 +5,9 @@
 (use-package emacs
   :init
   (load-theme 'doom-gruvbox t)
-  (add-hook 'prog-mode-hook 'display-line-numbers-mode)
 
   (tool-bar-mode -1) ; Disable toolbar and scrollbar.
   (scroll-bar-mode -1)
-
-  (setq custom-file (locate-user-emacs-file "custom_var.el"))
 
   (load-user-file "meow.el")
 
@@ -20,7 +17,13 @@
   (bind-keys :prefix-map my-prefix-map
     :prefix "C-;"
     ("a" . avy-transient)
-    ("f" . consult-transient)))
+    ("f" . consult-transient))
+
+  :custom
+  (tab-always-indent 'complete) ; Enable indentation + completion using the TAB key.
+  (custom-file "~/.config/emacs/custom_var.el")
+
+  :hook (prog-mode-hook . display-line-numbers-mode))
 
 ; Avy allows for fast jumping in buffers.
 (use-package avy
