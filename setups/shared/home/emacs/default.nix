@@ -17,6 +17,7 @@
       epkgs.embark
       epkgs.consult
       epkgs.try
+      epkgs.yasnippet
     ];
 
     package = pkgs.emacs-pgtk;
