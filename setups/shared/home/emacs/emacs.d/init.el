@@ -77,14 +77,18 @@
   (completion-category-defaults nil) ; Ensures that orderless is the only completion style used by default.
   (completion-category-overrides '((file (styles basic partial-completion)))))
 
-; Embark provides actions on buffer targets.
+;; Embark provides actions on buffer targets.
 (use-package embark
   :bind
   ("C-." . embark-act)
   ("M-." . embark-dwim)
-  ("C-h B" . embark-bindings))
+  ("C-h B" . embark-bindings)
 
-; Use consult for better searching interfaces.
+  ;; Add custom variable for embark indicator.
+  :custom (embark-indicators '(embark-minimal-indicator
+			       embark-highlight-indicator
+			       embark-isearch-highlight-indicator)))
+
 (use-package consult
   :bind
   ("M-s r" . consult-ripgrep)
