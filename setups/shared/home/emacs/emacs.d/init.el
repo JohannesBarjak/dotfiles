@@ -118,7 +118,10 @@
 (use-package vertico
   :custom
   (vertico--resize t)
-  :init (vertico-mode))
+  :init
+  (vertico-mode)
+  (vertico-multiform-mode)
+  (add-to-list 'vertico-multiform-categories '(embark-keybinding grid)))
 
 ; Marginalia adds annotations to the minibuffer.
 (use-package marginalia
