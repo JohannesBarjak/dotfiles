@@ -57,7 +57,7 @@
     enable = true;
 
     package = pkgs.nushell;
-    extraConfig = "$env.config = { show_banner: false, edit_mode: vi }"; # Removes annoying welcome message.
+    extraConfig = "$env.config = { show_banner: false, edit_mode: emacs }"; # Removes annoying welcome message.
   };
 
   xdg.configFile."elvish" = {
