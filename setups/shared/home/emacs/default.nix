@@ -18,6 +18,7 @@
       epkgs.consult
       epkgs.try
       epkgs.yasnippet
+      epkgs.pandoc-mode
     ];
 
     package = pkgs.emacs-pgtk;
