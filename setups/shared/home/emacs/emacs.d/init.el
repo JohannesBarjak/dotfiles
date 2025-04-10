@@ -106,6 +106,10 @@
   :bind ("C-; f" . consult-transient))
 
 ; Vertico is a package for interactive completion.
+;; Add embark consult integration.
+(use-package embark-consult
+  :hook (embark-collect-mode . consult-preview-at-point-mode))
+
 (use-package vertico
   :custom
   (vertico--resize t)
