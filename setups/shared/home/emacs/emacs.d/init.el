@@ -89,6 +89,7 @@
 			       embark-highlight-indicator
 			       embark-isearch-highlight-indicator)))
 
+;; Use consult for better searching interfaces.
 (use-package consult
   :bind
   ("M-s r" . consult-ripgrep)
@@ -99,7 +100,7 @@
   :init
   (require 'transient)
 
-  ; Consult transient.
+  ;; Consult transient.
   (transient-define-prefix consult-transient()
     "Transient for consult"
     ["Consult command"
@@ -109,11 +110,11 @@
      ("q" "quit" transient-quit-one)])
   :bind ("C-; f" . consult-transient))
 
-; Vertico is a package for interactive completion.
 ;; Add embark consult integration.
 (use-package embark-consult
   :hook (embark-collect-mode . consult-preview-at-point-mode))
 
+;; Vertico is a package for interactive completion.
 (use-package vertico
   :custom
   (vertico--resize t)
