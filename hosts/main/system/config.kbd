@@ -9,14 +9,23 @@
 (deflayer base
   grv  1    2    3    4    5    6    7    8    9    0    -    eql  bks
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
-  @cec a    s    d    f    g    h    j    k    l    ;    apo  ent
-  @lss z    x    c    v    b    n    m    ,    .    /    rsft
+  @cec @mta @ats @cld @stf g    h    @mtj @atk @cll @st; apo  ent
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
   lctl met  lalt           spc            ralt prnt rctl pgup up   pgdn
                                                          left down right)
 
 (defalias
   cec (tap-hold-press 0 150 esc ctl)
-  lss (one-shot 2000 lsft))
+
+  mta (tap-hold-release 0 200 a   met)
+  ats (tap-hold-release 0 200 s   alt)
+  cld (tap-hold-release 0 200 d   ctl)
+  stf (tap-hold-release 0 200 f   sft)
+
+  mtj (tap-hold-release 0 200 j   met)
+  atk (tap-hold-release 0 200 k   alt)
+  cll (tap-hold-release 0 200 l   ctl)
+  st; (tap-hold-release 0 200 ;   sft))
 
 (defchordsv2
   (met caps) caps 50 first-release ())
