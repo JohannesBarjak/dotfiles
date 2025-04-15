@@ -51,6 +51,7 @@
         "XF86MonBrightnessDown" = "exec ${pkgs.brightnessctl}/bin/brightnessctl set 5%-";
         "${mod}+tab" = "workspace next_on_output";
         "${mod}+Shift+tab" = "workspace prev_on_output";
+        "${mod}+g" = "exec ${config.programs.rofi.package}/bin/rofi -show window";
       };
 
       colors = let
