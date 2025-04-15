@@ -52,6 +52,7 @@
         "${mod}+tab" = "workspace next_on_output";
         "${mod}+Shift+tab" = "workspace prev_on_output";
         "${mod}+g" = "exec ${config.programs.rofi.package}/bin/rofi -show window";
+        "${mod}+c" = "exec ${config.programs.emacs.finalPackage}/bin/emacs";
       };
 
       colors = let
