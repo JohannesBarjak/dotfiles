@@ -34,6 +34,7 @@
 
     packages = [
       "net.mullvad.MullvadBrowser"
+      "org.libreoffice.LibreOffice"
     ];
 
     overrides = {
