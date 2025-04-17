@@ -9,26 +9,36 @@
 (deflayer base
   grv  1    2    3    4    5    6    7    8    9    0    -    eql  bks
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
-  @cec @mta @ats @cld @stf g    h    @mtj @atk @cll @st; apo  ent
-  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  @cec @a   @s   @d   @f   g    h    @j   @k   @l   @;   apo  ent
+  lsft z    x    @c   v    b    n    m    ,    .    /    rsft
   lctl met  lalt           spc            ralt prnt rctl pgup up   pgdn
                                                          left down right)
 
 (defalias
   cec (tap-hold-press 0 150 esc ctl)
 
-  mta (tap-hold-release 0 200 a   met)
-  ats (tap-hold-release 0 200 s   alt)
-  cld (tap-hold-release 0 200 d   ctl)
-  stf (tap-hold-release 0 200 f   sft)
+  a (tap-hold-release 0 200 a   met)
+  s (tap-hold-release 0 200 s   alt)
+  d (tap-hold-release 0 200 d   ctl)
+  f (tap-hold-release 0 200 f   sft)
 
-  mtj (tap-hold-release 0 200 j   met)
-  atk (tap-hold-release 0 200 k   alt)
-  cll (tap-hold-release 0 200 l   ctl)
-  st; (tap-hold-release 0 200 ;   sft))
+  j (tap-hold-release 0 200 j   met)
+  k (tap-hold-release 0 200 k   alt)
+  l (tap-hold-release 0 200 l   ctl)
+  ; (tap-hold-release 0 200 ;   sft)
+
+  c (tap-hold-release 0 200 c   (layer-while-held navigation)))
 
 (defchordsv2
   (met caps) caps 50 first-release ())
+
+(deflayer navigation
+  _    _    _    _    _    _    _    _    _    _     _    _    _    _
+  _    _    _    _    _    _    _    _    up   _     _    _    _    _
+  _    _    _    _    _    _    _    left down right _    _    _
+  _    _    _    _    _    _    _    _    _    _     _    _
+  _    _    _              _              _    _     _    _    _    _
+                                                          _    _    _)
 
 #|
 (deflayer qwerty
