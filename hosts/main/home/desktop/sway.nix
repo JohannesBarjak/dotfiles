@@ -21,8 +21,8 @@
         };
 
         "2:10:TPPS/2_ALPS_TrackPoint" = {
-          accel_profile = "adaptive";
-          pointer_accel = "1.0";
+          accel_profile = "flat";
+          pointer_accel = "0.5";
         };
       };
 
