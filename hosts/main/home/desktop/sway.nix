@@ -49,15 +49,17 @@
 
       # Use mkOptiondefault so that default config is not overwritten.
       keybindings = lib.mkOptionDefault {
+        "${mod}+c" = "exec ${config.programs.emacs.finalPackage}/bin/emacs";
+        "${mod}+g" = "exec ${config.programs.rofi.package}/bin/rofi -show window";
+        "${mod}+i" = "exec ${config.programs.librewolf.package}/bin/librewolf";
+        "${mod}+tab" = "workspace next_on_output";
+        "${mod}+Shift+tab" = "workspace prev_on_output";
+
         "XF86AudioMute" = "exec ${config.programs.nushell.package}/bin/nu ${./sway/volume.nu} --toggle=mute";
         "XF86AudioRaiseVolume" = "exec ${config.programs.nushell.package}/bin/nu ${./sway/volume.nu} --inc";
         "XF86AudioLowerVolume" = "exec ${config.programs.nushell.package}/bin/nu ${./sway/volume.nu} --dec";
         "XF86MonBrightnessUp" = "exec ${pkgs.brightnessctl}/bin/brightnessctl set 5%+";
         "XF86MonBrightnessDown" = "exec ${pkgs.brightnessctl}/bin/brightnessctl set 5%-";
-        "${mod}+tab" = "workspace next_on_output";
-        "${mod}+Shift+tab" = "workspace prev_on_output";
-        "${mod}+g" = "exec ${config.programs.rofi.package}/bin/rofi -show window";
-        "${mod}+c" = "exec ${config.programs.emacs.finalPackage}/bin/emacs";
       };
 
       colors = let
