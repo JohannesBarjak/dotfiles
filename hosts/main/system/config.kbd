@@ -17,17 +17,17 @@
 (defalias
   cec (tap-hold-press 0 150 esc ctl)
 
-  a (tap-hold-release 0 200 a   met)
-  s (tap-hold-release 0 200 s   alt)
-  d (tap-hold-release 0 200 d   ctl)
-  f (tap-hold-release 0 200 f   sft)
+  a (tap-hold-release 0 200 a met)
+  s (tap-hold-release 0 200 s alt)
+  d (tap-hold-release 0 200 d ctl)
+  f (tap-hold-release 0 200 f sft)
 
-  j (tap-hold-release 0 200 j   met)
-  k (tap-hold-release 0 200 k   alt)
-  l (tap-hold-release 0 200 l   ctl)
-  ; (tap-hold-release 0 200 ;   sft)
+  j (tap-hold-release 0 200 j sft)
+  k (tap-hold-release 0 200 k ctl)
+  l (tap-hold-release 0 200 l alt)
+  ; (tap-hold-release 0 200 ; met)
 
-  c (tap-hold-release 0 200 c   (layer-while-held navigation)))
+  c (tap-hold-release 0 200 c (layer-while-held navigation)))
 
 (defchordsv2
   (met caps) caps 50 first-release ())
