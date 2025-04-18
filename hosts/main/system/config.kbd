@@ -10,7 +10,7 @@
   grv  1    2    3    4    5    6    7    8    9    0    -    eql  bks
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
   @cec @a   @s   @d   @f   g    h    @j   @k   @l   @;   apo  ent
-  lsft z    x    @c   v    b    n    m    ,    .    /    rsft
+  lsft z    x    @c   @v   b    @n   m    ,    .    /    rsft
   lctl met  lalt           spc            ralt prnt rctl pgup up   pgdn
                                                          left down right)
 
@@ -27,7 +27,9 @@
   l (tap-hold-release 0 200 l alt)
   ; (tap-hold-release 0 200 ; met)
 
-  c (tap-hold-release 0 200 c (layer-while-held navigation)))
+  c (tap-hold-release 0 200 c (layer-while-held navigation))
+  v (tap-hold-release 0 200 v (layer-while-held symbols))
+  n (tap-hold-release 0 200 n (layer-while-held symbols)))
 
 (defchordsv2
   (met caps) caps 50 first-release ())
@@ -39,6 +41,14 @@
   _    _    _    _    _    _    _    _    home end   _    _
   _    _    _              _              _    _     _    _    _    _
                                                           _    _    _)
+
+(deflayer symbols
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    1    2    3    4    5    6    7    8    9    0    _    _
+  _    [    ]    -    \    _    \    =    S-[  S-]  _    _
+  _    _    _              sft            _    _    _    _    _    _
+                                                         _    _    _)
 
 #|
 (deflayer qwerty
