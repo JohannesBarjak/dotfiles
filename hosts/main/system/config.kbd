@@ -10,7 +10,7 @@
   grv  1    2    3    4    5    6    7    8    9    0    -    eql  bks
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
   @cec @a   @s   @d   @f   g    h    @j   @k   @l   @;   apo  ent
-  lsft z    x    @c   @v   b    @n   m    ,    .    /    rsft
+  lsft @z   x    @c   v    b    n    m    ,    .    @/   rsft
   lctl met  lalt           spc            ralt prnt rctl pgup up   pgdn
                                                          left down right)
 
@@ -28,8 +28,8 @@
   ; (tap-hold-release 0 200 ; met)
 
   c (tap-hold-release 0 200 c (layer-while-held navigation))
-  v (tap-hold-release 0 200 v (layer-while-held symbols))
-  n (tap-hold-release 0 200 n (layer-while-held symbols)))
+  z (tap-hold-release 0 200 z (layer-while-held symbols))
+  / (tap-hold-release 0 200 / (layer-while-held symbols)))
 
 (defchordsv2
   (met caps) caps 50 first-release ())
