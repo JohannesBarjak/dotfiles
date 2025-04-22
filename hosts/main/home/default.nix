@@ -20,6 +20,7 @@
     opensnitch-ui
     distrobox distrobox-tui
     (hunspellWithDicts [ hunspellDicts.en-us hunspellDicts.en-us-large ])
+    zip unzip
   ];
 
   home.sessionVariables = {
