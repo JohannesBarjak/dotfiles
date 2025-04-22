@@ -15,7 +15,7 @@
                                                          left down right)
 
 (defalias
-  cec (tap-hold-press 0 150 esc ctl)
+  cec (tap-hold-press 0 200 esc caps)
 
   a (tap-hold-release 0 200 a met)
   s (tap-hold-release 0 200 s alt)
