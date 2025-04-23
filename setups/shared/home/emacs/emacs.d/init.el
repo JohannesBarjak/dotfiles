@@ -94,8 +94,12 @@
   :bind
   ("M-s r" . consult-ripgrep)
   ("M-s d" . consult-fd)
-  ("C-c h" . consult-history)
   ("M-g m" . consult-mark)
+
+  ("C-c h" . consult-history)
+  ("C-c k" . consult-kmacro)
+
+  ("C-x b" . consult-buffer)
 
   :init
   (require 'transient)
