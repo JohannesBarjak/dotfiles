@@ -8,7 +8,7 @@
 
 (deflayer base
   grv  1    2    3    4    5    6    7    8    9    0    -    eql  bks
-  tab  q    @w   @e   r    t    y    u    @i   o    p    [    ]    \
+  tab  @q   @w   e    r    t    y    u    i    o    @p   [    ]    \
   @cec @a   @s   @d   @f   g    h    @j   @k   @l   @;   apo  ent
   lsft @z   @x   @c   @v   b    @n   @m   @,   @.   /    rsft
   lctl met  lalt           spc            ralt prnt rctl pgup up   pgdn
@@ -38,8 +38,8 @@
   . (tap-hold-release 0 200 . (multi met sft))
 
   w (tap-hold-release 0 200 w (layer-while-held navigation))
-  e (tap-hold-release 0 200 e (layer-while-held symbols))
-  i (tap-hold-release 0 200 i (layer-while-held symbols)))
+  q (tap-hold-release 0 200 q (layer-while-held symbols))
+  p (tap-hold-release 0 200 p (layer-while-held symbols)))
 
 (defchordsv2
   (met caps) caps 50 first-release ())
