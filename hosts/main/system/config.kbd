@@ -11,12 +11,13 @@
   tab  @q   @w   e    r    t    y    u    i    o    @p   [    ]    \
   @cec @a   @s   @d   @f   g    h    @j   @k   @l   @;   apo  ent
   lsft @z   @x   @c   @v   b    @n   @m   @,   @.   /    rsft
-  lctl met  lalt           spc            @era prnt rctl pgup up   pgdn
+  lctl met  @bla           spc            @era prnt rctl pgup up   pgdn
                                                          left down right)
 
 (defalias
   cec (tap-hold-press 0 200 esc caps)
   era (tap-hold-press 0 200 ent  alt)
+  bla (tap-hold-press 200 200 bks  alt)
 
   a (tap-hold-release 200 200 a met)
   s (tap-hold-release 200 200 s alt)
