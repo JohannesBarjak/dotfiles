@@ -180,6 +180,8 @@
     package = pkgs.ananicy-cpp;
   };
 
+  services.auto-cpufreq.enable = true;
+
   security.polkit.enable = true;
   services.locate.enable = true;
 
