@@ -41,6 +41,7 @@ window#waybar {
 
 #clock,
 #network,
+#wireplumber,
 #idle_inhibitor,
 #battery,
 #mode,

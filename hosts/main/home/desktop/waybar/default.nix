@@ -8,7 +8,7 @@
         layer = "top";
         modules-left = [ "sway/workspaces" "sway/mode" ];
         modules-center = [ "clock#2" ];
-        modules-right = [ "network" "battery" "idle_inhibitor" "clock#1" "custom/power" ];
+        modules-right = [ "network" "wireplumber" "battery" "idle_inhibitor" "clock#1" "custom/power" ];
 
         margin = "3 5 0 5";
 
@@ -40,6 +40,12 @@
           format-disconnected = "Disconnected";
 
           tooltip-format-wifi = "{essid}";
+        };
+
+        wireplumber = {
+          format = "{volume}% {icon}";
+          format-muted = "";
+          format-icons = ["" "" ""];
         };
 
         battery = {
