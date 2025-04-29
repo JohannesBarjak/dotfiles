@@ -59,6 +59,7 @@
         # Add hints from warpd.
         "${mod}+m" = "exec ${pkgs.warpd}/bin/warpd --hint";
         "${mod}+c" = "exec ${pkgs.warpd}/bin/warpd --grid";
+        "${mod}+x" = "exec ${pkgs.warpd}/bin/warpd --normal";
 
         "XF86AudioMute" = "exec ${config.programs.nushell.package}/bin/nu ${./sway/volume.nu} --toggle=mute";
         "XF86AudioRaiseVolume" = "exec ${config.programs.nushell.package}/bin/nu ${./sway/volume.nu} --inc";
