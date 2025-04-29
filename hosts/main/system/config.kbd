@@ -17,29 +17,29 @@
 (defalias
   cec (tap-hold-press 0 200 esc caps)
 
-  a (tap-hold-release 0 200 a met)
-  s (tap-hold-release 0 200 s alt)
-  d (tap-hold-release 0 200 d ctl)
-  f (tap-hold-release 0 200 f sft)
+  a (tap-hold-release 200 200 a met)
+  s (tap-hold-release 200 200 s alt)
+  d (tap-hold-release 200 200 d ctl)
+  f (tap-hold-release 200 200 f sft)
 
-  j (tap-hold-release 0 200 j sft)
-  k (tap-hold-release 0 200 k ctl)
-  l (tap-hold-release 0 200 l alt)
-  ; (tap-hold-release 0 200 ; met)
+  j (tap-hold-release 200 200 j sft)
+  k (tap-hold-release 200 200 k ctl)
+  l (tap-hold-release 200 200 l alt)
+  ; (tap-hold-release 200 200 ; met)
 
-  z (tap-hold-release 0 200 z (multi met sft))
-  x (tap-hold-release 0 200 x (multi alt sft))
-  c (tap-hold-release 0 200 c (multi ctl sft))
-  v (tap-hold-release 0 200 v (multi ctl alt))
+  z (tap-hold-release 200 200 z (multi met sft))
+  x (tap-hold-release 200 200 x (multi alt sft))
+  c (tap-hold-release 200 200 c (multi ctl sft))
+  v (tap-hold-release 200 200 v (multi ctl alt))
 
-  n (tap-hold-release 0 200 n (multi ctl alt))
-  m (tap-hold-release 0 200 m (multi ctl sft))
-  , (tap-hold-release 0 200 , (multi alt sft))
-  . (tap-hold-release 0 200 . (multi met sft))
+  n (tap-hold-release 200 200 n (multi ctl alt))
+  m (tap-hold-release 200 200 m (multi ctl sft))
+  , (tap-hold-release 200 200 , (multi alt sft))
+  . (tap-hold-release 200 200 . (multi met sft))
 
-  w (tap-hold-release 0 200 w (layer-while-held navigation))
-  q (tap-hold-release 0 200 q (layer-while-held symbols))
-  p (tap-hold-release 0 200 p (layer-while-held symbols)))
+  w (tap-hold-release 200 200 w (layer-while-held navigation))
+  q (tap-hold-release 200 200 q (layer-while-held symbols))
+  p (tap-hold-release 200 200 p (layer-while-held symbols)))
 
 (defchordsv2
   (met caps) caps 50 first-release ())
