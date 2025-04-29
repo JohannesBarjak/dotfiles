@@ -49,12 +49,16 @@
 
       # Use mkOptiondefault so that default config is not overwritten.
       keybindings = lib.mkOptionDefault {
-        "${mod}+c" = "exec ${config.programs.emacs.finalPackage}/bin/emacs";
+        "${mod}+n" = "exec ${config.programs.emacs.finalPackage}/bin/emacs";
         "${mod}+g" = "exec ${config.programs.rofi.package}/bin/rofi -show window";
         "${mod}+i" = "exec ${config.programs.librewolf.package}/bin/librewolf";
 
         "${mod}+tab" = "workspace next_on_output";
         "${mod}+Shift+tab" = "workspace prev_on_output";
+
+        # Add hints from warpd.
+        "${mod}+m" = "exec ${pkgs.warpd}/bin/warpd --hint";
+        "${mod}+c" = "exec ${pkgs.warpd}/bin/warpd --grid";
 
         "XF86AudioMute" = "exec ${config.programs.nushell.package}/bin/nu ${./sway/volume.nu} --toggle=mute";
         "XF86AudioRaiseVolume" = "exec ${config.programs.nushell.package}/bin/nu ${./sway/volume.nu} --inc";
