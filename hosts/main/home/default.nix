@@ -36,6 +36,8 @@
     packages = [
       "net.mullvad.MullvadBrowser"
       "org.libreoffice.LibreOffice"
+      "net.veloren.airshipper"
+      "com.brave.Browser"
     ];
 
     overrides = {
@@ -47,6 +49,22 @@
           "xdg-config/gtk-4.0:ro"
           "xdg-config/gtk-3.0:ro"
         ];
+      };
+
+      "net.veloren.airshipper" = {
+        Context.sockets = "!wayland";
+      };
+
+      "org.libreoffice.LibreOffice" = {
+        Context = {
+          sockets = [
+            "!fallback-x11" "!x11"
+          ];
+
+          filesystems = [
+            "!host" "xdg-documents/LibreOffice"
+          ];
+        };
       };
     };
   };
