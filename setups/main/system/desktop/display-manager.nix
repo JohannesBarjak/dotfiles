@@ -1,4 +1,5 @@
-{pkgs, ...}: let cmd = "dbus-run-session sway &> /dev/null"; in {
+{config, pkgs, ...}: let cmd = "dbus-run-session sway &> /dev/null";
+                         sessionData = "${config.services.displayManager.sessionData.desktops}/share/wayland-sessions"; in {
   services.greetd = {
     enable = true;
 
@@ -10,7 +11,8 @@
 
       };
 
-      default_session.command = "${pkgs.greetd.tuigreet}/bin/tuigreet -r -t --asterisks --user-menu --cmd '${cmd}'";
+      default_session.command =
+        "${pkgs.greetd.tuigreet}/bin/tuigreet -r -t --asterisks --user-menu --sessions ${sessionData} --cmd '${cmd}'";
 
       # Got this from 'https://github.com/apognu/tuigreet/issues/68'
       # Prevent tty text from appearing on greetd
