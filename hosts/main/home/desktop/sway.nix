@@ -61,6 +61,9 @@
         "${mod}+c" = "exec ${pkgs.warpd}/bin/warpd --grid";
         "${mod}+x" = "exec ${pkgs.warpd}/bin/warpd --normal";
 
+        # Add binding for focus on child.
+        "${mod}+s" = "focus child";
+
         "XF86AudioMute" = "exec ${config.programs.nushell.package}/bin/nu ${./sway/volume.nu} --toggle=mute";
         "XF86AudioRaiseVolume" = "exec ${config.programs.nushell.package}/bin/nu ${./sway/volume.nu} --inc";
         "XF86AudioLowerVolume" = "exec ${config.programs.nushell.package}/bin/nu ${./sway/volume.nu} --dec";
