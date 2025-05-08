@@ -1,7 +1,15 @@
 {pkgs, ...}: {
   networking = {
-    wireless.iwd.enable = true;
+    wireless.iwd = {
+      enable = true;
+
+      settings = {
+        General.EnableNetworkConfiguration = true;
+      };
+    };
     hostName = "nixos";
+
+    useDHCP = false;
   };
 
   services.mullvad-vpn.enable = true;
