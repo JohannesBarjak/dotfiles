@@ -186,6 +186,8 @@
   security.polkit.enable = true;
   services.locate.enable = true;
 
+  services.dbus.implementation = "broker";
+
   # I am using this service to remap caps to esc and ctrl.
   services.kanata = {
     enable = true;
