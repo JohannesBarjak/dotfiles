@@ -1,12 +1,7 @@
 {pkgs, ...}: {
-  systemd.network.enable = true;
-  systemd.network.wait-online.anyInterface = true;
-
   networking = {
-    useDHCP = false;
-    hostName = "nixos";
-
     wireless.iwd.enable = true;
+    hostName = "nixos";
   };
 
   services.mullvad-vpn.enable = true;
