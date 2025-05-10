@@ -105,7 +105,7 @@
   ("M-s l" . consult-line)
 
   ("C-c h" . consult-history)
-  ("C-c k" . consult-kmacro)
+  ("C-c k" . consult-kmacro))
 
 ;; Add embark consult integration.
 (use-package embark-consult
