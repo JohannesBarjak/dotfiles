@@ -92,27 +92,20 @@
 ;; Use consult for better searching interfaces.
 (use-package consult
   :bind
-  ("M-s r" . consult-ripgrep)
-  ("M-s d" . consult-fd)
+  ("C-x b" . consult-buffer)
+
+  ("M-g f" . consult-flymake)
   ("M-g m" . consult-mark)
+  ("M-g M-g" . consult-goto-line)
+  ("M-g g" . consult-goto-line)
+
+  ("M-s d" . consult-fd)
+  ("M-s c" . consult-locate)
+  ("M-s r" . consult-ripgrep)
+  ("M-s l" . consult-line)
 
   ("C-c h" . consult-history)
   ("C-c k" . consult-kmacro)
-
-  ("C-x b" . consult-buffer)
-
-  :init
-  (require 'transient)
-
-  ;; Consult transient.
-  (transient-define-prefix consult-transient()
-    "Transient for consult"
-    ["Consult command"
-     ("f" "consult-ripgrep" consult-ripgrep)
-     ("l" "consult-line" consult-line)
-     ("d" "consult-fd" consult-fd)
-     ("q" "quit" transient-quit-one)])
-  :bind ("C-; f" . consult-transient))
 
 ;; Add embark consult integration.
 (use-package embark-consult
