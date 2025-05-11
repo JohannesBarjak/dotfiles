@@ -22,21 +22,14 @@
   :bind
   ("C-:" . avy-goto-char)
   ("C-'" . avy-goto-char-2)
-  :init
-  (require 'transient)
 
-  ; Define avy keybingings using transient.
-  (transient-define-prefix avy-transient ()
-    "Transient menu for avy"
-    ["Avy command"
-     ("c" "avy-goto-char" avy-goto-char)
-     ("l" "avy-goto-line" avy-goto-line)
-     ("r" "avy-resume" avy-resume)
-     ("s" "avy-isearch" avy-isearch)
-     ("f" "avy-goto-char-timer" avy-goto-char-timer)
-     ("w" "avy-goto-subword-1" avy-goto-subword-1)
-     ("q" "quit" transient-quit-one)])
-  :bind ("C-; a" . avy-transient))
+  ("M-g e" . avy-goto-word-0)
+  ("M-g w" . avy-goto-word-1)
+  ("M-g l" . avy-goto-line)
+
+  ("M-s s" . avy-goto-char-timer)
+  :custom
+  (avy-timeout-seconds 2)
 
 ; Use corfu for completion prompts.
 (use-package corfu
