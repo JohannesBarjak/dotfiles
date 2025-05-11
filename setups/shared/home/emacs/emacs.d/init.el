@@ -19,6 +19,9 @@
 
 ; Avy allows for fast jumping in buffers.
 (use-package avy
+  :bind
+  ("C-:" . avy-goto-char)
+  ("C-'" . avy-goto-char-2)
   :init
   (require 'transient)
 
