@@ -29,7 +29,7 @@
 
   ("M-s s" . avy-goto-char-timer)
   :custom
-  (avy-timeout-seconds 2)
+  (avy-timeout-seconds 2))
 
 ; Use corfu for completion prompts.
 (use-package corfu
