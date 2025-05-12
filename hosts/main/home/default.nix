@@ -14,7 +14,7 @@
     numbat
     wineWow64Packages.waylandFull winetricks
     bluetuith
-    gnome-disk-utility ventoy-full
+    gnome-disk-utility
     valent
     musescore
     opensnitch-ui
