@@ -49,12 +49,6 @@
           installation_mode = "force_installed";
         };
 
-        # Note that uMatrix is archived.
-        "uMatrix@raymondhill.net" = {
-          install_url = "https://addons.mozilla.org/firefox/downloads/latest/umatrix/latest.xpi";
-          installation_mode = "force_installed";
-        };
-
         "CanvasBlocker@kkapsner.de" = {
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/canvasblocker/latest.xpi";
           installation_mode = "force_installed";
