@@ -11,6 +11,16 @@
 
   (load-user-file "meow.el")
 
+  ;; Add smart open line, idea and code came from this site:
+  ;; https://emacsredux.com/blog/2013/03/26/smarter-open-line/.
+  (defun smart-open-line ()
+    "A smarter open line that inserts indentation."
+    (interactive)
+    (move-end-of-line nil)
+    (newline-and-indent))
+
+  :bind ("M-o" . smart-open-line)
+
   :custom
   (tab-always-indent 'complete) ; Enable indentation + completion using the TAB key.
   (custom-file "~/.config/emacs/custom_var.el")
