@@ -53,8 +53,13 @@
         "${mod}+g" = "exec ${config.programs.rofi.package}/bin/rofi -show window";
         "${mod}+i" = "exec ${config.programs.librewolf.package}/bin/librewolf";
 
-        "${mod}+tab" = "workspace next_on_output";
-        "${mod}+Shift+tab" = "workspace prev_on_output";
+        "${mod}+h" = "exec ${pkgs.sway-overfocus}/bin/sway-overfocus split-lt float-lt output-lt";
+        "${mod}+j" = "exec ${pkgs.sway-overfocus}/bin/sway-overfocus split-dt float-dt output-dt";
+        "${mod}+k" = "exec ${pkgs.sway-overfocus}/bin/sway-overfocus split-ut float-ut output-ut";
+        "${mod}+l" = "exec ${pkgs.sway-overfocus}/bin/sway-overfocus split-rt float-rt output-rt";
+
+        "${mod}+Period" = "exec ${pkgs.sway-overfocus}/bin/sway-overfocus group-rw group-dw";
+        "${mod}+Comma"  = "exec ${pkgs.sway-overfocus}/bin/sway-overfocus group-lw group-uw";
 
         # Add hints from warpd.
         "${mod}+m" = "exec ${pkgs.warpd}/bin/warpd --hint";
