@@ -46,7 +46,7 @@
   boot.loader.systemd-boot.memtest86.enable = true;
 
   boot.kernelParams = [ "quiet" "loglevel=3" ];
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_testing;
   boot.supportedFilesystems = [ "ntfs" ];
 
   boot.initrd.systemd.enable = true;
