@@ -14,7 +14,9 @@
       # when set globally.
       settings = {
         "browser.tabs.inTitlebar" = 0;
+
         "sidebar.verticalTabs" = true;
+        "sidebar.visibility" = "hide-sidebar";
 
         "webgl.disabled" = false;
       };
