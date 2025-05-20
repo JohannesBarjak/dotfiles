@@ -11,7 +11,7 @@
 
   (load-user-file "meow.el")
 
-  ;; Add smart open line, idea and code came from this site:
+  ;; Add smart open line, the idea and code came from this site:
   ;; https://emacsredux.com/blog/2013/03/26/smarter-open-line/.
   (defun smart-open-line ()
     "A smarter open line that inserts indentation."
