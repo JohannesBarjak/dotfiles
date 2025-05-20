@@ -43,6 +43,8 @@
     settings.ProcMonitorMethod = "ebpf";
 
     rules = {
+
+      # Allow timesyncd to get time information from the Nixos ntp pool.
       systemd-timesyncd = {
         name = "systemd-timesyncd";
         enabled = true;
@@ -74,6 +76,7 @@
         };
       };
 
+      # Nsncd rules.
       nsncd = {
         name = "nsncd";
         enabled = true;
@@ -95,6 +98,7 @@
               data = "${pkgs.nsncd}/bin/nsncd";
             }
 
+            # Allow nsncd to connect when mullvad is establishing a connection. 
             {
               type = "simple";
               operand = "dest.host";
@@ -106,6 +110,7 @@
         };
       };
 
+      # Allow mullvad daemon to establish connections.
       mullvad-daemon = {
         name = "mullvad-daemon";
         enabled = true;
@@ -122,6 +127,7 @@
         };
       };
 
+      # Add rule to allow wireguard kernel connections.
       kworker-wg = {
         name = "kworker-wg";
         enabled = true;
