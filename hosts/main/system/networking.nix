@@ -121,6 +121,40 @@
           data = "${pkgs.mullvad}/bin/.mullvad-daemon-wrapped";
         };
       };
+
+      kworker-wg = {
+        name = "kworker-wg";
+        enabled = true;
+
+        action = "allow";
+        duration = "always";
+
+        operator = {
+          type = "list";
+          operand = "list";
+          sensitive = true;
+
+          list = [
+            {
+              type = "simple";
+              operand = "dest.port";
+              data = "51820";
+            }
+
+            {
+              type = "simple";
+              operand = "user.id";
+              data = "0";
+            }
+
+            {
+              type = "simple";
+              operand = "process.path";
+              data = "Kernel connection";
+            }
+          ];
+        };
+      };
     };
   };
 
