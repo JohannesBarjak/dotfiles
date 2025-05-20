@@ -58,7 +58,7 @@
     themePackages = with pkgs; [ (adi1090x-plymouth-themes.override { selected_themes = [ "cross_hud" ]; }) ];
   };
 
-  fileSystems."/".options = [ "compress-force=zstd:1" "noatime" ];
+  fileSystems."/".options = [ "compress-force=zstd:-5" "noatime" ];
 
   # Enable graphics.
   hardware.graphics = {
