@@ -34,10 +34,14 @@
     enable = true;
 
     packages = [
-      "net.mullvad.MullvadBrowser"
-      "org.libreoffice.LibreOffice"
-      "net.veloren.airshipper"
+      "ch.tlaun.TL"
       "com.brave.Browser"
+      "com.github.Anuken.Mindustry"
+      "net.mullvad.MullvadBrowser"
+      "net.veloren.airshipper"
+      "org.libreoffice.LibreOffice"
+      "org.torproject.torbrowser-launcher"
+      "us.zoom.Zoom"
     ];
 
     overrides = {
