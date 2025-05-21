@@ -1,4 +1,4 @@
-; Helper function to load elisp files.
+;; Helper function to load elisp files.
 (defun load-user-file (file-path)
   (load-file (expand-file-name (concat user-emacs-directory file-path))))
 
@@ -27,7 +27,7 @@
 
   :hook (prog-mode-hook . display-line-numbers-mode))
 
-; Avy allows for fast jumping in buffers.
+;; Avy allows for fast jumping in buffers.
 (use-package avy
   :bind
   ("C-:" . avy-goto-char)
@@ -41,13 +41,13 @@
   :custom
   (avy-timeout-seconds 2))
 
-; Use corfu for completion prompts.
+;; Use corfu for completion prompts.
 (use-package corfu
   :custom
   (corfu-cycle t)
   (corfu-preselect 'prompt)
 
-  ; Use tab to cycle completions.
+  ;; Use tab to cycle completions.
   :bind (:map corfu-map
 	      ("TAB" . corfu-next)
 	      ([tab] . corfu-next)
@@ -59,11 +59,11 @@
   (corfu-popupinfo-mode)
   (setq corfu-popupinfo-delay '(0.5 . 0)))
 
-; Add completion preview.
+;; Add completion preview.
 (use-package completion-preview
   :hook (after-init-hook . global-completion-preview-mode))
 
-; Use eglot as my lsp manager.
+;; Use eglot as my lsp manager.
 (use-package eglot
   :config
   (add-hook 'haskell-mode-hook 'eglot-ensure)
@@ -76,7 +76,7 @@
   (eglot-autoshutdown t)  ; shutdown language server after closing last file.
   (eglot-confirm-server-initiated-edits nil))  ; allow edits without confirmation.
 
-; Add orderless completion style.
+;; Add orderless completion style.
 (use-package orderless
   :custom
   (completion-styles '(orderless flex))
@@ -126,7 +126,7 @@
   (vertico-multiform-mode)
   (add-to-list 'vertico-multiform-categories '(embark-keybinding grid)))
 
-; Marginalia adds annotations to the minibuffer.
+;; Marginalia adds annotations to the minibuffer.
 (use-package marginalia
   ;; Bind `marginalia-cycle' locally in the minibuffer.  To make the binding
   ;; available in the *Completions* buffer, add it to the
@@ -144,24 +144,24 @@
   (treesit-auto-add-to-auto-mode-alist 'all)
   (global-treesit-auto-mode))
 
-; Use eldoc for documentation popups.
+;; Use eldoc for documentation popups.
 (use-package eldoc-box
   :bind ("C-h ;" . #'eldoc-box-help-at-point))
 
-; Add syntax highlighting to magit diffs.
+;; Add syntax highlighting to magit diffs.
 (use-package magit-delta
   :after magit
   :init (magit-delta-mode)
-  ; Setting the theme to use for magit diff.
+  ;; Setting the theme to use for magit diff.
   :custom
   (magit-delta-default-dark-theme "gruvbox-dark")
   (magit-delta-default-light-theme "gruvbox"))
 
-; Mode for keyboard configuration language.
+;; Mode for keyboard configuration language.
 (use-package kbd-mode
   :vc (:url "https://github.com/kmonad/kbd-mode" :rev :newest))
 
-; Make ispell use hunspell.
+;; Make ispell use hunspell.
 (eval-after-load 'ispell
   (setq ispell-program-name (executable-find "hunspell")
         ispell-dictionary   "en_US"))
