@@ -24,6 +24,7 @@
       # Language modes.
       epkgs.idris2-mode epkgs.haskell-mode
       epkgs.nix-mode epkgs.markdown-mode
+      epkgs.nushell-mode
     ];
 
     package = pkgs.emacs-pgtk;
