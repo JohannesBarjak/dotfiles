@@ -181,7 +181,6 @@
     package = pkgs.ananicy-cpp;
   };
 
-  services.system76-scheduler.enable = true;
   services.auto-cpufreq.enable = true;
 
   security.polkit.enable = true;
