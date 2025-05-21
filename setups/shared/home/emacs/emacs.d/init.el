@@ -66,9 +66,9 @@
 
 ;; Use eglot as my lsp manager.
 (use-package eglot
-  :config
-  (add-hook 'haskell-mode-hook 'eglot-ensure)
-  (add-hook 'nix-mode-hook 'eglot-ensure)
+  :hook					; Add language hooks.
+  (haskell-mode . eglot-ensure)
+  (nix-mode . eglot-ensure)
 
   :config
   (setq-default eglot-workspace-configuration
