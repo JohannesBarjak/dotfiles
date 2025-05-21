@@ -10,9 +10,7 @@
       epkgs.vertico epkgs.orderless
       epkgs.corfu
       epkgs.transient
-      epkgs.idris2-mode epkgs.haskell-mode
-      epkgs.nix-mode
-      epkgs.eldoc-box epkgs.markdown-mode
+      epkgs.eldoc-box
       epkgs.eat epkgs.vterm
       epkgs.magit epkgs.magit-delta
       epkgs.doom-themes
@@ -20,6 +18,11 @@
       epkgs.try
       epkgs.yasnippet
       epkgs.pandoc-mode
+      epkgs.treesit-auto
+
+      # Language modes.
+      epkgs.idris2-mode epkgs.haskell-mode
+      epkgs.nix-mode epkgs.markdown-mode
     ];
 
     package = pkgs.emacs-pgtk;
