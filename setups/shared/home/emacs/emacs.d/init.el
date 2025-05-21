@@ -6,7 +6,8 @@
   :init
   (load-theme 'doom-gruvbox t)
 
-  (tool-bar-mode -1) ; Disable toolbar and scrollbar.
+  ;; Disable toolbar and scrollbar.
+  (tool-bar-mode -1)
   (scroll-bar-mode -1)
 
   (load-user-file "meow.el")
@@ -119,8 +120,7 @@
 
 ;; Vertico is a package for interactive completion.
 (use-package vertico
-  :custom
-  (vertico--resize t)
+  :custom (vertico--resize t)
   :init
   (vertico-mode)
   (vertico-multiform-mode)
