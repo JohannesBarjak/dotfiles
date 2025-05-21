@@ -23,6 +23,9 @@
     zip unzip
   ];
 
+  # Opensnitch-ui provides the network request popups.
+  services.opensnitch-ui.enable = true;
+
   home.sessionVariables = {
     GTK_THEME = config.gtk.theme.name;
   };
@@ -126,7 +129,6 @@
 
   # Enabled this service for better bluetooth control of audio devices.
   services.mpris-proxy.enable = true;
-  services.opensnitch-ui.enable = true;
 
   services.podman = {
     enable = true;

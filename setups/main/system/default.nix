@@ -4,6 +4,7 @@
   imports = [
     ./desktop
     ./flatpak-workaround.nix
+    ./opensnitchd.nix
   ];
 
   # Add an overlay for warpd.
