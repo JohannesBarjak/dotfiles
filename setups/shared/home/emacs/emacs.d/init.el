@@ -134,6 +134,16 @@
   :bind (:map minibuffer-local-map ("M-A" . marginalia-cycle))
   :init (marginalia-mode))
 
+(use-package haskell-mode
+  :init (require 'haskell-mode-autoloads))
+
+;; Manage tree-sitter grammars.
+(use-package treesit-auto
+  :custom (treesit-auto-install 'prompt)
+  :config
+  (treesit-auto-add-to-auto-mode-alist 'all)
+  (global-treesit-auto-mode))
+
 ; Use eldoc for documentation popups.
 (use-package eldoc-box
   :bind ("C-h ;" . #'eldoc-box-help-at-point))
@@ -146,9 +156,6 @@
   :custom
   (magit-delta-default-dark-theme "gruvbox-dark")
   (magit-delta-default-light-theme "gruvbox"))
-
-(use-package haskell-mode
-  :init (require 'haskell-mode-autoloads))
 
 ; Mode for keyboard configuration language.
 (use-package kbd-mode
