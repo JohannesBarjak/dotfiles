@@ -6,6 +6,7 @@
       epkgs.meow epkgs.avy
       epkgs.embark
       epkgs.consult
+      epkgs.consult-hoogle
       epkgs.embark-consult
       epkgs.vertico epkgs.orderless
       epkgs.corfu
