@@ -8,7 +8,7 @@
 
 (deflayer base
   grv  1    2    3    4    5    6    7    8    9    0    -    eql  bks
-  tab  @q   @w   e    r    t    y    u    i    @o   @p   [    ]    \
+  tab  @q   @w   @e   r    t    y    u    @i   @o   @p   [    ]    \
   @cec @a   @s   @d   @f   g    h    @j   @k   @l   @;   apo  ent
   lsft @z   @x   @c   v    b    n    @m   @,   @.   /    rsft
   lctl met  @bla           spc            @era prnt rctl pgup up   pgdn
@@ -39,6 +39,8 @@
 
   q (tap-hold-release 200 200 q (multi met ctl))
   w (tap-hold-release 200 200 w (multi ctl alt))
+  e (tap-hold-release 200 200 e (multi ctl alt sft))
+  i (tap-hold-release 200 200 i (multi ctl alt sft))
   o (tap-hold-release 200 200 o (multi ctl alt))
   p (tap-hold-release 200 200 p (multi met ctl))
 
