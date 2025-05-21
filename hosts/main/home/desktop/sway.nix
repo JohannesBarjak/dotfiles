@@ -31,7 +31,20 @@
         "eDP-1".scale = "1.4";
       };
 
-      window.titlebar = false;
+      window = {
+        titlebar = false;
+
+        # Window specific rules.
+        commands = [
+          {
+            # This rule makes OpenSnitch popups floating.
+            command = "floating enable";
+            criteria = {
+              app_id = "opensnitch_ui";
+            };
+          }
+        ];
+      };
 
       gaps = {
         outer = 3;
