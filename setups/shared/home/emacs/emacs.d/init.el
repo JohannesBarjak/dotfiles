@@ -69,6 +69,7 @@
   :hook					; Add language hooks.
   (haskell-mode . eglot-ensure)
   (nix-mode . eglot-ensure)
+  (python-ts-mode . eglot-ensure)
 
   :config
   (setq-default eglot-workspace-configuration
