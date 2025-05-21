@@ -129,6 +129,7 @@
 
     dive
     podman-tui podman-compose
+    gcc
   ];
 
   hardware.cpu.amd.ryzen-smu.enable = true;
