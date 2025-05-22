@@ -81,7 +81,7 @@
 
         # Add binding for focus on child.
         "${mod}+s" = "focus child";
-        "${mod}+Shift+s" = "exec ${config.programs.nushell.package}/bin/nu ${./sway/focus_visible.nu}";
+        "${mod}+Ctrl+s" = "exec ${config.programs.nushell.package}/bin/nu ${./sway/focus_visible.nu}";
 
         "XF86AudioMute" = "exec ${config.programs.nushell.package}/bin/nu ${./sway/volume.nu} --toggle=mute";
         "XF86AudioRaiseVolume" = "exec ${config.programs.nushell.package}/bin/nu ${./sway/volume.nu} --inc";
