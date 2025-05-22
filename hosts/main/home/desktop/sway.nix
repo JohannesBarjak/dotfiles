@@ -1,6 +1,6 @@
 {config, lib, pkgs, ...}: {
   imports = [ ./wallpapers ];
-  home.packages = [ pkgs.libnotify ];
+  home.packages = [ pkgs.libnotify pkgs.jq ];
 
   wayland.windowManager.sway = {
     enable = true;
@@ -81,6 +81,7 @@
 
         # Add binding for focus on child.
         "${mod}+s" = "focus child";
+        "${mod}+Shift+s" = "exec ${config.programs.nushell.package}/bin/nu ${./sway/focus_visible.nu}";
 
         "XF86AudioMute" = "exec ${config.programs.nushell.package}/bin/nu ${./sway/volume.nu} --toggle=mute";
         "XF86AudioRaiseVolume" = "exec ${config.programs.nushell.package}/bin/nu ${./sway/volume.nu} --inc";
