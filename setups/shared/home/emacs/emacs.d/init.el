@@ -101,12 +101,16 @@
 ;; Use consult for better searching interfaces.
 (use-package consult
   :bind
+  ;; Buffer switching using consult.
   ("C-x b" . consult-buffer)
 
-  ("M-g f" . consult-flymake)
-  ("M-g m" . consult-mark)
+  ;; Enhanced yank-pop.
+  ("M-y" . consult-yank-pop)
+
+  ("M-g f"   . consult-flymake)
+  ("M-g m"   . consult-mark)
   ("M-g M-g" . consult-goto-line)
-  ("M-g g" . consult-goto-line)
+  ("M-g g"   . consult-goto-line)
 
   ("M-s d" . consult-fd)
   ("M-s c" . consult-locate)
