@@ -23,8 +23,9 @@
   :bind ("M-o" . smart-open-line)
 
   :custom
-  (tab-always-indent 'complete) ; Enable indentation + completion using the TAB key.
-  (custom-file "~/.config/emacs/custom_var.el")
+  (tab-always-indent 'complete)         ; Enable indentation + completion using the TAB key.
+  (indent-tabs-mode nil)                ; Do not indent with tabs.
+  (custom-file "~/.config/emacs/custom_var.el") ; Write values to separate file.
 
   :hook (prog-mode-hook . display-line-numbers-mode))
 
