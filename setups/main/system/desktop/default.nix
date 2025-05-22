@@ -6,11 +6,6 @@
     wrapperFeatures.gtk = true;
   };
 
-  services.xserver.windowManager.qtile = {
-    enable = true;
-    configFile = ./config.py;
-  };
-
   programs.waybar.enable = true;
 
   xdg.portal = {
