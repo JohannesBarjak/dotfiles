@@ -135,8 +135,15 @@
   :bind (:map minibuffer-local-map ("M-A" . marginalia-cycle))
   :init (marginalia-mode))
 
+;; Haskell mode configuration.
 (use-package haskell-mode
-  :init (require 'haskell-mode-autoloads))
+  :init (require 'haskell-mode-autoloads)
+
+  :custom
+  (haskell-indentation-layout-offset 4)	; Tweak indentation settings to my preferences.
+  (haskell-indentation-left-offset 4)
+  (haskell-indentation-where-pre-offset 2)
+  (haskell-indentation-where-post-offset 2))
 
 ;; Manage tree-sitter grammars.
 (use-package treesit-auto
