@@ -112,10 +112,14 @@
   ("M-g M-g" . consult-goto-line)
   ("M-g g"   . consult-goto-line)
 
+  ;; Seaching commands.
   ("M-s d" . consult-fd)
   ("M-s c" . consult-locate)
   ("M-s r" . consult-ripgrep)
   ("M-s l" . consult-line)
+  ("M-s L" . consult-line-multi)
+  ("M-s k" . consult-keep-lines)
+  ("M-s u" . consult-focus-lines)
 
   ("C-c h" . consult-history)
   ("C-c k" . consult-kmacro))
