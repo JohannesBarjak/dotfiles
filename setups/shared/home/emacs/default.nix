@@ -1,13 +1,8 @@
 {pkgs, ...}: {
-  # Add emacs server and set it as my default editor.
-  services.emacs = {
-    enable = true;
-    defaultEditor = true;
-  };
-
   # Main gui text editor.
   programs.emacs = {
     enable = true;
+
     extraPackages = epkgs: [
       # Navigation and selection plugins for Emacs.
       epkgs.meow epkgs.avy
