@@ -62,7 +62,7 @@
 
       # Use mkOptiondefault so that default config is not overwritten.
       keybindings = lib.mkOptionDefault {
-        "${mod}+n" = "exec ${config.programs.emacs.finalPackage}/bin/emacs";
+        "${mod}+Shift+Return" = "exec ${config.programs.emacs.finalPackage}/bin/emacs";
         "${mod}+g" = "exec ${config.programs.rofi.package}/bin/rofi -show window";
         "${mod}+i" = "exec ${config.programs.librewolf.package}/bin/librewolf";
 
