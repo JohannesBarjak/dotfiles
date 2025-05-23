@@ -13,7 +13,6 @@
   # Main tui text editor.
   programs.helix = {
     enable = true;
-    defaultEditor = true;
 
     settings = {
       theme = "gruvbox";
