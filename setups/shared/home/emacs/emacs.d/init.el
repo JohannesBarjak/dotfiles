@@ -51,9 +51,9 @@
 
   ;; Use tab to cycle completions.
   :bind (:map corfu-map
-	      ("TAB" . corfu-next)
-	      ([tab] . corfu-next)
-	      ("S-TAB" . corfu-previous)
+	      ("TAB"     . corfu-next)
+	      ([tab]     . corfu-next)
+	      ("S-TAB"   . corfu-previous)
 	      ([backtab] . corfu-previous))
 
   :init
@@ -68,8 +68,8 @@
 ;; Use eglot as my lsp manager.
 (use-package eglot
   :hook					; Add language hooks.
-  (haskell-mode . eglot-ensure)
-  (nix-mode . eglot-ensure)
+  (haskell-mode   . eglot-ensure)
+  (nix-mode       . eglot-ensure)
   (python-ts-mode . eglot-ensure)
 
   :config
@@ -89,8 +89,8 @@
 ;; Embark provides actions on buffer targets.
 (use-package embark
   :bind
-  ("C-." . embark-act)
-  ("M-." . embark-dwim)
+  ("C-."   . embark-act)
+  ("M-."   . embark-dwim)
   ("C-h B" . embark-bindings)
 
   ;; Add custom variable for embark indicator.
