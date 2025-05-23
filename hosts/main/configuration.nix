@@ -140,7 +140,6 @@
 
   environment.sessionVariables = {
     TERMINAL = "kitty";
-    EDITOR = "hx";
     QT_STYLE_OVERRIDE = "kvantum";
     QT_QPA_PLATFORM = "wayland";
   };
