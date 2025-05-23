@@ -145,8 +145,8 @@
   :init (require 'haskell-mode-autoloads)
 
   :custom
-  (haskell-indentation-layout-offset 4)	; Tweak indentation settings to my preferences.
-  (haskell-indentation-left-offset 4)
+  (haskell-indentation-layout-offset 2)	; Tweak indentation settings to my preferences.
+  (haskell-indentation-left-offset 2)
   (haskell-indentation-where-pre-offset 2)
   (haskell-indentation-where-post-offset 2))
 
