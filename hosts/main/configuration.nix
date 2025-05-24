@@ -122,8 +122,6 @@
     ryzenadj
     compsize
 
-    dive
-    podman-tui podman-compose
     gcc
   ];
 

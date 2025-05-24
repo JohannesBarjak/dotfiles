@@ -130,37 +130,6 @@
   # Enabled this service for better bluetooth control of audio devices.
   services.mpris-proxy.enable = true;
 
-  services.podman = {
-    enable = true;
-
-    containers.local-ai = {
-      autoStart = false;
-      ports = [ "8080:8080" ];
-
-      devices = [
-        "/dev/dri/renderD128:/dev/dri/renderD128"
-        "/dev/dri/card1:/dev/dri/card1"
-      ];
-
-      volumes = [
-        "models:/build/models"
-        "photos:/tmp/generated/images/"
-      ];
-
-      environment = {
-        DEBUG = true;
-        SINGLE_ACTIVE_BACKEND = false;
-        GGML_SYCL_DEVICE = 0;
-        ZES_ENABLE_SYSMAN = 1;
-        USE_XETLA = "OFF";
-        SYCL_PI_LEVEL_ZERO_USE_IMMEDIATE_COMMANDLISTS = 1;
-        SYCL_CACHE_PERSISTENT = 1;
-      };
-
-      image = "quay.io/go-skynet/local-ai:master-sycl-f16-ffmpeg";
-    };
-  };
-
   # Make gtk apps use emacs keybindings for text boxes.
   dconf.settings = {
     "org/gnome/desktop/interface" = {
