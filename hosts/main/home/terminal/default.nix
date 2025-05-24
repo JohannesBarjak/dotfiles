@@ -14,7 +14,6 @@
 
     settings = {
       theme = "gruvbox";
-
       editor.line-number = "relative";
     };
   };
@@ -45,17 +44,16 @@
     };
   };
 
-  # Default shell.
+  # Nushell is my terminal shell.
   programs.nushell = {
     enable = true;
 
-    package = pkgs.nushell;
     extraConfig = ''
       $env.config = {
         show_banner: false, edit_mode: emacs,
         cursor_shape: { emacs: line }
       }
-    ''; # Removes annoying welcome message.
+    '';
   };
 
   xdg.configFile."elvish" = {
@@ -115,8 +113,10 @@
   services.pueue.enable = true;
   programs.navi.enable = true;
 
+  # Pandoc is a file format converter.
   programs.pandoc.enable = true;
 
+  # Btop is a htop-like resource monitor.
   programs.btop = {
     enable = true;
      settings.color_theme = "gruvbox_material_dark";
@@ -134,10 +134,12 @@
     enableNushellIntegration = true;
   };
 
-  programs.fd.enable = true;
-  programs.fzf.enable = true;
-  programs.ripgrep.enable = true;
+  # Add common terminal utilities.
+  programs.fd.enable = true;      # Finder.
+  programs.fzf.enable = true;     # Fuzzy search.
+  programs.ripgrep.enable = true; # Modern grep.
 
+  # Modern terminal file viewer.
   programs.bat = {
     enable = true;
     config.theme = "gruvbox-dark";
