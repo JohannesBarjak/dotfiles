@@ -36,10 +36,6 @@
     };
   };
 
-  programs.wezterm = {
-    enable = true;
-  };
-
   programs.zellij = {
     enable = true;
 
