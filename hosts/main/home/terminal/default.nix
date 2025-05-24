@@ -1,6 +1,4 @@
 {pkgs, config, ...}: {
-  imports = [ ./editors.nix ];
-
   home.packages = with pkgs; [
     nixd markdown-oxide taplo
     typst tinymist
