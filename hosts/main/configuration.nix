@@ -118,13 +118,8 @@
   environment.systemPackages = with pkgs; [
     wl-clipboard glib
 
-    ppsspp-sdl-wayland pcsx2
-    bsnes-hd mgba melonDS
-    dosbox-x _86Box
-
     keepassxc
     ryzenadj
-    tauon
     compsize
 
     dive
@@ -176,6 +171,7 @@
 
   services.udisks2.enable = true;
 
+  # Ananicy is a service which automatically sets process nice levels.
   services.ananicy = {
     enable = true;
     package = pkgs.ananicy-cpp;
@@ -184,8 +180,9 @@
   services.auto-cpufreq.enable = true;
 
   security.polkit.enable = true;
-  services.locate.enable = true;
+  services.locate.enable = true; # Scans filesystem for file searching.
 
+  # Switch to a faster dbus implementation.
   services.dbus.implementation = "broker";
 
   # I am using this service to remap caps to esc and ctrl.
