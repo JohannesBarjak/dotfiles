@@ -143,15 +143,6 @@
     config.theme = "gruvbox-dark";
   };
 
-  programs.hexchat = {
-    enable = true;
-    theme = pkgs.fetchzip {
-      url = "https://dl.hexchat.net/themes/Zenburn.hct#Zenburn.zip";
-      sha256 = "sha256-VIv+IeCwq+jq+F5yyz5J3CSCvQaNh07uc81kVNMqxsY=";
-      stripRoot = false;
-    };
-  };
-
   programs.newsboat = {
     enable = true;
 
