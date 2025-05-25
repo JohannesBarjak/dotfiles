@@ -25,16 +25,25 @@
         force = true;
 
         settings = [
+          # Logic games practice.
           { name = "Syllogimous V4";
             url  = "https://4skinskywalker.github.io/Syllogimous-v4/Intro";
           }
-        
+
+          # Reading to do.
           { name = "Kahne: Multiple Mentality";
             url  = "http://www.rexresearch.com/kahne/kahne.htm";
           }
 
+          # Internship programs.
           { name = "CMU Research Internships";
             url  = "https://www.cmu.edu/scs/s3d/reuse/Research/index.html";
+          }
+
+          # Interesting guides to build personal projects.
+          {
+            name = "Build your own X";
+            url = "https://github.com/codecrafters-io/build-your-own-x";
           }
         ];
       };
