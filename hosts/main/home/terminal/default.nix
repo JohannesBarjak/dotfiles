@@ -56,7 +56,7 @@
   };
 
   # Correct incorrect commands in the shell.
-  programs.thefuck = {
+  programs.pay-respects = {
     enable = true;
     enableNushellIntegration = true;
   };
