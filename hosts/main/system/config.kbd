@@ -11,13 +11,13 @@
   tab  @q   @w   @e   r    t    y    u    @i   @o   @p   [    ]    \
   @cec @a   @s   @d   @f   g    h    @j   @k   @l   @;   apo  ent
   lsft @z   @x   @c   v    b    n    @m   @,   @.   /    rsft
-  lctl met  @bla           spc            @era prnt rctl pgup up   pgdn
+  lctl met  @bka           @spc           @eta prnt rctl pgup up   pgdn
                                                          left down right)
 
 (defalias
   cec (tap-hold-press 0   200 esc caps)
-  era (tap-hold-press 0   200 ent  (layer-while-held symbols))
-  bla (tap-hold-press 200 200 bks  alt)
+  eta (tap-hold-press 200 200 ent alt)
+  bka (tap-hold-press 200 200 bks alt)
 
   a (tap-hold-release 200 200 a met)
   s (tap-hold-release 200 200 s alt)
@@ -45,18 +45,26 @@
   p (tap-hold-release 200 200 p (multi met ctl))
 
   mst (layer-switch base)
-  iqt (layer-switch qwerty)
-  nav (layer-while-held navigation))
+  spc (tap-hold-release 200 200 spc (layer-while-held metalayer))
 
-(defchordsv2
-  (met caps) caps 50 first-release ())
+  iqt (layer-switch qwerty)
+  nav (layer-switch navigation)
+  sym (layer-switch symbols))
+
+(deflayer metalayer
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    @iqt _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    @sym _    @nav _    _    _    _    _
+  _    _    _              _              _    _    _    _    _    _
+                                                         _    _    _)
 
 (deflayer navigation
   _    _    _    _    _    _    _    _    _    _     _    _    _    _
   _    _    _    _    _    _    _    pgup up   pgdn  _    _    _    _
   _    _    alt  ctl  _    _    home left down right end  _    _
   _    _    _    _    _    _    _    _    _    _     _    _
-  _    _    _              _              _    _     _    _    _    _
+  _    _    _              _              @mst _     _    _    _    _
                                                           _    _    _)
 
 (deflayer symbols
@@ -64,7 +72,7 @@
   _    f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11 f12   _
   _    1    2    3    4    5    6    7    8    9    0    _    _
   _    [    ]    -    \    _    \    =    S-[  S-]  _    _
-  _    _    @nav           @iqt           sft  _    _    _    _    _
+  _    _    _              _              @mst _    _    _    _    _
                                                          _    _    _)
 
 (deflayer qwerty
