@@ -5,7 +5,6 @@
     nodePackages.bash-language-server shellcheck
     vscode-langservers-extracted
     tealdeer
-    elvish
   ];
 
   # Main tui text editor.
@@ -54,11 +53,6 @@
         cursor_shape: { emacs: line }
       }
     '';
-  };
-
-  xdg.configFile."elvish" = {
-    source = ./elvish;
-    recursive = true;
   };
 
   # Correct incorrect commands in the shell.
