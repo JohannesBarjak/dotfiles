@@ -82,9 +82,8 @@
 
   programs.lazygit.enable = true;
 
-  # Terminal document viewers.
+  # Primary document viewer.
   programs.zathura.enable = true;
-  programs.sioyek.enable = true;
 
   # Carapace completes command arguments.
   programs.carapace = {
