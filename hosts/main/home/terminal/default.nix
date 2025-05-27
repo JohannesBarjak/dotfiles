@@ -55,6 +55,15 @@
     '';
   };
 
+  # Enable direnv to automatically enter nix shell environments.
+  programs.direnv = {
+    enable = true;
+    enableNushellIntegration = true;
+
+    # Nix direnv integration.
+    nix-direnv.enable = true;
+  };
+
   # Correct incorrect commands in the shell.
   programs.pay-respects = {
     enable = true;
