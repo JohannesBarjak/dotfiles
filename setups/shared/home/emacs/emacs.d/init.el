@@ -161,6 +161,10 @@
   (treesit-auto-add-to-auto-mode-alist 'all)
   (global-treesit-auto-mode))
 
+;; Envrc automatically loads direnv environments in a per-buffer basis.
+(use-package envrc
+  :hook (after-init . envrc-global-mode))
+
 ;; Use eldoc for documentation popups.
 (use-package eldoc-box
   :bind ("C-h ;" . #'eldoc-box-help-at-point))

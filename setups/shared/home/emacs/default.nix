@@ -33,6 +33,7 @@
       # Misc.
       epkgs.doom-themes
       epkgs.pandoc-mode
+      epkgs.envrc
     ];
 
     package = pkgs.emacs-pgtk;
