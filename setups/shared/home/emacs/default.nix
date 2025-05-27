@@ -1,4 +1,10 @@
 {pkgs, ...}: {
+  # Enable emacs background service.
+  services.emacs = {
+    enable = true;
+    defaultEditor = true;
+  };
+
   # Main gui text editor.
   programs.emacs = {
     enable = true;
