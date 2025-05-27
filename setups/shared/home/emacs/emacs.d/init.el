@@ -24,7 +24,7 @@
 
   :custom
   (tab-always-indent 'complete)         ; Enable indentation + completion using the TAB key.
-  (indent-tabs-mode nil)                ; Do not indent with tabs.
+  (indent-tabs-mode nil)                ; Do not indent with the tab character.
   (custom-file "~/.config/emacs/custom_var.el") ; Write values to separate file.
 
   :hook (prog-mode-hook . display-line-numbers-mode))
