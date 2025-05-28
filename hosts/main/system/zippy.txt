@@ -1,7 +1,9 @@
- w  n	when
+ e t	exit
+ h e	have
+ h g	hoogle
  h k l	haskell
  k e	keepassxc
- h g	hoogle
+ r d d	reddit
  t h	that
- h e	have
+ w n	when
 
