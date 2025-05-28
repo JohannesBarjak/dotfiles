@@ -32,6 +32,18 @@
 
   programs.bash.enable = true;
 
+  # Password manager.
+  programs.keepassxc = {
+    enable = true;
+
+    settings = {
+      GUI = {
+        CompactMode = true;
+        ApplicationTheme = "classic";
+      };
+    };
+  };
+
   # Configure flatpak packages.
   services.flatpak = {
     enable = true;

@@ -118,7 +118,6 @@
   environment.systemPackages = with pkgs; [
     wl-clipboard glib
 
-    keepassxc
     ryzenadj
     compsize
 
