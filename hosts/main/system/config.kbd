@@ -12,8 +12,8 @@
   grv  1    2    3    4    5    6    7    8    9    0    -    eql  bks
   tab  @q   @w   @e   r    t    y    u    @i   @o   @p   [    ]    \
   @cec @a   @s   @d   @f   g    h    @j   @k   @l   @;   apo  ent
-  lsft @z   @x   @c   v    b    n    @m   @,   @.   /    rsft
-  lctl met  @bka           @spc           @eta prnt rctl pgup up   pgdn
+  lsft @z   @x   @c   v    @b   n    @m   @,   @.   /    rsft
+  lctl met  @bka           spc            @eta prnt rctl pgup up   pgdn
                                                          left down right)
 
 (defalias
@@ -49,7 +49,7 @@
   p (tap-hold-release 200 200 p (multi met ctl))
 
   mst (layer-switch base)
-  spc (tap-hold-release 200 200 spc (layer-while-held metalayer))
+  b   (tap-hold-release 200 200 b   (layer-while-held metalayer))
 
   iqt (layer-switch qwerty)
   nav (layer-switch navigation)
