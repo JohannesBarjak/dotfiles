@@ -132,8 +132,11 @@
 
   environment.sessionVariables = {
     TERMINAL = "kitty";
+
+    # Qt related environment variables.
     QT_STYLE_OVERRIDE = "kvantum";
     QT_QPA_PLATFORM = "wayland";
+    QT_SCALE_FACTOR = "0.9";
   };
 
   # Some programs need SUID wrappers, can be configured further or are
