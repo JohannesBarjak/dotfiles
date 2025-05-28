@@ -194,7 +194,7 @@
         (defzippy
           ${./system/zippy.txt}
           on-first-press-chord-deadline 500
-          idle-reactivate-time          500
+          idle-reactivate-time          0
           smart-space-punctuation (? ! . , ; :)
           output-character-mappings (
             ! S-1
