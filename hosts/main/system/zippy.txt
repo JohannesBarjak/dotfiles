@@ -1,2 +1,7 @@
- a  b  c	alphabet
- w  a	Washington
+ w  n	when
+ h k l	haskell
+ k e	keepassxc
+ h g	hoogle
+ t h	that
+ h e	have
+
