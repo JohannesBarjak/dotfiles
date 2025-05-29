@@ -81,12 +81,3 @@
    '("z" . meow-pop-selection)
    '("'" . repeat)
    '("<escape>" . ignore)))
-
-;; Basic meow setup and starup.
-(use-package meow
-  :init
-  (meow-setup)
-  (meow-global-mode t)
-
-  ;; Set meow cheat-sheet to use a qwerty layout.
-  :custom (meow-cheatsheet-layout meow-cheatsheet-layout-qwerty))
