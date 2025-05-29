@@ -16,45 +16,6 @@
   lctl met  @bka           spc            @eta prnt rctl pgup up   pgdn
                                                          left down right)
 
-(defalias
-  ;; Double use keys.
-  cec (tap-hold-press 0   200 esc caps)
-  eta (tap-hold-press 200 200 ent alt)
-  bka (tap-hold-press 200 200 bks alt)
-
-  ;; Basic home row mods.
-  a (tap-hold-release 200 200 a met)
-  s (tap-hold-release 200 200 s alt)
-  d (tap-hold-release 200 200 d ctl)
-  f (tap-hold-release 200 200 f sft)
-  j (tap-hold-release 200 200 j sft)
-  k (tap-hold-release 200 200 k ctl)
-  l (tap-hold-release 200 200 l alt)
-  ; (tap-hold-release 200 200 ; met)
-
-    ;; Lower key mods consist of prefixing shift to the main mods.
-  z (tap-hold-release 200 200 z (multi met sft))
-  x (tap-hold-release 200 200 x (multi alt sft))
-  c (tap-hold-release 200 200 c (multi ctl sft))
-  m (tap-hold-release 200 200 m (multi ctl sft))
-  , (tap-hold-release 200 200 , (multi alt sft))
-  . (tap-hold-release 200 200 . (multi met sft))
-
-  ;; Extra mods that are useful.
-  q (tap-hold-release 200 200 q (multi met ctl))
-  w (tap-hold-release 200 200 w (multi ctl alt))
-  e (tap-hold-release 200 200 e (multi ctl alt sft))
-  i (tap-hold-release 200 200 i (multi ctl alt sft))
-  o (tap-hold-release 200 200 o (multi ctl alt))
-  p (tap-hold-release 200 200 p (multi met ctl))
-
-  mst (layer-switch base)
-  b   (tap-hold-release 200 200 b   (layer-while-held metalayer))
-
-  iqt (layer-switch qwerty)
-  nav (layer-switch navigation)
-  sym (layer-switch symbols))
-
 ;; Leader layout.
 (deflayer metalayer
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
@@ -87,6 +48,45 @@
   lsft z    x    c    v    b    n    m    ,    .    /    rsft
   lctl met  lalt           spc            @mst prnt rctl pgup up   pgdn
                                                          left down right)
+
+(defalias
+  ;; Double use keys.
+  cec (tap-hold-press 0   200 esc caps)
+  eta (tap-hold-press 200 200 ent alt)
+  bka (tap-hold-press 200 200 bks alt)
+
+  ;; Basic home row mods.
+  a (tap-hold-release 200 200 a met)
+  s (tap-hold-release 200 200 s alt)
+  d (tap-hold-release 200 200 d ctl)
+  f (tap-hold-release 200 200 f sft)
+  j (tap-hold-release 200 200 j sft)
+  k (tap-hold-release 200 200 k ctl)
+  l (tap-hold-release 200 200 l alt)
+  ; (tap-hold-release 200 200 ; met)
+
+  ;; Lower key mods consist of prefixing shift to the main mods.
+  z (tap-hold-release 200 200 z (multi met sft))
+  x (tap-hold-release 200 200 x (multi alt sft))
+  c (tap-hold-release 200 200 c (multi ctl sft))
+  m (tap-hold-release 200 200 m (multi ctl sft))
+  , (tap-hold-release 200 200 , (multi alt sft))
+  . (tap-hold-release 200 200 . (multi met sft))
+
+  ;; Extra mods that are useful.
+  q (tap-hold-release 200 200 q (multi met ctl))
+  w (tap-hold-release 200 200 w (multi ctl alt))
+  e (tap-hold-release 200 200 e (multi ctl alt sft))
+  i (tap-hold-release 200 200 i (multi ctl alt sft))
+  o (tap-hold-release 200 200 o (multi ctl alt))
+  p (tap-hold-release 200 200 p (multi met ctl))
+
+  mst (layer-switch base)
+  b   (tap-hold-release 200 200 b   (layer-while-held metalayer))
+
+  iqt (layer-switch qwerty)
+  nav (layer-switch navigation)
+  sym (layer-switch symbols))
 
 #|
 (deflayer qwerty
