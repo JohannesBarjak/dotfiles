@@ -1,7 +1,3 @@
-;; Helper function to load elisp files.
-(defun load-user-file (file-path)
-  (load-file (expand-file-name (concat user-emacs-directory file-path))))
-
 (use-package emacs
   :init
   (load-theme 'doom-gruvbox t)
@@ -10,7 +6,9 @@
   (tool-bar-mode -1)
   (scroll-bar-mode -1)
 
-  (load-user-file "meow.el")
+  ;; Helper function to get user files.
+  (defun user-file (file-path)
+    (expand-file-name (concat user-emacs-directory file-path)))
 
   ;; Add smart open line, the idea and code came from this site:
   ;; https://emacsredux.com/blog/2013/03/26/smarter-open-line/.
@@ -23,9 +21,9 @@
   :bind ("M-o" . smart-open-line)
 
   :custom
-  (tab-always-indent 'complete)         ; Enable indentation + completion using the TAB key.
-  (indent-tabs-mode nil)                ; Do not indent with the tab character.
-  (custom-file "~/.config/emacs/custom_var.el") ; Write values to separate file.
+  (tab-always-indent 'complete) ; Enable indentation + completion using the TAB key.
+  (indent-tabs-mode nil)       ; Do not indent with the tab character.
+  (custom-file (expand-file-name (concat user-emacs-directory "custom_var.el"))) ; Write variables into a separate file.
 
   :hook (prog-mode-hook . display-line-numbers-mode))
 
