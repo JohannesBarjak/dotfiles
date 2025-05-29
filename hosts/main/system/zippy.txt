@@ -1,6 +1,7 @@
 ; a	and
 ; a b	about
 ; b c	because
+; d	does
 ; e t	exit
 ; f	from
 ; g h	github
@@ -15,6 +16,7 @@
 ; o	other
 ; o v	over
 ; r d d	reddit
+; r e p	replace
 ; s h	should
 ; t	the
 ; t a	that
@@ -30,4 +32,3 @@
 ; w l	will
 ; w n	when
 ; w t	with
-; d	does
