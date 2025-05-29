@@ -1,4 +1,4 @@
-defun meow-setup ()
+(defun meow-setup ()
   (meow-motion-define-key
    '("j" . meow-next)
    '("k" . meow-prev)
