@@ -1,53 +1,53 @@
 ;; Keyboard layout to change.
 (defsrc
   grv  1    2    3    4    5    6    7    8    9    0    -    eql  bks
-  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
-  caps a    s    d    f    g    h    j    k    l    ;    apo  ent
-  lsft z    x    c    v    b    n    m    ,    .    /    rsft
-  lctl met  lalt           spc            ralt prnt rctl pgup up   pgdn
-                                                        left down right)
+  tab   q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps   a    s    d    f    g    h    j    k    l    ;    apo  ent
+  lsft    z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl    met  lalt           spc            ralt prnt rctl pgup up   pgdn
+                                                            left down right)
 
 ;; Main layout. It mainly consists of home row mods.
 (deflayer base
   grv  1    2    3    4    5    6    7    8    9    0    -    eql  bks
-  tab  @q   @w   @e   r    t    y    u    @i   @o   @p   [    ]    \
-  @cec @a   @s   @d   @f   g    h    @j   @k   @l   @;   apo  ent
-  lsft @z   @x   @c   v    @b   n    @m   @,   @.   /    rsft
-  lctl met  @bka           spc            @eta prnt rctl pgup up   pgdn
-                                                         left down right)
+  tab   @q   @w   @e   r    t    y    u    @i   @o   @p   [    ]    \
+  @cec   @a   @s   @d   @f   g    h    @j   @k   @l   @;   apo  ent
+  lsft    @z   @x   @c   @v   b    @n   @m   @,   @.   /    rsft
+  lctl    met  @bka           @spc           @eta prnt rctl pgup up   pgdn
+                                                            left down right)
 
 ;; Leader layout.
 (deflayer metalayer
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    @iqt _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    @sym _    @nav _    _    _    _    _
-  _    _    _              _              _    _    _    _    _    _
-                                                         _    _    _)
+  _     @iqt _    _    _    _    _    _    _    _    _    _    _    _
+  _      _    _    _    _    _    _    _    _    _    _    _    _
+  _       _    _    _    @sym _    @nav _    _    _    _    _
+  _       _    _              _              _    _    _    _    _    _
+                                                            _    _    _)
 
 (deflayer navigation
   _    _    _    _    _    _    _    _    _    _     _    _    _    _
-  _    _    _    _    _    _    _    pgup up   pgdn  _    _    _    _
-  _    _    alt  ctl  _    _    home left down right end  _    _
-  _    _    _    _    _    _    _    _    _    _     _    _
-  _    _    _              _              @mst _     _    _    _    _
-                                                          _    _    _)
+  _     _    _    _    _    _    _    pgup up   pgdn  _    _    _    _
+  _      _    alt  ctl  _    _    home left down right end  _    _
+  _       _    _    _    _    _    _    _    _    _     _    _
+  _       _    _              _              @mst _     _    _    _    _
+                                                             _    _    _)
 
 (deflayer symbols
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11 f12   _
-  _    1    2    3    4    5    6    7    8    9    0    _    _
-  _    [    ]    -    \    _    \    =    S-[  S-]  _    _
-  _    _    _              _              @mst _    _    _    _    _
-                                                         _    _    _)
+  _     f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11 f12   _
+  _      1    2    3    4    5    6    7    8    9    0    _    _
+  _       [    ]    -    \    _    \    =    S-[  S-]  _    _
+  _       _    _              _              @mst _    _    _    _    _
+                                                            _    _    _)
 
 (deflayer qwerty
   grv  1    2    3    4    5    6    7    8    9    0    -    eql  bks
-  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
-  caps a    s    d    f    g    h    j    k    l    ;    apo  ent
-  lsft z    x    c    v    b    n    m    ,    .    /    rsft
-  lctl met  lalt           spc            @mst prnt rctl pgup up   pgdn
-                                                         left down right)
+  tab   q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps   a    s    d    f    g    h    j    k    l    ;    apo  ent
+  lsft    z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl    met  lalt           spc            @mst prnt rctl pgup up   pgdn
+                                                            left down right)
 
 (defalias
   ;; Double use keys.
@@ -80,9 +80,11 @@
   i (tap-hold-release 200 200 i (multi ctl alt sft))
   o (tap-hold-release 200 200 o (multi ctl alt))
   p (tap-hold-release 200 200 p (multi met ctl))
+  v (tap-hold-release 200 200 v (multi met ctl alt sft))
+  n (tap-hold-release 200 200 n (multi met ctl alt sft))
 
   mst (layer-switch base)
-  b   (tap-hold-release 200 200 b   (layer-while-held metalayer))
+  spc (tap-hold-release 200 200 spc (layer-while-held metalayer))
 
   iqt (layer-switch qwerty)
   nav (layer-switch navigation)
@@ -91,19 +93,19 @@
 #|
 (deflayer qwerty
   grv  1    2    3    4    5    6    7    8    9    0    -    eql  bks
-  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
-  caps a    s    d    f    g    h    j    k    l    ;    apo  ent
-  lsft z    x    c    v    b    n    m    ,    .    /    rsft
-  lctl met  lalt           spc            ralt prnt rctl pgup up   pgdn
-                                                         left down right)
+  tab   q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps   a    s    d    f    g    h    j    k    l    ;    apo  ent
+  lsft    z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl    met  lalt           spc            ralt prnt rctl pgup up   pgdn
+                                                            left down right)
 |#
 
 #|
 (deflayer emptyTemplate
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _              _              _    _    _    _    _    _
-                                                         _    _    _)
+  _     _    _    _    _    _    _    _    _    _    _    _    _    _
+  _      _    _    _    _    _    _    _    _    _    _    _    _
+  _       _    _    _    _    _    _    _    _    _    _    _
+  _       _    _              _              _    _    _    _    _    _
+                                                            _    _    _)
 |#
