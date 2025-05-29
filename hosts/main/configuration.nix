@@ -190,7 +190,26 @@
     enable = true;
 
     keyboards.myLayout = {
-      config = builtins.readFile ./system/config.kbd;
+      config = (builtins.readFile ./system/config.kbd) + ''
+        (defzippy
+          ${./system/zippy.txt}
+          on-first-press-chord-deadline 500
+          idle-reactivate-time          0
+          smart-space-punctuation (? ! . , ; :)
+          output-character-mappings (
+            ! S-1
+            ? S-/
+            % S-5
+            "(" S-9
+            ")" S-0
+            : S-;
+            < S-,
+            > S-.
+            r#"""# S-'
+            | S-\
+            _ S--
+          ))
+      '';
 
       extraDefCfg = ''
         process-unmapped-keys yes
