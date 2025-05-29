@@ -24,6 +24,7 @@
 ; t i	their
 ; t m	than
 ; t n	then
+; t s	this
 ; u	you
 ; w	why
 ; w a	what
