@@ -16,6 +16,9 @@
       epkgs.embark epkgs.embark-consult
       epkgs.orderless
 
+      # Integration with direnv.
+      epkgs.envrc
+
       # Language modes.
       epkgs.idris2-mode epkgs.haskell-mode
       epkgs.nix-mode epkgs.markdown-mode
@@ -40,7 +43,7 @@
       # Misc.
       epkgs.doom-themes
       epkgs.pandoc-mode
-      epkgs.envrc
+      epkgs.vundo
     ];
 
     package = pkgs.emacs-pgtk;
