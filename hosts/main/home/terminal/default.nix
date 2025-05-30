@@ -48,12 +48,18 @@
   programs.nushell = {
     enable = true;
 
-    extraConfig = ''
-      $env.config = {
-        show_banner: false, edit_mode: emacs,
-        cursor_shape: { emacs: line }
-      }
-    '';
+    # Here I can configure $env.config options.
+    settings = {
+      show_banner = false;
+      edit_mode = "emacs";
+      cursor_shape.emacs = "line";
+    };
+
+    # Shell alias definitions.
+    shellAliases = {
+      gst = "git status";
+      gdf = "git diff";
+    };
   };
 
   # Enable direnv to automatically enter nix shell environments.
