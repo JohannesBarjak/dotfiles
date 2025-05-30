@@ -50,7 +50,13 @@
 
         battery = {
           format = "{capacity}% {icon}";
-          format-icons = [""  ""  ""  ""  ""];
+          format-icons = [
+            "<span color=\"#fb4934\"></span>"
+            "<span color=\"#fabd2f\"></span>"
+            "<span color=\"#b8bb26\"></span>"
+            "<span color=\"#b8bb26\"></span>"
+            ""
+          ];
         };
 
         "custom/power" = {
