@@ -59,6 +59,7 @@
     shellAliases = {
       gst = "git status";
       gdf = "git diff";
+      enw = "emacsclient -t";
     };
   };
 
