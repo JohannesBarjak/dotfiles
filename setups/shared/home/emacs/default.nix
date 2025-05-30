@@ -30,8 +30,9 @@
       epkgs.eldoc-box
       epkgs.consult-hoogle
 
-      # Terminals.
+      # Terminal related packages.
       epkgs.eat epkgs.vterm
+      epkgs.kkp
 
       # Magit.
       epkgs.magit epkgs.magit-delta

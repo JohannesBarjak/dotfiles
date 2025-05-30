@@ -145,13 +145,9 @@
   (vertico-multiform-mode)
   (add-to-list 'vertico-multiform-categories '(embark-keybinding grid)))
 
-;; Marginalia adds annotations to the minibuffer.
-(use-package marginalia
-  ;; Bind `marginalia-cycle' locally in the minibuffer.  To make the binding
-  ;; available in the *Completions* buffer, add it to the
-  ;; `completion-list-mode-map'.
-  :bind (:map minibuffer-local-map ("M-A" . marginalia-cycle))
-  :init (marginalia-mode))
+;; Envrc automatically loads direnv environments in a per-buffer basis.
+(use-package envrc
+  :hook (after-init . envrc-global-mode))
 
 ;; Haskell mode configuration.
 (use-package haskell-mode
@@ -170,13 +166,21 @@
   (treesit-auto-add-to-auto-mode-alist 'all)
   (global-treesit-auto-mode))
 
-;; Envrc automatically loads direnv environments in a per-buffer basis.
-(use-package envrc
-  :hook (after-init . envrc-global-mode))
-
 ;; Use eldoc for documentation popups.
 (use-package eldoc-box
   :bind ("C-h ;" . #'eldoc-box-help-at-point))
+
+;; Add kitty terminal protocol extension for terminal compatibility.
+(use-package kkp
+  :config (global-kkp-mode t))
+
+;; Marginalia adds annotations to the minibuffer.
+(use-package marginalia
+  ;; Bind `marginalia-cycle' locally in the minibuffer.  To make the binding
+  ;; available in the *Completions* buffer, add it to the
+  ;; `completion-list-mode-map'.
+  :bind (:map minibuffer-local-map ("M-A" . marginalia-cycle))
+  :init (marginalia-mode))
 
 ;; Add syntax highlighting to magit diffs.
 (use-package magit-delta
