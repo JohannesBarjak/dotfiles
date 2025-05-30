@@ -47,8 +47,8 @@
       };
 
       gaps = {
-        outer = 3;
-        inner = 2;
+        outer = 2; inner = 2;
+        smartBorders = "on";
       };
 
       bars = [];
