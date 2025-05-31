@@ -159,8 +159,7 @@
 
 ;; Haskell mode configuration.
 (use-package haskell-mode
-  :init (require 'haskell-mode-autoloads)
-
+  :defer t
   :custom
   (haskell-indentation-layout-offset 2)	; Tweak indentation settings to my preferences.
   (haskell-indentation-left-offset 2)
@@ -207,10 +206,12 @@
 
 ;; Mode for keyboard configuration language.
 (use-package kbd-mode
+  :defer t
   :vc (:url "https://github.com/kmonad/kbd-mode" :rev :newest))
 
 ;; ispell configuration.
 (use-package ispell
+  :defer t
   :custom
   (ispell-program-name (executable-find "hunspell")) ; Make ispell use hunspell.
 
