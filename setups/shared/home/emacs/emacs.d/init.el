@@ -170,6 +170,10 @@
 (use-package eldoc-box
   :bind ("C-h ;" . #'eldoc-box-help-at-point))
 
+;; An undo-tree for Emacs.
+(use-package vundo
+  :bind ("C-c u" . vundo))
+
 ;; Add kitty terminal protocol extension for terminal compatibility.
 (use-package kkp
   :config (global-kkp-mode t))
