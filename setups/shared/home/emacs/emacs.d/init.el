@@ -65,6 +65,8 @@
   (corfu-cycle t)
   (corfu-preselect 'prompt)
 
+  (corfu-popupinfo-delay '(0.5 . 0))
+
   ;; Use tab to cycle completions.
   :bind (:map corfu-map
 	      ("TAB"     . corfu-next)
@@ -74,8 +76,7 @@
 
   :init
   (global-corfu-mode)
-  (corfu-popupinfo-mode)
-  (setq corfu-popupinfo-delay '(0.5 . 0)))
+  (corfu-popupinfo-mode))
 
 ;; Add completion preview.
 (use-package completion-preview
