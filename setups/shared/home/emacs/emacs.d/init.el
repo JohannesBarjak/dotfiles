@@ -147,9 +147,12 @@
 ;; Vertico is a package for interactive completion.
 (use-package vertico
   :custom (vertico--resize t)
+
   :init
   (vertico-mode)
   (vertico-multiform-mode)
+
+  ;; Use grid for embark completion.
   (add-to-list 'vertico-multiform-categories '(embark-keybinding grid)))
 
 ;; Envrc automatically loads direnv environments in a per-buffer basis.
@@ -169,6 +172,7 @@
 ;; Manage tree-sitter grammars.
 (use-package treesit-auto
   :custom (treesit-auto-install 'prompt)
+
   :config
   (treesit-auto-add-to-auto-mode-alist 'all)
   (global-treesit-auto-mode))
@@ -197,6 +201,7 @@
 (use-package magit-delta
   :after magit
   :init (magit-delta-mode)
+
   ;; Setting the theme to use for magit diff.
   :custom
   (magit-delta-default-dark-theme "gruvbox-dark")
