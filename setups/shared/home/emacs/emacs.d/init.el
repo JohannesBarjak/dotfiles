@@ -206,11 +206,16 @@
 (use-package kbd-mode
   :vc (:url "https://github.com/kmonad/kbd-mode" :rev :newest))
 
-;; Make ispell use hunspell.
-(eval-after-load 'ispell
-  (setq ispell-program-name (executable-find "hunspell")
-        ispell-dictionary   "en_US"))
+;; ispell configuration.
+(use-package ispell
+  :custom
+  (ispell-program-name (executable-find "hunspell")) ; Make ispell use hunspell.
 
-(setq ispell-local-dictionary "en_US")
-(setq ispell-local-dictionary-alist
-      '("en_US" "[[:alpha:]]" "[^[:alpha:]]" "[']" nil ("-d" "en_US") nil utf-8()))
+  ;; Set default ispell language to english.
+  (ispell-dictionary       "en_US")
+  (ispell-local-dictionary "en_US")
+
+  ;; Necessary changes to make ispell work with hunspell.
+  (spell-local-dictionary-alist
+   '("en_US" "[[:alpha:]]" "[^[:alpha:]]" "[']" nil ("-d" "en_US") nil utf-8())))
+
