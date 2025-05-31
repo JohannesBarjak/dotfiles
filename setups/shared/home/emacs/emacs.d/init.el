@@ -89,10 +89,6 @@
   (nix-mode       . eglot-ensure)
   (python-ts-mode . eglot-ensure)
 
-  :config
-  (setq-default eglot-workspace-configuration
-		'((haskell (plugin (stan (globalOn . :json-false)))))) ; disable stan.
-
   :custom
   (eglot-autoshutdown t) ; shutdown language server after closing last file.
   (eglot-confirm-server-initiated-edits nil)) ; allow edits without confirmation.
