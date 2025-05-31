@@ -38,8 +38,8 @@
 (use-package meow
   :config
   (load-file (user-file "meow.el"))     ; Load meow configuration.
-
   (meow-setup)
+
   (meow-global-mode t)
 
   ;; Set meow cheat-sheet to use a qwerty layout.
@@ -56,8 +56,8 @@
   ("M-g l" . avy-goto-line)
 
   ("M-s s" . avy-goto-char-timer)
-  :custom
-  (avy-timeout-seconds 2))
+
+  :custom (avy-timeout-seconds 2))
 
 ;; Use corfu for completion prompts.
 (use-package corfu
@@ -92,6 +92,7 @@
   :config
   (setq-default eglot-workspace-configuration
 		'((haskell (plugin (stan (globalOn . :json-false)))))) ; disable stan.
+
   :custom
   (eglot-autoshutdown t) ; shutdown language server after closing last file.
   (eglot-confirm-server-initiated-edits nil)) ; allow edits without confirmation.
