@@ -202,7 +202,7 @@
 
   ;; Setting the theme to use for magit diff.
   :custom
-  (magit-delta-default-dark-theme "gruvbox-dark")
+  (magit-delta-default-dark-theme  "gruvbox-dark")
   (magit-delta-default-light-theme "gruvbox"))
 
 ;; Mode for keyboard configuration language.
