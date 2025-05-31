@@ -18,7 +18,14 @@
     (move-end-of-line nil)
     (newline-and-indent))
 
-  :bind ("M-o" . smart-open-line)
+  :bind
+  ("M-o" . smart-open-line)             ; Vim-like open line.
+
+  ;; Custom prefix map.
+  (:prefix-map personal-map
+               :prefix "C-z"
+               :prefix-docstring "Personal keybindings prefix"
+               ("z" . suspend-frame))
 
   :custom
   (tab-always-indent 'complete) ; Enable indentation + completion using the TAB key.
