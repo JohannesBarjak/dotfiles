@@ -57,6 +57,10 @@
     border-color = mkLiteral "@bg0";
   };
 
+  textbox = {
+    text-color = mkLiteral "@fg0";
+  };
+
   inputbar = {
     color = mkLiteral "@fg0";
     padding = mkLiteral "14px";
