@@ -116,15 +116,14 @@
 (use-package consult
   :bind
   ;; Buffer switching using consult.
-  ("C-x b" . consult-buffer)
+  ("C-x b" . consult-buffer)            ; Orig. switch-to-buffer.
 
-  ;; Enhanced yank-pop.
-  ("M-y" . consult-yank-pop)
+  ("M-y" . consult-yank-pop)            ; Orig. yank-pop.
 
   ("M-g f"   . consult-flymake)
   ("M-g m"   . consult-mark)
-  ("M-g M-g" . consult-goto-line)
-  ("M-g g"   . consult-goto-line)
+  ("M-g M-g" . consult-goto-line)       ; Orig. goto-line.
+  ("M-g g"   . consult-goto-line)       ; Orig. goto-line.
 
   ;; Seaching commands.
   ("M-s d" . consult-fd)
