@@ -44,6 +44,7 @@
       epkgs.doom-themes
       epkgs.pandoc-mode
       epkgs.vundo
+      epkgs.try
     ];
 
     package = pkgs.emacs-pgtk;
