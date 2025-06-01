@@ -203,11 +203,6 @@
   (magit-delta-default-dark-theme  "gruvbox-dark")
   (magit-delta-default-light-theme "gruvbox"))
 
-;; Mode for keyboard configuration language.
-(use-package kbd-mode
-  :defer t
-  :vc (:url "https://github.com/kmonad/kbd-mode" :rev :newest))
-
 ;; ispell configuration.
 (use-package ispell
   :defer t
