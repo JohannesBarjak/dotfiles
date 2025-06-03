@@ -44,12 +44,14 @@
     style.name = "kvantum";
   };
 
-  xdg.configFile."Kvantum" = {
-    source = builtins.fetchGit {
-      url = "https://github.com/sachnr/gruvbox-kvantum-themes.git";
-      rev = "f47670be407c1f07c64890ad53884ee9977a7db1";
+  # Set Qt theme.
+  xdg.configFile."Kvantum" =
+    let kvantum-theme = builtins.fetchGit {
+          url = "https://github.com/sachnr/gruvbox-kvantum-themes.git";
+          rev = "f47670be407c1f07c64890ad53884ee9977a7db1";
+        };
+    in {
+      recursive = true;
+      source = "${kvantum-theme}";
     };
-
-    recursive = true;
-  };
 }
