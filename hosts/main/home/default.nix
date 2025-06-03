@@ -97,9 +97,9 @@
 
       defaultApplications = {
         # Set firefox as the default browser.
-        "text/html" = "firefox.desktop";
-        "x-scheme-handler/http" = "firefox.desktop";
-        "x-scheme-handler/https" = "firefox.desktop";
+        "text/html" = "librewolf.desktop";
+        "x-scheme-handler/http" = "librewolf.desktop";
+        "x-scheme-handler/https" = "librewolf.desktop";
 
         # Use mpv for video.
         "video/mp4" = "mpv.desktop";
