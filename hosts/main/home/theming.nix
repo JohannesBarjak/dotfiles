@@ -7,8 +7,8 @@
     iconTheme.package = (pkgs.papirus-icon-theme.override { color = "green"; });
 
     theme = {
-      name = "Gruvbox-Dark";
-      package = pkgs.gruvbox-gtk-theme;
+      name = "Orchis-Grey";
+      package = pkgs.orchis-theme;
     };
 
     gtk3.extraConfig.gtk-application-prefer-dark-theme = true;
@@ -47,11 +47,11 @@
   # Set Qt theme.
   xdg.configFile."Kvantum" =
     let kvantum-theme = builtins.fetchGit {
-          url = "https://github.com/sachnr/gruvbox-kvantum-themes.git";
-          rev = "f47670be407c1f07c64890ad53884ee9977a7db1";
+          url = "https://github.com/vinceliuice/Orchis-kde.git";
+          rev = "d6c86c2460bed343dce068ec9e720ab29fae5d6f";
         };
     in {
       recursive = true;
-      source = "${kvantum-theme}";
+      source = "${kvantum-theme}/Kvantum";
     };
 }
