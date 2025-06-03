@@ -101,7 +101,11 @@
         "x-scheme-handler/http" = "firefox.desktop";
         "x-scheme-handler/https" = "firefox.desktop";
 
-        "video/mp4" = "celluloid.desktop";
+        # Use mpv for video.
+        "video/mp4" = "mpv.desktop";
+
+        # Open text files using emacs.
+        "text/plain" = "emacs.desktop";
       };
     };
 
