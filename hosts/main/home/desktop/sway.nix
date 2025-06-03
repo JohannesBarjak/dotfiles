@@ -10,7 +10,7 @@
     checkConfig = false;
 
     config = let mod = "Mod4"; in {
-      menu = "${config.programs.rofi.package}/bin/rofi -show drun";
+      menu = "${config.programs.rofi.package}/bin/rofi -show combi";
       terminal = "${config.programs.kitty.package}/bin/kitty --single-instance";
       modifier = mod;
 

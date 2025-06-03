@@ -8,11 +8,19 @@
     font = "Cousine Nerd Font Propo";
 
     # Add calculator plugin to rofi.
-    plugins = [ pkgs.rofi-calc ];
+    plugins = [
+      pkgs.rofi-calc
+    ];
+
+    modes = [ "drun" "window" "combi" ];
 
     extraConfig = {
       show-icons = true;
-      display-drun = "󰣖 drun:";
+
+      display-drun = "󰀻 ";
+      display-window = "";
+
+      combi-modes = [ "drun" "window" ];
 
       sort = true;
       sorting-method = "fzf";
