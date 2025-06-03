@@ -17,11 +17,13 @@
     extraConfig = {
       show-icons = true;
 
+      # Change modi default text to icons.
       display-drun = "󰀻 ";
       display-window = "";
 
       combi-modes = [ "drun" "window" ];
 
+      # Prefer fuzzy searching.
       sort = true;
       sorting-method = "fzf";
       matching = "fuzzy";
