@@ -246,3 +246,7 @@
   (magit-delta-default-dark-theme  "gruvbox-dark")
   (magit-delta-default-light-theme "gruvbox"))
 
+;; A theme I like to occasionally use.
+(use-package everforest
+  (:vc (:url "https://github.com/Theory-of-Everything/everforest-emacs" :rev :newest)))
+
