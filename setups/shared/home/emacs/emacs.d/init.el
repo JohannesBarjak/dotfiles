@@ -2,9 +2,10 @@
   :init
   (load-theme 'doom-gruvbox t)
 
-  ;; Disable toolbar and scrollbar.
-  (tool-bar-mode -1)
+  ;; Disable toolbar, menu bar, and scroll bar.
+  (tool-bar-mode   -1)
   (scroll-bar-mode -1)
+  (menu-bar-mode   -1)
 
   ;; Helper function to get user files.
   (defun user-file (file-path)
