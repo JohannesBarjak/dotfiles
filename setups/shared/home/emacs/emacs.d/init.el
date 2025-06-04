@@ -38,6 +38,12 @@
 
   :hook (prog-mode-hook . display-line-numbers-mode))
 
+;; Setup which key.
+(use-package which-key
+  :config
+  (which-key-mode)
+  (which-key-setup-side-window-bottom))
+
 ;; Basic meow setup and starup.
 (use-package meow
   :config
