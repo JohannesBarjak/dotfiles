@@ -1,6 +1,6 @@
 (use-package emacs
   :init
-  (load-theme 'everforest-hard-dark t)
+  (load-theme 'doom-gruvbox t)
 
   ;; Disable toolbar, menu bar, and scroll bar.
   (tool-bar-mode   -1)
@@ -237,7 +237,4 @@
   :custom
   (magit-delta-default-dark-theme  "gruvbox-dark")
   (magit-delta-default-light-theme "gruvbox"))
-
-(use-package everforest
-  :vc (:url "https://github.com/Theory-of-Everything/everforest-emacs" :rev :newest))
 
