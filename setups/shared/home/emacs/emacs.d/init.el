@@ -1,6 +1,6 @@
 (use-package emacs
   :init
-  (load-theme 'doom-gruvbox t)
+  (load-theme 'everforest-hard-dark t)
 
   ;; Disable toolbar, menu bar, and scroll bar.
   (tool-bar-mode   -1)
@@ -214,16 +214,6 @@
   :bind (:map minibuffer-local-map ("M-A" . marginalia-cycle))
   :init (marginalia-mode))
 
-;; Add syntax highlighting to magit diffs.
-(use-package magit-delta
-  :after magit
-  :init (magit-delta-mode)
-
-  ;; Setting the theme to use for magit diff.
-  :custom
-  (magit-delta-default-dark-theme  "gruvbox-dark")
-  (magit-delta-default-light-theme "gruvbox"))
-
 ;; ispell configuration.
 (use-package ispell
   :defer t
@@ -237,4 +227,17 @@
   ;; Necessary changes to make ispell work with hunspell.
   (spell-local-dictionary-alist
    '("en_US" "[[:alpha:]]" "[^[:alpha:]]" "[']" nil ("-d" "en_US") nil utf-8())))
+
+;; Add syntax highlighting to magit diffs.
+(use-package magit-delta
+  :after magit
+  :init (magit-delta-mode)
+
+  ;; Setting the theme to use for magit diff.
+  :custom
+  (magit-delta-default-dark-theme  "gruvbox-dark")
+  (magit-delta-default-light-theme "gruvbox"))
+
+(use-package everforest
+  :vc (:url "https://github.com/Theory-of-Everything/everforest-emacs" :rev :newest))
 

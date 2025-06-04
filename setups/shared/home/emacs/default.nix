@@ -42,6 +42,7 @@
 
       # Misc.
       epkgs.doom-themes
+      epkgs.base16-theme
       epkgs.pandoc-mode
       epkgs.vundo
       epkgs.try
