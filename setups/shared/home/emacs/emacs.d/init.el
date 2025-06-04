@@ -146,7 +146,13 @@
   ("M-s u" . consult-focus-lines)
 
   ("C-c h" . consult-history)
-  ("C-c K" . consult-kmacro))
+  ("C-c K" . consult-kmacro)
+
+  (:map isearch-mode-map
+
+  ;; These keybindings help consult-line detect isearch.
+  ("M-s l" . consult-line)
+  ("M-s L" . consult-line-multi)))
 
 ;; Add embark consult integration.
 (use-package embark-consult
