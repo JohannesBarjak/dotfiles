@@ -7,6 +7,7 @@
   (scroll-bar-mode -1)
   (menu-bar-mode   -1)
 
+  ;; Disable left-right fringes and add a uniform border width.
   (set-fringe-mode 0)
   (add-to-list 'default-frame-alist '(internal-border-width . 7))
 
