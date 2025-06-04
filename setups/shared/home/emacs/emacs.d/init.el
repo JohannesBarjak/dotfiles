@@ -132,9 +132,11 @@
   ("M-y" . consult-yank-pop)            ; Orig. yank-pop.
 
   ("M-g f"   . consult-flymake)
-  ("M-g m"   . consult-mark)
   ("M-g M-g" . consult-goto-line)       ; Orig. goto-line.
   ("M-g g"   . consult-goto-line)       ; Orig. goto-line.
+  ("M-g m"   . consult-mark)
+  ("M-g i"   . consult-imenu)
+  ("M-g I"   . consult-imenu-multi)
 
   ;; Seaching commands.
   ("M-s d" . consult-fd)
@@ -145,8 +147,14 @@
   ("M-s k" . consult-keep-lines)
   ("M-s u" . consult-focus-lines)
 
+  ("M-#" . consult-register-load)
+  ("M-'" . consult-register-store)
+  ("C-M-#" . consult-register)
+
+  ;; Commands for fast register access.
   ("C-c h" . consult-history)
   ("C-c K" . consult-kmacro)
+  ("C-c i" . consult-info)
 
   (:map isearch-mode-map
 
