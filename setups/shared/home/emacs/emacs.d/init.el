@@ -187,6 +187,10 @@
   :custom (treesit-auto-install 'prompt)
 
   :config
+  ;; Extra tree-sitter language grammars.
+  (setq treesit-language-source-alist
+   '((kanata . ("https://github.com/postsolar/tree-sitter-kanata" "master" "src"))))
+
   (treesit-auto-add-to-auto-mode-alist 'all)
   (global-treesit-auto-mode))
 
