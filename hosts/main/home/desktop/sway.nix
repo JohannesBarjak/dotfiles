@@ -63,7 +63,7 @@
       # Use mkOptiondefault so that default config is not overwritten.
       keybindings = lib.mkOptionDefault {
         "${mod}+Ctrl+space" = "exec ${config.programs.emacs.finalPackage}/bin/emacsclient -n -c";
-        "${mod}+g" = "exec ${config.programs.rofi.package}/bin/rofi -show window";
+        "${mod}+Ctrl+r" = "exec ${pkgs.mullvad}/bin/mullvad reconnect";
         "${mod}+i" = "exec ${config.programs.librewolf.package}/bin/librewolf";
 
         "${mod}+h" = "exec ${pkgs.sway-overfocus}/bin/sway-overfocus split-lt float-lt output-lt";
