@@ -13,7 +13,7 @@
   tab   @q   @w   @e   r    t    y    u    @i   @o   @p   [    ]    \
   @cec   @a   @s   @d   @f   g    h    @j   @k   @l   @;   apo  ent
   lsft    @z   @x   @c   @v   b    @n   @m   @,   @.   /    rsft
-  lctl    met  @bka           @spc           @eta prnt rctl pgup up   pgdn
+  lctl    met  @bka           @spc           @etc prnt rctl pgup up   pgdn
                                                             left down right)
 
 ;; Leader layout.
@@ -52,7 +52,7 @@
 (defalias
   ;; Double use keys.
   cec (tap-hold-press 0   200 esc caps)
-  eta (tap-hold-press 200 200 ent alt)
+  etc (tap-hold-press 200 200 ent ctl)
   bka (tap-hold-press 200 200 bks alt)
 
   ;; Basic home row mods.
