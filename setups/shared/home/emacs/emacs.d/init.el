@@ -62,17 +62,6 @@
   (which-key-mode)
   (which-key-setup-side-window-bottom))
 
-;; Basic meow setup and starup.
-(use-package meow
-  :config
-  (load-file (user-file "meow.el"))     ; Load meow configuration.
-  (meow-setup)
-
-  (meow-global-mode t)
-
-  ;; Set meow cheat-sheet to use a qwerty layout.
-  :custom (meow-cheatsheet-layout meow-cheatsheet-layout-qwerty))
-
 ;; Avy allows for fast jumping in buffers.
 (use-package avy
   :bind
