@@ -23,8 +23,23 @@
     (move-end-of-line nil)
     (newline-and-indent))
 
+  ;; Scroll half a page up.
+  (defun scroll-half-page-up ()
+    "Function to move the text half a page up."
+    (interactive)
+    (scroll-up (/ (window-body-height) 2)))
+
+  ;; Scroll half a page down.
+  (defun scroll-half-page-down ()
+    "Function to move the text half a page down."
+    (interactive)
+    (scroll-down (/ (window-body-height) 2)))
+
   :bind
   ("M-o" . smart-open-line)             ; Vim-like open line.
+
+  ("M-p" . scroll-half-page-down)
+  ("M-n" . scroll-half-page-up)
 
   ;; Custom prefix map.
   (:prefix-map personal-map
