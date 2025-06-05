@@ -37,7 +37,9 @@
   (indent-tabs-mode nil)       ; Do not indent with the tab character.
   (custom-file (expand-file-name (concat user-emacs-directory "custom_var.el"))) ; Write variables into a separate file.
 
-  :hook (prog-mode-hook . display-line-numbers-mode))
+  :hook
+  (prog-mode-hook . display-line-numbers-mode)
+  (prog-mode-hook . electric-pair-mode))
 
 ;; Setup which key.
 (use-package which-key
