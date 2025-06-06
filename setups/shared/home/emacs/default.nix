@@ -11,9 +11,9 @@
 
     extraPackages = epkgs: [
       # Navigation and selection plugins for Emacs.
-      epkgs.meow epkgs.avy
       epkgs.consult epkgs.vertico
       epkgs.embark epkgs.embark-consult
+      epkgs.avy
       epkgs.god-mode
       epkgs.orderless
 
