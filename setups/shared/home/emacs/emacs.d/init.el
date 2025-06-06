@@ -98,9 +98,6 @@
   (global-corfu-mode)
   (corfu-popupinfo-mode))
 
-;; Add completion preview.
-(use-package completion-preview
-  :hook (after-init-hook . global-completion-preview-mode))
 
 ;; Use eglot as my lsp manager.
 (use-package eglot
@@ -112,25 +109,6 @@
   :custom
   (eglot-autoshutdown t) ; shutdown language server after closing last file.
   (eglot-confirm-server-initiated-edits nil)) ; allow edits without confirmation.
-
-;; Add orderless completion style.
-(use-package orderless
-  :custom
-  (completion-styles '(orderless flex))
-  (completion-category-defaults nil) ; Ensures that orderless is the only completion style used by default.
-  (completion-category-overrides '((file (styles basic partial-completion)))))
-
-;; Embark provides actions on buffer targets.
-(use-package embark
-  :bind
-  ("C-."   . embark-act)
-  ("M-."   . embark-dwim)
-  ("C-h B" . embark-bindings)
-
-  ;; Add custom variable for embark indicator.
-  :custom (embark-indicators '(embark-minimal-indicator
-			       embark-highlight-indicator
-			       embark-isearch-highlight-indicator)))
 
 ;; Use consult for better searching interfaces.
 (use-package consult
@@ -171,6 +149,25 @@
   ("M-s l" . consult-line)
   ("M-s L" . consult-line-multi)))
 
+;; Add orderless completion style.
+(use-package orderless
+  :custom
+  (completion-styles '(orderless flex))
+  (completion-category-defaults nil) ; Ensures that orderless is the only completion style used by default.
+  (completion-category-overrides '((file (styles basic partial-completion)))))
+
+;; Embark provides actions on buffer targets.
+(use-package embark
+  :bind
+  ("C-."   . embark-act)
+  ("M-."   . embark-dwim)
+  ("C-h B" . embark-bindings)
+
+  ;; Add custom variable for embark indicator.
+  :custom (embark-indicators '(embark-minimal-indicator
+			       embark-highlight-indicator
+			       embark-isearch-highlight-indicator)))
+
 ;; Add embark consult integration.
 (use-package embark-consult
   :hook (embark-collect-mode . consult-preview-at-point-mode))
@@ -210,6 +207,10 @@
 
   (treesit-auto-add-to-auto-mode-alist 'all)
   (global-treesit-auto-mode))
+
+;; Add completion preview.
+(use-package completion-preview
+  :hook (after-init-hook . global-completion-preview-mode))
 
 ;; Use eldoc for documentation popups.
 (use-package eldoc-box
