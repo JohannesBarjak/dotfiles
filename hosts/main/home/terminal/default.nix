@@ -122,7 +122,6 @@
   };
 
   services.pueue.enable = true;
-  programs.navi.enable = true;
 
   # Pandoc is a file format converter.
   programs.pandoc.enable = true;
