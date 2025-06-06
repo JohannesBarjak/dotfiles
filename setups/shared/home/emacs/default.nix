@@ -11,19 +11,25 @@
 
     extraPackages = epkgs: [
       # Navigation and selection plugins for Emacs.
-      epkgs.consult epkgs.vertico
-      epkgs.embark epkgs.embark-consult
       epkgs.avy
+      epkgs.consult
+      epkgs.vertico
+      epkgs.embark
       epkgs.god-mode
+      epkgs.embark-consult
+      epkgs.expand-region
       epkgs.orderless
 
       # Integration with direnv.
       epkgs.envrc
 
       # Language modes.
-      epkgs.idris2-mode epkgs.haskell-mode
-      epkgs.nix-mode epkgs.markdown-mode
-      epkgs.treesit-auto epkgs.nushell-mode
+      epkgs.treesit-auto
+      epkgs.idris2-mode
+      epkgs.haskell-mode
+      epkgs.nix-mode
+      epkgs.markdown-mode
+      epkgs.nushell-mode
 
       # Code completion plugins.
       epkgs.corfu
@@ -38,17 +44,18 @@
       epkgs.consult-hoogle
 
       # Terminal related packages.
-      epkgs.eat epkgs.vterm
+      epkgs.eat
+      epkgs.vterm
       epkgs.kkp
 
       # Magit.
-      epkgs.magit epkgs.magit-delta
+      epkgs.magit
+      epkgs.magit-delta
 
       # Misc.
       epkgs.pandoc-mode
       epkgs.vundo
       epkgs.try
-      epkgs.expand-region
 
       # Themes.
       epkgs.doom-themes
