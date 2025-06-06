@@ -44,6 +44,7 @@
       epkgs.pandoc-mode
       epkgs.vundo
       epkgs.try
+      epkgs.expand-region
 
       # Themes.
       epkgs.doom-themes

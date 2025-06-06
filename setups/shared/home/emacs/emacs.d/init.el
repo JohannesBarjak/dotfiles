@@ -187,6 +187,10 @@
 (use-package envrc
   :hook (after-init . envrc-global-mode))
 
+;; This package provides semantic region expansion.
+(use-package expand-region
+  :bind ("C-c e" . er/expand-region))
+
 ;; Haskell mode configuration.
 (use-package haskell-mode
   :defer t
