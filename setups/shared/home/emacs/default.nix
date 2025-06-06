@@ -14,6 +14,7 @@
       epkgs.meow epkgs.avy
       epkgs.consult epkgs.vertico
       epkgs.embark epkgs.embark-consult
+      epkgs.god-mode
       epkgs.orderless
 
       # Integration with direnv.
