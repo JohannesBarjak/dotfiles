@@ -28,6 +28,9 @@
       epkgs.corfu
       epkgs.yasnippet
 
+      # Multiple cursors.
+      epkgs.multiple-cursors
+
       # Documentation plugins.
       epkgs.marginalia
       epkgs.eldoc-box
