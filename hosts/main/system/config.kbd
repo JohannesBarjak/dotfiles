@@ -20,9 +20,9 @@
 (deflayer metalayer
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _     @iqt _    _    _    _    _    _    _    _    _    _    _    _
-  _      _    _    _    _    _    _    _    _    _    _    _    _
-  _       _    _    _    @sym _    @nav _    _    _    _    _
-  _       _    _              _              _    _    _    _    _    _
+  _      _    _    _    _    @mca _    _    _    _    _    _    _
+  _       _    _    @mcl @sym _    @nav @mat _    _    _    _
+  _       _    _              _              @mst _    _    _    _    _
                                                             _    _    _)
 
 (deflayer navigation
@@ -84,11 +84,30 @@
   n (tap-hold-release 200 200 n (multi met ctl alt sft))
 
   mst (layer-switch base)
-  spc (tap-hold-release 200 200 spc (layer-while-held metalayer))
+
+  release_keys (multi
+    (on-release tap-virtualkey release_ctl)
+    (on-release tap-virtualkey release_alt)
+    (on-release tap-virtualkey release_ctl_alt))
+
+  spc (tap-hold-release 200 200 spc (multi (layer-switch metalayer) @release_keys))
 
   iqt (layer-switch qwerty)
   nav (layer-switch navigation)
-  sym (layer-switch symbols))
+  sym (layer-switch symbols)
+
+  mcl (on-press press-virtualkey control)
+  mat (on-press press-virtualkey altern)
+  mca (on-press press-virtualkey control_alt))
+
+(defvirtualkeys
+  control (multi (layer-switch base) ctl)
+  altern (multi (layer-switch base) alt)
+  control_alt (multi (layer-switch base) ctl alt)
+
+  release_ctl (multi (layer-switch base) (on-press release-virtualkey control))
+  release_alt (multi (layer-switch base) (on-press release-virtualkey altern))
+  release_ctl_alt (multi (layer-switch base) (on-press release-virtualkey control_alt)))
 
 #|
 (deflayer qwerty
