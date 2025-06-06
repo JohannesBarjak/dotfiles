@@ -186,6 +186,14 @@
 (use-package envrc
   :hook (after-init . envrc-global-mode))
 
+;; God mode enables a pseudo-modal interface for Emacs.
+(use-package god-mode
+  :custom
+  (god-mode-exempt-major-modes nil)
+  (god-mode-exempt-predicates nil)
+
+  :bind ("<escape>" . god-mode-all))
+
 ;; Add multiple cursor functionality to Emacs.
 (use-package multiple-cursors
   :bind
