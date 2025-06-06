@@ -15,7 +15,6 @@
       epkgs.consult
       epkgs.vertico
       epkgs.embark
-      epkgs.god-mode
       epkgs.embark-consult
       epkgs.expand-region
       epkgs.orderless
