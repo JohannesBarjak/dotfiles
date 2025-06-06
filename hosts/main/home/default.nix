@@ -16,7 +16,6 @@
     valent
     musescore
     opensnitch-ui
-    distrobox-tui
     (hunspellWithDicts [ hunspellDicts.en-us hunspellDicts.en-us-large ])
     zip unzip
   ];
