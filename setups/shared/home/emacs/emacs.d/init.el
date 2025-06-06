@@ -189,8 +189,8 @@
 ;; God mode enables a pseudo-modal interface for Emacs.
 (use-package god-mode
   :custom
-  (god-mode-exempt-major-modes nil)
-  (god-mode-exempt-predicates nil)
+  (god-exempt-major-modes nil)
+  (god-exempt-predicates nil)
 
   :bind ("<escape>" . god-mode-all))
 
