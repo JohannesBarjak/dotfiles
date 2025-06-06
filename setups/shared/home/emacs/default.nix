@@ -41,11 +41,13 @@
       epkgs.magit epkgs.magit-delta
 
       # Misc.
-      epkgs.doom-themes
-      epkgs.base16-theme
       epkgs.pandoc-mode
       epkgs.vundo
       epkgs.try
+
+      # Themes.
+      epkgs.doom-themes
+      epkgs.base16-theme
     ];
 
     package = pkgs.emacs-pgtk;
