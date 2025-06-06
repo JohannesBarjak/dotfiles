@@ -98,7 +98,6 @@
   (global-corfu-mode)
   (corfu-popupinfo-mode))
 
-
 ;; Use eglot as my lsp manager.
 (use-package eglot
   :hook					; Add language hooks.
