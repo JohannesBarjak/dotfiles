@@ -11,14 +11,12 @@
   ];
 
   home.packages = with pkgs; [
-    numbat
     wineWow64Packages.waylandFull winetricks
     bluetuith
-    gnome-disk-utility
     valent
     musescore
     opensnitch-ui
-    distrobox distrobox-tui
+    distrobox-tui
     (hunspellWithDicts [ hunspellDicts.en-us hunspellDicts.en-us-large ])
     zip unzip
   ];
@@ -87,6 +85,9 @@
       };
     };
   };
+
+  # Install distrobox for greater package compatibility.
+  programs.distrobox.enable = true;
 
   xdg = {
     enable = true;

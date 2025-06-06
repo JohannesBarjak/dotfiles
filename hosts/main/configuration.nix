@@ -121,7 +121,7 @@
     ryzenadj
     compsize
 
-    gcc
+    gcc # Added to the global path to permit the install of tree-sitter grammars.
   ];
 
   hardware.cpu.amd.ryzen-smu.enable = true; # Enable system management driver for Amd.
