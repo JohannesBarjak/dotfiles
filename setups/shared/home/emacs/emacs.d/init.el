@@ -60,13 +60,6 @@
   (prog-mode-hook . display-line-numbers-mode)
   (prog-mode-hook . electric-pair-mode))
 
-;; Setup which key.
-(use-package which-key
-  :config
-  (which-key-mode)                      ; Enable which-key
-  (which-key-setup-side-window-bottom)  ; This setting enables god mode support from which-key.
-  (which-key-enable-god-mode-support))
-
 ;; Avy allows for fast jumping in buffers.
 (use-package avy
   :bind
@@ -79,25 +72,6 @@
   ("M-g s" . avy-goto-char-timer)
 
   :custom (avy-timeout-seconds 2))
-
-;; Use corfu for completion prompts.
-(use-package corfu
-  :custom
-  (corfu-cycle t)
-  (corfu-preselect 'prompt)
-
-  (corfu-popupinfo-delay '(0.5 . 0))
-
-  ;; Use tab to cycle completions.
-  :bind (:map corfu-map
-	      ("TAB"     . corfu-next)
-	      ([tab]     . corfu-next)
-	      ("S-TAB"   . corfu-previous)
-	      ([backtab] . corfu-previous))
-
-  :init
-  (global-corfu-mode)
-  (corfu-popupinfo-mode))
 
 ;; Use eglot as my lsp manager.
 (use-package eglot
@@ -149,13 +123,6 @@
   ("M-s l" . consult-line)
   ("M-s L" . consult-line-multi)))
 
-;; Add orderless completion style.
-(use-package orderless
-  :custom
-  (completion-styles '(orderless flex))
-  (completion-category-defaults nil) ; Ensures that orderless is the only completion style used by default.
-  (completion-category-overrides '((file (styles basic partial-completion)))))
-
 ;; Embark provides actions on buffer targets.
 (use-package embark
   :bind
@@ -168,20 +135,12 @@
 			       embark-highlight-indicator
 			       embark-isearch-highlight-indicator)))
 
+;; Completion frameworks.
+(load-file (user-file "completion.el"))
+
 ;; Add embark consult integration.
 (use-package embark-consult
   :hook (embark-collect-mode . consult-preview-at-point-mode))
-
-;; Vertico is a package for interactive completion.
-(use-package vertico
-  :custom (vertico--resize t)
-
-  :init
-  (vertico-mode)
-  (vertico-multiform-mode)
-
-  ;; Use grid for embark completion.
-  (add-to-list 'vertico-multiform-categories '(embark-keybinding grid)))
 
 ;; Envrc automatically loads direnv environments in a per-buffer basis.
 (use-package envrc
@@ -228,10 +187,6 @@
 
   (treesit-auto-add-to-auto-mode-alist 'all)
   (global-treesit-auto-mode))
-
-;; Add completion preview.
-(use-package completion-preview
-  :hook (after-init-hook . global-completion-preview-mode))
 
 ;; Use eldoc for documentation popups.
 (use-package eldoc-box
