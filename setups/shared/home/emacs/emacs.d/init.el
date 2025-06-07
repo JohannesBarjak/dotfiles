@@ -71,7 +71,7 @@
   ("M-g l" . avy-goto-line)
   ("M-j" . avy-goto-char-timer)
 
-  :custom (avy-timeout-seconds 2))
+  :custom (avy-timeout-seconds 0.3))
 
 ;; Use eglot as my lsp manager.
 (use-package eglot
