@@ -281,3 +281,7 @@
 (use-package everforest
   (:vc (:url "https://github.com/Theory-of-Everything/everforest-emacs" :rev :newest)))
 
+;; Add support for Fica Code fonts.
+(use-package fira-code-mode
+  :hook (haskell-mode . fira-code-mode))
+

@@ -56,6 +56,7 @@
       epkgs.pandoc-mode
       epkgs.vundo
       epkgs.try
+      epkgs.fira-code-mode
 
       # Themes.
       epkgs.doom-themes
