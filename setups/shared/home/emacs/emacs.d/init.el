@@ -108,11 +108,11 @@
   ("M-s k" . consult-keep-lines)
   ("M-s u" . consult-focus-lines)
 
+  ;; Commands for fast register access.
   ("M-#" . consult-register-load)
   ("M-'" . consult-register-store)
   ("C-M-#" . consult-register)
 
-  ;; Commands for fast register access.
   ("C-c h" . consult-history)
   ("C-c K" . consult-kmacro)
   ("C-c i" . consult-info)
