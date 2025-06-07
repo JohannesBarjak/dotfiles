@@ -69,7 +69,7 @@
   ("M-g e" . avy-goto-word-0)
   ("M-g w" . avy-goto-word-1)
   ("M-g l" . avy-goto-line)
-  ("M-g s" . avy-goto-char-timer)
+  ("M-j" . avy-goto-char-timer)
 
   :custom (avy-timeout-seconds 2))
 
