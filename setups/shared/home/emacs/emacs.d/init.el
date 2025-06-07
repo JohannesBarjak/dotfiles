@@ -241,6 +241,9 @@
 (use-package vundo
   :bind ("C-c u" . vundo))
 
+;; Load magit configuration.
+(load-file (user-file "magit.el"))
+
 ;; Add kitty terminal protocol extension for terminal compatibility.
 (use-package kkp
   :config (global-kkp-mode t))
@@ -266,16 +269,6 @@
   ;; Necessary changes to make ispell work with hunspell.
   (spell-local-dictionary-alist
    '("en_US" "[[:alpha:]]" "[^[:alpha:]]" "[']" nil ("-d" "en_US") nil utf-8())))
-
-;; Add syntax highlighting to magit diffs.
-(use-package magit-delta
-  :after magit
-  :init (magit-delta-mode)
-
-  ;; Setting the theme to use for magit diff.
-  :custom
-  (magit-delta-default-dark-theme  "gruvbox-dark")
-  (magit-delta-default-light-theme "gruvbox"))
 
 ;; A theme I like to occasionally use.
 (use-package everforest
