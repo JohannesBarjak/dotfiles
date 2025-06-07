@@ -62,6 +62,18 @@
 
 ;; Avy allows for fast jumping in buffers.
 (use-package avy
+  :config
+  ;; Define avy embark actions from https://karthinks.com/software/avy-can-do-anything/.
+  (defun avy-action-embark (pt)
+    (unwind-protect
+        (save-excursion
+          (goto-char pt)
+          (embark-act))
+      (select-window (cdr (ring-ref avy-ring 0))))
+    t)
+
+  (setf (alist-get ?. avy-dispatch-alist) 'avy-action-embark)
+
   :bind
   ("C-:" . avy-goto-char)
   ("C-'" . avy-goto-char-2)
