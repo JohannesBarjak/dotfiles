@@ -63,33 +63,20 @@
 ;; Configure packages related to more efficient navigation.
 (load-file (user-file "navigation.el"))
 
-;; Lsp and programming language support related configuration.
-(load-file (user-file "lsp.el"))
-
 ;; Completion frameworks.
 (load-file (user-file "completion.el"))
+
+;; Configuration that improves the Emacs editing experience.
+(load-file (user-file "edition.el"))
+
+;; Lsp and programming language support related configuration.
+(load-file (user-file "lsp.el"))
 
 ;; Load magit configuration.
 (load-file (user-file "magit.el"))
 
 ;; Emacs configuration which helps with documentation.
 (load-file (user-file "documentation.el"))
-
-;; Embark provides actions on buffer targets.
-(use-package embark
-  :bind
-  ("C-."   . embark-act)
-  ("M-."   . embark-dwim)
-  ("C-h B" . embark-bindings)
-
-  ;; Add custom variable for embark indicator.
-  :custom (embark-indicators '(embark-minimal-indicator
-			       embark-highlight-indicator
-			       embark-isearch-highlight-indicator)))
-
-;; Add embark consult integration.
-(use-package embark-consult
-  :hook (embark-collect-mode . consult-preview-at-point-mode))
 
 ;; God mode enables a pseudo-modal interface for Emacs.
 (use-package god-mode
@@ -98,23 +85,6 @@
   (god-exempt-predicates nil)
 
   :bind ("<escape>" . god-mode-all))
-
-;; Add multiple cursor functionality to Emacs.
-(use-package multiple-cursors
-  :bind
-  ("C-c M" . 'mc/edit-lines)
-
-  ("C->" . 'mc/mark-next-like-this)
-  ("C-<" . 'mc/mark-previous-like-this)
-  ("C-c C-<" . 'mc/mark-all-like-this))
-
-;; This package provides semantic region expansion.
-(use-package expand-region
-  :bind ("C-c e" . er/expand-region))
-
-;; An undo-tree for Emacs.
-(use-package vundo
-  :bind ("C-c u" . vundo))
 
 ;; Add kitty terminal protocol extension for terminal compatibility.
 (use-package kkp
