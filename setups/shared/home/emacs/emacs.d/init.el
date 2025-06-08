@@ -48,16 +48,11 @@
 ;; Emacs configuration which helps with documentation.
 (load-file (user-file "documentation.el"))
 
+;; Configuration that primarily concerns itself with keybindings.
+(load-file (user-file "keybinds.el"))
+
 ;; Here I have all my custom functions.
 (load-file (user-file "custom-functions.el"))
-
-;; God mode enables a pseudo-modal interface for Emacs.
-(use-package god-mode
-  :custom
-  (god-exempt-major-modes nil)
-  (god-exempt-predicates nil)
-
-  :bind ("<escape>" . god-mode-all))
 
 ;; Add kitty terminal protocol extension for terminal compatibility.
 (use-package kkp
