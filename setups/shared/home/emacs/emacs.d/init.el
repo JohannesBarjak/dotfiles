@@ -66,6 +66,9 @@
 ;; Lsp and programming language support related configuration.
 (load-file (user-file "lsp.el"))
 
+;; Completion frameworks.
+(load-file (user-file "completion.el"))
+
 ;; Embark provides actions on buffer targets.
 (use-package embark
   :bind
@@ -77,9 +80,6 @@
   :custom (embark-indicators '(embark-minimal-indicator
 			       embark-highlight-indicator
 			       embark-isearch-highlight-indicator)))
-
-;; Completion frameworks.
-(load-file (user-file "completion.el"))
 
 ;; Add embark consult integration.
 (use-package embark-consult
