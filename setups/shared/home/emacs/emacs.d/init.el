@@ -69,6 +69,9 @@
 ;; Completion frameworks.
 (load-file (user-file "completion.el"))
 
+;; Load magit configuration.
+(load-file (user-file "magit.el"))
+
 ;; Embark provides actions on buffer targets.
 (use-package embark
   :bind
@@ -113,9 +116,6 @@
 ;; An undo-tree for Emacs.
 (use-package vundo
   :bind ("C-c u" . vundo))
-
-;; Load magit configuration.
-(load-file (user-file "magit.el"))
 
 ;; Add kitty terminal protocol extension for terminal compatibility.
 (use-package kkp
