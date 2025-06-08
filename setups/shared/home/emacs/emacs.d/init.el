@@ -63,16 +63,8 @@
 ;; Configure packages related to more efficient navigation.
 (load-file (user-file "navigation.el"))
 
-;; Use eglot as my lsp manager.
-(use-package eglot
-  :hook					; Add language hooks.
-  (haskell-mode   . eglot-ensure)
-  (nix-mode       . eglot-ensure)
-  (python-ts-mode . eglot-ensure)
-
-  :custom
-  (eglot-autoshutdown t) ; shutdown language server after closing last file.
-  (eglot-confirm-server-initiated-edits nil)) ; allow edits without confirmation.
+;; Lsp and programming language support related configuration.
+(load-file (user-file "lsp.el"))
 
 ;; Embark provides actions on buffer targets.
 (use-package embark
@@ -92,10 +84,6 @@
 ;; Add embark consult integration.
 (use-package embark-consult
   :hook (embark-collect-mode . consult-preview-at-point-mode))
-
-;; Envrc automatically loads direnv environments in a per-buffer basis.
-(use-package envrc
-  :hook (after-init . envrc-global-mode))
 
 ;; God mode enables a pseudo-modal interface for Emacs.
 (use-package god-mode
@@ -117,27 +105,6 @@
 ;; This package provides semantic region expansion.
 (use-package expand-region
   :bind ("C-c e" . er/expand-region))
-
-;; Haskell mode configuration.
-(use-package haskell-mode
-  :defer t
-  :custom
-  (haskell-indentation-layout-offset 2)	; Tweak indentation settings to my preferences.
-  (haskell-indentation-left-offset 2)
-  (haskell-indentation-where-pre-offset 2)
-  (haskell-indentation-where-post-offset 2))
-
-;; Manage tree-sitter grammars.
-(use-package treesit-auto
-  :custom (treesit-auto-install 'prompt)
-
-  :config
-  ;; Extra tree-sitter language grammars.
-  (setq treesit-language-source-alist
-   '((kanata . ("https://github.com/postsolar/tree-sitter-kanata" "master" "src"))))
-
-  (treesit-auto-add-to-auto-mode-alist 'all)
-  (global-treesit-auto-mode))
 
 ;; Use eldoc for documentation popups.
 (use-package eldoc-box
