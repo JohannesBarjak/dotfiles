@@ -72,6 +72,9 @@
 ;; Load magit configuration.
 (load-file (user-file "magit.el"))
 
+;; Emacs configuration which helps with documentation.
+(load-file (user-file "documentation.el"))
+
 ;; Embark provides actions on buffer targets.
 (use-package embark
   :bind
@@ -109,10 +112,6 @@
 (use-package expand-region
   :bind ("C-c e" . er/expand-region))
 
-;; Use eldoc for documentation popups.
-(use-package eldoc-box
-  :bind ("C-h ;" . #'eldoc-box-help-at-point))
-
 ;; An undo-tree for Emacs.
 (use-package vundo
   :bind ("C-c u" . vundo))
@@ -120,14 +119,6 @@
 ;; Add kitty terminal protocol extension for terminal compatibility.
 (use-package kkp
   :config (global-kkp-mode t))
-
-;; Marginalia adds annotations to the minibuffer.
-(use-package marginalia
-  ;; Bind `marginalia-cycle' locally in the minibuffer.  To make the binding
-  ;; available in the *Completions* buffer, add it to the
-  ;; `completion-list-mode-map'.
-  :bind (:map minibuffer-local-map ("M-A" . marginalia-cycle))
-  :init (marginalia-mode))
 
 ;; ispell configuration.
 (use-package ispell
