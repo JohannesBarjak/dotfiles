@@ -52,7 +52,6 @@
 ;; Configuration that primarily concerns itself with keybindings.
 (load-file (user-file "keybinds.el"))
 
-;; Random configurations that do not fit the previous categories
-;; but provide minor improvements.
+;; Random configurations that do not fit the previous categories but provide minor improvements.
 (load-file (user-file "qol.el"))
 
