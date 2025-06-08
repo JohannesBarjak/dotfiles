@@ -51,9 +51,6 @@
 ;; Configuration that primarily concerns itself with keybindings.
 (load-file (user-file "keybinds.el"))
 
-;; Here I have all my custom functions.
-(load-file (user-file "custom-functions.el"))
-
 ;; Add kitty terminal protocol extension for terminal compatibility.
 (use-package kkp
   :config (global-kkp-mode t))
