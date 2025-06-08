@@ -11,10 +11,15 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    niri = {
+      url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
   };
 
-  outputs = { nixpkgs, home-manager, nixpkgs-stable, nix-flatpak, ... }:
+  outputs = { nixpkgs, home-manager, nixpkgs-stable, nix-flatpak, niri, ... }:
     let system = "x86_64-linux"; in {
           nixosConfigurations.main = nixpkgs.lib.nixosSystem {
             system = "${system}";
@@ -28,6 +33,7 @@
                 home-manager.users.johannes = {
                   imports = [
                     ./hosts/main/home
+                    niri.homeModules.niri
                     nix-flatpak.homeManagerModules.nix-flatpak
                   ];
                 };

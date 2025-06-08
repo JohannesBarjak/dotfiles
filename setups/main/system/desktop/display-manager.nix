@@ -1,10 +1,10 @@
-{config, pkgs, ...}: let cmd = "dbus-run-session sway &> /dev/null";
+{config, pkgs, ...}: let cmd = "niri-session";
                          sessionData = "${config.services.displayManager.sessionData.desktops}/share/wayland-sessions"; in {
   services.greetd = {
     enable = true;
 
     settings = {
-      # Autologin into sway.
+      # Autologin into niri.
       initial_session = {
         user = "johannes";
         command = cmd;
