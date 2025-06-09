@@ -38,6 +38,16 @@
         "Mod+C".action = center-column;
         "Mod+Ctrl+C".action = center-visible-columns;
 
+        "Mod+BracketLeft".action = consume-or-expel-window-left;
+        "Mod+BracketRight".action = consume-or-expel-window-right;
+
+        "Mod+Comma".action = consume-window-into-column;
+        "Mod+Period".action = expel-window-from-column;
+
+        "Mod+R".action = switch-preset-column-width;
+        "Mod+Shift+R".action = switch-preset-window-height;
+        "Mod+Ctrl+R".actiona = reset-window-height;
+
         # Different kinds of maximization commands.
         "Mod+F".action = maximize-column;
         "Mod+Shift+F".action = fullscreen-window;
@@ -45,13 +55,28 @@
 
         "Mod+W".action = toggle-column-tabbed-display;
 
-        "Mod+Shift+Q".action = close-window;
+        "Mod+Q".action = close-window;
+
+        "Mod+O" = { repeat = false; action = toggle-overview; };
 
         "Mod+Shift+E".action = quit;
         "Mod+Shift+Slash".action = show-hotkey-overlay;
 
-        "XF86MonBrightnessUp".action = spawn [ "${pkgs.brightnessctl}/bin/brightnessctl" "set" "5%+" ];
-        "XF86MonBrightnessDown".action = spawn [ "${pkgs.brightnessctl}/bin/brightnessctl" "set" "5%-" ];
+        # Column and window resizing keybindings.
+        "Mod+Minus".action = set-column-width "-10%";
+        "Mod+Equal".action = set-column-width "+10%";
+        "Mod+Shift+Minus".action = set-window-height "-10%";
+        "Mod+Shift+Equal".action = set-window-height "+10%";
+
+        "XF86MonBrightnessUp" = {
+          allow-when-locked = true;
+          action = spawn [ "${pkgs.brightnessctl}/bin/brightnessctl" "set" "5%+" ];
+        };
+
+        "XF86MonBrightnessDown" = {
+          allow-when-locked = true;
+          action = spawn [ "${pkgs.brightnessctl}/bin/brightnessctl" "set" "5%-" ];
+        };
       };
 
       layout = {
