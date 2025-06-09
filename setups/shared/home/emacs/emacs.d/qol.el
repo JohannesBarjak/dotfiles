@@ -1,7 +1,3 @@
-;; Add kitty terminal protocol extension for terminal compatibility.
-(use-package kkp
-  :config (global-kkp-mode t))
-
 ;; ispell configuration.
 (use-package ispell
   :defer t

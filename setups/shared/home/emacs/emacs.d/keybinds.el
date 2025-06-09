@@ -51,3 +51,7 @@
 
   :bind ("<escape>" . god-mode-all))
 
+;; Add kitty terminal protocol extension for terminal compatibility.
+(use-package kkp
+  :config (global-kkp-mode t))
+
