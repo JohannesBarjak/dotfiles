@@ -46,7 +46,7 @@
 
         "Mod+R".action = switch-preset-column-width;
         "Mod+Shift+R".action = switch-preset-window-height;
-        "Mod+Ctrl+R".actiona = reset-window-height;
+        "Mod+Ctrl+R".action = reset-window-height;
 
         # Different kinds of maximization commands.
         "Mod+F".action = maximize-column;
