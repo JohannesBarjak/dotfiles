@@ -29,14 +29,26 @@
         "Mod+9".action.focus-workspace = 9;
         "Mod+0".action.focus-workspace = 10;
 
+        # Bindings to focus on windows.
         "Mod+H".action = focus-column-left;
         "Mod+J".action = focus-window-or-workspace-down;
         "Mod+K".action = focus-window-or-workspace-up;
         "Mod+L".action = focus-column-right;
 
+        "Mod+C".action = center-column;
+        "Mod+Ctrl+C".action = center-visible-columns;
+
+        # Different kinds of maximization commands.
+        "Mod+F".action = maximize-column;
+        "Mod+Shift+F".action = fullscreen-window;
+        "Mod+Ctrl+F".action = expand-column-to-available-width;
+
+        "Mod+W".action = toggle-column-tabbed-display;
+
         "Mod+Shift+Q".action = close-window;
 
         "Mod+Shift+E".action = quit;
+        "Mod+Shift+Slash".action = show-hotkey-overlay;
 
         "XF86MonBrightnessUp".action = spawn [ "${pkgs.brightnessctl}/bin/brightnessctl" "set" "5%+" ];
         "XF86MonBrightnessDown".action = spawn [ "${pkgs.brightnessctl}/bin/brightnessctl" "set" "5%-" ];
