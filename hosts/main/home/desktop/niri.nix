@@ -81,6 +81,8 @@
 
       layout = {
         gaps = 8;
+        default-column-width.proportion = 0.5;
+
         focus-ring = {
           width = 2;
           active.color = "rgb(168 153 132)";
@@ -109,6 +111,12 @@
           };
 
           clip-to-geometry = true;
+        }
+
+        # Make Emacs occupy half of the screen by default.
+        {
+          matches = [ { app-id = "librewolf"; } ];
+          default-column-width = {};
         }
       ];
     };
