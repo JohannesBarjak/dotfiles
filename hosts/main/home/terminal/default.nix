@@ -30,7 +30,6 @@
 
     settings = {
       shell = "${config.programs.nushell.package}/bin/nu";
-      background_opacity = 0.85;
       kitty_mod = "super+ctrl+alt";
       cursor_trail = 3;
     };
