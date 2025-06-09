@@ -14,6 +14,8 @@
       binds = with config.lib.niri.actions; {
         "Mod+D".action = spawn [ "${config.programs.rofi.package}/bin/rofi" "-show" "combi" ];
         "Mod+T".action = spawn [ "${config.programs.kitty.package}/bin/kitty" "--single-instance" ];
+        "Mod+E".action = spawn [ "${config.programs.emacs.finalPackage}/bin/emacsclient" "-n" "-c" ];
+        "Mod+I".action = spawn [ "${config.programs.librewolf.package}/bin/librewolf" ];
 
         # keybindings to focus on workspaces using numbers.
         "Mod+1".action.focus-workspace = 1;
