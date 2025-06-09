@@ -53,6 +53,7 @@
       epkgs.magit-delta
 
       # Misc.
+      epkgs.golden-ratio
       epkgs.pandoc-mode
       epkgs.vundo
       epkgs.try

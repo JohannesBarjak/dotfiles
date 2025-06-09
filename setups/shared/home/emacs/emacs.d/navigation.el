@@ -62,3 +62,7 @@
 
   :custom (avy-timeout-seconds 0.3))
 
+;; Enable golden ratio support for automatic split resizing.
+(use-package golden-ratio
+  :config (golden-ratio-mode))
+
