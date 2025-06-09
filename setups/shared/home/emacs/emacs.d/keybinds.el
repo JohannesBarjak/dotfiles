@@ -24,11 +24,24 @@
       (scroll-down-command arg)
       (scroll-down-command (/ (window-body-height) 2))))
 
+  ;; This is something that I found myself doing frequently.
+  ;; It just checks the grammar for a single line of text.
+  (defun spellcheck-til-line-end ()
+    "Spell check from the current cursor position until the end of the line."
+
+    (interactive)
+    (push-mark)
+    (activate-mark)
+    (move-end-of-line nil)
+    (ispell-region (region-beginning) (region-end)))
+
   :bind
   ("M-o" . smart-open-line)             ; Vim-like open line.
 
   ("C-v" . scroll-half-page-up)
-  ("M-v" . scroll-half-page-down))
+  ("M-v" . scroll-half-page-down)
+
+  ("C-c s" . spellcheck-til-line-end))
 
 ;; God mode enables a pseudo-modal interface for Emacs.
 (use-package god-mode
