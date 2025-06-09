@@ -41,6 +41,7 @@
         "Mod+Ctrl+K".action = move-window-up-or-to-workspace-up;
         "Mod+Ctrl+L".action = move-column-right;
 
+        # Centering commands.
         "Mod+C".action = center-column;
         "Mod+Ctrl+C".action = center-visible-columns;
 
