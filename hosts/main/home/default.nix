@@ -13,7 +13,6 @@
   home.packages = with pkgs; [
     wineWow64Packages.waylandFull winetricks
     bluetuith
-    valent
     musescore
     opensnitch-ui
     (hunspellWithDicts [ hunspellDicts.en-us hunspellDicts.en-us-large ])
