@@ -1,4 +1,5 @@
 {config, pkgs, ...}: {
+  imports = [ ./wallpapers ];
   home.packages = [ pkgs.niri ];
 
   programs.niri = {
@@ -6,10 +7,30 @@
     package = pkgs.niri;
 
     settings = {
+      spawn-at-startup = [
+        { command = [ "${pkgs.swaybg}/bin/swaybg" "-i" "${config.wallpaper.path}" ]; }
+      ];
+
       binds = with config.lib.niri.actions; {
         "Mod+D".action = spawn [ "${config.programs.rofi.package}/bin/rofi" "-show" "combi" ];
         "Mod+T".action = spawn [ "${config.programs.kitty.package}/bin/kitty" "--single-instance" ];
+
+        # keybindings to focus on workspaces using numbers.
         "Mod+1".action.focus-workspace = 1;
+        "Mod+2".action.focus-workspace = 2;
+        "Mod+3".action.focus-workspace = 3;
+        "Mod+4".action.focus-workspace = 4;
+        "Mod+5".action.focus-workspace = 5;
+        "Mod+6".action.focus-workspace = 6;
+        "Mod+7".action.focus-workspace = 7;
+        "Mod+8".action.focus-workspace = 8;
+        "Mod+9".action.focus-workspace = 9;
+        "Mod+0".action.focus-workspace = 10;
+
+        "Mod+H".action = focus-column-left;
+        "Mod+J".action = focus-window-or-workspace-down;
+        "Mod+K".action = focus-window-or-workspace-up;
+        "Mod+L".action = focus-column-right;
 
         "Mod+Shift+Q".action = close-window;
 
