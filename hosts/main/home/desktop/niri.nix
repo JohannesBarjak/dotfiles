@@ -120,6 +120,11 @@
           allow-inhibiting = false;
           action = toggle-keyboard-shortcuts-inhibit;
         };
+
+        # Convenient screenshot shortcuts.
+        "Print".action = screenshot;
+        "Ctrl+Print".action = screenshot-screen;
+        "Alt+Print".action = screenshot-window;
       };
 
       layout = {
