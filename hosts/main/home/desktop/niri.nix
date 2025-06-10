@@ -1,6 +1,10 @@
 {config, pkgs, ...}: {
   imports = [ ./wallpapers ];
-  home.packages = [ pkgs.niri ];
+
+  home.packages = [
+    pkgs.niri
+    pkgs.nautilus               # Need it for working file picker.
+  ];
 
   programs.niri = {
     enable = true;
