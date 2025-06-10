@@ -1,17 +1,10 @@
 {pkgs, ...}: {
   networking = {
     # Wireless wifi is managed by iwd.
-    wireless.iwd = {
-      enable = true;
-
-      # Manage DHCP using iwd.
-      settings = {
-        General.EnableNetworkConfiguration = true;
-      };
-    };
+    wireless.iwd.enable = true;
     hostName = "nixos";
 
-    useDHCP = false;
+    useDHCP = true;
   };
 
   services.mullvad-vpn.enable = true;
