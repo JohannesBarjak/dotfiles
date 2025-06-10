@@ -19,7 +19,7 @@
         "Mod+D".action = spawn [ "${config.programs.rofi.package}/bin/rofi" "-show" "combi" ];
         "Mod+T".action = spawn [ "${config.programs.kitty.package}/bin/kitty" "--single-instance" ];
         "Mod+E".action = spawn [ "${config.programs.emacs.finalPackage}/bin/emacsclient" "-n" "-c" ];
-        "Mod+I".action = spawn [ "${config.programs.librewolf.package}/bin/librewolf" ];
+        "Mod+B".action = spawn [ "${config.programs.librewolf.package}/bin/librewolf" ];
 
         # keybindings to focus on workspaces using numbers.
         "Mod+1".action.focus-workspace = 1;
@@ -33,6 +33,18 @@
         "Mod+9".action.focus-workspace = 9;
         "Mod+0".action.focus-workspace = 10;
 
+        # Move columns to workspaces using indices.
+        "Mod+Ctrl+1".action.move-column-to-workspace = 1;
+        "Mod+Ctrl+2".action.move-column-to-workspace = 2;
+        "Mod+Ctrl+3".action.move-column-to-workspace = 3;
+        "Mod+Ctrl+4".action.move-column-to-workspace = 4;
+        "Mod+Ctrl+5".action.move-column-to-workspace = 5;
+        "Mod+Ctrl+6".action.move-column-to-workspace = 6;
+        "Mod+Ctrl+7".action.move-column-to-workspace = 7;
+        "Mod+Ctrl+8".action.move-column-to-workspace = 8;
+        "Mod+Ctrl+9".action.move-column-to-workspace = 9;
+        "Mod+Ctrl+0".action.move-column-to-workspace = 10;
+
         # Window focus bindings.
         "Mod+H".action = focus-column-left;
         "Mod+J".action = focus-window-or-workspace-down;
@@ -45,16 +57,27 @@
         "Mod+Ctrl+K".action = move-window-up-or-to-workspace-up;
         "Mod+Ctrl+L".action = move-column-right;
 
+        # Keybindings to manage workspaces.
+        "Mod+I".action = focus-workspace-up;
+        "Mod+U".action = focus-workspace-down;
+        "Mod+Ctrl+I".action = move-column-to-workspace-up;
+        "Mod+Ctrl+U".action = move-column-to-workspace-down;
+        "Mod+Shift+I".action = move-workspace-up;
+        "Mod+Shift+U".action = move-workspace-down;
+
         # Centering commands.
         "Mod+C".action = center-column;
         "Mod+Ctrl+C".action = center-visible-columns;
 
+        # Directional column management.
         "Mod+BracketLeft".action = consume-or-expel-window-left;
         "Mod+BracketRight".action = consume-or-expel-window-right;
 
+        # Consume or expel rightward window into focused column.
         "Mod+Comma".action = consume-window-into-column;
         "Mod+Period".action = expel-window-from-column;
 
+        # Preset toggles.
         "Mod+R".action = switch-preset-column-width;
         "Mod+Shift+R".action = switch-preset-window-height;
         "Mod+Ctrl+R".action = reset-window-height;
@@ -64,7 +87,10 @@
         "Mod+Shift+F".action = fullscreen-window;
         "Mod+Ctrl+F".action = expand-column-to-available-width;
 
+        # Alternative window management schemes.
         "Mod+W".action = toggle-column-tabbed-display;
+        "Mod+V".action = toogle-window-floating;
+        "Mod+Shift+V".action = switch-focus-between-floating-and-tiling;
 
         "Mod+Q".action = close-window;
 
@@ -87,6 +113,12 @@
         "XF86MonBrightnessDown" = {
           allow-when-locked = true;
           action = spawn [ "${pkgs.brightnessctl}/bin/brightnessctl" "set" "5%-" ];
+        };
+
+        # keyboard shortcut to escape applications that grab the keyboard.
+        "Mod+Escape" = {
+          allow-inhibiting = false;
+          action = toggle-keyboard-shortcuts-inhibit;
         };
       };
 
