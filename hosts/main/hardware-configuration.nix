@@ -19,7 +19,13 @@
       options = [ "subvol=@" ];
     };
 
-  boot.initrd.luks.devices."luks-0f8443fc-2857-405b-a24f-12f3419c6ae9".device = "/dev/disk/by-uuid/0f8443fc-2857-405b-a24f-12f3419c6ae9";
+  boot.initrd.luks.devices."luks-0f8443fc-2857-405b-a24f-12f3419c6ae9" = {
+    device = "/dev/disk/by-uuid/0f8443fc-2857-405b-a24f-12f3419c6ae9";
+
+    # Discards prevent write wear and bypassWorkqueues removes indirection.
+    allowDiscards = true;
+    bypassWorkqueues = true;
+  };
 
   fileSystems."/boot" =
     { device = "/dev/disk/by-uuid/9CC3-58E2";
