@@ -19,7 +19,11 @@
         "sidebar.visibility" = "hide-sidebar";
 
         "webgl.disabled" = false;
+        "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
       };
+
+      # Override minimum window size.
+      userChrome = "html { min-width: 0 !important; }";
 
       bookmarks = {
         force = true;
