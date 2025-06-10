@@ -89,7 +89,7 @@
 
         # Alternative window management schemes.
         "Mod+W".action = toggle-column-tabbed-display;
-        "Mod+V".action = toogle-window-floating;
+        "Mod+V".action = toggle-window-floating;
         "Mod+Shift+V".action = switch-focus-between-floating-and-tiling;
 
         "Mod+Q".action = close-window;
