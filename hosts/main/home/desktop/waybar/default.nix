@@ -6,7 +6,7 @@
     settings = {
       mainBar = {
         layer = "top";
-        modules-left = [ "sway/workspaces" "sway/mode" ];
+        modules-left = [ "sway/workspaces" "niri/workspaces" "sway/mode" ];
         modules-center = [ "clock#2" ];
         modules-right = [ "network" "wireplumber" "battery" "idle_inhibitor" "clock#1" "custom/power" ];
 
