@@ -15,6 +15,7 @@
   (defun user-file (file-path)
     (expand-file-name (concat user-emacs-directory file-path)))
 
+  :bind
   ;; Custom prefix map.
   (:prefix-map personal-map
                :prefix "C-z"
