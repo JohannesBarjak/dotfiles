@@ -45,6 +45,7 @@ window#waybar {
 #idle_inhibitor,
 #battery,
 #mode,
+#tray,
 #custom-power {
   background-color: rgba(29, 32, 33, 0.5);
   padding: 0.2em 0.5em;
