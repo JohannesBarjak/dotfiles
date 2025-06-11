@@ -35,7 +35,8 @@
       epkgs.corfu
       epkgs.yasnippet
 
-      # Multiple cursors.
+      # Editing plugins.
+      epkgs.wgrep
       epkgs.multiple-cursors
 
       # Documentation plugins.
