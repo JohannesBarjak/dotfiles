@@ -120,9 +120,18 @@
           action = spawn [ "${pkgs.brightnessctl}/bin/brightnessctl" "set" "5%-" ];
         };
 
-        "XF86AudioMute".action = spawn [ "${config.programs.nushell.package}/bin/nu" "${./sway/volume.nu}" "--toggle=mute" ];
-        "XF86AudioRaiseVolume".action = spawn [ "${config.programs.nushell.package}/bin/nu" "${./sway/volume.nu}" "--inc"  ];
-        "XF86AudioLowerVolume".action = spawn [ "${config.programs.nushell.package}/bin/nu" "${./sway/volume.nu}" "--dec"  ];
+        # Audio control keybindings.
+        "XF86AudioMute".action = spawn [
+          "${config.programs.nushell.package}/bin/nu" "${./sway/volume.nu}" "--toggle=mute"
+        ];
+
+        "XF86AudioRaiseVolume".action = spawn [
+          "${config.programs.nushell.package}/bin/nu" "${./sway/volume.nu}" "--inc"
+        ];
+
+        "XF86AudioLowerVolume".action = spawn [
+          "${config.programs.nushell.package}/bin/nu" "${./sway/volume.nu}" "--dec"
+        ];
 
         # keyboard shortcut to escape applications that grab the keyboard.
         "Mod+Escape" = {
