@@ -66,3 +66,8 @@
 (use-package golden-ratio
   :config (golden-ratio-mode))
 
+;; Puni allows for smarter parenthesis behavior.
+(use-package puni
+  :defer t
+  :init (puni-global-mode))
+

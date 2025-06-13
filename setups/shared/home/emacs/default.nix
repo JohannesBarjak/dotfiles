@@ -18,6 +18,7 @@
       epkgs.embark-consult
       epkgs.expand-region
       epkgs.orderless
+      epkgs.puni
 
       # Integration with direnv.
       epkgs.envrc
