@@ -2,8 +2,7 @@
 (use-package which-key
   :config
   (which-key-mode)                      ; Enable which-key
-  (which-key-setup-side-window-bottom)  ; This setting enables god mode support from which-key.
-  (which-key-enable-god-mode-support))
+  (which-key-setup-side-window-bottom))
 
 ;; Add completion preview.
 (use-package completion-preview

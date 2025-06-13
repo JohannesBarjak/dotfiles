@@ -43,14 +43,6 @@
 
   ("C-c s" . spellcheck-til-line-end))
 
-;; God mode enables a pseudo-modal interface for Emacs.
-(use-package god-mode
-  :custom
-  (god-exempt-major-modes nil)
-  (god-exempt-predicates nil)
-
-  :bind ("<escape>" . god-mode-all))
-
 ;; Add kitty terminal protocol extension for terminal compatibility.
 (use-package kkp
   :config (global-kkp-mode t))
