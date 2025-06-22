@@ -20,6 +20,8 @@
 
         "webgl.disabled" = false;
         "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+
+        "privacy.resistFingerprinting.letterboxing" = true;
       };
 
       # Override minimum window size.
