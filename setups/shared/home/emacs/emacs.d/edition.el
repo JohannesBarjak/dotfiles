@@ -1,7 +1,7 @@
 ;; Embark provides actions on buffer targets.
 (use-package embark
   :bind
-  ("C-."   . embark-act)
+  ("C-;"   . embark-act)
   ("M-."   . embark-dwim)
   ("C-h B" . embark-bindings)
 
