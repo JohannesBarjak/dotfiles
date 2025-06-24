@@ -14,7 +14,7 @@
     (interactive)
     (if arg
         (scroll-up-command arg)
-        (scroll-up-command (/ (window-body-height) 2))))
+        (scroll-up-command (round (/ (window-body-height) 2.618)))))
 
   ;; Scroll the text half a page down.
   (defun scroll-half-page-down (&optional arg)
@@ -22,7 +22,7 @@
     (interactive)
     (if arg
       (scroll-down-command arg)
-      (scroll-down-command (/ (window-body-height) 2))))
+      (scroll-down-command (round (/ (window-body-height) 2.618)))))
 
   ;; This is something that I found myself doing frequently.
   ;; It just checks the grammar for a single line of text.
