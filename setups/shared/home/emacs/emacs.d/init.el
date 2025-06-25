@@ -11,6 +11,9 @@
   (set-fringe-mode 0)
   (add-to-list 'default-frame-alist '(internal-border-width . 7))
 
+  ;; Windmove gives easy keybindings to navigate across windows.
+  (windmove-default-keybindings)
+
   ;; Helper function to get user files.
   (defun user-file (file-path)
     (expand-file-name (concat user-emacs-directory file-path)))
