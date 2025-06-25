@@ -62,9 +62,10 @@
 
   :custom (avy-timeout-seconds 0.3))
 
-;; Enable golden ratio support for automatic split resizing.
-(use-package golden-ratio
-  :config (golden-ratio-mode))
+;; Enable package for automatic split resizing.
+(use-package zoom
+  :config (zoom-mode)
+  :custom (zoom-size '(0.618 . 0.618)))
 
 ;; Puni allows for smarter parenthesis behavior.
 (use-package puni
