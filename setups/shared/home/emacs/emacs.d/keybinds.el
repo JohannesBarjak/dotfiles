@@ -9,7 +9,7 @@
     (newline-and-indent))
 
   ;; Scroll the text half a page up.
-  (defun scroll-half-page-up (&optional arg)
+  (defun my/scroll-half-up (&optional arg)
     "Move half a page up. If an argument is supplied it is passed to 'scroll-up-command'."
     (interactive)
     (if arg
@@ -17,7 +17,7 @@
         (scroll-up-command (round (/ (window-body-height) 2.618)))))
 
   ;; Scroll the text half a page down.
-  (defun scroll-half-page-down (&optional arg)
+  (defun my/scroll-half-down (&optional arg)
     "Move half a page down. If an argument is supplied it is passed to 'scroll-down-command'."
     (interactive)
     (if arg
@@ -38,8 +38,8 @@
   :bind
   ("M-o" . smart-open-line)             ; Vim-like open line.
 
-  ("C-v" . scroll-half-page-up)
-  ("M-v" . scroll-half-page-down)
+  ("C-v" . my/scroll-half-up)
+  ("M-v" . my/scroll-half-down)
 
   ("C-c s" . spellcheck-til-line-end))
 
