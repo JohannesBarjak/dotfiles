@@ -82,6 +82,10 @@
         "Mod+Comma".action = consume-window-into-column;
         "Mod+Period".action = expel-window-from-column;
 
+        # Add keybindings to swap windows in the style of master-stack layouts.
+        "Mod+Ctrl+Comma".action = swap-window-left;
+        "Mod+Ctrl+Period".action = swap-window-right;
+
         # Preset toggles.
         "Mod+R".action = switch-preset-column-width;
         "Mod+Shift+R".action = switch-preset-window-height;
