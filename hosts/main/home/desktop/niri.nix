@@ -62,6 +62,10 @@
         "Mod+Ctrl+K".action = move-window-up-or-to-workspace-up;
         "Mod+Ctrl+L".action = move-column-right;
 
+        # Add keybindings to move to the end of the scroll.
+        "Mod+Shift+H".action = focus-column-first;
+        "Mod+Shift+L".action = focus-column-last;
+
         # Keybindings to manage workspaces.
         "Mod+I".action = focus-workspace-up;
         "Mod+U".action = focus-workspace-down;
