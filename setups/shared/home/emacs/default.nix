@@ -46,7 +46,6 @@
 
       # Terminal related packages.
       epkgs.eat
-      epkgs.vterm
       epkgs.kkp
 
       # Magit.
