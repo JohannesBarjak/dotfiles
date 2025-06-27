@@ -2,7 +2,7 @@
   :init
   ;; Add smart open line, the idea and code came from this site:
   ;; https://emacsredux.com/blog/2013/03/26/smarter-open-line/.
-  (defun smart-open-line ()
+  (defun my/smart-open-line ()
     "A smarter open line that inserts indentation."
     (interactive)
     (move-end-of-line nil)
@@ -26,7 +26,7 @@
 
   ;; This is something that I found myself doing frequently.
   ;; It just checks the grammar for a single line of text.
-  (defun spellcheck-til-line-end ()
+  (defun my/spellcheck-til-line-end ()
     "Spell check from the current cursor position until the end of the line."
 
     (interactive)
@@ -36,12 +36,12 @@
     (ispell-region (region-beginning) (region-end)))
 
   :bind
-  ("M-o" . smart-open-line)             ; Vim-like open line.
+  ("M-o" . my/smart-open-line)             ; Vim-like open line.
 
   ("C-v" . my/scroll-half-up)
   ("M-v" . my/scroll-half-down)
 
-  ("C-c s" . spellcheck-til-line-end))
+  ("C-c s" . my/spellcheck-til-line-end))
 
 ;; Add kitty terminal protocol extension for terminal compatibility.
 (use-package kkp
