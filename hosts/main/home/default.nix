@@ -15,7 +15,7 @@
     bluetuith
     musescore
     opensnitch-ui
-    (hunspellWithDicts [ hunspellDicts.en-us hunspellDicts.en-us-large ])
+    (hunspellWithDicts [ hunspellDicts.en-us-large ])
     zip unzip
   ];
 
