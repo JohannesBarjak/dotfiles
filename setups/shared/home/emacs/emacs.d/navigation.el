@@ -70,5 +70,13 @@
 ;; Puni allows for smarter parenthesis behavior.
 (use-package puni
   :defer t
-  :init (puni-global-mode))
+  :init (puni-global-mode)
+  :bind
+  ("C-c w" . puni-squeeze)
+
+  ;; Add slurp and barf commands to Emacs.
+  ("M-<right>" . puni-slurp-forward)
+  ("M-<left>"  . puni-slurp-backward)
+  ("M-<up>"    . puni-barf-forward)
+  ("M-<down>"  . puni-barf-backward))
 
