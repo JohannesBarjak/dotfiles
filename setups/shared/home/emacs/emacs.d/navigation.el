@@ -72,7 +72,14 @@
   :defer t
   :init (puni-global-mode)
   :bind
-  ("C-c w" . puni-squeeze)
+  ;; Useful puni actions.
+  ("C-c d s" . puni-squeeze)
+  ("C-c d r" . puni-raise)
+  ("C-c d c" . puni-convolute)
+  ("C-c d e" . puni-splice)
+  ("C-c d l" . puni-split)
+  ("C-c d t" . puni-transpose)
+  ("C-c d 0" . puni-wrap-round)
 
   ;; Add slurp and barf commands to Emacs.
   ("M-<right>" . puni-slurp-forward)
