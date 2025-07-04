@@ -79,7 +79,12 @@
   ("C-c d e" . puni-splice)
   ("C-c d l" . puni-split)
   ("C-c d t" . puni-transpose)
-  ("C-c d 0" . puni-wrap-round)
+
+  ;; Commands to Wrap expressions.
+  ("C-c w r" . puni-wrap-round)
+  ("C-c w s"  . puni-wrap-square)
+  ("C-c w c"  . puni-wrap-curly)
+  ("C-c w a"  . puni-wrap-angle)
 
   ;; Add slurp and barf commands to Emacs.
   ("M-<right>" . puni-slurp-forward)
