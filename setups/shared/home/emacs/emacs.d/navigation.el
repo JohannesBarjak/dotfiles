@@ -73,11 +73,11 @@
   :init (puni-global-mode)
   :bind
   ;; Useful puni actions.
-  ("C-c d s" . puni-squeeze)
+  ("C-c s" . puni-squeeze)
   ("C-c d r" . puni-raise)
   ("C-c d c" . puni-convolute)
-  ("C-c d e" . puni-splice)
-  ("C-c d l" . puni-split)
+  ("C-c d d" . puni-splice)
+  ("C-c d s" . puni-split)
   ("C-c d t" . puni-transpose)
 
   ;; Commands to Wrap expressions.
