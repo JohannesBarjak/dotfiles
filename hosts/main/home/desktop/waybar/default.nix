@@ -5,9 +5,9 @@
 
     settings = {
       mainBar = {
-        modules-left = [ "sway/workspaces" "niri/workspaces" "tray" "sway/mode" ];
+        modules-left = [ "sway/workspaces" "niri/workspaces" "sway/mode" ];
         modules-center = [ "clock" ];
-        modules-right = [ "idle_inhibitor" "wireplumber" "network" "battery" "custom/power" ];
+        modules-right = [ "tray" "idle_inhibitor" "wireplumber" "network" "battery" "custom/power" ];
 
         margin = "3 5 0 5";
 
