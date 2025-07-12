@@ -21,6 +21,15 @@
           max-length = 50;
         };
 
+        "niri/workspaces" = {
+          format = "{icon}";
+          format-icons = {
+            urgent = "";
+            active = "";
+            default = "";
+          };
+        };
+
         idle_inhibitor = {
           format = "{icon}";
 

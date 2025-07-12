@@ -29,13 +29,13 @@ window#waybar {
   padding: 0.2em 0.5em;
   color: #ebdbb2;
   border-radius: 0.5em;
-  background-color: rgba(29, 32, 33, 0.5);
+  background-color: rgba(0, 0, 0, 0);
   font-weight: normal;
 }
 
 #workspaces button.visible label,
 #workspaces button.focused label {
-  background-color: rgba(60, 56, 54, 0.5);
+  background-color: rgba(0, 0, 0, 0);
   color: #ebdbb2;
 }
 
