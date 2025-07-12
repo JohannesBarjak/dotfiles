@@ -6,17 +6,14 @@
     settings = {
       mainBar = {
         modules-left = [ "sway/workspaces" "niri/workspaces" "tray" "sway/mode" ];
-        modules-center = [ "clock#2" ];
-        modules-right = [ "network" "wireplumber" "battery" "idle_inhibitor" "clock#1" "custom/power" ];
+        modules-center = [ "clock" ];
+        modules-right = [ "idle_inhibitor" "wireplumber" "network" "battery" "custom/power" ];
 
         margin = "3 5 0 5";
 
-        "clock#1" = {
-          format = "{:%R}";
-        };
-
-        "clock#2" = {
-          format = "{:%d.%m.%Y}";
+        "clock" = {
+          format = "{:%R - %d.%m.%Y}";
+          tooltip-format = "{calendar}";
         };
 
         "sway/mode" = {
