@@ -4,7 +4,11 @@
     style = ./style.css;
 
     settings = {
-      mainBar = {
+      mainBar = let workspace_icons = {
+        urgent = "";
+        active = "";
+        default = "";
+      }; in {
         layer = "top";
         modules-left = [ "sway/workspaces" "niri/workspaces" "sway/mode" ];
         modules-center = [ "clock" ];
@@ -24,11 +28,12 @@
 
         "niri/workspaces" = {
           format = "{icon}";
-          format-icons = {
-            urgent = "";
-            active = "";
-            default = "";
-          };
+          format-icons = workspace_icons;
+        };
+
+        "sway/workspaces" = {
+          format = "{icon}";
+          format-icons = workspace_icons;
         };
 
         idle_inhibitor = {
