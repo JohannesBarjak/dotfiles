@@ -13,7 +13,7 @@
   tab   @q   @w   @e   r    t    y    u    @i   @o   @p   [    ]    \
   @cec   @a   @s   @d   @f   g    h    @j   @k   @l   @;   apo  ent
   lsft    @z   @x   @c   @v   b    @n   @m   @,   @.   /    rsft
-  lctl    met  @bka           @spc           @etc prnt rctl pgup up   pgdn
+  lctl    met  @bka           @spc           @etc @prt rctl pgup up   pgdn
                                                             left down right)
 
 ;; Leader layout.
@@ -91,6 +91,7 @@
     (on-release tap-virtualkey release_ctl_alt))
 
   spc (tap-hold-release 200 200 spc (multi (layer-switch metalayer) @release_keys))
+  prt (tap-hold-release 200 200 prnt (layer-switch metalayer))
 
   iqt (layer-switch qwerty)
   nav (layer-switch navigation)
