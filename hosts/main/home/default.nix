@@ -68,7 +68,7 @@
       };
 
       "net.veloren.airshipper" = {
-        Context.sockets = "!wayland";
+        Context.sockets = [ "!fallback-x11" "!x11" ];
       };
 
       "org.libreoffice.LibreOffice" = {
