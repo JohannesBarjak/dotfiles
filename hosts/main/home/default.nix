@@ -17,7 +17,7 @@
     opensnitch-ui
     (hunspell.withDicts (d: [ d.en-us-large ]))
     zip unzip
-    xournalpp
+    xournalpp geogebra
   ];
 
   # Opensnitch-ui provides the network request popups.
