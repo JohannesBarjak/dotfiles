@@ -168,7 +168,16 @@
 
       outputs."eDP-1".scale = 1.33;
 
-      input.touchpad.natural-scroll = false;
+      input = {
+        touchpad.natural-scroll = false;
+
+        # Configure trackpoint to my preference.
+        trackpoint = {
+          accel-profile = "flat";
+          accel-speed = 0.5;
+        };
+      };
+
       prefer-no-csd = true;
 
       window-rules = [
