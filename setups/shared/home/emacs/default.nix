@@ -61,6 +61,7 @@
       # Themes.
       epkgs.doom-themes
       epkgs.base16-theme
+      epkgs.org-superstar
     ];
 
     package = pkgs.emacs-pgtk;

@@ -56,6 +56,9 @@
 ;; Configuration that primarily concerns itself with keybindings.
 (load-file (user-file "keybinds.el"))
 
+;; Org mode tweaks.
+(load-file (user-file "org.el"))
+
 ;; Random configurations that do not fit the previous categories but provide minor improvements.
 (load-file (user-file "qol.el"))
 
