@@ -2,7 +2,9 @@
 (use-package org-mode
   :defer t
   :custom (org-hide-emphasis-markers t)
-  :hook (org-mode . visual-line-mode))
+  :hook
+  (org-mode . visual-line-mode)
+  (org-mode . org-indent-mode))
 
 ;; Superstar is a package for pretty org mode bullet points.
 (use-package org-superstar
