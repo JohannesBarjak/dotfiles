@@ -178,6 +178,8 @@
   services.auto-cpufreq.enable = true;
 
   security.polkit.enable = true;
+  security.sudo-rs.enable = true;
+
   services.locate.enable = true; # Scans filesystem for file searching.
 
   # Switch to a faster dbus implementation.
