@@ -35,13 +35,20 @@
     (move-end-of-line nil)
     (ispell-region (region-beginning) (region-end)))
 
+  (defun my/update-system-flake ()
+    "Automatically update the system flake and commit it to git."
+    (interactive)
+    (shell-command "nix flake update")
+    (magit-call-git "commit" "-m" "Update flake."))
+
   :bind
   ("M-o" . my/smart-open-line)             ; Vim-like open line.
 
   ("C-v" . my/scroll-half-up)
   ("M-v" . my/scroll-half-down)
 
-  ("C-c c" . my/spellcheck-til-line-end))
+  ("C-c c" . my/spellcheck-til-line-end)
+  ("C-c l" . my/update-system-flake))
 
 ;; Add kitty terminal protocol extension for terminal compatibility.
 (use-package kkp
