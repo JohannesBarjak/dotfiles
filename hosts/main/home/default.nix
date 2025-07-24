@@ -20,7 +20,7 @@
     xournalpp geogebra
 
     # Add custom system update script to system path.
-    (writeShellScriptBin {
+    (writeShellApplication {
       name = "update-system";
       runtimeInputs = [ config.programs.nushell.package ];
       text = ./scripts/update-system.nu;
