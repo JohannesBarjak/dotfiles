@@ -18,6 +18,13 @@
     (hunspell.withDicts (d: [ d.en-us-large ]))
     zip unzip
     xournalpp geogebra
+
+    # Add custom system update script to system path.
+    (writeShellScriptBin {
+      name = "update-system";
+      runtimeInputs = [ config.programs.nushell.package ];
+      text = ./scripts/update-system.nu;
+    })
   ];
 
   # Opensnitch-ui provides the network request popups.
