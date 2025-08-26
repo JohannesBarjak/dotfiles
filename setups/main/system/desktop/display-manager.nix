@@ -12,7 +12,7 @@
       };
 
       default_session.command =
-        "${pkgs.greetd.tuigreet}/bin/tuigreet -r -t --asterisks --user-menu --sessions ${sessionData} --cmd '${cmd}'";
+        "${pkgs.tuigreet}/bin/tuigreet -r -t --asterisks --user-menu --sessions ${sessionData} --cmd '${cmd}'";
 
       # Got this from 'https://github.com/apognu/tuigreet/issues/68'
       # Prevent tty text from appearing on greetd
