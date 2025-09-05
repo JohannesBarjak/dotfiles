@@ -125,7 +125,7 @@
   ];
 
   hardware.cpu.amd.ryzen-smu.enable = true; # Enable system management driver for Amd.
-  hardware.amdgpu.overdrive.enable = true;  # Enable gpu overclock capabilities.
+  hardware.amdgpu.overdrive.enable = false; # Enable gpu overclock capabilities.
   programs.corectrl.enable = true;          # Enable corectl. It provies an inteface for chip configuration.
 
   environment.sessionVariables = {
