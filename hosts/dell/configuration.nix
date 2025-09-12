@@ -15,7 +15,7 @@
   boot.kernelParams = [
     "zswap.enabled=1"
     "zswap.compressor=zstd"
-    "zswap.max_pool_percent=25"
+    "zswap.max_pool_percent=20"
     "zswap.zpool=zsmalloc"
 
     "quiet"
