@@ -15,14 +15,17 @@
   boot.kernelParams = [
     "zswap.enabled=1"
     "zswap.compressor=zstd"
-    "zswap.max_pool_percent=50"
+    "zswap.max_pool_percent=25"
     "zswap.zpool=zsmalloc"
 
     "quiet"
     "loglevel=3"
   ];
 
-  fileSystems."/".options = [ "compress-force=lzo" ];
+  # Enable earlyoom to prevent freezes.
+  services.earlyoom.enable = true;
+
+  fileSystems."/".options = [ "compress-force=zstd:-5" ];
 
   system.autoUpgrade = {
     enable = true;

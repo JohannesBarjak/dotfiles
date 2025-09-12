@@ -20,6 +20,9 @@
     memoryPercent = 100;
   };
 
+  # Enable earlyoom to prevent freezes.
+  services.earlyoom.enable = true;
+
   boot.kernel.sysctl = {
     "vm.swappiness" = 200;
     "vm.page-cluster" = 0;
