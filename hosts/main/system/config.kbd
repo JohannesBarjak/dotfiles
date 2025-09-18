@@ -20,7 +20,7 @@
 (deflayer metalayer
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _     @iqt _    _    _    _    _    _    up   _    _    _    _    _
-  _      _    _    _    _    @mca _    left down right _    _    _
+  _      _    _    _    _    @mca home left down right end  _    _
   _       _    _    @mcl @sym _    @nav @mat _    _    _    _
   _       _    _              _              @mst _    _    _    _    _
                                                             _    _    _)
