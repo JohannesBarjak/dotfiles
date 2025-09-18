@@ -5,6 +5,8 @@
     defaultEditor = true;
   };
 
+  home.packages = [ pkgs.texlive.combined.scheme-full ];
+
   # Main gui text editor.
   programs.emacs = {
     enable = true;
@@ -57,6 +59,10 @@
       epkgs.pandoc-mode
       epkgs.vundo
       epkgs.try
+
+      # Latex.
+      epkgs.auctex
+      epkgs.cdlatex
 
       # Themes.
       epkgs.doom-themes
