@@ -63,6 +63,7 @@
       # Latex.
       epkgs.auctex
       epkgs.cdlatex
+      epkgs.org-fragtog
 
       # Themes.
       epkgs.doom-themes
