@@ -5,7 +5,7 @@
     defaultEditor = true;
   };
 
-  home.packages = [ pkgs.texlive.combined.scheme-full ];
+  home.packages = [ pkgs.texlive.combined.scheme-full pkgs.uiua ];
 
   # Main gui text editor.
   programs.emacs = {
@@ -32,6 +32,7 @@
       epkgs.nix-mode
       epkgs.markdown-mode
       epkgs.nushell-mode
+      epkgs.uiua-ts-mode
 
       # Code completion plugins.
       epkgs.corfu
