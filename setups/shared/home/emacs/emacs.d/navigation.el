@@ -12,6 +12,7 @@
   ("M-g m"   . consult-mark)
   ("M-g i"   . consult-imenu)
   ("M-g I"   . consult-imenu-multi)
+  ("M-g o"   . consult-outline)
 
   ;; Seaching commands.
   ("M-s d" . consult-fd)
