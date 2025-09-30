@@ -11,10 +11,11 @@
   (org-mode . visual-line-mode)
   (org-mode . org-indent-mode)
   (org-mode . org-fragtog-mode)
+  (org-mode . (lambda ()
+                (setq org-format-latex-options
+                      (plist-put org-format-latex-options :scale 0.8)))))
 
-  :config
-  (setq org-format-latex-options
-        (plist-put org-format-latex-options :scale 0.8)))
+
 
 ;; Superstar is a package for pretty org mode bullet points.
 (use-package org-superstar
