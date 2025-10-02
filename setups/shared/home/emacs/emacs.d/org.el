@@ -11,9 +11,12 @@
   (org-mode . visual-line-mode)
   (org-mode . org-indent-mode)
   (org-mode . org-fragtog-mode)
+
+  ;; Decrease default latex fragment size.
   (org-mode . (lambda ()
                 (setq org-format-latex-options
-                      (plist-put org-format-latex-options :scale 0.7)))))
+                      (plist-put org-format-latex-options :scale 0.6))))
+  (latex-mode . 'turn-on-cdlatex))
 
 
 
