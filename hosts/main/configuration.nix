@@ -27,6 +27,7 @@
     "vm.swappiness" = 200;
     "vm.page-cluster" = 0;
     "vm.vfs_cache_pressure" = 200;
+    "kernel.sysrq" = 1;
   };
 
   nix.optimise.automatic = true;
