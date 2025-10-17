@@ -2,7 +2,7 @@
 {config, pkgs, ...}: {
   programs.rofi = {
     enable = true;
-    package = pkgs.rofi-wayland;
+    package = pkgs.rofi;
 
     theme = (import ./gruvbox.nix { inherit config; });
     font = "Cousine Nerd Font Propo";
