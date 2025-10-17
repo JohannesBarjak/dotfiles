@@ -5,7 +5,11 @@
     defaultEditor = true;
   };
 
-  home.packages = [ pkgs.texlive.combined.scheme-full pkgs.uiua pkgs.cbqn-replxx ];
+  home.packages = [
+    pkgs.texlive.combined.scheme-full
+    pkgs.uiua pkgs.cbqn-replxx
+    pkgs.auctex
+  ];
 
   # Main gui text editor.
   programs.emacs = {
