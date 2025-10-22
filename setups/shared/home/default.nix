@@ -4,5 +4,6 @@
   home.packages = [
     pkgs.octaveFull
     pkgs.texmacs pkgs.maxima
+    pkgs.lyx
   ];
 }
