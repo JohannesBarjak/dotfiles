@@ -4,6 +4,7 @@
   home.packages = [
     pkgs.niri
     pkgs.nautilus               # Need it for working file picker.
+    pkgs.xwayland-satellite
   ];
 
   programs.niri = {
