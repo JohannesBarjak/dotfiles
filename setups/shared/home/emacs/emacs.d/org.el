@@ -23,3 +23,6 @@
 ;; Superstar is a package for pretty org mode bullet points.
 (use-package org-superstar
   :hook (org-mode))
+
+(use-package tex
+  :ensure auctex)

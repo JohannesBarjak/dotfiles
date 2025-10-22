@@ -18,6 +18,10 @@
   (defun user-file (file-path)
     (expand-file-name (concat user-emacs-directory file-path)))
 
+  (load "auctex.el" nil t t)
+  (setq TeX-auto-save t)
+  (setq TeX-parse-self t)
+
   :bind
   ;; Custom prefix map.
   (:prefix-map personal-map
