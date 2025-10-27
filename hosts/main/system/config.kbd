@@ -18,7 +18,7 @@
 
 ;; Leader layout.
 (deflayer metalayer
-  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  _
   _     @iqt _    _    _    _    _    _    up   _    _    _    _    _
   _      _    _    _    _    @mca home left down right end  _    _
   _       _    _    @mcl @sym _    @nav @mat _    _    _    _
