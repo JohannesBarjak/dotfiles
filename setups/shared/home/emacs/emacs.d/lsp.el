@@ -34,6 +34,8 @@
   (haskell-indentation-where-pre-offset 2)
   (haskell-indentation-where-post-offset 2))
 
+(use-package idris2-mode)
+
 (use-package uiua-ts-mode
   :mode "\\.ua\\'")
 
