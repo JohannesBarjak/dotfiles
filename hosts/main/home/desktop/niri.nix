@@ -151,10 +151,10 @@
         };
 
         # Convenient screenshot shortcuts.
-        "Print".action = screenshot;
+        "Print".action.screenshot = [];
         # This option is not currently usable due to a bug in nix-flake.
         # "Ctrl+Print".action = screenshot-screen;
-        "Alt+Print".action = screenshot-window;
+        "Alt+Print".action.screenshot-window = [];
       };
 
       layout = {
