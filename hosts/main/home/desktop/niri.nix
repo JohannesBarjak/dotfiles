@@ -177,6 +177,8 @@
           accel-profile = "flat";
           accel-speed = 0.5;
         };
+
+        keyboard.xkb.options = "compose:ralt";
       };
 
       prefer-no-csd = true;

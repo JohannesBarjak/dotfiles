@@ -22,7 +22,7 @@
   _     @iqt _    _    _    _    _    _    up   _    _    _    _    _
   _      _    _    _    _    @mca home left down right end  _    _
   _       _    _    @mcl @sym _    @nav @mat _    _    _    _
-  _       _    _              _              @mst _    _    _    _    _
+  _       _    @mst           _              ralt _    _    _    _    _
                                                             _    _    _)
 
 (deflayer navigation
@@ -52,8 +52,8 @@
 (defalias
   ;; Double use keys.
   cec (tap-hold-press 0   200 esc caps)
-  etc (tap-hold-press 200 200 ent ctl)
-  bka (tap-hold-press 200 200 bks alt)
+  etc (tap-hold-press 200 200 ent ralt)
+  bka (tap-hold-press 200 200 bks lalt)
 
   ;; Basic home row mods.
   a (tap-hold-release 200 200 a met)
