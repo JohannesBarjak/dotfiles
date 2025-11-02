@@ -52,7 +52,7 @@
 (defalias
   ;; Double use keys.
   cec (tap-hold-press 0   200 esc caps)
-  etc (tap-hold-press 200 200 ent ralt)
+  etc (tap-hold-press 200 200 ent  ctl)
   bka (tap-hold-press 200 200 bks lalt)
 
   ;; Basic home row mods.
