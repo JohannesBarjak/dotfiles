@@ -74,6 +74,7 @@
       epkgs.doom-themes
       epkgs.base16-theme
       epkgs.org-superstar
+      epkgs.fira-code-mode
     ];
 
     package = pkgs.emacs-pgtk;

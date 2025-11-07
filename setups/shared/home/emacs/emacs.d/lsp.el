@@ -34,6 +34,11 @@
   (haskell-indentation-where-pre-offset 2)
   (haskell-indentation-where-post-offset 2))
 
+;; Fira Code font for Emacs.
+;; Remember to run fira-code-mode-install-fonts so that ligatures are rendered.
+(use-package fira-code-mode
+  :hook prog-mode)
+
 (use-package idris2-mode)
 
 (use-package uiua-ts-mode
