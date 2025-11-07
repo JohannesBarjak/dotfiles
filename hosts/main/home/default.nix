@@ -25,6 +25,8 @@
       runtimeInputs = [ config.programs.nushell.package ];
       text = ./scripts/update-system.nu;
     })
+
+    podman podman-tui
   ];
 
   # Opensnitch-ui provides the network request popups.
