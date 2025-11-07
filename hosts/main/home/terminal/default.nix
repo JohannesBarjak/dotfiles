@@ -82,19 +82,21 @@
   programs.git = {
     enable = true;
 
-    userName = "Johannes";
-    userEmail = "johannes.barjak@gmail.com";
+    settings = {
+      user.name = "Johannes";
+      user.email = "johannes.barjak@gmail.com";
 
-    # Use delta for git diff.
-    delta = {
-      enable = true;
-      options.syntax-theme = "gruvbox-dark";
-    };
-
-    extraConfig = {
       pull.rebase = true;
       http.postBuffer = 10485760; # Set git file size limit in bytes.
     };
+  };
+
+  # Use delta for git diff.
+  programs.delta = {
+    enable = true;
+    options.syntax-theme = "gruvbox-dark";
+
+    enableGitIntegration = true;
   };
 
   programs.lazygit.enable = true;
