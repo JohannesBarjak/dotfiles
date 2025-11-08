@@ -151,6 +151,8 @@
 <Multi_key> <minus> <greater> : "→"
 <Multi_key> <bar>   <less>    : "↓"
 <Multi_key> <minus> <less>    : "←"
+<Multi_key> <minus> <exclam> <greater> : "↛"
+<Multi_key> <minus> <exclam> <less>    : "↚"
 
 <Multi_key> <8> <8>         : "∞"
 <Multi_key> <KP_8> <KP_8>   : "∞"
