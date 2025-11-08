@@ -44,3 +44,7 @@
 (use-package uiua-ts-mode
   :mode "\\.ua\\'")
 
+;; Remove Fira Code fonts when programming in BQN.
+(use-package bqn-mode
+  :config (remove-hook 'prog-mode 'fira-code-mode t))
+

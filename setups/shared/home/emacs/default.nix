@@ -7,7 +7,8 @@
 
   home.packages = [
     pkgs.texlive.combined.scheme-full
-    pkgs.uiua pkgs.cbqn-replxx
+    pkgs.uiua
+    pkgs.cbqn-replxx pkgs.bqn386
     ];
 
   # Main gui text editor.
