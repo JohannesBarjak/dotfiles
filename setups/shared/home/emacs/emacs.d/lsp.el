@@ -48,10 +48,15 @@
   :vc (:url "https://codeberg.org/mekeor/nael.git"
             :lisp-dir "nael"))
 
+;; Uiua mode.
 (use-package uiua-ts-mode
   :mode "\\.ua\\'")
 
 ;; Remove Fira Code fonts when programming in BQN.
 (use-package bqn-mode
   :config (remove-hook 'prog-mode 'fira-code-mode t))
+
+;; Mode for kanata keyboard configuration.
+(use-package kanata-kbd-mode
+  :vc (:url "https://github.com/chmouel/kanata-kbd-mode/" :rev :newest))
 
