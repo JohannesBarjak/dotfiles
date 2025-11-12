@@ -113,7 +113,9 @@
     description = "Computer";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-    #  thunderbird
+      #  thunderbird
+      networkmanagerapplet
+      networkmanager
     ];
   };
 
