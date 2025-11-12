@@ -7,8 +7,6 @@
 
   home.packages = [
     pkgs.texlive.combined.scheme-full
-    pkgs.uiua
-    pkgs.cbqn-replxx pkgs.bqn386
     ];
 
   # Main gui text editor.
@@ -38,6 +36,7 @@
       epkgs.nushell-mode
       epkgs.uiua-ts-mode
       epkgs.bqn-mode
+      epkgs.j-mode
 
       # Code completion plugins.
       epkgs.corfu
