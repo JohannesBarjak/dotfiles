@@ -60,3 +60,7 @@
 (use-package kanata-kbd-mode
   :vc (:url "https://github.com/chmouel/kanata-kbd-mode/" :rev :newest))
 
+(use-package j-mode
+  :custom-face
+  (j-other-face ((t (:foreground "White")))))
+
