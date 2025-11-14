@@ -62,5 +62,8 @@
 
 (use-package j-mode
   :custom-face
-  (j-other-face ((t (:foreground "White")))))
+  (j-other-face ((t (:inherit font-lock-punctuation-face :foreground nil))))
+  (j-verb-face ((t (:inherit font-lock-function-name-face :foreground nil))))
+  (j-adverb-face ((t (:inherit font-lock-builtin-face :foreground nil))))
+  (j-conjunction-face ((t (:inherit font-lock-keyword-face :foreground nil)))))
 
