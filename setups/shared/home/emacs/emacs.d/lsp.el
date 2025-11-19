@@ -54,7 +54,7 @@
 
 ;; Remove Fira Code fonts when programming in BQN.
 (use-package bqn-mode
-  :config (remove-hook 'prog-mode 'fira-code-mode t))
+  :hook bqn-mode (lambda () (fira-code-mode 0)))
 
 ;; Mode for kanata keyboard configuration.
 (use-package kanata-kbd-mode
