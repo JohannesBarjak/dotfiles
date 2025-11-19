@@ -11,6 +11,8 @@
   (set-fringe-mode 0)
   (add-to-list 'default-frame-alist '(internal-border-width . 7))
 
+  (delete-selection-mode t)
+
   ;; Windmove gives easy keybindings to navigate across windows.
   (windmove-default-keybindings)
 
