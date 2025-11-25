@@ -36,8 +36,7 @@
 
 ;; Fira Code font for Emacs.
 ;; Remember to run fira-code-mode-install-fonts so that ligatures are rendered.
-(use-package fira-code-mode
-  :hook prog-mode)
+(use-package fira-code-mode :hook prog-mode)
 
 ;; Idris2 mode.
 (use-package idris2-mode)
@@ -49,12 +48,10 @@
             :lisp-dir "nael"))
 
 ;; Uiua mode.
-(use-package uiua-ts-mode
-  :mode "\\.ua\\'")
+(use-package uiua-ts-mode :mode "\\.ua\\'")
 
 ;; Remove Fira Code fonts when programming in BQN.
-(use-package bqn-mode
-  :hook bqn-mode (lambda () (fira-code-mode 0)))
+(use-package bqn-mode :hook bqn-mode (lambda () (fira-code-mode 0)))
 
 ;; Mode for kanata keyboard configuration.
 (use-package kanata-kbd-mode
@@ -62,8 +59,8 @@
 
 (use-package j-mode
   :custom-face
-  (j-other-face ((t (:inherit font-lock-punctuation-face :foreground nil))))
-  (j-verb-face ((t (:inherit font-lock-function-name-face :foreground nil))))
-  (j-adverb-face ((t (:inherit font-lock-builtin-face :foreground nil))))
-  (j-conjunction-face ((t (:inherit font-lock-keyword-face :foreground nil)))))
+  (j-other-face ((t (:inherit font-lock-punctuation-face :foreground unspecified))))
+  (j-verb-face ((t (:inherit font-lock-function-name-face :foreground unspecified))))
+  (j-adverb-face ((t (:inherit font-lock-builtin-face :foreground unspecified))))
+  (j-conjunction-face ((t (:inherit font-lock-keyword-face :foreground unspecified)))))
 
