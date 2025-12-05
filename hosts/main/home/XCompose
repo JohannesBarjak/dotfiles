@@ -222,3 +222,5 @@
 <Multi_key> <a> <l> <e> <f>: "ℵ"
 
 <Multi_key> <&> <Right>    : ""⃗" # combining vector arrow
+
+<Multi_key> <p> <i>        : "π"
