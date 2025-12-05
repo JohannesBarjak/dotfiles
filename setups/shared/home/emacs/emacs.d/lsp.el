@@ -36,7 +36,9 @@
 
 ;; Fira Code font for Emacs.
 ;; Remember to run fira-code-mode-install-fonts so that ligatures are rendered.
-(use-package fira-code-mode :hook prog-mode)
+(use-package fira-code-mode
+  :hook prog-mode
+  :custom (fira-code-mode-disabled-ligatures '("x")))
 
 ;; Idris2 mode.
 (use-package idris2-mode)
