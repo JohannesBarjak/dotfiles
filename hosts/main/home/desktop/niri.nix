@@ -174,8 +174,8 @@
 
         # Configure trackpoint to my preference.
         trackpoint = {
-          accel-profile = "flat";
-          accel-speed = 0.5;
+          accel-profile = "adaptive";
+          accel-speed = 0;
         };
 
         keyboard.xkb.options = "compose:ralt";
