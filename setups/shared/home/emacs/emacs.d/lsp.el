@@ -44,10 +44,10 @@
 (use-package idris2-mode)
 
 ;; Install mode for lean4 proof assistant.
-(use-package nael-mode
-  :ensure t
-  :vc (:url "https://codeberg.org/mekeor/nael.git"
-            :lisp-dir "nael"))
+;; Fix: Emacs use-package declarations are order sensitive.
+(use-package nael
+  :vc ( :lisp-dir "nael"
+        :url "https://codeberg.org/mekeor/nael.git"))
 
 ;; Uiua mode.
 (use-package uiua-ts-mode :mode "\\.ua\\'")
