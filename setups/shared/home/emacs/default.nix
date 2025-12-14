@@ -55,9 +55,10 @@
       epkgs.eat
       epkgs.kkp
 
-      # Magit.
+      # Git.
       epkgs.magit
       epkgs.magit-delta
+      epkgs.git-gutter
 
       # Misc.
       epkgs.zoom
