@@ -53,8 +53,7 @@
   (setf (alist-get ?. avy-dispatch-alist) 'avy-action-embark)
 
   :bind
-  ("C-:" . avy-goto-char)
-  ("C-'" . avy-goto-char-2)
+  ("C-:" . avy-goto-char-2)
 
   ("M-g e" . avy-goto-word-0)
   ("M-g w" . avy-goto-word-1)

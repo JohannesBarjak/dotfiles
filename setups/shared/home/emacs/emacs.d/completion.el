@@ -45,3 +45,6 @@
   (completion-category-defaults nil) ; Ensures that orderless is the only completion style used by default.
   (completion-category-overrides '((file (styles basic partial-completion)))))
 
+(use-package abbrev
+  :bind ("C-'" . expand-abbrev))
+
