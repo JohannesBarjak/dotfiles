@@ -47,7 +47,11 @@
 ;; Fix: Emacs use-package declarations are order sensitive.
 (use-package nael
   :vc ( :lisp-dir "nael"
-        :url "https://codeberg.org/mekeor/nael.git"))
+        :url "https://codeberg.org/mekeor/nael.git")
+  ;; Add hooks for lean4 files.
+  :hook
+  (nael-mode . eglot-ensure)
+  (nael-mode . abbrev-mode))
 
 ;; Uiua mode.
 (use-package uiua-ts-mode :mode "\\.ua\\'")
