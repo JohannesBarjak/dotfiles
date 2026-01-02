@@ -17,7 +17,7 @@
     enable = true;
     algorithm = "lz4 zstd";
     priority = 150;
-    memoryPercent = 50;
+    memoryPercent = 100;
   };
 
   # Enable earlyoom to prevent freezes.
