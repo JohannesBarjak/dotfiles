@@ -31,6 +31,7 @@
     settings = {
       shell = "${config.programs.nushell.package}/bin/nu";
       kitty_mod = "super+ctrl+alt";
+      disable_ligatures = "cursor";
       cursor_trail = 3;
     };
   };
