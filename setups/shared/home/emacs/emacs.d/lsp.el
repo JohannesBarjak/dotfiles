@@ -43,6 +43,9 @@
 ;; Idris2 mode.
 (use-package idris2-mode)
 
+;; Racket mode.
+(use-package racket-mode)
+
 ;; Install mode for lean4 proof assistant.
 ;; Fix: Emacs use-package declarations are order sensitive.
 (use-package nael

@@ -37,6 +37,7 @@
       epkgs.uiua-ts-mode
       epkgs.bqn-mode
       epkgs.j-mode
+      epkgs.racket-mode
 
       # Code completion plugins.
       epkgs.corfu
