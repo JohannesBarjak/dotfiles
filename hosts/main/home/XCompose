@@ -224,3 +224,4 @@
 <Multi_key> <&> <Right>    : ""⃗" # combining vector arrow
 
 <Multi_key> <p> <i>        : "π"
+<Multi_key> <*> <l>        : "λ"
