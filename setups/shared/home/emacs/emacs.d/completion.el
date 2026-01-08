@@ -22,6 +22,7 @@
 	      ([tab]     . corfu-next)
 	      ("S-TAB"   . corfu-previous)
 	      ([backtab] . corfu-previous))
+  (:map corfu-mode-map ("C-<tab>" . completion-at-point))
 
   :init
   (global-corfu-mode)
