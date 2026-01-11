@@ -42,7 +42,7 @@
 (use-package avy
   :config
   ;; Define avy embark actions from https://karthinks.com/software/avy-can-do-anything/.
-  (defun avy-action-embark (pt)
+  (defun my/avy-action-embark (pt)
     (unwind-protect
         (save-excursion
           (goto-char pt)
@@ -50,7 +50,21 @@
       (select-window (cdr (ring-ref avy-ring 0))))
     t)
 
-  (setf (alist-get ?. avy-dispatch-alist) 'avy-action-embark)
+  (defun my/avy-action-multilple-cursors (pt)
+    "Add a multi-cursor using an avy jump."
+    (save-excursion
+      (goto-char pt)
+      (mc/create-fake-cursor-at-point pt))
+
+    (setq avy--old-cands nil)           ; Reset avy candidate list.
+
+    ;; Enable multiple cursor mode after placing the fake cursor.
+    (multiple-cursors-mode 1)
+
+    t)
+
+  (add-to-list 'avy-dispatch-alist '(?. . my/avy-action-embark))
+  (add-to-list 'avy-dispatch-alist '(?c . my/avy-action-multilple-cursors))
 
   :bind
   ("C-:" . avy-goto-char-2)
