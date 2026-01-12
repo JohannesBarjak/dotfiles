@@ -23,6 +23,7 @@
         "Mod+T".action = spawn [ "${config.programs.kitty.package}/bin/kitty" "--single-instance" ];
         "Mod+E".action = spawn [ "${config.programs.emacs.finalPackage}/bin/emacsclient" "-n" "-c" ];
         "Mod+B".action = spawn [ "${config.programs.librewolf.package}/bin/librewolf" ];
+        "Mod+Shift+B".action = spawn [ "${config.programs.librewolf.package}/bin/librewolf" "--private-window" ];
 
         # Add useful warpd commands to control the mouse using the keyboard.
         "Mod+G".action = spawn [ "${pkgs.warpd}/bin/warpd" "--grid"   ];
