@@ -20,6 +20,16 @@
   (defun user-file (file-path)
     (expand-file-name (concat user-emacs-directory file-path)))
 
+  ;; Braille is not rendered well in Emacs terminals with my font,
+  ;; so this function overrides the font used for braille characters.
+  (defun my/setup-braille-font (&optional frame)
+    "Set Caskaydia as the braille fallback for the given FRAME."
+
+    (let ((font "CaskaydiaMono Nerd Font Mono"))
+     (set-fontset-font t 'braille (font-spec :family font) frame 'prepend)))
+
+  (my/setup-braille-font)
+
   (load "auctex.el" nil t t)
   (setq TeX-auto-save t)
   (setq TeX-parse-self t)
@@ -41,7 +51,9 @@
 
   :hook
   (prog-mode-hook . display-line-numbers-mode)
-  (prog-mode-hook . electric-pair-mode))
+  (prog-mode-hook . electric-pair-mode)
+
+  (after-make-frame-functions . my/setup-braille-font))
 
 ;; Configure packages related to more efficient navigation.
 (load-file (user-file "navigation.el"))

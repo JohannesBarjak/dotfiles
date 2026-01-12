@@ -155,6 +155,7 @@
 
       nerd-fonts.fira-code
       nerd-fonts.cousine
+      nerd-fonts.caskaydia-mono
     ];
 
     fontconfig.enable = true;
