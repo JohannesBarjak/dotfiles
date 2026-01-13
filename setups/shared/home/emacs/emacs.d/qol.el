@@ -12,10 +12,6 @@
   (spell-local-dictionary-alist
    '("en_US" "[[:alpha:]]" "[^[:alpha:]]" "[']" nil ("-d" "en_US") nil utf-8())))
 
-;; Change the variable that is looked at for the terminal shell.
-(use-package vterm
-  :custom (vterm-shell explicit-shell-file-name))
-
 ;; A theme I like to occasionally use.
 (use-package everforest-theme
   :vc (:url "https://github.com/Theory-of-Everything/everforest-emacs" :rev :newest))

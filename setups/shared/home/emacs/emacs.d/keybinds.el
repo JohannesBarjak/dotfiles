@@ -41,7 +41,8 @@
   ("C-v" . my/scroll-half-up)
   ("M-v" . my/scroll-half-down)
 
-  ("C-c c" . my/spellcheck-til-line-end))
+  ("C-c c" . my/spellcheck-til-line-end)
+  ("C-c t" . eat))
 
 ;; Add kitty terminal protocol extension for terminal compatibility.
 (use-package kkp

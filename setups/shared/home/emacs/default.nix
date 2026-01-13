@@ -53,7 +53,7 @@
       epkgs.consult-hoogle
 
       # Terminal related packages.
-      epkgs.eat epkgs.vterm
+      epkgs.eat
       epkgs.kkp
 
       # Git.
