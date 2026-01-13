@@ -14,6 +14,7 @@
       # when set globally.
       settings = {
         "browser.tabs.inTitlebar" = 0;
+        "browser.toolbars.bookmarks.visibility" = "never";
 
         "sidebar.verticalTabs" = true;
         "sidebar.visibility" = "hide-sidebar";
