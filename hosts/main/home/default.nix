@@ -58,9 +58,13 @@
       "ch.tlaun.TL"
       "com.brave.Browser"
       "com.github.Anuken.Mindustry"
+      "com.usebottles.bottles"
+      "io.github.flattool.Warehouse"
       "net.mullvad.MullvadBrowser"
       "net.veloren.airshipper"
       "org.libreoffice.LibreOffice"
+      "org.onlyoffice.desktopeditors"
+      "org.processing.processingide"
       "org.torproject.torbrowser-launcher"
       "us.zoom.Zoom"
     ];
