@@ -73,6 +73,10 @@
   :vc (:url "https://github.com/chmouel/kanata-kbd-mode/" :rev :newest))
 
 (use-package j-mode
+  ;; Change the binary name for the J programming language.
+  :custom (j-console-cmd "jconsole")
+
+  ;; Change default font colors for J.
   :custom-face
   (j-other-face ((t (:inherit font-lock-punctuation-face :foreground unspecified))))
   (j-verb-face ((t (:inherit font-lock-function-name-face :foreground unspecified))))
