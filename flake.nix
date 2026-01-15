@@ -48,13 +48,5 @@
               ./hosts/dell/configuration.nix
             ];
           };
-
-          nixosConfigurations.aspire = nixpkgs.lib.nixosSystem {
-            system = "${system}";
-
-            modules = [
-              ./hosts/aspire/configuration.nix
-            ];
-          };
         };
 }
