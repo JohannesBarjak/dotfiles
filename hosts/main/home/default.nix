@@ -17,7 +17,7 @@
     opensnitch-ui
     (hunspell.withDicts (d: [ d.en-us-large ]))
     zip unzip
-    xournalpp geogebra
+    xournalpp
 
     # Add custom system update script to system path.
     (writeShellApplication {
