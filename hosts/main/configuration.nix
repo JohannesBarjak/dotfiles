@@ -146,6 +146,21 @@
 
   virtualisation.containers.enable = true;
 
+  virtualisation.vmVariant = {
+    virtualisation.memorySize = 4096;
+
+    # Taken from https://github.com/donovanglover/nix-config/commit/0bf134297b3a62da62f9ee16439d6da995d3fbff
+    # to enable wayland to work on a virtualized GPU.
+    virtualisation.qemu.options = [
+      "-device virtio-vga-gl"
+      "-display gtk,gl=on,grab-on-hover=on,window-close=off"
+      # Wire up pipewire audio
+      "-audiodev pipewire,id=audio0"
+      "-device intel-hda"
+      "-device hda-output,audiodev=audio0"
+    ];
+  };
+
   # Configure fonts.
   fonts = {
     packages = with pkgs; [
