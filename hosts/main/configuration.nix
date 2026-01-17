@@ -12,6 +12,52 @@
     extraOptions = "experimental-features = nix-command flakes";
   };
 
+  users.mutableUsers = false;
+  users.users.root.hashedPasswordFile = "/persistent/passwords/root";
+  users.users.johannes.hashedPasswordFile = "/persistent/passwords/root";
+
+  environment.persistence."/persistent" = {
+    directories = [
+      "/var"
+      "/var/log"
+      "/var/lib/bluetooth"
+      "/var/lib/nixos"
+      "/var/lib/systemd/coredump"
+      "/etc/NetworkManager/system-connections"
+      "/etc"
+      "/bin"
+      "/home"
+      "/usr"
+
+      { directory = "/var/lib/greetd";
+        user = "greeter"; group = "greeter";
+        mode = "0750";
+      }
+    ];
+    files = [
+      "/etc/machine-id"
+      { file = "/var/keys/secret_file"; parentDirectory = { mode = "u=rwx,g=,o="; }; }
+    ];
+    users.johannes = {
+      directories = [
+        "Downloads"
+        "Music"
+        "Pictures"
+        "Documents"
+        "Videos"
+        ".dotfiles"
+        { directory = ".gnupg"; mode = "0700"; }
+        { directory = ".ssh"; mode = "0700"; }
+        { directory = ".nixops"; mode = "0700"; }
+        { directory = ".local/share/keyrings"; mode = "0700"; }
+        ".local/share/direnv"
+      ];
+      files = [
+        ".screenrc"
+      ];
+    };
+  };
+
   # Enable zram.
   zramSwap = {
     enable = true;

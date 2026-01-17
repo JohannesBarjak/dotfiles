@@ -17,9 +17,13 @@
     };
 
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
+
+    impermanence.url = "github:nix-community/impermanence";
   };
 
-  outputs = { nixpkgs, home-manager, nixpkgs-stable, nix-flatpak, niri, ... }:
+  outputs = { nixpkgs, home-manager,
+              nixpkgs-stable, nix-flatpak,
+              niri, impermanence, ... }:
     let system = "x86_64-linux"; in {
           nixosConfigurations.main = nixpkgs.lib.nixosSystem {
             system = "${system}";
@@ -27,6 +31,7 @@
             modules = [
               ./hosts/main/configuration.nix
 
+              impermanence.nixosModules.impermanence
               home-manager.nixosModules.home-manager {
                 home-manager.useGlobalPkgs = true;
                 home-manager.useUserPackages = true;

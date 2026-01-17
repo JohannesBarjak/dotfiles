@@ -27,4 +27,6 @@
       };
     };
   };
+
+  systemd.services.greetd.environment.RUST_BACKTRACE = "full";
 }

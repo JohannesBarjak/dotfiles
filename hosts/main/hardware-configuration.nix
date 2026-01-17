@@ -27,6 +27,55 @@
     bypassWorkqueues = true;
   };
 
+  fileSystems."/persistent" = {
+    device = "/dev/disk/by-label/root";
+    neededForBoot = true;
+    fsType = "btrfs";
+    options = [ "subvol=persistent" ];
+    };
+
+  fileSystems."/nix" = {
+    device = "/dev/disk/by-label/root";
+    neededForBoot = true;
+    fsType = "btrfs";
+    options = [ "subvol=nix" ];
+  };
+
+  boot.initrd.systemd.services.rollback = {
+    description = "Rollback btrfs.";
+
+    wantedBy = [ "initrd.target" ];
+    after = [ "systemd-cryptsetup@luks\\x2d0f8443fc\\x2d2857\\x2d405b\\x2da24f\\x2d12f3419c6ae9.service" ];
+    before = [ "sysroot.mount" ];
+
+    unitConfig.DefaultDependencies = "no";
+    serviceConfig.Type = "oneshot";
+    script = ''
+    mkdir /btrfs_tmp
+    mount /dev/disk/by-label/root /btrfs_tmp
+    if [[ -e /btrfs_tmp/@ ]]; then
+        mkdir -p /btrfs_tmp/old_roots
+        timestamp=$(date --date="@$(stat -c %Y /btrfs_tmp/@)" "+%Y-%m-%-d_%H:%M:%S")
+        mv /btrfs_tmp/@ "/btrfs_tmp/old_roots/$timestamp"
+    fi
+
+    delete_subvolume_recursively() {
+        IFS=$'\n'
+        for i in $(btrfs subvolume list -o "$1" | cut -f 9- -d ' '); do
+            delete_subvolume_recursively "/btrfs_tmp/$i"
+        done
+        btrfs subvolume delete "$1"
+    }
+
+    for i in $(find /btrfs_tmp/old_roots/ -maxdepth 1 -mtime +30); do
+        delete_subvolume_recursively "$i"
+    done
+
+    btrfs subvolume create /btrfs_tmp/@
+    umount /btrfs_tmp
+    '';
+  };
+
   fileSystems."/boot" =
     { device = "/dev/disk/by-uuid/9CC3-58E2";
       fsType = "vfat";
