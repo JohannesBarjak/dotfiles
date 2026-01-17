@@ -48,8 +48,11 @@
 
         ".dotfiles"
         "Projects"
+
+        # User data to persist.
         ".local/share/direnv"
         ".local/share/zoxide"
+        ".local/share/fonts"
       ];
 
       # User files.
