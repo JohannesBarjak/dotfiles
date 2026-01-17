@@ -49,11 +49,11 @@
         ".dotfiles"
         "Projects"
         ".local/share/direnv"
+        ".local/share/zoxide"
       ];
 
       # User files.
       files = [
-        ".local/share/zoxide/db.zo"
         ".config/Kvantum/kvantum.kvconfig"
       ];
     };
