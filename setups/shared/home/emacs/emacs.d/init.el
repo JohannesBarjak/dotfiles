@@ -15,6 +15,7 @@
 
   ;; Windmove gives easy keybindings to navigate across windows.
   (windmove-default-keybindings)
+  (windmove-swap-states-default-keybindings)
 
   ;; Helper function to get user files.
   (defun user-file (file-path)
