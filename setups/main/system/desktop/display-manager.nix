@@ -1,4 +1,4 @@
-{config, pkgs, ...}: let cmd = "niri-session &> /dev/null";
+{config, pkgs, ...}: let cmd = "${config.programs.niri.package}/bin/niri-session &> /dev/null";
                          sessionData = "${config.services.displayManager.sessionData.desktops}/share/wayland-sessions"; in {
   services.greetd = {
     enable = true;

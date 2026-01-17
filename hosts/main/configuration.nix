@@ -24,10 +24,7 @@
       "/var/lib/nixos"
       "/var/lib/systemd/coredump"
       "/etc/NetworkManager/system-connections"
-      "/etc"
-      "/bin"
       "/home"
-      "/usr"
 
       { directory = "/var/lib/greetd";
         user = "greeter"; group = "greeter";
