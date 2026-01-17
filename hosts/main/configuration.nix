@@ -17,40 +17,44 @@
   users.users.johannes.hashedPasswordFile = "/persistent/passwords/root";
 
   environment.persistence."/persistent" = {
+    # Persist directories and all subdirectories.
     directories = [
-      "/var"
+      # Remember internet connections and leases.
+      "/var/lib/iwd"
+      "/var/lib/dhcpcd"
+
+      # Remember logs.
       "/var/log"
+
       "/var/lib/bluetooth"
       "/var/lib/nixos"
       "/var/lib/systemd/coredump"
-      "/etc/NetworkManager/system-connections"
-      "/home"
+      ];
 
-      { directory = "/var/lib/greetd";
-        user = "greeter"; group = "greeter";
-        mode = "0750";
-      }
-    ];
+    # Persist files.
     files = [
       "/etc/machine-id"
-      { file = "/var/keys/secret_file"; parentDirectory = { mode = "u=rwx,g=,o="; }; }
     ];
+
     users.johannes = {
+      # User directories and subdirectories.
       directories = [
+        # Standard user directories.
         "Downloads"
         "Music"
         "Pictures"
         "Documents"
         "Videos"
+
         ".dotfiles"
-        { directory = ".gnupg"; mode = "0700"; }
-        { directory = ".ssh"; mode = "0700"; }
-        { directory = ".nixops"; mode = "0700"; }
-        { directory = ".local/share/keyrings"; mode = "0700"; }
+        "Projects"
         ".local/share/direnv"
       ];
+
+      # User files.
       files = [
-        ".screenrc"
+        ".local/share/zoxide/db.zo"
+        ".config/Kvantum/kvantum.kvconfig"
       ];
     };
   };
