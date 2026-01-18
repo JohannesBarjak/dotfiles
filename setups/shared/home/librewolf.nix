@@ -1,4 +1,4 @@
-{...}: {
+{firefox-addons, system, ...}: {
   programs.librewolf = {
     enable = true;
 
@@ -23,7 +23,16 @@
         "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
 
         "privacy.resistFingerprinting.letterboxing" = true;
+        "extensions.autoDisableScopes" = 0;
       };
+
+      extensions.packages = with firefox-addons.packages.${system}; [
+        ublock-origin
+        canvasblocker
+        tridactyl
+        localcdn
+        umatrix
+      ];
 
       # Override minimum window size.
       userChrome = "html { min-width: 0 !important; }";

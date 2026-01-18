@@ -6,6 +6,8 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.05";
 
+    impermanence.url = "github:nix-community/impermanence";
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -18,12 +20,16 @@
 
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
 
-    impermanence.url = "github:nix-community/impermanence";
+    # Nur firefox addons.
+    firefox-addons = {
+      url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { nixpkgs, home-manager,
               nixpkgs-stable, nix-flatpak,
-              niri, impermanence, ... }:
+              niri, impermanence, firefox-addons, ... }:
     let system = "x86_64-linux"; in {
           nixosConfigurations.main = nixpkgs.lib.nixosSystem {
             system = "${system}";
@@ -42,6 +48,9 @@
                     nix-flatpak.homeManagerModules.nix-flatpak
                   ];
                 };
+
+                # Add firefox addons to home manager arguments.
+                home-manager.extraSpecialArgs = { inherit firefox-addons system; };
               }
             ];
           };
