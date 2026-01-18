@@ -19,16 +19,20 @@
   environment.persistence."/persistent" = {
     # Persist directories and all subdirectories.
     directories = [
-      # Remember internet connections and leases.
+      # Remember internet connections, leases, and bluetooth.
       "/var/lib/iwd"
       "/var/lib/dhcpcd"
+      "/var/lib/bluetooth"
 
       # Remember logs.
       "/var/log"
 
-      "/var/lib/bluetooth"
-      "/var/lib/nixos"
-      "/var/lib/systemd/coredump"
+      "/var/lib/nixos"            # Important to preserve file permissions.
+      "/var/lib/systemd/coredump" # Coredumps storage.
+
+      # Remember vpn state.
+      "/etc/mullvad-vpn"
+      "/var/cache/mullvad-vpn"
       ];
 
     # Persist files.
