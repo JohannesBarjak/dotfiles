@@ -122,6 +122,23 @@
           ];
         };
       };
+
+      # Enable dhcpcd.
+      dhcpcd = {
+        name = "dhcpcd";
+        enabled = true;
+
+        action = "allow";
+        duration = "always";
+
+        operator = {
+          type = "simple";
+          operand = "process.path";
+
+          sensitive = true;
+          data = "${pkgs.dhcpcd}/bin/dhcpcd";
+        };
+      };
     };
   };
 }
