@@ -64,8 +64,9 @@
         ".local/share/flatpak"
         ".var/app"
 
-        # Preserve opensnitch-ui configuration.
-        ".config/opensnitch"
+        ".config/opensnitch"    # Opensnitch-ui configuration.
+        ".config/emacs"
+        ".librewolf"
       ];
 
       # User files.
