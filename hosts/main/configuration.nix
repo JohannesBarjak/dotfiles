@@ -17,6 +17,7 @@
   users.users.johannes.hashedPasswordFile = "/persistent/passwords/root";
 
   environment.persistence."/persistent" = {
+    hideMounts = true;
     # Persist directories and all subdirectories.
     directories = [
       # Remember internet connections, leases, and bluetooth.
@@ -50,13 +51,21 @@
         "Documents"
         "Videos"
 
+        # Code and dotfiles.
         ".dotfiles"
         "Projects"
 
-        # User data to persist.
+        # Application data.
         ".local/share/direnv"
         ".local/share/zoxide"
-        ".local/share/fonts"
+        ".local/share/fonts"    # Important for fira code in Emacs.
+
+        # Stateful data for flatpaks.
+        ".local/share/flatpak"
+        ".var/app"
+
+        # Preserve opensnitch-ui configuration.
+        ".config/opensnitch"
       ];
 
       # User files.
