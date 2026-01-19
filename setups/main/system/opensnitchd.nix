@@ -47,27 +47,11 @@
         precedence = false;
 
         operator = {
-          type = "list";
-          operand = "list";
+          type = "simple";
+          operand = "process.path";
 
-          list = [
-            {
-              type = "simple";
-              operand = "process.path";
-
-              sensitive = true;
-              data = "${pkgs.nsncd}/bin/nsncd";
-            }
-
-            # Allow nsncd to connect when mullvad is establishing a connection. 
-            {
-              type = "simple";
-              operand = "dest.host";
-
-              sensitive = true;
-              data = "ipv4.am.i.mullvad.net";
-            }
-          ];
+          sensitive = true;
+          data = "${pkgs.nsncd}/bin/nsncd";
         };
       };
 
