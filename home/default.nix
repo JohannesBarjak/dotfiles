@@ -14,4 +14,9 @@
     pkgs.uiua
     pkgs.cbqn-replxx pkgs.bqn386
   ];
+
+  # Compose file.
+  home.file.".XCompose" = {
+    source = ./XCompose;
+  };
 }

@@ -149,11 +149,6 @@
     };
   };
 
-  # Compose file.
-  home.file.".XCompose" = {
-    source = ./XCompose;
-  };
-
   services.poweralertd.enable = true;
 
   # Enabled this service for better bluetooth control of audio devices.
