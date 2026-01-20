@@ -163,9 +163,10 @@
 
   programs.mpv.enable = true;
 
-  programs.git = {
-    user.name = "Johannes";
-    user.email = "johannes.barjak@gmail.com";
+  # Set user specific git information.
+  programs.git.settings.user = {
+    name = "Johannes";
+    email = "johannes.barjak@gmail.com";
   };
 
   home.stateVersion = "25.11";
