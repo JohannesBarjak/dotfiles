@@ -163,5 +163,10 @@
 
   programs.mpv.enable = true;
 
+  programs.git = {
+    user.name = "Johannes";
+    user.email = "johannes.barjak@gmail.com";
+  };
+
   home.stateVersion = "25.11";
 }

@@ -75,9 +75,6 @@
     enable = true;
 
     settings = {
-      user.name = "Johannes";
-      user.email = "johannes.barjak@gmail.com";
-
       pull.rebase = true;
       http.postBuffer = 10485760; # Set git file size limit in bytes.
     };
