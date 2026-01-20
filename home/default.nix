@@ -1,5 +1,9 @@
 {pkgs, ...}: {
-  imports = [ ./emacs ./librewolf.nix ];
+  imports = [
+    ./emacs
+    ./librewolf.nix
+    ./terminal.nix
+  ];
 
   home.packages = [
     pkgs.octaveFull
