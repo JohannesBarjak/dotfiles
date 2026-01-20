@@ -49,4 +49,13 @@
     source = "${pkgs.gruvbox-kvantum}/share/Kvantum";
     recursive = true;
   };
+
+  programs.kitty.themeFile = "GruvboxMaterialDarkMedium";
+  programs.helix.settings.theme = "gruvbox";
+
+  programs.bat.config.theme = "gruvbox-dark";
+  programs.btop.settings.color_theme = "gruvbox_material_dark";
+
+  programs.delta.options.syntax-theme = "gruvbox-dark";
+  programs.zellij.settings.theme = "gruvbox-dark";
 }

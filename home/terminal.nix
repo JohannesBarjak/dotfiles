@@ -10,17 +10,12 @@
   # Main tui text editor.
   programs.helix = {
     enable = true;
-
-    settings = {
-      theme = "gruvbox";
-      editor.line-number = "relative";
-    };
+    settings.editor.line-number = "relative";
   };
 
   # Default terminal.
   programs.kitty = {
     enable = true;
-    themeFile = "GruvboxMaterialDarkMedium";
 
     font = {
       name = "FiraCode Nerd Font Mono";
@@ -38,11 +33,7 @@
 
   programs.zellij = {
     enable = true;
-
-    settings = {
-      theme = "gruvbox-dark";
-      default_shell = "${config.programs.nushell.package}/bin/nu";
-    };
+    settings.default_shell = "${config.programs.nushell.package}/bin/nu";
   };
 
   # Nushell is my terminal shell.
@@ -95,8 +86,6 @@
   # Use delta for git diff.
   programs.delta = {
     enable = true;
-    options.syntax-theme = "gruvbox-dark";
-
     enableGitIntegration = true;
   };
 
@@ -129,10 +118,7 @@
   programs.pandoc.enable = true;
 
   # Btop is a htop-like resource monitor.
-  programs.btop = {
-    enable = true;
-     settings.color_theme = "gruvbox_material_dark";
-  };
+  programs.btop.enable = true;
 
   # Tui file manager.
   programs.yazi = {
@@ -152,10 +138,7 @@
   programs.ripgrep.enable = true; # Modern grep.
 
   # Modern terminal file viewer.
-  programs.bat = {
-    enable = true;
-    config.theme = "gruvbox-dark";
-  };
+  programs.bat.enable = true;
 
   programs.newsboat = {
     enable = true;
