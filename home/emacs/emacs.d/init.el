@@ -1,7 +1,5 @@
 (use-package emacs
   :init
-  (load-theme 'doom-gruvbox t)
-
   ;; Disable toolbar, menu bar, and scroll bar.
   (tool-bar-mode   -1)
   (scroll-bar-mode -1)

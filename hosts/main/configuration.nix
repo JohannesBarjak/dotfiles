@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, stylix, ... }: {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
@@ -71,7 +71,6 @@
 
       # User files.
       files = [
-        ".config/Kvantum/kvantum.kvconfig"
       ];
     };
   };
@@ -196,13 +195,18 @@
   hardware.amdgpu.overdrive.enable = false; # Enable gpu overclock capabilities.
   programs.corectrl.enable = true;          # Enable corectl. It provies an inteface for chip configuration.
 
+  stylix.enable = true;
+  stylix.autoEnable = true;
+  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-material-dark-medium.yaml";
+
+  stylix.targets.plymouth.enable = false;
+
   environment.sessionVariables = {
     TERMINAL = "kitty";
 
     # Qt related environment variables.
     QT_STYLE_OVERRIDE = "kvantum";
     QT_QPA_PLATFORM = "wayland";
-    QT_SCALE_FACTOR = "0.9";
   };
 
   # Some programs need SUID wrappers, can be configured further or are

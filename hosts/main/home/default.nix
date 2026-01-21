@@ -154,12 +154,7 @@
   services.mpris-proxy.enable = true;
 
   # Make gtk apps use emacs keybindings for text boxes.
-  dconf.settings = {
-    "org/gnome/desktop/interface" = {
-      gtk-key-theme = "Emacs";
-      color-scheme = "prefer-dark";
-    };
-  };
+  dconf.settings."org/gnome/desktop/interface".gtk-key-theme = "Emacs";
 
   programs.mpv.enable = true;
 

@@ -25,11 +25,15 @@
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    stylix = {
+      url = "github:nix-community/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, home-manager,
-              nixpkgs-stable, nix-flatpak,
-              niri, impermanence, firefox-addons, ... }:
+  outputs = { nixpkgs, home-manager, nixpkgs-stable, impermanence
+            , nix-flatpak, niri, firefox-addons, stylix, ... }:
     let system = "x86_64-linux"; in {
           nixosConfigurations.main = nixpkgs.lib.nixosSystem {
             system = "${system}";
@@ -37,6 +41,7 @@
             modules = [
               ./hosts/main/configuration.nix
 
+              stylix.nixosModules.stylix
               impermanence.nixosModules.impermanence
               home-manager.nixosModules.home-manager {
                 home-manager.useGlobalPkgs = true;
@@ -50,7 +55,9 @@
                 };
 
                 # Add firefox addons to home manager arguments.
-                home-manager.extraSpecialArgs = { inherit firefox-addons system; };
+                home-manager.extraSpecialArgs = {
+                  inherit firefox-addons system;
+                };
               }
             ];
           };

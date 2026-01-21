@@ -89,47 +89,6 @@
         "XF86MonBrightnessUp" = "exec ${pkgs.brightnessctl}/bin/brightnessctl set 5%+";
         "XF86MonBrightnessDown" = "exec ${pkgs.brightnessctl}/bin/brightnessctl set 5%-";
       };
-
-      colors = let
-          bg0 = "#1d2021"; bg = "#282828";
-          bg3 = "#665c54"; fg = "#ebdbb2";
-          fg2 = "d5c4a1"; gray = "#a89984";
-          red = "#cc241d"; in
-      {
-        background = bg;
-
-        focused = {
-          background = bg; indicator = bg;
-          border = gray; childBorder = gray;
-          text = fg;
-        };
-
-        focusedInactive = {
-          background = bg; indicator = bg;
-          border = gray; childBorder = gray;
-          text = fg;
-        };
-
-        unfocused = {
-          background = bg0; indicator = bg0;
-          border = bg3; childBorder = bg3;
-          text = fg2;
-        };
-
-        urgent = {
-          background = bg; indicator = bg;
-          border = red; childBorder = red;
-          text = fg;
-        };
-
-        placeholder = {
-          background = bg0;
-          border = "#0c0c0c";
-          childBorder = "#0c0c0c";
-          indicator = "#000000";
-          text = fg;
-        };
-      };
     };
 
     extraConfig = ''

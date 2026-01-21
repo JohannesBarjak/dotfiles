@@ -1,28 +1,10 @@
-{pkgs, config, ...}: {
+{pkgs, config, stylix, ...}: {
   # Set gtk theme to Gruvbox and Numix Circle.
   gtk = {
     enable = true;
 
     iconTheme.name = "Papirus-Dark";
     iconTheme.package = (pkgs.papirus-icon-theme.override { color = "green"; });
-
-    theme = {
-      name = "Gruvbox-Dark";
-      package = pkgs.gruvbox-gtk-theme;
-    };
-
-    gtk3.extraConfig.gtk-application-prefer-dark-theme = true;
-    gtk4.extraConfig.gtk-application-prefer-dark-theme = true;
-  };
-
-  xdg.configFile = {
-    "gtk-4.0/assets".source = "${config.gtk.theme.package}/share/themes/${config.gtk.theme.name}/gtk-4.0/assets";
-    "gtk-4.0/gtk.css".source = "${config.gtk.theme.package}/share/themes/${config.gtk.theme.name}/gtk-4.0/gtk.css";
-    "gtk-4.0/gtk-dark.css".source = "${config.gtk.theme.package}/share/themes/${config.gtk.theme.name}/gtk-4.0/gtk-dark.css";
-
-    "gtk-3.0/assets".source = "${config.gtk.theme.package}/share/themes/${config.gtk.theme.name}/gtk-3.0/assets";
-    "gtk-3.0/gtk.css".source = "${config.gtk.theme.package}/share/themes/${config.gtk.theme.name}/gtk-3.0/gtk.css";
-    "gtk-3.0/gtk-dark.css".source = "${config.gtk.theme.package}/share/themes/${config.gtk.theme.name}/gtk-3.0/gtk-dark.css";
   };
 
   # Cursor theme.
@@ -37,25 +19,15 @@
     };
   };
 
-  qt = {
-    enable = true;
-
-    platformTheme.name = "qtct";
-    style.name = "kvantum";
-  };
-
-  # Setup Kvantum theme.
-  xdg.configFile."Kvantum" = {
-    source = "${pkgs.gruvbox-kvantum}/share/Kvantum";
-    recursive = true;
-  };
-
-  programs.kitty.themeFile = "GruvboxMaterialDarkMedium";
-  programs.helix.settings.theme = "gruvbox";
-
-  programs.bat.config.theme = "gruvbox-dark";
-  programs.btop.settings.color_theme = "gruvbox_material_dark";
+  stylix.targets.librewolf.enable = true;
+  stylix.targets.librewolf.profileNames = [ "default" ];
 
   programs.delta.options.syntax-theme = "gruvbox-dark";
-  programs.zellij.settings.theme = "gruvbox-dark";
+  stylix.targets.waybar.enable = false;
+  stylix.targets.kitty.fonts.enable = false;
+  stylix.targets.rofi.fonts.enable = false;
+  stylix.targets.rofi.enable = false;
+
+  stylix.targets.emacs.fonts.enable = false;
+  stylix.fonts.sizes.applications = 10;
 }
