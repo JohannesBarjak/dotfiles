@@ -65,12 +65,18 @@
         ".var/app"
 
         ".config/opensnitch"    # Opensnitch-ui configuration.
-        ".config/emacs"
         ".librewolf"
+
+        # Emacs directories to persist.
+        ".config/emacs/elpa"
       ];
 
       # User files.
       files = [
+        # Important emacs files.
+        ".config/emacs/custom.el"
+        ".config/emacs/.mc-lists.el"
+        ".config/emacs/bookmarks"
       ];
     };
   };
