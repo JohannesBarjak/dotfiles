@@ -4,7 +4,7 @@
     enable = true;
     package = pkgs.rofi;
 
-    theme = (import ./gruvbox.nix { inherit config; });
+    theme = (import ./theme.nix { inherit config; });
     font = "Cousine Nerd Font Propo";
 
     # Add calculator plugin to rofi.

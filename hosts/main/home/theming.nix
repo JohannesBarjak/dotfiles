@@ -26,7 +26,6 @@
   stylix.targets.waybar.enable = false;
   stylix.targets.kitty.fonts.enable = false;
   stylix.targets.rofi.fonts.enable = false;
-  stylix.targets.rofi.enable = false;
 
   stylix.targets.emacs.fonts.enable = false;
   stylix.fonts.sizes.applications = 10;
