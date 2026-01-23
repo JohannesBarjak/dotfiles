@@ -1,5 +1,4 @@
 {pkgs, config, stylix, ...}: {
-  # Set gtk theme to Gruvbox and Numix Circle.
   gtk = {
     enable = true;
 
