@@ -60,6 +60,8 @@
         ".local/share/zoxide"
         ".local/share/fonts"    # Important for fira code in Emacs.
 
+        ".local/share/wireplumber" # Persist volume information.
+
         # Stateful data for flatpaks.
         ".local/share/flatpak"
         ".var/app"
