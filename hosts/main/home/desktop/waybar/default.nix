@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   programs.waybar = {
     enable = true;
-    style = ./style.css;
+    style = builtins.readFile ./style.css; # Need to read file to work with stylix.
 
     settings = {
       mainBar = let workspace_icons = {

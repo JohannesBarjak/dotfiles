@@ -11,7 +11,7 @@
 }
 
 window#waybar {
-  background-color: rgba(40, 40, 40, 0.95);
+  background-color: alpha(@base00, 0.95);
   border-radius: 2em;
   padding: 0.2em;
 }
@@ -22,21 +22,12 @@ window#waybar {
 
 #workspaces button {
   margin: 0.3em 0.2em;
-  background: transparent;
 }
 
 #workspaces button label {
   padding: 0.2em 0.5em;
-  color: #ebdbb2;
   border-radius: 0.5em;
-  background-color: rgba(0, 0, 0, 0);
   font-weight: normal;
-}
-
-#workspaces button.visible label,
-#workspaces button.focused label {
-  background-color: rgba(0, 0, 0, 0);
-  color: #ebdbb2;
 }
 
 #clock,
@@ -47,11 +38,9 @@ window#waybar {
 #mode,
 #tray,
 #custom-power {
-  background-color: rgba(29, 32, 33, 0.5);
   padding: 0.2em 0.5em;
   margin: 0.3em 0.25em;
   border-radius: 0.5em;
-  color: #ebdbb2;
 }
 
 #custom-power {

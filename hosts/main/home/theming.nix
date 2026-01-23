@@ -22,7 +22,6 @@
   stylix.targets.librewolf.profileNames = [ "default" ];
 
   programs.delta.options.syntax-theme = "gruvbox-dark";
-  stylix.targets.waybar.enable = false;
   stylix.targets.kitty.fonts.enable = false;
   stylix.targets.rofi.fonts.enable = false;
 
