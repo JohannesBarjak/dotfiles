@@ -1,4 +1,4 @@
-{pkgs, config, stylix, ...}: {
+{pkgs, ...}: {
   gtk = {
     enable = true;
 
@@ -18,7 +18,6 @@
     };
   };
 
-  stylix.targets.librewolf.enable = true;
   stylix.targets.librewolf.profileNames = [ "default" ];
 
   programs.delta.options.syntax-theme = "gruvbox-dark";

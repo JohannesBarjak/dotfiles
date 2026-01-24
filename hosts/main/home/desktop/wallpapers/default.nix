@@ -2,7 +2,7 @@
   options.wallpaper = {
     path = lib.mkOption {
       type = lib.types.path;
-      default = ./skyline.png;
+      default = ./forest-stairs.jpg;
 
       description = "This option stores which wallpaper to use";
     };

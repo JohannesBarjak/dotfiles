@@ -205,7 +205,7 @@
 
   stylix.enable = true;
   stylix.autoEnable = true;
-  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-material-dark-medium.yaml";
+  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/everforest-dark-medium.yaml";
 
   stylix.targets.plymouth.enable = false;
 
