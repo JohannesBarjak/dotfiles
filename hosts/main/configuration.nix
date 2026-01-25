@@ -71,6 +71,7 @@
 
         # Emacs directories to persist.
         ".config/emacs/elpa"
+        ".config/emacs/tree-sitter"
       ];
 
       # User files.
@@ -79,6 +80,8 @@
         ".config/emacs/custom.el"
         ".config/emacs/.mc-lists.el"
         ".config/emacs/bookmarks"
+
+        ".config/nushell/history.txt" # Shell history.
       ];
     };
   };
