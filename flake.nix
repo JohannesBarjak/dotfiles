@@ -30,10 +30,15 @@
       url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    mango = {
+      url = "github:DreamMaoMao/mango";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { nixpkgs, home-manager, nixpkgs-stable, impermanence
-            , nix-flatpak, niri, firefox-addons, stylix, ... }:
+            , nix-flatpak, niri, firefox-addons, stylix, mango, ... }:
     let system = "x86_64-linux"; in {
           nixosConfigurations.main = nixpkgs.lib.nixosSystem {
             system = "${system}";
@@ -43,6 +48,7 @@
 
               stylix.nixosModules.stylix
               impermanence.nixosModules.impermanence
+              mango.nixosModules.mango
               home-manager.nixosModules.home-manager {
                 home-manager.useGlobalPkgs = true;
                 home-manager.useUserPackages = true;
@@ -51,6 +57,7 @@
                     ./hosts/main/home
                     niri.homeModules.niri
                     nix-flatpak.homeManagerModules.nix-flatpak
+                    mango.hmModules.mango
                   ];
                 };
 
