@@ -2,12 +2,28 @@
   wayland.windowManager.mango = {
     enable = true;
     settings =
-      builtins.readFile ./config.conf + ''
-        exec-once=${pkgs.swaybg}/bin/swaybg -i ${config.wallpaper.path}
-        exec-once=${pkgs.waybar}/bin/waybar
-      '';
+      builtins.readFile ./config.conf + (with config.lib.stylix.colors; ''
+        exec=${pkgs.swaybg}/bin/swaybg -i ${config.wallpaper.path}
 
-    autostart_sh = ''
-    '';
+        rootcolor=0x${base00}ff
+        bordercolor=0x${base03}ff
+        focuscolor=0x${base0D}ff
+        maximizescreencolor=0x89aa61ff
+        urgentcolor=0x${base08}ff
+        scratchpadcolor=0x516c93ff
+        globalcolor=0xb153a7ff
+        overlaycolor=0x14a57cff
+
+        exec=${config.xdg.configHome}/mango/autostart.sh
+
+        bind=NONE,XF86MonBrightnessUp,spawn,brightnessctl set 5%+
+        bind=NONE,XF86MonBrightnessDown,spawn,brightnessctl set 5%-
+
+        bind=NONE,XF86AudioMute,spawn,${config.programs.nushell.package}/bin/nu ${./sway/volume.nu} --toggle=mute
+        bind=NONE,XF86AudioRaiseVolume,spawn,${config.programs.nushell.package}/bin/nu ${./sway/volume.nu} --inc
+        bind=NONE,XF86AudioLowerVolumef,spawn,${config.programs.nushell.package}/bin/nu ${./sway/volume.nu} --dec
+      '');
+
+    autostart_sh = builtins.readFile ./autostart.sh;
   };
 }
