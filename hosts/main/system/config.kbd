@@ -11,7 +11,7 @@
 (deflayer base
   grv  1    2    3    4    5    6    7    8    9    0    -    eql  bks
   tab   @q   @w   @e   r    t    y    u    @i   @o   @p   [    ]    \
-  @cec   @a   @s   @d   @f   g    h    @j   @k   @l   @;   apo  ent
+  @cec   @a   @s   @d   @f   g    h    @j   @k   @l   @;   @ap  ent
   lsft    @z   @x   @c   @v   b    @n   @m   @,   @.   /    rsft
   lctl    met  @bka           @spc           @etc @prt rctl pgup up   pgdn
                                                             left down right)
@@ -51,7 +51,8 @@
 
 (defalias
   ;; Double use keys.
-  cec (tap-hold-press 0   200 esc caps)
+  cec (tap-hold-press 0   200 esc (multi met ctl alt sft))
+  ap (tap-hold-release 200 200 apo (multi met ctl alt sft))
   etc (tap-hold-press 200 200 ent  ctl)
   bka (tap-hold-press 200 200 bks (layer-while-held symbols))
 
@@ -109,6 +110,9 @@
   release_ctl (multi (layer-switch base) (on-press release-virtualkey control))
   release_alt (multi (layer-switch base) (on-press release-virtualkey altern))
   release_ctl_alt (multi (layer-switch base) (on-press release-virtualkey control_alt)))
+
+(defchordsv2
+  (sft caps) caps 10 all-released ())
 
 #|
 (deflayer qwerty
