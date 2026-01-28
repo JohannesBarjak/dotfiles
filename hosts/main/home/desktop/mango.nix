@@ -21,11 +21,11 @@
 
         bind=NONE,XF86AudioMute,spawn,${config.programs.nushell.package}/bin/nu ${./sway/volume.nu} --toggle=mute
         bind=NONE,XF86AudioRaiseVolume,spawn,${config.programs.nushell.package}/bin/nu ${./sway/volume.nu} --inc
-        bind=NONE,XF86AudioLowerVolumef,spawn,${config.programs.nushell.package}/bin/nu ${./sway/volume.nu} --dec
+        bind=NONE,XF86AudioLowerVolume,spawn,${config.programs.nushell.package}/bin/nu ${./sway/volume.nu} --dec
 
-        bind=SUPER,v,spawn,${pkgs.warpd}/bin/warpd --hint
-        bind=SUPER,c,spawn,${pkgs.warpd}/bin/warpd --normal
-        bind=SUPER,s,spawn,${pkgs.warpd}/bin/warpd --grid
+        bind=SUPER+ALT,j,spawn,${pkgs.warpd}/bin/warpd --hint
+        bind=SUPER+ALT,h,spawn,${pkgs.warpd}/bin/warpd --normal
+        bind=SUPER+ALT,g,spawn,${pkgs.warpd}/bin/warpd --grid
 
         bind=SUPER,b,spawn,${config.programs.librewolf.package}/bin/librewolf
         bind=SUPER+SHIFT,b,spawn,${config.programs.librewolf.package}/bin/librewolf --private-window
