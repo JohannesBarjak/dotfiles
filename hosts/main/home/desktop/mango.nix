@@ -8,11 +8,11 @@
         rootcolor=0x${base00}ff
         bordercolor=0x${base03}ff
         focuscolor=0x${base0D}ff
-        maximizescreencolor=0x89aa61ff
+        maximizescreencolor=0x${base0D}ff
         urgentcolor=0x${base08}ff
-        scratchpadcolor=0x516c93ff
-        globalcolor=0xb153a7ff
-        overlaycolor=0x14a57cff
+        scratchpadcolor=0x${base0C}ff
+        globalcolor=0x${base0E}ff
+        overlaycolor=0x${base0B}ff
 
         exec=${config.xdg.configHome}/mango/autostart.sh
 
