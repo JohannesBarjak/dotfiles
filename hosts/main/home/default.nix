@@ -108,7 +108,7 @@
       enable = true;
 
       defaultApplications = {
-        # Set firefox as the default browser.
+        # Set librewolf as the default browser.
         "text/html" = "librewolf.desktop";
         "x-scheme-handler/http" = "librewolf.desktop";
         "x-scheme-handler/https" = "librewolf.desktop";
