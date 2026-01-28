@@ -13,10 +13,10 @@
       # 'about:config' settings should be set here since they can be ignored
       # when set globally.
       settings = {
-        "browser.tabs.inTitlebar" = 0;
+        "browser.tabs.inTitlebar" = 2;
         "browser.toolbars.bookmarks.visibility" = "never";
 
-        "sidebar.verticalTabs" = true;
+        "sidebar.verticalTabs" = false;
         "sidebar.visibility" = "hide-sidebar";
 
         "webgl.disabled" = false;
