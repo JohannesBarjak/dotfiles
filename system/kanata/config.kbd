@@ -81,8 +81,8 @@
   i (tap-hold-release 200 200 i (multi ctl alt sft))
   o (tap-hold-release 200 200 o (multi ctl alt))
   p (tap-hold-release 200 200 p (multi met ctl))
-  v (tap-hold-release 200 200 v (multi met ctl alt sft))
-  n (tap-hold-release 200 200 n (multi met ctl alt sft))
+  v (tap-hold-release 200 200 v (multi met alt))
+  n (tap-hold-release 200 200 n (multi met alt))
 
   mst (layer-switch base)
 
