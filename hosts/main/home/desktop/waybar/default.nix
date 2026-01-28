@@ -10,7 +10,7 @@
         default = "";
       }; in {
         layer = "top";
-        modules-left = [ "sway/workspaces" "niri/workspaces" "sway/mode" ];
+        modules-left = [ "sway/workspaces" "niri/workspaces" "ext/workspaces" "sway/mode" ];
         modules-center = [ "clock" ];
         modules-right = [ "tray" "idle_inhibitor" "wireplumber" "network" "battery" "custom/power" ];
 
@@ -24,6 +24,11 @@
         "sway/mode" = {
           format = "{}";
           max-length = 50;
+        };
+
+        "ext/workspaces" = {
+          format = "{icon}";
+          format-icons = workspace_icons;
         };
 
         "niri/workspaces" = {
