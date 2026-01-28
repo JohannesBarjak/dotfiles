@@ -24,5 +24,5 @@
   stylix.targets.rofi.fonts.enable = false;
 
   stylix.targets.emacs.fonts.enable = false;
-  stylix.fonts.sizes.applications = 10;
+  stylix.fonts.sizes.applications = 10.5;
 }
