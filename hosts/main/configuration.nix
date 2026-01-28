@@ -255,6 +255,18 @@
     ];
 
     fontconfig.enable = true;
+
+    fontconfig = {
+      # Enable font hinting.
+      hinting = {
+        enable = true;
+        style = "full";
+      };
+
+      antialias = true;
+
+      subpixel.rgba = "rgb";
+    };
   };
 
   # List services that you want to enable:
