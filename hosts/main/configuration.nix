@@ -59,6 +59,8 @@
         # Application data.
         ".local/share/direnv"
         ".local/share/zoxide"
+        ".local/share/atuin"
+
         ".local/share/fonts"    # Important for fira code in Emacs.
 
         ".local/state/wireplumber" # Persist volume information.
