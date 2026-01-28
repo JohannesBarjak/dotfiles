@@ -11,7 +11,7 @@
 }
 
 window#waybar {
-  background-color: alpha(@base00, 0.95);
+  background-color: alpha(@base00, 0.85);
   border-radius: 2em;
   padding: 0.2em;
 }
