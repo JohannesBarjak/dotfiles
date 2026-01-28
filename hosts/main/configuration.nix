@@ -4,6 +4,7 @@
       ./hardware-configuration.nix
       ./system
       ../../setups/main
+      ../../system/kanata
     ];
 
   # Enable flakes.
@@ -297,20 +298,6 @@
 
   # Switch to a faster dbus implementation.
   services.dbus.implementation = "broker";
-
-  # I am using this service to remap caps to esc and ctrl.
-  services.kanata = {
-    enable = true;
-
-    keyboards.myLayout = {
-      config = builtins.readFile ./system/config.kbd;
-
-      extraDefCfg = ''
-        process-unmapped-keys yes
-        concurrent-tap-hold yes
-      '';
-    };
-  };
 
   systemd.services.NetworkManager-wait-online.enable = false;
   services.journald.extraConfig = "SystemMaxUse=50M";
