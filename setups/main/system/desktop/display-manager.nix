@@ -1,5 +1,5 @@
 {config, pkgs, ...}: let
-  cmd = "${pkgs.mangowc}/bin/mango";
+  cmd = "dbus-run-session ${pkgs.mangowc}/bin/mango";
   sessionData = "${config.services.displayManager.sessionData.desktops}/share/wayland-sessions"; in {
     services.greetd = {
       enable = true;
