@@ -10,7 +10,7 @@
       AMDGPU_ABM_LEVEL_ON_BAT = 3;
 
       RADEON_DPM_STATE_ON_AC = "performance";
-      RADEON_DPM_STATE_ON_BAT = "battery";
+      RADEON_DPM_STATE_ON_BAT = "balanced";
     };
   };
 }
