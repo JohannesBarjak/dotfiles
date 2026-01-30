@@ -4,6 +4,7 @@
     ./networking.nix
     ./tlp.nix
     ./sysd-hardening.nix
+    ./snapper.nix
   ];
 
   programs.firejail = {
