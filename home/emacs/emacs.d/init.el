@@ -52,7 +52,9 @@
   (prog-mode-hook . display-line-numbers-mode)
   (prog-mode-hook . electric-pair-mode)
 
-  (after-make-frame-functions . my/setup-braille-font))
+  (after-make-frame-functions . my/setup-braille-font)
+  (after-make-frame-functions
+   . (lambda (frame) (set-frame-parameter frame 'alpha-background 85))))
 
 ;; Configure packages related to more efficient navigation.
 (load-file (user-file "navigation.el"))
