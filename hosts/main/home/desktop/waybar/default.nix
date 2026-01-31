@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{config, pkgs, ...}: {
   programs.waybar = {
     enable = true;
     style = builtins.readFile ./style.css; # Need to read file to work with stylix.
@@ -66,11 +66,11 @@
 
         battery = {
           format = "{capacity}% {icon}";
-          format-icons = [
-            "<span color=\"#fb4934\"></span>"
-            "<span color=\"#fabd2f\"></span>"
-            "<span color=\"#b8bb26\"></span>"
-            "<span color=\"#b8bb26\"></span>"
+          format-icons = with config.lib.stylix.colors; [
+            "<span color=\"#${base08}\"></span>"
+            "<span color=\"#${base0A}\"></span>"
+            "<span color=\"#${base05}\"></span>"
+            "<span color=\"#${base05}\"></span>"
             ""
           ];
         };
