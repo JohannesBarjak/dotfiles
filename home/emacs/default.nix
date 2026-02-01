@@ -29,7 +29,6 @@
       epkgs.envrc
 
       # Language modes.
-      epkgs.treesit-auto
       epkgs.idris2-mode
       epkgs.haskell-mode
       epkgs.nix-mode
@@ -39,6 +38,11 @@
       epkgs.bqn-mode
       epkgs.j-mode
       epkgs.racket-mode
+      epkgs.treesit-auto
+      (epkgs.treesit-grammars.with-grammars (g: [
+        g.tree-sitter-bash
+        g.tree-sitter-css
+      ]))
 
       # Code completion plugins.
       epkgs.corfu

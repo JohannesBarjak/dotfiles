@@ -74,7 +74,6 @@
 
         # Emacs directories to persist.
         ".config/emacs/elpa"
-        ".config/emacs/tree-sitter"
       ];
 
       # User files.
