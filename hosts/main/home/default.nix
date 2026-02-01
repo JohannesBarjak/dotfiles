@@ -53,19 +53,23 @@
   services.flatpak = {
     enable = true;
 
+    remotes = {
+      flathub = "https://dl.flathub.org/repo/flathub.flatpakrepo";
+    };
+
     packages = [
-      "ch.tlaun.TL"
-      "com.brave.Browser"
-      "com.github.Anuken.Mindustry"
-      "com.usebottles.bottles"
-      "io.github.flattool.Warehouse"
-      "net.mullvad.MullvadBrowser"
-      "net.veloren.airshipper"
-      "org.libreoffice.LibreOffice"
-      "org.onlyoffice.desktopeditors"
-      "org.processing.processingide"
-      "org.torproject.torbrowser-launcher"
-      "us.zoom.Zoom"
+      "flathub:app/ch.tlaun.TL//stable"
+      "flathub:app/com.brave.Browser//stable"
+      "flathub:app/com.github.Anuken.Mindustry//stable"
+      "flathub:app/com.usebottles.bottles//stable"
+      "flathub:app/io.github.flattool.Warehouse//stable"
+      "flathub:app/net.mullvad.MullvadBrowser//stable"
+      "flathub:app/net.veloren.airshipper//stable"
+      "flathub:app/org.libreoffice.LibreOffice//stable"
+      "flathub:app/org.onlyoffice.desktopeditors//stable"
+      "flathub:app/org.processing.processingide//stable"
+      "flathub:app/org.torproject.torbrowser-launcher//stable"
+      "flathub:app/us.zoom.Zoom//stable"
     ];
 
     overrides = {

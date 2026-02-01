@@ -18,7 +18,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
+    flatpaks.url = "github:in-a-dil-emma/declarative-flatpak/latest";
 
     # Nur firefox addons.
     firefox-addons = {
@@ -38,7 +38,7 @@
   };
 
   outputs = { nixpkgs, home-manager, nixpkgs-stable, impermanence
-            , nix-flatpak, niri, firefox-addons, stylix, mango, ... }:
+            , flatpaks, niri, firefox-addons, stylix, mango, ... }:
     let system = "x86_64-linux"; in {
           nixosConfigurations.main = nixpkgs.lib.nixosSystem {
             system = "${system}";
@@ -56,7 +56,7 @@
                   imports = [
                     ./hosts/main/home
                     niri.homeModules.niri
-                    nix-flatpak.homeManagerModules.nix-flatpak
+                    flatpaks.homeModules.default
                     mango.hmModules.mango
                   ];
                 };
