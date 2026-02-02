@@ -1,6 +1,6 @@
 {lib, pkgs, ...}:
 let genSimRule = name: data: { inherit name data; };
-    genRule = name: type: operand: data: { inherit type operand data; };
+    genRule = type: operand: data: { inherit type operand data; };
     # These are simple allow rules that match to an exact binary.
     simpleRules = [
       (genSimRule "dhcpcd" "${pkgs.dhcpcd}/bin/dhcpcd")
