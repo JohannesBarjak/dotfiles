@@ -1,49 +1,26 @@
 {lib, pkgs, ...}:
-# These are simple allow rules that match to an exact binary.
-let simple_rules = [
-      { name = "dhcpcd"; data = "${pkgs.dhcpcd}/bin/dhcpcd"; }
-      { name = "nsncd"; data = "${pkgs.nsncd}/bin/nsncd"; }
-
-      { name = "mullvad-daemon";
-        data = "${pkgs.mullvad}/bin/.mullvad-daemon-wrapped";
-      }
+let genSimRule = name: data: { inherit name data; };
+    genRule = name: type: operand: data: { inherit type operand data; };
+    # These are simple allow rules that match to an exact binary.
+    simpleRules = [
+      (genSimRule "dhcpcd" "${pkgs.dhcpcd}/bin/dhcpcd")
+      (genSimRule "nsncd" "${pkgs.nsncd}/bin/nsncd")
+      (genSimRule "mullvad-daemon" "${pkgs.mullvad}/bin/.mullvad-daemon-wrapped")
     ];
-    multi_rules = [
+
+    multiRules = [
       { name = "systemd-timesyncd";
         list = [
-          {
-            type = "regexp";
-            operand = "dest.host";
-            data = "\\d\\.nixos\\.pool\\.ntp\\.org";
-          }
-
-          {
-            type = "simple";
-            operand = "process.path";
-            data = "${pkgs.systemd}/lib/systemd/systemd-timesyncd";
-          }
+          (genRule "regexp" "dest.host" "\\d\\.nixos\\.pool\\.ntp\\.org")
+          (genRule "simple" "process.path" "${pkgs.systemd}/lib/systemd/systemd-timesyncd")
         ];
       }
 
       { name = "kworker-wg";
         list = [
-          {
-            type = "simple";
-            operand = "dest.port";
-            data = "51820";
-          }
-
-          {
-            type = "simple";
-            operand = "user.id";
-            data = "0";
-          }
-
-          {
-            type = "simple";
-            operand = "process.path";
-            data = "Kernel connection";
-          }
+          (genRule "simple" "dest.port" "51820")
+          (genRule "simple" "user.id" "0")
+          (genRule "simple" "process.path" "Kernel connection")
         ];
       }
     ]; in
@@ -68,7 +45,7 @@ let simple_rules = [
          sensitive = true;
          data = rule.data;
        };
-     }) simple_rules))
+     }) simpleRules))
 
       # Case-sensitive rules that match more complex conditions.
       (lib.listToAttrs (map (rule: lib.nameValuePair rule.name {
@@ -84,7 +61,7 @@ let simple_rules = [
 
          list = map (lib.mergeAttrs { sensitive = true; }) rule.list;
        };
-     }) multi_rules))
+     }) multiRules))
     ];
   };
 }
