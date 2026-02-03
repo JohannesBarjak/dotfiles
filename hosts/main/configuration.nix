@@ -5,6 +5,7 @@
       ./system
       ../../setups/main
       ../../system/kanata
+      ../../system/opensnitch.nix
     ];
 
   # Enable flakes.
