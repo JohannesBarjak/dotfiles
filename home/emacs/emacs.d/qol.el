@@ -12,7 +12,3 @@
   (spell-local-dictionary-alist
    '("en_US" "[[:alpha:]]" "[^[:alpha:]]" "[']" nil ("-d" "en_US") nil utf-8())))
 
-;; A theme I like to occasionally use.
-(use-package everforest-theme
-  :vc (:url "https://github.com/Theory-of-Everything/everforest-emacs" :rev :newest))
-
