@@ -1,81 +1,45 @@
-{...}: {
+{lib, pkgs, ...}:
+let lowBrkBoolDirectives = (
+      LockPersonality: NoNewPrivileges: PrivateDevices: {
+        inherit LockPersonality NoNewPrivileges PrivateDevices;
+      });
+
+    restrictDirectives = (
+      RestrictRealtime: RestrictSUIDSGID: RestrictNamespaces: {
+        inherit RestrictRealtime RestrictSUIDSGID RestrictNamespaces;
+      });
+
+    protectionDirectives = (
+      ProtectHostname: ProtectControlGroups: ProtectClock: {
+        inherit ProtectHostname ProtectControlGroups ProtectClock;
+      });
+
+    protectKernel = (protect: {
+      ProtectKernelTunables = protect;
+      ProtectKernelLogs = protect;
+      ProtectKernelModules = protect;
+    });
+
+    protectFilesystem = (
+      ProtectSystem: ProtectHome: PrivateTmp: ReadWritePaths: {
+        inherit ProtectSystem ProtectHome PrivateTmp ReadWritePaths;
+      });
+in {
   systemd.services = {
-    NetworkManager-dispatcher.serviceConfig = {
-      PrivateTmp = true;
-      ProtectHome = true;
-      ProtectProc = "invisible";
-      ProtectSystem = "strict";
+    cups.serviceConfig = lib.mkMerge [
+      (restrictDirectives true true true)
+      (lowBrkBoolDirectives true false false)
+      (protectionDirectives true true true)
 
-      MemoryDenyWriteExecute = true;
-      NoNewPrivileges = true;
-      RestrictNamespaces = true;
-      RestrictSUIDSGID = true;
+      (protectKernel true)
+      (protectFilesystem "strict" true true
+        [ "-/var/spool/cups" "-/var/cache/cups" "-/var/lib/cups" "-/run/cups" ])
+    ];
 
-      ProtectControlGroups = true;
-      ProtectKernelLogs = true;
-      ProtectKernelModules = true;
-
-      PrivateMounts = true;
-      ProtectClock = true;
-      ProtectHostname = true;
-      RestrictRealtime = true;
-
-      CapabilityBoundingSet = "CAP_NET_ADMIN CAP_NET_RAW";
-      RestrictAddressFamilies = [
-        "AF_UNIX"
-        "AF_NETLINK"
-        "AF_INET"
-        "AF_INET6"
-        "AF_PACKET"
-      ];
-
-      LockPersonality = true;
-      SystemCallArchitectures = "native";
-      SystemCallFilter = [
-        "~@cpu-emulation"
-        "~@module"
-        "~@mount"
-        "~@obsolete"
-        "~@swap"
-      ];
-    };
-
-    NetworkManager.serviceConfig = {
-      PrivateTmp = true;
-      ProtectHome = true;
-      ProtectProc = "invisible";
-
-      MemoryDenyWriteExecute = true;
-      NoNewPrivileges = true;
-      RestrictNamespaces = true;
-      RestrictSUIDSGID = true;
-
-      ProtectControlGroups = true;
-      ProtectKernelLogs = true;
-      ProtectKernelModules = true;
-
-      ProtectClock = true;
-      ProtectHostname = true;
-      RestrictRealtime = true;
-
-      RestrictAddressFamilies = [
-        "AF_UNIX"
-        "AF_NETLINK"
-        "AF_INET"
-        "AF_INET6"
-        "AF_PACKET"
-      ];
-
-      LockPersonality = true;
-      SystemCallArchitectures = "native";
-      SystemCallFilter = [
-        "~@mount"
-        "~@module"
-        "~@swap"
-        "~@obsolete"
-        "~@cpu-emulation"
-        "ptrace"
-      ];
-    };
+    cups-browsed.serviceConfig = lib.mkMerge [
+      (protectKernel true)
+      (protectFilesystem "strict" true true
+        [ "-/var/cache/cups" "-/var/log/cups" ])
+    ];
   };
 }
