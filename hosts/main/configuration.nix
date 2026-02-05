@@ -1,4 +1,4 @@
-{pkgs, ... }: {
+{pkgs, emacs-overlay, ... }: {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
@@ -13,6 +13,10 @@
     package = pkgs.nixVersions.stable;
     extraOptions = "experimental-features = nix-command flakes";
   };
+
+  nixpkgs.overlays = [
+    emacs-overlay.overlays.default
+  ];
 
   users.mutableUsers = false;
   users.users.root.hashedPasswordFile = "/persistent/passwords/root";

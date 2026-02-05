@@ -35,18 +35,24 @@
       url = "github:DreamMaoMao/mango";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    emacs-overlay = {
+      url = "github:nix-community/emacs-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { nixpkgs, home-manager, nixpkgs-stable, impermanence
-            , flatpaks, niri, firefox-addons, stylix, mango, ... }:
+            , flatpaks, niri, firefox-addons, stylix, mango, emacs-overlay, ... }@inputs:
     let system = "x86_64-linux"; in {
           nixosConfigurations.main = nixpkgs.lib.nixosSystem {
             system = "${system}";
+            specialArgs = { inherit emacs-overlay; };
 
             modules = [
               ./hosts/main/configuration.nix
 
-              stylix.nixosModules.stylix
+              inputs.stylix.nixosModules.stylix
               impermanence.nixosModules.impermanence
               mango.nixosModules.mango
               home-manager.nixosModules.home-manager {
@@ -63,7 +69,7 @@
 
                 # Add firefox addons to home manager arguments.
                 home-manager.extraSpecialArgs = {
-                  inherit firefox-addons system;
+                  inherit firefox-addons system emacs-overlay;
                 };
               }
             ];

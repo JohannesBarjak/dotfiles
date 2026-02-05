@@ -84,7 +84,12 @@
       epkgs.fira-code-mode
     ];
 
-    package = pkgs.emacs-pgtk;
+    package = (pkgs.emacs-igc-pgtk.overrideAttrs (prev: {
+      NIX_CFLAGS_COMPILE = (prev.NIX_CFLAGS_COMPILE or []) ++
+                           [ "-O3" "-march=native"
+                             "-fgcse-las" "-fgcse-sm"
+                             "-pipe" "-fno-semantic-interposition" ];
+    }));
   };
 
   # Copy Emacs elisp configuration into its appropriate folder.
