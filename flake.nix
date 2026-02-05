@@ -26,11 +26,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Theme manager for NixOS.
     stylix = {
       url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # A wlroots feature rich Wayland compositor.
     mango = {
       url = "github:DreamMaoMao/mango";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -42,34 +44,33 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, nixpkgs-stable, impermanence
-            , flatpaks, niri, firefox-addons, stylix, mango, emacs-overlay, ... }@inputs:
+  outputs = { nixpkgs, home-manager, nixpkgs-stable, ... }@inputs:
     let system = "x86_64-linux"; in {
           nixosConfigurations.main = nixpkgs.lib.nixosSystem {
             system = "${system}";
-            specialArgs = { inherit emacs-overlay; };
+            specialArgs = with inputs; { inherit emacs-overlay; };
 
             modules = [
               ./hosts/main/configuration.nix
 
               inputs.stylix.nixosModules.stylix
-              impermanence.nixosModules.impermanence
-              mango.nixosModules.mango
+              inputs.impermanence.nixosModules.impermanence
+              inputs.mango.nixosModules.mango
               home-manager.nixosModules.home-manager {
                 home-manager.useGlobalPkgs = true;
                 home-manager.useUserPackages = true;
                 home-manager.users.johannes = {
                   imports = [
                     ./hosts/main/home
-                    niri.homeModules.niri
-                    flatpaks.homeModules.default
-                    mango.hmModules.mango
+                    inputs.niri.homeModules.niri
+                    inputs.flatpaks.homeModules.default
+                    inputs.mango.hmModules.mango
                   ];
                 };
 
                 # Add firefox addons to home manager arguments.
-                home-manager.extraSpecialArgs = {
-                  inherit firefox-addons system emacs-overlay;
+                home-manager.extraSpecialArgs = with inputs; {
+                  inherit system firefox-addons emacs-overlay;
                 };
               }
             ];
