@@ -7,7 +7,7 @@
 
   home.packages = [
     pkgs.texlive.combined.scheme-full
-    ];
+  ];
 
   # Main gui text editor.
   programs.emacs = {
@@ -71,6 +71,23 @@
       epkgs.pandoc-mode
       epkgs.vundo
       epkgs.try
+      (epkgs.melpaBuild {
+        ename = "reader";
+        pname = "emacs-reader";
+        version = "20250629";
+        src = pkgs.fetchFromGitea {
+          domain = "codeberg.org";
+          owner = "divyaranjan";
+          repo = "emacs-reader";
+          rev = "2d95199bbb0f2c488f8d5d1ae8e9dc2de937f430";
+          hash = "sha256-rZ+1PgRS68QN0yXdYyEJafJmbCceaKeDQhT+GfsPiFA=";
+        };
+        files = ''(:defaults "render-core.so")'';
+        nativeBuildInputs = [ pkgs.pkg-config ];
+        buildInputs = with pkgs; [ gcc mupdf gnumake pkg-config ];
+        preBuild = "make clean all";
+      })
+
 
       # Latex.
       epkgs.auctex
