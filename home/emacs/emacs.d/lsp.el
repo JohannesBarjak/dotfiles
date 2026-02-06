@@ -1,9 +1,9 @@
 ;; Use eglot as my lsp manager.
 (use-package eglot
   :hook					; Add language hooks.
-  (haskell-mode   . eglot-ensure)
-  (nix-mode       . eglot-ensure)
-  (python-ts-mode . eglot-ensure)
+  (haskell-ts-mode . eglot-ensure)
+  (nix-mode        . eglot-ensure)
+  (python-ts-mode  . eglot-ensure)
 
   :custom
   (eglot-autoshutdown t) ; shutdown language server after closing last file.
@@ -26,13 +26,8 @@
   (global-treesit-auto-mode))
 
 ;; Haskell mode configuration.
-(use-package haskell-mode
-  :defer t
-  :custom
-  (haskell-indentation-layout-offset 2)	; Tweak indentation settings to my preferences.
-  (haskell-indentation-left-offset 2)
-  (haskell-indentation-where-pre-offset 2)
-  (haskell-indentation-where-post-offset 2))
+(use-package haskell-ts-mode
+  :defer t)
 
 ;; Fira Code font for Emacs.
 ;; Remember to run fira-code-mode-install-fonts so that ligatures are rendered.
