@@ -108,3 +108,11 @@
   ("M-<up>"    . puni-barf-forward)
   ("M-<down>"  . puni-barf-backward))
 
+;; Swap dired mode's default behavior to not open a new buffer every time.
+(use-package dired
+  :init (put 'dired-find-alternate-file 'disabled nil)
+  :bind (:map dired-mode-map
+              ("RET" . dired-find-alternate-file)
+              ("a"   . dired-find-file)
+              ("^"   . (lambda () (interactive) (find-alternate-file "..")))))
+
