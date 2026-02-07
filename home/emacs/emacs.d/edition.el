@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 ;; Embark provides actions on buffer targets.
 (use-package embark
   :bind

@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 ;; Magit configuraton.
 (use-package magit :defer t)
 

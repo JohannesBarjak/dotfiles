@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 ;; Marginalia adds annotations to the minibuffer.
 (use-package marginalia
   ;; Bind `marginalia-cycle' locally in the minibuffer.  To make the binding

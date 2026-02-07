@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 ;; Use eglot as my lsp manager.
 (use-package eglot
   :hook					; Add language hooks.

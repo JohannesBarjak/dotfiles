@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 ;; Put general org mode tweaks here.
 (use-package org-mode
   :defer t

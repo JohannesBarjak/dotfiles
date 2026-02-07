@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 ;; Use consult for better searching interfaces.
 (use-package consult
   :bind

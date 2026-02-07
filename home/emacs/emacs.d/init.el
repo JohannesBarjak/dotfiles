@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (use-package emacs
   :init
   ;; Disable toolbar, menu bar, and scroll bar.

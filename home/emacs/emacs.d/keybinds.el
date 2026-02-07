@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (use-package emacs
   :init
   ;; Add smart open line, the idea and code came from this site:

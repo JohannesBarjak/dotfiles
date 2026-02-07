@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 ;; ispell configuration.
 (use-package ispell
   :defer t

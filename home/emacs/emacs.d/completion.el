@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 ;; Setup which key.
 (use-package which-key
   :config
