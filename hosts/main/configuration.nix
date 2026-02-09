@@ -4,8 +4,10 @@
       ./hardware-configuration.nix
       ./system
       ../../setups/main
+
       ../../system/kanata
       ../../system/opensnitch.nix
+      ../../system/power.nix
     ];
 
   # Enable flakes.
@@ -278,27 +280,7 @@
 
   # List services that you want to enable:
 
-  # Power management.
-  services.upower = {
-    enable = true;
-
-    criticalPowerAction = "PowerOff";
-    percentageCritical = 5;
-    percentageAction = 4;
-  };
-
   services.udisks2.enable = true;
-
-  # Ananicy is a service which automatically sets process nice levels.
-  services.ananicy = {
-    enable = true;
-    package = pkgs.ananicy-cpp;
-
-    rulesProvider = pkgs.ananicy-rules-cachyos;
-    extraRules = [{ name = "mango"; type = "LowLatency_RT"; }];
-  };
-
-  services.auto-cpufreq.enable = true;
 
   security.polkit.enable = true;
   security.sudo-rs.enable = true;
@@ -308,7 +290,6 @@
   # Switch to a faster dbus implementation.
   services.dbus.implementation = "broker";
 
-  systemd.services.NetworkManager-wait-online.enable = false;
   services.journald.extraConfig = "SystemMaxUse=50M";
 
   # Open ports in the firewall.
