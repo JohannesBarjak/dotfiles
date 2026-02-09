@@ -2,7 +2,6 @@
   imports = [
     ./sound.nix
     ./networking.nix
-    ./tlp.nix
     ./sysd-hardening.nix
     ./snapper.nix
   ];
