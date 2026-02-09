@@ -44,10 +44,8 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, nixpkgs-stable, ... }@inputs:
-    let system = "x86_64-linux"; in {
+  outputs = { nixpkgs, home-manager, nixpkgs-stable, ... }@inputs: {
           nixosConfigurations.main = nixpkgs.lib.nixosSystem {
-            system = "${system}";
             specialArgs = with inputs; { inherit emacs-overlay; };
 
             modules = [
@@ -70,18 +68,14 @@
 
                 # Add firefox addons to home manager arguments.
                 home-manager.extraSpecialArgs = with inputs; {
-                  inherit system firefox-addons emacs-overlay;
+                  inherit firefox-addons emacs-overlay;
                 };
               }
             ];
           };
 
           nixosConfigurations.dell = nixpkgs-stable.lib.nixosSystem {
-            system = "${system}";
-
-            modules = [
-              ./hosts/dell/configuration.nix
-            ];
+            modules = [ ./hosts/dell/configuration.nix ];
           };
         };
 }

@@ -1,4 +1,4 @@
-{firefox-addons, system, ...}: {
+{pkgs, firefox-addons, ...}: {
   programs.librewolf = {
     enable = true;
 
@@ -26,7 +26,7 @@
         "extensions.autoDisableScopes" = 0;
       };
 
-      extensions.packages = with firefox-addons.packages.${system}; [
+      extensions.packages = with firefox-addons.packages.${pkgs.stdenv.hostPlatform.system}; [
         ublock-origin
         canvasblocker
         tridactyl
