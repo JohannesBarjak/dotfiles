@@ -28,8 +28,7 @@
   (global-treesit-auto-mode))
 
 ;; Haskell mode configuration.
-(use-package haskell-ts-mode
-  :defer t)
+(use-package haskell-ts-mode)
 
 ;; Fira Code font for Emacs.
 ;; Remember to run fira-code-mode-install-fonts so that ligatures are rendered.
