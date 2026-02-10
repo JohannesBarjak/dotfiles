@@ -31,7 +31,7 @@
       # Language modes.
       epkgs.idris2-mode
       epkgs.haskell-ts-mode
-      epkgs.nix-mode
+      epkgs.nix-ts-mode
       epkgs.markdown-mode
       epkgs.nushell-mode
       epkgs.uiua-ts-mode
@@ -39,11 +39,7 @@
       epkgs.j-mode
       epkgs.racket-mode
       epkgs.treesit-auto
-      (epkgs.treesit-grammars.with-grammars (t: with t; [
-        tree-sitter-bash
-        tree-sitter-css
-        tree-sitter-haskell
-      ]))
+      epkgs.treesit-grammars.with-all-grammars
 
       # Code completion plugins.
       epkgs.corfu

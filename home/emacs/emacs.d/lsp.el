@@ -4,7 +4,7 @@
 (use-package eglot
   :hook					; Add language hooks.
   (haskell-ts-mode . eglot-ensure)
-  (nix-mode        . eglot-ensure)
+  (nix-ts-mode     . eglot-ensure)
   (python-ts-mode  . eglot-ensure)
 
   :custom
