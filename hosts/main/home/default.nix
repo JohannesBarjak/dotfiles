@@ -22,7 +22,7 @@
     (writeShellApplication {
       name = "update-system";
       runtimeInputs = [ config.programs.nushell.package ];
-      text = ./scripts/update-system.nu;
+      text = /${rootPath}/home/scripts/update-system.nu;
     })
 
     podman podman-tui
