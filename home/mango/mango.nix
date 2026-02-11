@@ -27,9 +27,9 @@
         bind=NONE,XF86MonBrightnessUp,spawn,brightnessctl set 5%+
         bind=NONE,XF86MonBrightnessDown,spawn,brightnessctl set 5%-
 
-        bind=NONE,XF86AudioMute,spawn,${config.programs.nushell.package}/bin/nu ${./sway/volume.nu} --toggle=mute
-        bind=NONE,XF86AudioRaiseVolume,spawn,${config.programs.nushell.package}/bin/nu ${./sway/volume.nu} --inc
-        bind=NONE,XF86AudioLowerVolume,spawn,${config.programs.nushell.package}/bin/nu ${./sway/volume.nu} --dec
+        bind=NONE,XF86AudioMute,spawn,${config.programs.nushell.package}/bin/nu ${/${rootPath}/home/scripts/volume.nu} --toggle=mute
+        bind=NONE,XF86AudioRaiseVolume,spawn,${config.programs.nushell.package}/bin/nu ${/${rootPath}/home/scripts/volume.nu} --inc
+        bind=NONE,XF86AudioLowerVolume,spawn,${config.programs.nushell.package}/bin/nu ${/${rootPath}/home/scripts/volume.nu} --dec
 
         bind=SUPER+ALT,j,spawn,${pkgs.warpd}/bin/warpd --hint
         bind=SUPER+ALT,h,spawn,${pkgs.warpd}/bin/warpd --normal

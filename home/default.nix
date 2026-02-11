@@ -3,6 +3,7 @@
     ./emacs
     ./librewolf.nix
     ./terminal.nix
+    ./mango
   ];
 
   home.packages = [

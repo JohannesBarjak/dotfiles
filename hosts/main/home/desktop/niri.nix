@@ -134,15 +134,15 @@
 
         # Audio control keybindings.
         "XF86AudioMute".action = spawn [
-          "${config.programs.nushell.package}/bin/nu" "${./sway/volume.nu}" "--toggle=mute"
+          "${config.programs.nushell.package}/bin/nu" "${/${rootPath}/home/scripts/volume.nu}" "--toggle=mute"
         ];
 
         "XF86AudioRaiseVolume".action = spawn [
-          "${config.programs.nushell.package}/bin/nu" "${./sway/volume.nu}" "--inc"
+          "${config.programs.nushell.package}/bin/nu" "${/${rootPath}/home/scripts/volume.nu}" "--inc"
         ];
 
         "XF86AudioLowerVolume".action = spawn [
-          "${config.programs.nushell.package}/bin/nu" "${./sway/volume.nu}" "--dec"
+          "${config.programs.nushell.package}/bin/nu" "${/${rootPath}/home/scripts/volume.nu}" "--dec"
         ];
 
         # keyboard shortcut to escape applications that grab the keyboard.

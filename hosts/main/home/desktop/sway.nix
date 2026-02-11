@@ -1,4 +1,4 @@
-{config, lib, pkgs, ...}: {
+{config, lib, pkgs, rootPath, ...}: {
   imports = [ ./wallpapers ];
   home.packages = [ pkgs.libnotify pkgs.jq ];
 
@@ -81,11 +81,11 @@
 
         # Add binding for focus on child.
         "${mod}+s" = "focus child";
-        "${mod}+Ctrl+s" = "exec ${config.programs.nushell.package}/bin/nu ${./sway/focus_visible.nu}";
+        "${mod}+Ctrl+s" = "exec ${config.programs.nushell.package}/bin/nu ${/${rootPath}/home/scripts/sway-focus_visible.nu}";
 
-        "XF86AudioMute" = "exec ${config.programs.nushell.package}/bin/nu ${./sway/volume.nu} --toggle=mute";
-        "XF86AudioRaiseVolume" = "exec ${config.programs.nushell.package}/bin/nu ${./sway/volume.nu} --inc";
-        "XF86AudioLowerVolume" = "exec ${config.programs.nushell.package}/bin/nu ${./sway/volume.nu} --dec";
+        "XF86AudioMute" = "exec ${config.programs.nushell.package}/bin/nu ${/${rootPath}/home/scripts/volume.nu} --toggle=mute";
+        "XF86AudioRaiseVolume" = "exec ${config.programs.nushell.package}/bin/nu ${/${rootPath}/home/scripts/volume.nu} --inc";
+        "XF86AudioLowerVolume" = "exec ${config.programs.nushell.package}/bin/nu ${/${rootPath}/home/scripts/volume.nu} --dec";
         "XF86MonBrightnessUp" = "exec ${pkgs.brightnessctl}/bin/brightnessctl set 5%+";
         "XF86MonBrightnessDown" = "exec ${pkgs.brightnessctl}/bin/brightnessctl set 5%-";
       };
