@@ -1,13 +1,13 @@
-{pkgs, emacs-overlay, ... }: {
+{pkgs, inputs, rootPath, ... }: {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./system
-      ../../setups/main
+      /${rootPath}/setups/main
 
-      ../../system/kanata
-      ../../system/opensnitch.nix
-      ../../system/power.nix
+      /${rootPath}/system/kanata
+      /${rootPath}/system/opensnitch.nix
+      /${rootPath}/system/power.nix
     ];
 
   # Enable flakes.
@@ -17,7 +17,7 @@
   };
 
   nixpkgs.overlays = [
-    emacs-overlay.overlays.default
+    inputs.emacs-overlay.overlays.default
   ];
 
   users.mutableUsers = false;

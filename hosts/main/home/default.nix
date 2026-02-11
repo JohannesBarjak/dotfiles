@@ -1,4 +1,4 @@
-{pkgs, config, ...}: {
+{pkgs, config, rootPath, ...}: {
   home.username = "johannes";
   home.homeDirectory = "/home/johannes";
   programs.home-manager.enable = true;
@@ -6,7 +6,7 @@
   imports = [
     ./desktop
     ./theming.nix
-    ../../../home
+    /${rootPath}/home
   ];
 
   home.packages = with pkgs; [

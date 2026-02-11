@@ -1,4 +1,4 @@
-{pkgs, firefox-addons, ...}: {
+{pkgs, inputs, ...}: {
   programs.librewolf = {
     enable = true;
 
@@ -26,13 +26,14 @@
         "extensions.autoDisableScopes" = 0;
       };
 
-      extensions.packages = with firefox-addons.packages.${pkgs.stdenv.hostPlatform.system}; [
-        ublock-origin
-        canvasblocker
-        tridactyl
-        localcdn
-        umatrix
-      ];
+      extensions.packages =
+        with inputs.firefox-addons.packages.${pkgs.stdenv.hostPlatform.system}; [
+          ublock-origin
+          canvasblocker
+          tridactyl
+          localcdn
+          umatrix
+        ];
 
       # Override minimum window size.
       userChrome = "html { min-width: 0 !important; }";

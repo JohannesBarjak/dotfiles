@@ -44,9 +44,9 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, nixpkgs-stable, ... }@inputs: {
+  outputs = { nixpkgs, home-manager, nixpkgs-stable, ... }@inputs: let rootPath = ./.; in {
           nixosConfigurations.main = nixpkgs.lib.nixosSystem {
-            specialArgs = with inputs; { inherit emacs-overlay; };
+            specialArgs = { inherit inputs rootPath; };
 
             modules = [
               ./hosts/main/configuration.nix
@@ -67,9 +67,7 @@
                 };
 
                 # Add firefox addons to home manager arguments.
-                home-manager.extraSpecialArgs = with inputs; {
-                  inherit firefox-addons emacs-overlay;
-                };
+                home-manager.extraSpecialArgs = { inherit inputs rootPath; };
               }
             ];
           };
