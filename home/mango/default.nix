@@ -1,4 +1,4 @@
-{config, pkgs, ...}: {
+{config, pkgs, rootPath, ...}: {
   xdg.portal = {
     enable = true;
     extraPortals = [
