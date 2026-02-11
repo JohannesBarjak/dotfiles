@@ -1,45 +1,51 @@
-{lib, pkgs, ...}:
-let lowBrkBoolDirectives = (
-      LockPersonality: NoNewPrivileges: PrivateDevices: {
-        inherit LockPersonality NoNewPrivileges PrivateDevices;
-      });
+{lib, ...}:
+let protectKernel = enabled: {
+  ProtectKernelTunables = enabled;
+  ProtectKernelLogs = enabled;
+  ProtectKernelModules = enabled;
+  ProtectControlGroups = enabled;
+};
 
-    restrictDirectives = (
-      RestrictRealtime: RestrictSUIDSGID: RestrictNamespaces: {
-        inherit RestrictRealtime RestrictSUIDSGID RestrictNamespaces;
-      });
+protectFilesystem =
+  ProtectSystem: ProtectHome: PrivateTmp: ReadWritePaths: {
+    inherit ProtectSystem ProtectHome PrivateTmp ReadWritePaths;
+  };
 
-    protectionDirectives = (
-      ProtectHostname: ProtectControlGroups: ProtectClock: {
-        inherit ProtectHostname ProtectControlGroups ProtectClock;
-      });
+privilegeEscalation = enabled: {
+  NoNewPrivileges = enabled;
+  RestrictSUIDSGID = enabled;
+  LockPersonality = enabled;
+  RestrictRealtime = enabled;
+};
 
-    protectKernel = (protect: {
-      ProtectKernelTunables = protect;
-      ProtectKernelLogs = protect;
-      ProtectKernelModules = protect;
-    });
-
-    protectFilesystem = (
-      ProtectSystem: ProtectHome: PrivateTmp: ReadWritePaths: {
-        inherit ProtectSystem ProtectHome PrivateTmp ReadWritePaths;
-      });
+protectDevices = enabled: full: {
+  PrivateDevices = full;
+  ProtectClock = enabled;
+};
+protectNetwork = enabled: private: {
+  ProtectHostname = enabled;
+  PrivateNetwork = private;
+};
 in {
   systemd.services = {
     cups.serviceConfig = lib.mkMerge [
-      (restrictDirectives true true true)
-      (lowBrkBoolDirectives true false false)
-      (protectionDirectives true true true)
-
       (protectKernel true)
       (protectFilesystem "strict" true true
         [ "-/var/spool/cups" "-/var/cache/cups" "-/var/lib/cups" "-/run/cups" ])
+      (privilegeEscalation true)
+      (protectDevices true false)
+      (protectNetwork true true)
+      { RestrictNamespaces = true; }
     ];
 
     cups-browsed.serviceConfig = lib.mkMerge [
       (protectKernel true)
       (protectFilesystem "strict" true true
         [ "-/var/cache/cups" "-/var/log/cups" ])
+      (privilegeEscalation true)
+      (protectDevices true true)
+      (protectNetwork true false)
+      { RestrictNamespaces = true; }
     ];
   };
 }
