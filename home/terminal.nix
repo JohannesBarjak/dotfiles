@@ -53,6 +53,8 @@
       gdf = "git diff";
       enw = "emacsclient -t";
     };
+
+    extraConfig = "$env.LS_COLORS = (vivid generate stylix)";
   };
 
   # Enable direnv to automatically enter nix shell environments.

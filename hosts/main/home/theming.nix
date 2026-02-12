@@ -18,6 +18,9 @@
     };
   };
 
+    # LS_COLORS theming.
+  programs.vivid.enable = true;
+
   stylix.targets.librewolf.profileNames = [ "default" ];
 
   stylix.targets.kitty.fonts.enable = false;
