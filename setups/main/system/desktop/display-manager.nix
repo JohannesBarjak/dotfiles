@@ -17,26 +17,26 @@
       };
     };
 
-      programs.uwsm = {
-        enable = true;
-        waylandCompositors.mango = {
-          binPath = "${pkgs.mangowc}/bin/mango";
-          prettyName = "MangoWC";
-          comment = "A feature rich Wayland compositor.";
-        };
+    programs.uwsm = {
+      enable = true;
+      waylandCompositors.mango = {
+        binPath = "${pkgs.mangowc}/bin/mango";
+        prettyName = "MangoWC";
+        comment = "A feature rich Wayland compositor.";
       };
+    };
 
-      # Got this from 'https://github.com/apognu/tuigreet/issues/68'
-      # Prevent tty text from appearing on greetd
-      systemd.services.greetd.serviceConfig = {
-        Type = "idle";
-        StandardInput = "tty";
-        StandardOutput = "tty";
-        StandardError = "journal";
-        TTYReset = true;
-        TTYVHangup = true;
-        TTYVTDisallocate = true;
-      };
+    # Got this from 'https://github.com/apognu/tuigreet/issues/68'
+    # Prevent tty text from appearing on greetd
+    systemd.services.greetd.serviceConfig = {
+      Type = "idle";
+      StandardInput = "tty";
+      StandardOutput = "tty";
+      StandardError = "journal";
+      TTYReset = true;
+      TTYVHangup = true;
+      TTYVTDisallocate = true;
+    };
 
-      systemd.services.greetd.environment.RUST_BACKTRACE = "full";
+    systemd.services.greetd.environment.RUST_BACKTRACE = "full";
   }
