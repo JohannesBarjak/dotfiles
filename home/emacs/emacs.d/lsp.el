@@ -62,7 +62,8 @@
 (use-package uiua-ts-mode :mode "\\.ua\\'")
 
 ;; Remove Fira Code fonts when programming in BQN.
-(use-package bqn-mode :hook bqn-mode (lambda () (fira-code-mode 0)))
+(use-package bqn-mode
+  :hook (bqn-mode . (lambda () (fira-code-mode 0))))
 
 ;; Mode for kanata keyboard configuration.
 (use-package kanata-kbd-mode
