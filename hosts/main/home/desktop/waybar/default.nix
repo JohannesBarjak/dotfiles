@@ -69,9 +69,9 @@
           format-icons = with config.lib.stylix.colors; [
             "<span color=\"#${base08}\"></span>"
             "<span color=\"#${base0A}\"></span>"
-            "<span color=\"#${base0B}\"></span>"
-            "<span color=\"#${base05}\"></span>"
-            ""
+            ""
+            ""
+            "<span color=\"#${base0B}\"></span>"
           ];
         };
 
