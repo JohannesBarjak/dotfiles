@@ -1,5 +1,8 @@
 {config, lib, pkgs, rootPath, ...}: {
-  imports = [ ./wallpapers ];
+  imports = [
+    ./wallpapers
+    /${rootPath}/home/waybar
+  ];
   home.packages = [ pkgs.libnotify pkgs.jq ];
 
   wayland.windowManager.sway = {

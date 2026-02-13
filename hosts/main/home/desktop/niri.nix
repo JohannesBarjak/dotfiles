@@ -1,5 +1,8 @@
 {config, pkgs, rootPath, ...}: {
-  imports = [ ./wallpapers ];
+  imports = [
+    ./wallpapers
+    /${rootPath}/home/waybar
+  ];
 
   home.packages = [
     pkgs.niri

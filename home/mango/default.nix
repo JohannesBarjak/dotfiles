@@ -1,4 +1,6 @@
 {config, pkgs, rootPath, ...}: {
+  imports = [ /${rootPath}/home/waybar ];
+
   xdg.portal = {
     enable = true;
     extraPortals = [
