@@ -7,6 +7,9 @@
     tealdeer
   ];
 
+  # Better cli interface for nixos.
+  programs.nh.enable = true;
+
   # Main tui text editor.
   programs.helix = {
     enable = true;
