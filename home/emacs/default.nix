@@ -23,7 +23,6 @@
       epkgs.expand-region
       epkgs.orderless
       epkgs.puni
-      epkgs.persp-mode
 
       # Integration with direnv.
       epkgs.envrc

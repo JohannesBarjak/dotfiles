@@ -108,6 +108,19 @@
   ("M-<up>"    . puni-barf-forward)
   ("M-<down>"  . puni-barf-backward))
 
+(use-package tab-bar
+  :custom
+  (tab-bar-show t)
+  (tab-bar-close-button-show nil)
+  (tab-bar-new-button-show nil)
+  (tab-bar-tab-hints t)
+  (tab-bar-select-tab-modifiers '(meta))
+  (tab-bar-separator " ")
+  (tab-bar-format '(tab-bar-format-tabs tab-bar-separator))
+  :config
+  (tab-bar-mode)
+  (tab-bar-history-mode))
+
 ;; Swap dired mode's default behavior to not open a new buffer every time.
 (use-package dired
   :init (put 'dired-find-alternate-file 'disabled nil)
