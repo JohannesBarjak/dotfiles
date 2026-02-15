@@ -3,12 +3,7 @@
     ./sound.nix
     ./networking.nix
     ./sysd-hardening.nix
-    ./snapper.nix
   ];
-
-  programs.firejail = {
-    enable = true;
-  };
 
   # Enable printing in my main pc.
   services.printing.enable = true;
