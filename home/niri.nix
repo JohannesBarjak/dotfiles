@@ -1,9 +1,4 @@
 {config, pkgs, rootPath, ...}: {
-  imports = [
-    ./wallpapers
-    /${rootPath}/home/waybar
-  ];
-
   home.packages = [
     pkgs.niri
     pkgs.nautilus               # Need it for working file picker.
@@ -16,7 +11,7 @@
 
     settings = {
       spawn-at-startup = [
-        { command = [ "${pkgs.swaybg}/bin/swaybg" "-i" "${config.wallpaper.path}" ]; }
+        { command = [ "${pkgs.swaybg}/bin/swaybg" "-i" "${config.stylix.image}" ]; }
         # Necessary for corectrl and  other privileged applications to work correctly.
         { command = [ "${pkgs.mate.mate-polkit}/libexec/polkit-mate-authentication-agent-1" ]; }
       ];
@@ -171,7 +166,7 @@
         };
       };
 
-      outputs."eDP-1".scale = 1.33;
+      outputs."eDP-1".scale = 1.25;
 
       input = {
         touchpad.natural-scroll = false;

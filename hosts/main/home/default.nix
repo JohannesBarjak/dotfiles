@@ -4,8 +4,6 @@
   programs.home-manager.enable = true;
 
   imports = [
-    ./desktop
-    ./theming.nix
     /${rootPath}/home
   ];
 

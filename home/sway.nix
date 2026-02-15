@@ -1,8 +1,4 @@
 {config, lib, pkgs, rootPath, ...}: {
-  imports = [
-    ./wallpapers
-    /${rootPath}/home/waybar
-  ];
   home.packages = [ pkgs.libnotify pkgs.jq ];
 
   wayland.windowManager.sway = {
@@ -30,8 +26,7 @@
       };
 
       output = {
-        "*".bg = "${config.wallpaper.path} fill";
-        "eDP-1".scale = "1.4";
+        "eDP-1".scale = "1.25";
       };
 
       window = {

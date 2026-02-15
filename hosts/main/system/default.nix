@@ -1,4 +1,4 @@
-{...}: {
+{rootPath, ...}: {
   imports = [
     ./sound.nix
     ./networking.nix
@@ -19,4 +19,7 @@
     nssmdns4 = true;
     openFirewall = true;
   };
+
+  # Set my wallpaper.
+  stylix.image = /${rootPath}/home/wallpapers/forest-stairs.jpg;
 }

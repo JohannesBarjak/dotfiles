@@ -1,6 +1,4 @@
 {config, pkgs, rootPath, ...}: {
-  imports = [ /${rootPath}/home/waybar ];
-
   xdg.portal = {
     enable = true;
     extraPortals = [
@@ -13,7 +11,7 @@
     enable = true;
     settings =
       builtins.readFile ./config.conf + (with config.lib.stylix.colors; ''
-        exec=${pkgs.swaybg}/bin/swaybg -i ${config.wallpaper.path}
+        exec=${pkgs.swaybg}/bin/swaybg -i ${config.stylix.image}
 
         rootcolor=0x${base00}ff
         bordercolor=0x${base03}ff

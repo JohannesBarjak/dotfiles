@@ -2,8 +2,16 @@
   imports = [
     ./emacs
     ./librewolf.nix
-    ./terminal.nix
+    ./mako.nix
     ./mango
+    ./niri.nix
+    ./rofi
+    ./sway.nix
+    ./swayidle.nix
+    ./swaylock.nix
+    ./terminal.nix
+    ./theming.nix
+    ./waybar
   ];
 
   home.packages = [

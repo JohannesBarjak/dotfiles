@@ -1,6 +1,4 @@
-{config, pkgs, ...}: {
-  imports = [ ./wallpapers ];
-
+{pkgs, config, ...}: {
   programs.swaylock = {
     enable = true;
     package = pkgs.swaylock-effects;
@@ -9,7 +7,7 @@
       clock = true;
       ignore-empty-password = true;
 
-      image = "${config.wallpaper.path}";
+      image = "${config.stylix.image}";
       indicator = true;
       indicator-radius = 70;
 
