@@ -99,7 +99,7 @@
     };
   };
 
-  # Install distrobox for greater package compatibility.
+  # Install distrobox for greater package availability.
   programs.distrobox.enable = true;
 
   xdg = {
@@ -120,26 +120,6 @@
 
         # Open text files using emacs.
         "text/plain" = "emacs.desktop";
-      };
-    };
-
-    desktopEntries = {
-      librewolf = {
-        exec = "librewolf";
-
-        name = "Librewolf";
-        genericName = "Web Browser";
-        icon = "librewolf";
-
-        mimeType
-          = [ "text/html" "text/xml" "application/xhtml+xml"
-              "application/vnd.mozilla.xul+xml" "x-scheme-handler/http"
-              "x-scheme-handler/https"
-        ];
-
-        startupNotify = true;
-        terminal = false;
-        type = "Application";
       };
     };
 
