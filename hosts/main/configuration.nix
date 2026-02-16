@@ -67,7 +67,7 @@
   boot.loader.systemd-boot.memtest86.enable = true;
 
   boot.kernelParams = [ "acpi_backlight=native" "quiet" "loglevel=3" ];
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_6_18; # Temporarily fix to 6.18 to prevent opensnitchd bug.
   boot.supportedFilesystems = [ "ntfs" ];
 
   boot.initrd.systemd.enable = true;
