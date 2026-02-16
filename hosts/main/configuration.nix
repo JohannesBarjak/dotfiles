@@ -9,6 +9,7 @@
       /${rootPath}/system/opensnitch.nix
       /${rootPath}/system/power.nix
       /${rootPath}/system/impermanence.nix
+      /${rootPath}/system/systemd-hardening.nix
     ];
 
   # Enable flakes.

@@ -2,7 +2,6 @@
   imports = [
     ./sound.nix
     ./networking.nix
-    ./sysd-hardening.nix
   ];
 
   # Enable printing in my main pc.
