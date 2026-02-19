@@ -24,6 +24,7 @@
       epkgs.orderless
       epkgs.puni
       epkgs.activities
+      epkgs.beframe
 
       # Integration with direnv.
       epkgs.envrc
