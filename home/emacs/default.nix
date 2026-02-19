@@ -37,7 +37,6 @@
       epkgs.bqn-mode
       epkgs.j-mode
       epkgs.racket-mode
-      epkgs.treesit-auto
       epkgs.treesit-grammars.with-all-grammars
 
       # Code completion plugins.

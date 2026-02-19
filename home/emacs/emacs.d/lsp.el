@@ -15,18 +15,6 @@
 (use-package envrc
   :hook (after-init . envrc-global-mode))
 
-;; Manage tree-sitter grammars.
-(use-package treesit-auto
-  :custom (treesit-auto-install 'prompt)
-
-  :config
-  ;; Extra tree-sitter language grammars.
-  (setq treesit-language-source-alist
-   '((kanata . ("https://github.com/postsolar/tree-sitter-kanata" "master" "src"))))
-
-  (treesit-auto-add-to-auto-mode-alist 'all)
-  (global-treesit-auto-mode))
-
 ;; Haskell mode configuration.
 (use-package haskell-ts-mode)
 
