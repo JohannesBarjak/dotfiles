@@ -21,6 +21,9 @@
         # Remember vpn state.
         "/etc/mullvad-vpn"
         "/var/cache/mullvad-vpn"
+
+        # If this directory is not persisted timers won't persist.
+        "/var/lib/systemd/timers"
       ];
 
       # Persist files.
