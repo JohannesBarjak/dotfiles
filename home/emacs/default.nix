@@ -23,6 +23,7 @@
       epkgs.expand-region
       epkgs.orderless
       epkgs.puni
+      epkgs.activities
 
       # Integration with direnv.
       epkgs.envrc

@@ -63,6 +63,7 @@
 
           # Emacs directories to persist.
           ".config/emacs/elpa"
+          ".config/emacs/persist"
         ];
 
         # User files.

@@ -121,6 +121,24 @@
   (tab-bar-mode)
   (tab-bar-history-mode))
 
+;; Activities provide workspaces to emacs.
+(use-package activities
+  :init
+  (activities-mode)
+  (activities-tabs-mode)
+
+  :bind
+  (:map personal-map
+        ("a n" . activities-new)
+        ("a d" . activities-define)
+        ("a a" . activities-resume)
+        ("a z" . activities-suspend)
+        ("a C-k" . activities-kill)
+        ("a RET" . activities-switch)
+        ("a b" . activities-switch-buffer)
+        ("a g" . activities-revert)
+        ("a l" . activities-list)))
+
 ;; Swap dired mode's default behavior to not open a new buffer every time.
 (use-package dired
   :init (put 'dired-find-alternate-file 'disabled nil)
