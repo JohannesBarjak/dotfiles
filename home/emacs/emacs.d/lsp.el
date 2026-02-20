@@ -33,7 +33,7 @@
   :custom (fira-code-mode-disabled-ligatures '("x")))
 
 ;; More language modes.
-(use-package nix-ts-mode :mode "\\.nix\\")
+(use-package nix-ts-mode :mode "\\.nix\\'")
 (use-package idris2-mode)
 (use-package racket-mode)
 
