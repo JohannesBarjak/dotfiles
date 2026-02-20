@@ -2,7 +2,6 @@
   imports = [
     ./emacs
     ./librewolf.nix
-    ./mako.nix
     ./mango
     ./niri.nix
     ./rofi

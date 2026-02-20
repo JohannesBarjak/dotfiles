@@ -44,36 +44,46 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, nixpkgs-stable, ... }@inputs: let rootPath = ./.; in {
-          nixosConfigurations.main = nixpkgs.lib.nixosSystem {
-            specialArgs = { inherit inputs rootPath; };
+  outputs = { nixpkgs, home-manager, nixpkgs-stable, ... }@inputs:
+let
+  rootPath = ./.;
+  importTree = dir: let toPath = name: dir + "/${name}"; in
+    nixpkgs.lib.concatLists (nixpkgs.lib.mapAttrsToList (
+      name: type:
+        if type == "directory" then importTree (toPath name)
+        else if nixpkgs.lib.hasSuffix ".nix" name then [ (toPath name) ]
+        else []
+    ) (builtins.readDir dir));
+in {
+  nixosConfigurations.main = nixpkgs.lib.nixosSystem {
+    specialArgs = { inherit inputs rootPath; user = "johannes"; };
 
-            modules = [
-              ./hosts/main/configuration.nix
+    modules = [
+      ./hosts/main/configuration.nix
 
-              inputs.stylix.nixosModules.stylix
-              inputs.impermanence.nixosModules.impermanence
-              inputs.mango.nixosModules.mango
-              home-manager.nixosModules.home-manager {
-                home-manager.useGlobalPkgs = true;
-                home-manager.useUserPackages = true;
-                home-manager.users.johannes = {
-                  imports = [
-                    ./hosts/main/home
-                    inputs.niri.homeModules.niri
-                    inputs.flatpaks.homeModules.default
-                    inputs.mango.hmModules.mango
-                  ];
-                };
-
-                # Add firefox addons to home manager arguments.
-                home-manager.extraSpecialArgs = { inherit inputs rootPath; };
-              }
-            ];
-          };
-
-          nixosConfigurations.dell = nixpkgs-stable.lib.nixosSystem {
-            modules = [ ./hosts/dell/configuration.nix ];
-          };
+      inputs.stylix.nixosModules.stylix
+      inputs.impermanence.nixosModules.impermanence
+      inputs.mango.nixosModules.mango
+      home-manager.nixosModules.home-manager {
+        home-manager.useGlobalPkgs = true;
+        home-manager.useUserPackages = true;
+        home-manager.users.johannes = {
+          imports = [
+            ./hosts/main/home
+            inputs.niri.homeModules.niri
+            inputs.flatpaks.homeModules.default
+            inputs.mango.hmModules.mango
+          ];
         };
+
+        # Add firefox addons to home manager arguments.
+        home-manager.extraSpecialArgs = { inherit inputs rootPath; };
+      }
+    ] ++ (importTree ./modules);
+  };
+
+  nixosConfigurations.dell = nixpkgs-stable.lib.nixosSystem {
+    modules = [ ./hosts/dell/configuration.nix ];
+  };
+};
 }
