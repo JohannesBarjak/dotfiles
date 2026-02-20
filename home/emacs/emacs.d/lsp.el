@@ -32,10 +32,9 @@
 
   :custom (fira-code-mode-disabled-ligatures '("x")))
 
-;; Idris2 mode.
+;; More language modes.
+(use-package nix-ts-mode :mode "\\.nix\\")
 (use-package idris2-mode)
-
-;; Racket mode.
 (use-package racket-mode)
 
 ;; Install mode for lean4 proof assistant.
