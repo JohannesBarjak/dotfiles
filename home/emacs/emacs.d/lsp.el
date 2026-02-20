@@ -21,14 +21,10 @@
 ;; Fira Code font for Emacs.
 ;; Remember to run fira-code-mode-install-fonts so that ligatures are rendered.
 (use-package fira-code-mode
-  :init (add-to-list 'warning-suppress-types '(fira-code-ligatures))
   :hook
-  (after-make-frame-functions
-   . (lambda (frame)
-       (with-selected-frame frame
-         (if (display-graphic-p)
-             (global-fira-code-mode 1)
-           (global-fira-code-mode -1)))))
+  (prog-mode
+   . (lambda () (when (display-graphic-p)
+             (fira-code-mode 1))))
 
   :custom (fira-code-mode-disabled-ligatures '("x")))
 
