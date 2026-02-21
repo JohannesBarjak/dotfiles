@@ -28,4 +28,9 @@
   home.file.".XCompose" = {
     source = ./XCompose;
   };
+
+  programs.anki = {
+    enable = true;
+    addons = with pkgs.ankiAddons; [ review-heatmap ];
+  };
 }

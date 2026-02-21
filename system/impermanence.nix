@@ -49,6 +49,7 @@
           ".local/share/direnv"
           ".local/share/zoxide"
           ".local/share/atuin"
+          ".local/share/Anki2"
 
           ".local/share/fonts"    # Important for fira code in Emacs.
 
