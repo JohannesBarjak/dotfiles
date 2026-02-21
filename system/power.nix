@@ -14,7 +14,6 @@
     package = pkgs.ananicy-cpp;
 
     rulesProvider = pkgs.ananicy-rules-cachyos;
-    extraRules = [{ name = "mango"; type = "LowLatency_RT"; }];
   };
 
   services.auto-cpufreq.enable = true;

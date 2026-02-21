@@ -155,8 +155,6 @@
 
   stylix.targets.plymouth.enable = false;
 
-  programs.mango.enable = true;
-
   environment.sessionVariables = {
     TERMINAL = "kitty";
 
