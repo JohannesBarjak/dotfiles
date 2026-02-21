@@ -47,16 +47,15 @@
   outputs = { nixpkgs, home-manager, nixpkgs-stable, ... }@inputs:
 let
   rootPath = ./.;
-  importTree = dir: let toPath = name: dir + "/${name}"; in
-    nixpkgs.lib.concatLists (nixpkgs.lib.mapAttrsToList (
-      name: type:
-        if type == "directory" then importTree (toPath name)
-        else if nixpkgs.lib.hasSuffix ".nix" name then [ (toPath name) ]
-        else []
-    ) (builtins.readDir dir));
+  importTree = dir: nixpkgs.lib.concatLists (nixpkgs.lib.mapAttrsToList (
+    name: type:
+      if type == "directory" then importTree (dir + "/${name}")
+      else if nixpkgs.lib.hasSuffix ".nix" name then [ (dir + "/${name}") ]
+      else []
+  ) (builtins.readDir dir));
 in {
   nixosConfigurations.main = nixpkgs.lib.nixosSystem {
-    specialArgs = { inherit inputs rootPath; user = "johannes"; };
+    specialArgs = { inherit inputs rootPath; };
 
     modules = [
       ./hosts/main/configuration.nix

@@ -224,6 +224,8 @@
 
   services.journald.extraConfig = "SystemMaxUse=50M";
 
+  modules.user = "johannes";
+
   modules.desktop.wm = "mango";
   modules.desktop.services.enable = true;
 
