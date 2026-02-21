@@ -2,12 +2,9 @@
   imports = [
     ./emacs
     ./librewolf.nix
-    ./mango
     ./niri.nix
     ./rofi
     ./sway.nix
-    ./swayidle.nix
-    ./swaylock.nix
     ./terminal.nix
     ./theming.nix
     ./waybar

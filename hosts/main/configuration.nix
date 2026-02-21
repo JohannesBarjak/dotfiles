@@ -226,6 +226,9 @@
 
   services.journald.extraConfig = "SystemMaxUse=50M";
 
+  modules.desktop.wm = "mango";
+  modules.desktop.services.enable = true;
+
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];

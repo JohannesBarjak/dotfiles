@@ -16,9 +16,6 @@
   programs.dconf.enable = true;
   security.polkit.enable = true;
 
-  # Allow unlocking with swaylock.
-  security.pam.services.swaylock = {};
-
   # Enable flatpak.
   services.flatpak.enable = true;
 }
