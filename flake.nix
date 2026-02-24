@@ -47,12 +47,17 @@
   outputs = { nixpkgs, home-manager, nixpkgs-stable, ... }@inputs:
 let
   rootPath = ./.;
-  importTree = dir: nixpkgs.lib.concatLists (nixpkgs.lib.mapAttrsToList (
+  importTree = dir: let l = nixpkgs.lib; in l.concatLists (l.mapAttrsToList (
     name: type:
       if type == "directory" then importTree (dir + "/${name}")
-      else if nixpkgs.lib.hasSuffix ".nix" name then [ (dir + "/${name}") ]
+      else if l.hasSuffix ".nix" name && name != "schema.nix" then [ (dir + "/${name}") ]
       else []
   ) (builtins.readDir dir));
+
+  modules = nixpkgs.lib.evalModules {
+    specialArgs = { inherit inputs; };
+    modules = [ ./modules/schema.nix ] ++ (importTree ./modules);
+  };
 in {
   nixosConfigurations.main = nixpkgs.lib.nixosSystem {
     specialArgs = { inherit inputs rootPath; };
@@ -72,13 +77,20 @@ in {
             inputs.niri.homeModules.niri
             inputs.flatpaks.homeModules.default
             inputs.mango.hmModules.mango
+
+            modules.config.modules."wm/mango".home
+            modules.config.modules."desktop/services".home
           ];
         };
 
         # Add firefox addons to home manager arguments.
         home-manager.extraSpecialArgs = { inherit inputs rootPath; };
       }
-    ] ++ (importTree ./modules);
+      modules.config.modules.hm.nixos
+      modules.config.modules.wm.nixos
+      modules.config.modules."wm/mango".nixos
+      modules.config.modules."desktop/services".nixos
+    ];
   };
 
   nixosConfigurations.dell = nixpkgs-stable.lib.nixosSystem {
