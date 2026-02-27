@@ -18,10 +18,6 @@
     extraOptions = "experimental-features = nix-command flakes";
   };
 
-  nixpkgs.overlays = [
-    inputs.emacs-overlay.overlays.default
-  ];
-
   users.mutableUsers = false;
   users.users.root.hashedPasswordFile = "/persistent/passwords/root";
   users.users.johannes.hashedPasswordFile = "/persistent/passwords/root";

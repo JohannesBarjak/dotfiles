@@ -47,15 +47,12 @@
   outputs = { nixpkgs, home-manager, nixpkgs-stable, ... }@inputs:
 let
   rootPath = ./.;
-  importTree = dir: let l = nixpkgs.lib; in l.concatLists (l.mapAttrsToList (
-    name: type:
-      if type == "directory" then importTree (dir + "/${name}")
-      else if l.hasSuffix ".nix" name && name != "schema.nix" then [ (dir + "/${name}") ]
-      else []
-  ) (builtins.readDir dir));
+  importTree = dir: let l = nixpkgs.lib;
+  in l.filter (p: l.hasSuffix "nix" (toString p) && (baseNameOf p) != "schema.nix")
+    (l.filesystem.listFilesRecursive dir);
 
   modules = nixpkgs.lib.evalModules {
-    specialArgs = { inherit inputs; };
+    specialArgs = { inherit inputs rootPath; };
     modules = [ ./modules/schema.nix ] ++ (importTree ./modules);
   };
 in {
@@ -80,6 +77,7 @@ in {
 
             modules.config.modules."wm/mango".home
             modules.config.modules."desktop/services".home
+            modules.config.modules.emacs.home
           ];
         };
 
@@ -90,6 +88,7 @@ in {
       modules.config.modules.wm.nixos
       modules.config.modules."wm/mango".nixos
       modules.config.modules."desktop/services".nixos
+      modules.config.modules.emacs.nixos
     ];
   };
 

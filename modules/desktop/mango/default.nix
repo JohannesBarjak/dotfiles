@@ -1,5 +1,5 @@
 {config, lib, rootPath, ...}: let cfg = config.modules; in {
-  modules."wm/mango".nixos = lib.mkIf (cfg.wm == "mango") {
+  modules."wm/mango".nixos = {
     # Globally enable mango.
     programs.mango.enable = true;
 
@@ -9,7 +9,7 @@
     ];
   };
 
-  modules."wm/mango".home = {config, pkgs, ...}: lib.mkIf (cfg.wm == "mango") {
+  modules."wm/mango".home = {config, pkgs, ...}: {
     # Portals to use with mango.
     xdg.portal = {
       enable = true;

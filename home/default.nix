@@ -1,6 +1,5 @@
 {pkgs, ...}: {
   imports = [
-    ./emacs
     ./librewolf.nix
     ./niri.nix
     ./rofi
