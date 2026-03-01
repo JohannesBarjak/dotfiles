@@ -52,22 +52,5 @@
 
       autostart_sh = builtins.readFile ./autostart.sh;
     };
-
-    # Display scaling service.
-    services.shikane = {
-      enable = true;
-      settings.profile = [
-        {
-          name = "Builtin laptop monitor.";
-          output = [
-            {
-              match = "eDP-1";
-              enable = true;
-              scale = 1.25;
-            }
-          ];
-        }
-      ];
-    };
   };
 }
