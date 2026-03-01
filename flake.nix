@@ -55,6 +55,9 @@ let
     specialArgs = { inherit inputs rootPath; };
     modules = [ ./modules/schema.nix ] ++ (importTree ./modules);
   };
+
+  homeModules = ms: map (name: modules.config.modules.${name}.home) ms;
+  nixosModules = ms: map (name: modules.config.modules.${name}.nixos) ms;
 in {
   nixosConfigurations.main = nixpkgs.lib.nixosSystem {
     specialArgs = { inherit inputs rootPath; };
@@ -73,22 +76,17 @@ in {
             ./hosts/main/home
             inputs.niri.homeModules.niri
             inputs.flatpaks.homeModules.default
-            inputs.mango.hmModules.mango
-
-            modules.config.modules."wm/mango".home
-            modules.config.modules."desktop/services".home
-            modules.config.modules.emacs.home
+          ] ++ homeModules [
+            "wm/mango" "desktop/services" "emacs" "opensnitch"
           ];
         };
 
         # Add firefox addons to home manager arguments.
         home-manager.extraSpecialArgs = { inherit inputs rootPath; };
       }
-      modules.config.modules.hm.nixos
-      modules.config.modules.wm.nixos
-      modules.config.modules."wm/mango".nixos
-      modules.config.modules."desktop/services".nixos
-      modules.config.modules.emacs.nixos
+    ] ++ nixosModules [
+      "hm" "wm" "wm/mango"
+      "desktop/services" "emacs" "opensnitch"
     ];
   };
 

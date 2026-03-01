@@ -9,7 +9,9 @@
     ];
   };
 
-  modules."wm/mango".home = {config, pkgs, ...}: {
+  modules."wm/mango".home = {inputs, config, pkgs, ...}: {
+    imports = [ inputs.mango.hmModules.mango ];
+
     # Portals to use with mango.
     xdg.portal = {
       enable = true;

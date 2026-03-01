@@ -11,7 +11,6 @@
     wineWow64Packages.waylandFull winetricks
     bluetuith
     musescore
-    opensnitch-ui
     (hunspell.withDicts (d: [ d.en-us-large ]))
     zip unzip
     xournalpp
@@ -25,9 +24,6 @@
 
     podman podman-tui
   ];
-
-  # Opensnitch-ui provides the network request popups.
-  services.opensnitch-ui.enable = true;
 
   home.sessionVariables = {
     GTK_THEME = config.gtk.theme.name;
