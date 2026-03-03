@@ -47,17 +47,18 @@
   outputs = { nixpkgs, home-manager, nixpkgs-stable, ... }@inputs:
 let
   rootPath = ./.;
-  importTree = dir: let l = nixpkgs.lib;
-  in l.filter (p: l.hasSuffix "nix" (toString p) && (baseNameOf p) != "schema.nix")
+  l = nixpkgs.lib;
+  importTree = dir:
+  l.filter (p: l.hasSuffix "nix" (toString p) && (baseNameOf p) != "schema.nix")
     (l.filesystem.listFilesRecursive dir);
 
-  modules = nixpkgs.lib.evalModules {
+  modules = l.evalModules {
     specialArgs = { inherit inputs rootPath; };
     modules = [ ./modules/schema.nix ] ++ (importTree ./modules);
   };
 
-  homeModules = ms: map (name: modules.config.modules.${name}.home) ms;
-  nixosModules = ms: map (name: modules.config.modules.${name}.nixos) ms;
+  homeModules = l.mapAttrsToList (_: val: val.home) modules.config.modules;
+  nixosModules = l.mapAttrsToList (_: val: val.nixos) modules.config.modules;
 in {
   nixosConfigurations.main = nixpkgs.lib.nixosSystem {
     specialArgs = { inherit inputs rootPath; };
@@ -67,7 +68,6 @@ in {
 
       inputs.stylix.nixosModules.stylix
       inputs.impermanence.nixosModules.impermanence
-      inputs.mango.nixosModules.mango
       home-manager.nixosModules.home-manager {
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
@@ -76,18 +76,13 @@ in {
             ./hosts/main/home
             inputs.niri.homeModules.niri
             inputs.flatpaks.homeModules.default
-          ] ++ homeModules [
-            "wm/mango" "desktop/services" "emacs" "opensnitch"
-          ];
+          ] ++ homeModules;
         };
 
         # Add firefox addons to home manager arguments.
         home-manager.extraSpecialArgs = { inherit inputs rootPath; };
       }
-    ] ++ nixosModules [
-      "hm" "wm" "wm/mango"
-      "desktop/services" "emacs" "opensnitch"
-    ];
+    ] ++ nixosModules;
   };
 
   nixosConfigurations.dell = nixpkgs-stable.lib.nixosSystem {

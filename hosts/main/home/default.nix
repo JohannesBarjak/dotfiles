@@ -126,8 +126,6 @@
     };
   };
 
-  services.poweralertd.enable = true;
-
   # Enabled this service for better bluetooth control of audio devices.
   services.mpris-proxy.enable = true;
 

@@ -1,5 +1,6 @@
-{config, lib, rootPath, ...}: let cfg = config.modules; in {
-  modules."wm/mango".nixos = {
+{config, rootPath, ...}: let cfg = config.modules; in {
+  modules."wm/mango".nixos = {inputs, ...}: {
+    imports = [ inputs.mango.nixosModules.mango ];
     # Globally enable mango.
     programs.mango.enable = true;
 
