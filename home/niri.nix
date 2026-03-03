@@ -13,7 +13,7 @@
       spawn-at-startup = [
         { command = [ "${pkgs.swaybg}/bin/swaybg" "-i" "${config.stylix.image}" ]; }
         # Necessary for corectrl and  other privileged applications to work correctly.
-        { command = [ "${pkgs.mate.mate-polkit}/libexec/polkit-mate-authentication-agent-1" ]; }
+        { command = [ "${pkgs.mate-polkit}/libexec/polkit-mate-authentication-agent-1" ]; }
       ];
 
       binds = with config.lib.niri.actions; {
