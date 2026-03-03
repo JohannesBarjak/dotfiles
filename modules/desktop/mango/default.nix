@@ -1,5 +1,5 @@
 {config, rootPath, ...}: let cfg = config.modules; in {
-  modules."wm/mango".nixos = {inputs, ...}: {
+  modules.mango.nixos = {inputs, ...}: {
     imports = [ inputs.mango.nixosModules.mango ];
     # Globally enable mango.
     programs.mango.enable = true;
@@ -10,7 +10,7 @@
     ];
   };
 
-  modules."wm/mango".home = {inputs, config, pkgs, ...}: {
+  modules.mango.home = {inputs, config, pkgs, ...}: {
     imports = [ inputs.mango.hmModules.mango ];
 
     # Portals to use with mango.

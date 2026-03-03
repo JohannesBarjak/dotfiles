@@ -1,11 +1,6 @@
 {pkgs, ...}: {
   imports = [ ./display-manager.nix ];
 
-  programs.sway = {
-    enable = true;
-    wrapperFeatures.gtk = true;
-  };
-
   programs.waybar.enable = true;
 
   xdg.portal = {

@@ -3,7 +3,6 @@
     ./librewolf.nix
     ./niri.nix
     ./rofi
-    ./sway.nix
     ./terminal.nix
     ./theming.nix
     ./waybar
