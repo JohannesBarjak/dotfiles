@@ -166,8 +166,6 @@
         };
       };
 
-      outputs."eDP-1".scale = 1.25;
-
       input = {
         touchpad.natural-scroll = false;
 

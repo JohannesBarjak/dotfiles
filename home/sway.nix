@@ -25,10 +25,6 @@
         };
       };
 
-      output = {
-        "eDP-1".scale = "1.25";
-      };
-
       window = {
         titlebar = false;
 
