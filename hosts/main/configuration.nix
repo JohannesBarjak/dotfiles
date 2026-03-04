@@ -4,7 +4,6 @@
       ./hardware-configuration.nix
       ./system
       /${rootPath}/setups/main
-
       /${rootPath}/system/kanata
       /${rootPath}/system/impermanence.nix
       /${rootPath}/system/systemd-hardening.nix

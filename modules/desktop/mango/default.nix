@@ -45,12 +45,12 @@
         bind=NONE,XF86AudioRaiseVolume,spawn,${config.programs.nushell.package}/bin/nu ${/${rootPath}/home/scripts/volume.nu} --inc
         bind=NONE,XF86AudioLowerVolume,spawn,${config.programs.nushell.package}/bin/nu ${/${rootPath}/home/scripts/volume.nu} --dec
 
-        bind=SUPER+ALT,j,spawn,${pkgs.warpd}/bin/warpd --hint
-        bind=SUPER+ALT,h,spawn,${pkgs.warpd}/bin/warpd --normal
-        bind=SUPER+ALT,g,spawn,${pkgs.warpd}/bin/warpd --grid
+        bind=Super+Alt,j,spawn,${pkgs.warpd}/bin/warpd --hint
+        bind=Super+Alt,h,spawn,${pkgs.warpd}/bin/warpd --normal
+        bind=Super+Alt,g,spawn,${pkgs.warpd}/bin/warpd --grid
 
-        bind=SUPER,b,spawn,${config.programs.librewolf.package}/bin/librewolf
-        bind=SUPER+SHIFT,b,spawn,${config.programs.librewolf.package}/bin/librewolf --private-window
+        bind=Super,b,spawn,${config.programs.librewolf.package}/bin/librewolf
+        bind=Super+Shift,b,spawn,${config.programs.librewolf.package}/bin/librewolf --private-window
       '');
 
       autostart_sh = builtins.readFile ./autostart.sh;
