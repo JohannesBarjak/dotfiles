@@ -75,5 +75,10 @@ in {
 
     # Opensnitch-ui provides the network request popups.
     services.opensnitch-ui.enable = true;
+
+    systemd.user.services.opensnitch-ui.Service = {
+      MemoryHigh = "30M";
+      MemoryAccounting = true;
+    };
   };
 }
