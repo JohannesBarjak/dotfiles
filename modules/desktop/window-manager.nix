@@ -1,8 +1,13 @@
 {lib, ...}: {
-  modules.wm.nixos = {
+  modules.wm.nixos = {...}: {
     options.stgs.user.wm = lib.mkOption {
       type = lib.types.enum [ "mango" "sway" "niri" ];
       description = "Which window manager to enable.";
+    };
+
+    config = {
+      programs.dconf.enable = true;
+      security.polkit.enable = true;
     };
   };
 

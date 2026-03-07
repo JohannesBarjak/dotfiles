@@ -3,7 +3,6 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./system
-      /${rootPath}/setups/main
       /${rootPath}/system/impermanence.nix
       /${rootPath}/system/systemd-hardening.nix
     ];

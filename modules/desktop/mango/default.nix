@@ -1,6 +1,8 @@
 {config, rootPath, ...}: let cfg = config.modules; in {
-  modules.mango.nixos = {inputs, ...}: {
+  modules.mango.nixos = {inputs, pkgs, ...}: {
     imports = [ inputs.mango.nixosModules.mango ];
+    environment.systemPackages = [ pkgs.wl-kbptr ];
+
     # Globally enable mango.
     programs.mango.enable = true;
 
@@ -38,12 +40,12 @@
 
         exec=${config.xdg.configHome}/mango/autostart.sh
 
-        bind=NONE,XF86MonBrightnessUp,spawn,brightnessctl set 5%+
-        bind=NONE,XF86MonBrightnessDown,spawn,brightnessctl set 5%-
+        bind=None,XF86MonBrightnessUp,spawn,brightnessctl set 5%+
+        bind=None,XF86MonBrightnessDown,spawn,brightnessctl set 5%-
 
-        bind=NONE,XF86AudioMute,spawn,${config.programs.nushell.package}/bin/nu ${/${rootPath}/home/scripts/volume.nu} --toggle=mute
-        bind=NONE,XF86AudioRaiseVolume,spawn,${config.programs.nushell.package}/bin/nu ${/${rootPath}/home/scripts/volume.nu} --inc
-        bind=NONE,XF86AudioLowerVolume,spawn,${config.programs.nushell.package}/bin/nu ${/${rootPath}/home/scripts/volume.nu} --dec
+        bind=None,XF86AudioMute,spawn,${config.programs.nushell.package}/bin/nu ${/${rootPath}/home/scripts/volume.nu} --toggle=mute
+        bind=None,XF86AudioRaiseVolume,spawn,${config.programs.nushell.package}/bin/nu ${/${rootPath}/home/scripts/volume.nu} --inc
+        bind=None,XF86AudioLowerVolume,spawn,${config.programs.nushell.package}/bin/nu ${/${rootPath}/home/scripts/volume.nu} --dec
 
         bind=Super,b,spawn,${config.programs.librewolf.package}/bin/librewolf
         bind=Super+Shift,b,spawn,${config.programs.librewolf.package}/bin/librewolf --private-window
