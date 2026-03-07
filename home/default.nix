@@ -2,7 +2,6 @@
   imports = [
     ./librewolf.nix
     ./niri.nix
-    ./rofi
     ./terminal.nix
     ./theming.nix
   ];
