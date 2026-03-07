@@ -5,7 +5,6 @@
     ./rofi
     ./terminal.nix
     ./theming.nix
-    ./waybar
   ];
 
   home.packages = [
