@@ -144,6 +144,7 @@
   stylix.enable = true;
   stylix.autoEnable = true;
   stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/everforest-dark-medium.yaml";
+  stylix.opacity.popups = 0.85;
 
   stylix.targets.plymouth.enable = false;
 

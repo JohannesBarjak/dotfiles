@@ -5,15 +5,13 @@
   };
 
   modules."desktop/services".home = {config, pkgs, ...}: {
-    services.mako = {
+    # A minimal, keyboard driven notification manager.
+    services.fnott = {
       enable = true;
-
       settings = {
-        text-alignment = "center";
-        icon-path = "${config.gtk.iconTheme.package}/share/icons/${config.gtk.iconTheme.name}";
-
-        # Add round borders.
-        border-radius = 5;
+        main = {
+          border-radius = 10;
+        };
       };
     };
 
