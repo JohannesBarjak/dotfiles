@@ -1,12 +1,12 @@
 {...}: {
-  modules.flatpak.nixos = {inputs, ...}: {
-    imports = [ inputs.flatpaks.homeModules.default ];
-
+  modules.flatpak.nixos = {...}: {
     # Enable flatpak.
     services.flatpak.enable = true;
   };
 
-  modules.flatpak.home = {config, ...}: {
+  modules.flatpak.home = {inputs, config, ...}: {
+    imports = [ inputs.flatpaks.homeModules.default ];
+
     # Configure flatpak packages.
     services.flatpak = {
       enable = true;
