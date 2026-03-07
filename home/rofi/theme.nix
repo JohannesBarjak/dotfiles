@@ -6,10 +6,12 @@
     location = mkLiteral "center";
     anchor = mkLiteral "center";
 
-    width = mkLiteral "640px";
-    height = mkLiteral "480px";
+    width = mkLiteral "520px";
+    height = mkLiteral "390px";
 
+    border = mkLiteral "1px";
     border-radius = mkLiteral "10px";
+
     orientation = mkLiteral "horizontal";
     spacing = mkLiteral "0";
 
@@ -34,16 +36,13 @@
 
   inputbar = {
     padding = mkLiteral "14px";
-
-    border = mkLiteral "1px";
     border-radius = mkLiteral "10px 10px 0px 0px";
+
     children = [ "entry" ];
   };
 
   listview = {
     padding = mkLiteral "8px";
-
-    border = mkLiteral "1px";
     border-radius = mkLiteral "0px 0px 10px 10px";
 
     dynamic = false;
@@ -60,6 +59,9 @@
 
     vertical-align = mkLiteral "0.5";
     margin = mkLiteral "0 10 0 0";
+
+    # Necessary to maintain a consistent color through with the element box.
+    background-color = mkLiteral "transparent";
   };
 
   button = {
