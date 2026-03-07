@@ -76,11 +76,6 @@
           "${mod}+Period" = "exec ${pkgs.sway-overfocus}/bin/sway-overfocus group-rw group-dw";
           "${mod}+Comma"  = "exec ${pkgs.sway-overfocus}/bin/sway-overfocus group-lw group-uw";
 
-          # Add hints from warpd.
-          "${mod}+m" = "exec ${pkgs.warpd}/bin/warpd --hint";
-          "${mod}+c" = "exec ${pkgs.warpd}/bin/warpd --grid";
-          "${mod}+x" = "exec ${pkgs.warpd}/bin/warpd --normal";
-
           # Add binding for focus on child.
           "${mod}+s" = "focus child";
           "${mod}+Ctrl+s" = "exec ${config.programs.nushell.package}/bin/nu ${/${rootPath}/home/scripts/sway-focus_visible.nu}";

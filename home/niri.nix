@@ -23,11 +23,6 @@
         "Mod+B".action = spawn [ "${config.programs.librewolf.package}/bin/librewolf" ];
         "Mod+Shift+B".action = spawn [ "${config.programs.librewolf.package}/bin/librewolf" "--private-window" ];
 
-        # Add useful warpd commands to control the mouse using the keyboard.
-        "Mod+G".action = spawn [ "${pkgs.warpd}/bin/warpd" "--grid"   ];
-        "Mod+N".action = spawn [ "${pkgs.warpd}/bin/warpd" "--normal" ];
-        "Mod+M".action = spawn [ "${pkgs.warpd}/bin/warpd" "--hint"   ];
-
         # keybindings to focus on workspaces using numbers.
         "Mod+1".action.focus-workspace = 1;
         "Mod+2".action.focus-workspace = 2;
