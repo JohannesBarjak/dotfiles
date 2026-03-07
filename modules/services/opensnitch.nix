@@ -77,7 +77,7 @@ in {
     services.opensnitch-ui.enable = true;
 
     systemd.user.services.opensnitch-ui.Service = {
-      MemoryHigh = "30M";
+      MemoryHigh = "50M";
       MemoryAccounting = true;
     };
   };
