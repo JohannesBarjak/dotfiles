@@ -75,7 +75,6 @@ in {
           imports = [
             ./hosts/main/home
             inputs.niri.homeModules.niri
-            inputs.flatpaks.homeModules.default
           ] ++ homeModules;
         };
 

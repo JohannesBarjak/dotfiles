@@ -3,7 +3,6 @@
 
   imports = [
     ./desktop
-    ./flatpak-workaround.nix
   ];
 
   # Add an overlay for warpd.
