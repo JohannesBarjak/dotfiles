@@ -21,89 +21,73 @@
     programs.emacs = {
       enable = true;
 
-      extraPackages = epkgs: [
+      extraPackages = epkgs: with epkgs; [
         # Navigation and selection plugins for Emacs.
-        epkgs.avy
-        epkgs.consult
-        epkgs.vertico
-        epkgs.embark
-        epkgs.embark-consult
-        epkgs.expand-region
-        epkgs.orderless
-        epkgs.puni
-        epkgs.activities
-        epkgs.beframe
+        avy
+        consult
+        vertico
+        embark
+        embark-consult
+        expand-region
+        orderless
+        puni
+        activities
+        beframe
 
         # Integration with direnv.
-        epkgs.envrc
+        envrc
 
         # Language modes.
-        epkgs.idris2-mode
-        epkgs.haskell-ts-mode
-        epkgs.nix-ts-mode
-        epkgs.markdown-mode
-        epkgs.nushell-mode
-        epkgs.uiua-ts-mode
-        epkgs.bqn-mode
-        epkgs.j-mode
-        epkgs.racket-mode
-        epkgs.treesit-grammars.with-all-grammars
+        idris2-mode
+        haskell-ts-mode
+        nix-ts-mode
+        markdown-mode
+        nushell-mode
+        uiua-ts-mode
+        bqn-mode
+        j-mode
+        racket-mode
+        treesit-grammars.with-all-grammars
 
         # Code completion plugins.
-        epkgs.corfu
-        epkgs.yasnippet
+        corfu
+        yasnippet
 
         # Editing plugins.
-        epkgs.wgrep
-        epkgs.multiple-cursors
+        wgrep
+        multiple-cursors
 
         # Documentation plugins.
-        epkgs.marginalia
-        epkgs.eldoc-box
-        epkgs.consult-hoogle
+        marginalia
+        eldoc-box
+        consult-hoogle
 
         # Terminal related packages.
-        epkgs.eat
-        epkgs.kkp
+        eat
+        kkp
 
         # Git.
-        epkgs.magit
-        epkgs.magit-delta
-        epkgs.git-gutter
+        magit
+        magit-delta
+        git-gutter
 
         # Misc.
-        epkgs.zoom
-        epkgs.pandoc-mode
-        epkgs.vundo
-        epkgs.try
-        (epkgs.melpaBuild {
-          ename = "reader";
-          pname = "emacs-reader";
-          version = "20250629";
-          src = pkgs.fetchFromGitea {
-            domain = "codeberg.org";
-            owner = "divyaranjan";
-            repo = "emacs-reader";
-            rev = "2d95199bbb0f2c488f8d5d1ae8e9dc2de937f430";
-            hash = "sha256-rZ+1PgRS68QN0yXdYyEJafJmbCceaKeDQhT+GfsPiFA=";
-          };
-          files = ''(:defaults "render-core.so")'';
-          nativeBuildInputs = [ pkgs.pkg-config ];
-          buildInputs = with pkgs; [ gcc mupdf gnumake pkg-config ];
-          preBuild = "make clean all";
-        })
-
+        zoom
+        pandoc-mode
+        vundo
+        try
+        pdf-tools
 
         # Latex.
-        epkgs.auctex
-        epkgs.cdlatex
-        epkgs.org-fragtog
+        auctex
+        cdlatex
+        org-fragtog
 
         # Themes.
-        epkgs.doom-themes
-        epkgs.base16-theme
-        epkgs.org-superstar
-        epkgs.fira-code-mode
+        doom-themes
+        base16-theme
+        org-superstar
+        fira-code-mode
       ];
 
       package = (pkgs.emacs-igc-pgtk.overrideAttrs (prev: {

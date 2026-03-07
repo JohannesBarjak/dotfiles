@@ -43,6 +43,8 @@
   (nael-mode . eglot-ensure)
   (nael-mode . abbrev-mode))
 
+(use-package pdf-tools)
+
 ;; Uiua mode.
 (use-package uiua-ts-mode :mode "\\.ua\\'")
 
