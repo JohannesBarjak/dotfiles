@@ -1,7 +1,4 @@
-{config, lib, ...}: {
-  options.impermanence.user = lib.mkOption {
-    type = lib.types.str;
-  };
+{config, ...}: {
   config = {
     environment.persistence."/persistent" = {
       hideMounts = true;
@@ -31,7 +28,7 @@
         "/etc/machine-id"
       ];
 
-      users.${config.impermanence.user} = {
+      users.${config.stgs.user.name} = {
         # User directories and subdirectories.
         directories = [
           # Standard user directories.

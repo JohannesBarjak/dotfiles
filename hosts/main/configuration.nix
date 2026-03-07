@@ -18,9 +18,6 @@
   users.users.root.hashedPasswordFile = "/persistent/passwords/root";
   users.users.johannes.hashedPasswordFile = "/persistent/passwords/root";
 
-  # Set username for home impermanence config.
-  impermanence.user = "johannes";
-
   # Enable zram.
   zramSwap = {
     enable = true;
@@ -217,8 +214,8 @@
 
   services.journald.extraConfig = "SystemMaxUse=50M";
 
-  modules.user = "johannes";
-  modules.wm = "mango";
+  stgs.user.name = "johannes";
+  stgs.user.wm = "mango";
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

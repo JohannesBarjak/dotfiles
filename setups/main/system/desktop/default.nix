@@ -1,6 +1,4 @@
 {pkgs, ...}: {
-  imports = [ ./display-manager.nix ];
-
   xdg.portal = {
     enable = true;
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
