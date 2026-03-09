@@ -36,6 +36,7 @@ window#waybar {
 #idle_inhibitor,
 #battery,
 #mode,
+#mango_keymode,
 #tray,
 #custom-power {
   padding: 0.2em 0.5em;

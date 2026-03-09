@@ -15,7 +15,7 @@
           default = "";
         }; in {
           layer = "top";
-          modules-left = [ "sway/workspaces" "niri/workspaces" "ext/workspaces" "sway/mode" ];
+          modules-left = [ "ext/workspaces" "sway/mode" "custom/mango_keymode" ];
           modules-center = [ "clock" ];
           modules-right = [ "tray" "idle_inhibitor" "wireplumber" "network" "battery" "custom/power" ];
 
@@ -31,17 +31,12 @@
             max-length = 50;
           };
 
+          "custom/mango_keymode" = {
+            exec = "${pkgs.mangowc}/bin/mmsg -w -b | while read -r _ _ w; do echo $w; done;";
+            format = " {}";
+          };
+
           "ext/workspaces" = {
-            format = "{icon}";
-            format-icons = workspace_icons;
-          };
-
-          "niri/workspaces" = {
-            format = "{icon}";
-            format-icons = workspace_icons;
-          };
-
-          "sway/workspaces" = {
             format = "{icon}";
             format-icons = workspace_icons;
           };
