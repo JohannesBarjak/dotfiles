@@ -33,6 +33,7 @@
           tridactyl
           localcdn
           umatrix
+          auto-tab-discard
         ];
 
       # Override minimum window size.
