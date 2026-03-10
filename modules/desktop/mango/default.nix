@@ -27,7 +27,7 @@
     wayland.windowManager.mango = {
       enable = true;
       settings = builtins.readFile ./config.conf + (with config.lib.stylix.colors; ''
-        exec=${pkgs.swaybg}/bin/swaybg -i ${config.stylix.image}
+        exec-once=${pkgs.swaybg}/bin/swaybg -i ${config.stylix.image}
 
         rootcolor=0x${base00}ff
         bordercolor=0x${base03}ff
