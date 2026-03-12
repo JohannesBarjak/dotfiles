@@ -43,9 +43,11 @@
   :custom
   (tab-always-indent 'complete) ; Enable indentation + completion using the TAB key.
   (indent-tabs-mode nil)       ; Do not indent with the tab character.
+
   (custom-file
    (expand-file-name
     (concat user-emacs-directory "custom.el"))) ; Write variables into a separate file.
+
   (explicit-shell-file-name (executable-find "nu"))          ; Find nushell executable for interactive
   (native-comp-compiler-options '("-O3" "-march=skylake" "-mtune=native"))
 

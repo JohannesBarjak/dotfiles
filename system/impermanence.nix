@@ -67,7 +67,6 @@
         # User files.
         files = [
           # Important emacs files.
-          ".config/emacs/custom.el"
           ".config/emacs/.mc-lists.el"
           ".config/emacs/bookmarks"
 
