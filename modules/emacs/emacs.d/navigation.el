@@ -81,7 +81,12 @@
 ;; Enable package for automatic split resizing.
 (use-package zoom
   :config (zoom-mode)
-  :custom (zoom-size '(0.618 . 0.618)))
+
+  :custom
+  (zoom-size (lambda ()
+                (if (not (derived-mode-p 'eat-mode))
+                    '(0.618 . 0.716)
+                  '(0.618 . 0.382)))))
 
 ;; Puni allows for smarter parenthesis behavior.
 (use-package puni
