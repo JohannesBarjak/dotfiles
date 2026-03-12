@@ -34,6 +34,7 @@
           localcdn
           umatrix
           auto-tab-discard
+          libredirect
         ];
 
       # Override minimum window size.
