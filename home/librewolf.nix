@@ -5,11 +5,6 @@
     profiles.default = {
       isDefault = true;
 
-      search = {
-        default = "ddg";
-        force = true;
-      };
-
       # 'about:config' settings should be set here since they can be ignored
       # when set globally.
       settings = {
