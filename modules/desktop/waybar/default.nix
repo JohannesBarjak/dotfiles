@@ -32,9 +32,9 @@
           };
 
           "custom/mango_keymode" = {
-            exec = "${pkgs.mangowc}/bin/mmsg -w -b | while read -r _ _ w; do echo $w; done;";
-            format = " {}";
-          };
+              exec = "${config.waybar.mangoKeymode}/bin/mmsgKeymode";
+              format = " {}";
+            };
 
           "ext/workspaces" = {
             format = "{icon}";
