@@ -9,10 +9,11 @@
           mkdir -p $out/bin
           ${pkgs.rustc}/bin/rustc \
             -C opt-level=s \
+            -C target-cpu=native \
             -C panic=abort \
             -C lto=fat \
             -C codegen-units=1 \
-            -C link-arg=-s \
+            -C strip="symbols" \
             ${./keymodeIPC.rs} -o $out/bin/mmsgKeymode
         '');
     };
