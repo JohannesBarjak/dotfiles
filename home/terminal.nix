@@ -2,7 +2,7 @@
   home.packages = with pkgs; [
     nixd markdown-oxide taplo
     typst tinymist
-    nodePackages.bash-language-server shellcheck
+    bash-language-server shellcheck
     vscode-langservers-extracted
     tealdeer
   ];
