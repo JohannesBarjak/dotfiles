@@ -43,10 +43,6 @@
     };
   };
 
-
-  # Install distrobox for greater package availability.
-  programs.distrobox.enable = true;
-
   xdg = {
     enable = true;
 
