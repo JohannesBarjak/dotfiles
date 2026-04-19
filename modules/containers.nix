@@ -11,7 +11,7 @@
       enable = true;
       containers = {
         common-debian = {
-          additional_packages = "curl libncurses5 libqt5widgets5 libqt5websockets5 qtwayland5 libxkbcommon0";
+          additional_packages = "curl libncurses-dev";
           image = "debian:13";
           init_hooks = [
             "ln -sf /usr/bin/distrobox-host-exec /usr/local/bin/docker"
