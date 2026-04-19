@@ -65,6 +65,14 @@ in {
                 (genRule "simple" "process.path" "Kernel connection")
               ];
             }
+
+            {
+              name = "flatpak-to-flathub";
+              list = [
+                (genRule "simple" "process.path" "${pkgs.flatpak}/bin/.flatpak-wrapped")
+                (genRule "simple" "dest.host" "dl.flathub.org")
+              ];
+            }
           ])
       ];
     };
