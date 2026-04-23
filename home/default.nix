@@ -1,6 +1,5 @@
 {pkgs, ...}: {
   imports = [
-    ./librewolf.nix
     ./niri.nix
     ./terminal.nix
     ./theming.nix
