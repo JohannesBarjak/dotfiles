@@ -96,6 +96,10 @@
   # Primary document viewer.
   programs.zathura.enable = true;
 
+  xdg.mimeApps.defaultApplications = {
+    "application/pdf" = "org.pwmt.zathura.desktop";
+  };
+
   # Carapace completes command arguments.
   programs.carapace = {
     enable = true;
