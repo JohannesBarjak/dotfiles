@@ -49,7 +49,7 @@
     (concat user-emacs-directory "custom.el"))) ; Write variables into a separate file.
 
   (explicit-shell-file-name (executable-find "nu"))          ; Find nushell executable for interactive
-  (native-comp-compiler-options '("-O3" "-march=native" "-mtune=native"))
+  (native-comp-compiler-options '("-O3" "-march=x86-64-v3" "-mtune=native"))
 
   :hook
   (prog-mode-hook . display-line-numbers-mode)
