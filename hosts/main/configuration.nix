@@ -17,20 +17,11 @@
   users.users.root.hashedPasswordFile = "/persistent/passwords/root";
   users.users.johannes.hashedPasswordFile = "/persistent/passwords/root";
 
-  # Enable zram.
-  zramSwap = {
-    enable = true;
-    algorithm = "lz4 zstd";
-    priority = 150;
-    memoryPercent = 100;
-  };
-
   # Enable earlyoom to prevent freezes.
   services.earlyoom.enable = true;
 
   boot.kernel.sysctl = {
     "vm.swappiness" = 200;
-    "vm.page-cluster" = 0;
     "vm.vfs_cache_pressure" = 200;
     "kernel.sysrq" = 1;
   };

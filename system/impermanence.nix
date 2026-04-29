@@ -21,6 +21,9 @@
 
         # If this directory is not persisted timers won't persist.
         "/var/lib/systemd/timers"
+
+        # Directory for the swap file.
+        "/swap"
       ];
 
       # Persist files.
