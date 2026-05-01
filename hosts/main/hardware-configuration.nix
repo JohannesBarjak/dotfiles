@@ -56,6 +56,16 @@
     if [[ -e /btrfs_tmp/@ ]]; then
         mkdir -p /btrfs_tmp/old_roots
         timestamp=$(date --date="@$(stat -c %Y /btrfs_tmp/@)" "+%Y-%m-%-d_%H:%M:%S")
+
+        btrfs subvolume delete /btrfs_tmp/@/var/lib/portables || true
+        btrfs subvolume delete /btrfs_tmp/@/var/lib/machines || true
+        btrfs subvolume delete /btrfs_tmp/@/var/tmp || true
+        btrfs subvolume delete /btrfs_tmp/@/srv || true
+
+        if [[ -e /btrfs_tmp/@/swap ]]; then
+          mv /btrfs_tmp/@/swap /btrfs_tmp/swap_tmp
+        fi
+
         mv /btrfs_tmp/@ "/btrfs_tmp/old_roots/$timestamp"
     fi
 
@@ -72,6 +82,11 @@
     done
 
     btrfs subvolume create /btrfs_tmp/@
+
+    if [[ -e /btrfs_tmp/swap_tmp ]]; then
+      mv /btrfs_tmp/swap_tmp /btrfs_tmp/@/swap
+    fi
+
     umount /btrfs_tmp
     '';
   };
