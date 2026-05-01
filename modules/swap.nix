@@ -7,6 +7,7 @@
       "zswap.compressor=lz4"
       "zswap.pool=zsmalloc"
       "zswap.max_pool_percent=40"
+      "zswap.shrinker_enabled=1"
     ];
 
     boot.initrd.kernelModules = [ "lz4" "lz4_compress" ];
