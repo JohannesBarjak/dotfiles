@@ -87,6 +87,8 @@
           # Timeline settings.
           TIMELINE_CREATE = true;
           TIMELINE_CLEANUP = true;
+
+          TIMELINE_LIMIT_YEARLY = 0;
         };
       };
     };
