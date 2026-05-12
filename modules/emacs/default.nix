@@ -95,6 +95,14 @@
                           [ "-O3" "-march=native"
                             "-fgcse-las" "-fgcse-sm"
                             "-pipe" "-fno-semantic-interposition" ];
+        configureFlags = (prev.configureFlags or []) ++ [
+          "--without-x"
+          "--without-compress-install"
+          "--without-xim"
+          "--without-gconf"
+          "--without-xinput2"
+          "--enable-link-time-optimization"
+        ];
       }));
     };
 
