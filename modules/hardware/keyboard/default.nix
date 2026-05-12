@@ -21,4 +21,20 @@
       source = ./XCompose;
     };
   };
+
+  modules.espanso.nixos = {pkgs, ...}: {
+    services.espanso = {
+      enable = true;
+      package = pkgs.espanso-wayland;
+    };
+  };
+
+  modules.espanso.home = {pkgs, ...}: let yamlFormat = pkgs.formats.yaml {}; in {
+    xdg.configFile."espanso/config/default.yml".source =
+      yamlFormat.generate "espanso-config-default" {
+        undo_backspace = true;
+        toggle_key = "RIGHT_ALT";
+        force_mode = "clipboard";
+      };
+  };
 }

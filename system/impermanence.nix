@@ -62,6 +62,8 @@
           # Emacs directories to persist.
           ".config/emacs/elpa"
           ".config/emacs/persist"
+
+          ".config/espanso/match/packages"
         ];
 
         # User files.
