@@ -169,8 +169,6 @@
           accel-profile = "adaptive";
           accel-speed = 0;
         };
-
-        keyboard.xkb.options = "compose:ralt";
       };
 
       prefer-no-csd = true;

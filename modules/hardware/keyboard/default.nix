@@ -33,8 +33,11 @@
     xdg.configFile."espanso/config/default.yml".source =
       yamlFormat.generate "espanso-config-default" {
         undo_backspace = true;
+
         toggle_key = "RIGHT_ALT";
-        force_mode = "clipboard";
+        search_shortcut = "CTRL+ALT+META+SPACE";
+
+        inject_delay = 5;
       };
   };
 }
